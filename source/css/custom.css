@@ -1,0 +1,449 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0b1220;
+  color: #eaf2ff;
+  font-family: "Consolas", "Menlo", "Monaco", "Courier New", monospace;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: #eaf2ff;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #7cc7ff;
+}
+
+.site-wrapper {
+  width: 100%;
+}
+
+.site-header,
+.main-container,
+.site-footer {
+  width: min(780px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.site-header {
+  padding-top: 42px;
+}
+
+.brand-row {
+  display: flex;
+  justify-content: center;
+}
+
+.brand-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  width: 100%;
+}
+
+.site-logo {
+  font-size: 48px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.site-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.site-title a {
+  color: #f4f8ff;
+  text-decoration: none;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 17px;
+}
+
+.site-nav a {
+  color: #63b3ff;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: #9fd3ff;
+  text-decoration: underline;
+}
+
+.nav-sep {
+  color: #5f6f86;
+}
+
+.intro-links {
+  margin-top: 54px;
+  margin-bottom: 90px;
+  font-size: 18px;
+}
+
+.intro-links p {
+  margin: 0;
+}
+
+.intro-links a {
+  color: #f4f8ff;
+  text-decoration: none;
+}
+
+.intro-links a:hover {
+  color: #7cc7ff;
+}
+
+.section-title {
+  color: #63b3ff;
+  font-size: 52px;
+  line-height: 1.2;
+  margin: 0 0 34px;
+  font-weight: 700;
+}
+
+.writing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.writing-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 18px;
+  align-items: start;
+  font-size: 18px;
+}
+
+.writing-date {
+  color: #a9b8cc;
+}
+
+.writing-title a {
+  color: #eaf2ff;
+  text-decoration: underline;
+}
+
+.writing-title a:hover {
+  color: #7cc7ff;
+}
+
+.page-content,
+.post-content {
+  font-size: 18px;
+}
+
+.page-body,
+.post-body {
+  margin-top: 24px;
+}
+
+.page-body h2,
+.post-body h2 {
+  color: #63b3ff;
+  font-size: 30px;
+  margin-top: 34px;
+  margin-bottom: 14px;
+}
+
+.page-body h3,
+.post-body h3 {
+  color: #63b3ff;
+  font-size: 22px;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.page-body p,
+.post-body p {
+  margin: 14px 0;
+}
+
+.page-body ul,
+.post-body ul {
+  padding-left: 22px;
+  margin: 14px 0;
+}
+
+.page-body blockquote,
+.post-body blockquote {
+  margin: 24px 0;
+  padding-left: 16px;
+  border-left: 3px solid #63b3ff;
+  color: #cdd9ea;
+}
+
+.post-title {
+  font-size: 40px;
+  color: #63b3ff;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.post-meta {
+  color: #a9b8cc;
+  font-size: 16px;
+  margin-bottom: 26px;
+}
+
+.tags-inline a {
+  color: #63b3ff;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.tags-inline a:hover {
+  color: #9fd3ff;
+  text-decoration: underline;
+}
+
+.site-footer {
+  margin-top: 140px;
+  padding-bottom: 28px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  font-size: 15px;
+  color: #a9b8cc;
+}
+
+.footer-left {
+  color: #a9b8cc;
+}
+
+.footer-right {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-right a {
+  color: #a9b8cc;
+  text-decoration: underline;
+}
+
+.footer-right a:hover {
+  color: #7cc7ff;
+}
+
+.footer-right span {
+  color: #5f6f86;
+}
+
+pre,
+code {
+  font-family: "Consolas", "Menlo", "Monaco", "Courier New", monospace;
+}
+
+pre {
+  background: #111b2e;
+  color: #eaf2ff;
+  padding: 16px;
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  .site-header,
+  .main-container,
+  .site-footer {
+    width: calc(100% - 32px);
+  }
+
+  .brand-left {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .site-title a {
+    font-size: 28px;
+  }
+
+  .site-nav {
+    gap: 8px;
+    font-size: 15px;
+  }
+
+  .intro-links {
+    margin-top: 36px;
+    margin-bottom: 58px;
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 42px;
+    margin-bottom: 26px;
+  }
+
+  .writing-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .writing-date,
+  .writing-title {
+    font-size: 16px;
+  }
+
+  .post-title {
+    font-size: 32px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.search-box-wrap {
+  margin-top: 12px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #27466f;
+  background: #111b2e;
+  color: #eaf2ff;
+  font-family: "Consolas", "Menlo", "Monaco", "Courier New", monospace;
+  font-size: 18px;
+  outline: none;
+  border-radius: 4px;
+}
+
+.search-input:focus {
+  border-color: #63b3ff;
+  box-shadow: 0 0 0 2px rgba(99, 179, 255, 0.15);
+}
+
+.search-results {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-result-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.search-result-date {
+  color: #a9b8cc;
+  font-size: 15px;
+}
+
+.search-result-main {
+  min-width: 0;
+}
+
+.search-result-title {
+  color: #eaf2ff;
+  text-decoration: underline;
+  font-size: 19px;
+  word-break: break-word;
+}
+
+.search-result-title:hover {
+  color: #7cc7ff;
+}
+
+.search-result-excerpt {
+  margin: 10px 0 0;
+  color: #cdd9ea;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.search-hint,
+.search-empty {
+  color: #a9b8cc;
+  font-size: 16px;
+}
+
+mark {
+  background: rgba(99, 179, 255, 0.18);
+  color: #eaf2ff;
+  padding: 0 2px;
+}
+
+@media (max-width: 700px) {
+  .search-result-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .search-input {
+    font-size: 16px;
+  }
+
+  .search-result-title {
+    font-size: 17px;
+  }
+}
+.tags-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.tag-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+  padding: 14px 16px;
+  border: 1px solid #1b3b63;
+  background: #101a2c;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.tag-card:hover {
+  transform: translateY(-2px);
+  border-color: #63b3ff;
+  text-decoration: none;
+}
+
+.tag-name {
+  color: #63b3ff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.tag-count {
+  color: #a9b8cc;
+  font-size: 14px;
+}

@@ -1,0 +1,101 @@
+<article class="page-content">
+  <header class="page-header">
+    <h1 class="section-title"><%= page.title %></h1>
+  </header>
+
+  <div class="page-body">
+    <% if (page.title === 'Search') { %>
+      <div class="search-box-wrap">
+        <input
+          id="local-search-input"
+          class="search-input"
+          type="text"
+          placeholder="Search posts..."
+          autocomplete="off"
+        />
+        <div id="local-search-results" class="search-results"></div>
+      </div>
+
+      <script>
+        (async function () {
+          const input = document.getElementById('local-search-input');
+          const results = document.getElementById('local-search-results');
+
+          let posts = [];
+
+          try {
+            const res = await fetch('/search.json');
+            posts = await res.json();
+          } catch (err) {
+            results.innerHTML = '<p>Failed to load search index.</p>';
+            return;
+          }
+
+          function escapeHtml(str) {
+            return str
+              .replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&#039;');
+          }
+
+          function stripHtml(html) {
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            return div.textContent || div.innerText || '';
+          }
+
+          function highlight(text, keyword) {
+            if (!keyword) return escapeHtml(text);
+            const escaped = escapeHtml(text);
+            const pattern = new RegExp(`(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'ig');
+            return escaped.replace(pattern, '<mark>$1</mark>');
+          }
+
+          function renderResults(list, keyword) {
+            if (!keyword.trim()) {
+              results.innerHTML = '<p class="search-hint">Type something to search.</p>';
+              return;
+            }
+
+            if (!list.length) {
+              results.innerHTML = '<p class="search-empty">No matching posts found.</p>';
+              return;
+            }
+
+            results.innerHTML = list.map(post => {
+              const rawText = stripHtml(post.content || '');
+              const excerpt = rawText.slice(0, 180);
+              return `
+                <article class="search-result-item">
+                  <div class="search-result-date">${post.date ? post.date.slice(0, 10) : ''}</div>
+                  <div class="search-result-main">
+                    <a class="search-result-title" href="${post.url}">${highlight(post.title || 'Untitled', keyword)}</a>
+                    <p class="search-result-excerpt">${highlight(excerpt, keyword)}...</p>
+                  </div>
+                </article>
+              `;
+            }).join('');
+          }
+
+          input.addEventListener('input', function () {
+            const keyword = this.value.toLowerCase().trim();
+
+            const matched = posts.filter(post => {
+              const title = (post.title || '').toLowerCase();
+              const content = stripHtml(post.content || '').toLowerCase();
+              return title.includes(keyword) || content.includes(keyword);
+            });
+
+            renderResults(matched, this.value.trim());
+          });
+
+          renderResults([], '');
+        })();
+      </script>
+    <% } else { %>
+      <%- page.content %>
+    <% } %>
+  </div>
+</article>

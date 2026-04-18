@@ -1,0 +1,38 @@
+<header class="site-header">
+  <div class="brand-row">
+    <div class="brand-left">
+      <div class="site-logo">🐺</div>
+
+      <div class="site-title-wrap">
+        <div class="site-title">
+          <a href="<%= url_for('/') %>"><%= config.title %></a>
+        </div>
+
+        <nav class="site-nav">
+          <a href="<%= url_for('/') %>">Home</a>
+          <span class="nav-sep">|</span>
+          <a href="<%= url_for('/about/') %>">About</a>
+          <span class="nav-sep">|</span>
+          <a href="<%= url_for('/archives/') %>">Writing</a>
+          <span class="nav-sep">|</span>
+          <a href="<%= url_for('/search/') %>">Search</a>
+          <span class="nav-sep">|</span>
+          <a href="<%= url_for('/tags/') %>">Tags</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-links">
+    <p>
+      Find me on
+      <a href="https://github.com/casper3790" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      and
+      <a href="mailto:你的gmail@gmail.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>.
+    </p>
+  </div>
+</header>

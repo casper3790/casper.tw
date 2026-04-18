@@ -1,0 +1,26 @@
+title: Casper's Blog
+subtitle:
+description: Personal blog about cybersecurity, CTF, robotics, and projects.
+author: Casper
+language: en
+timezone: Asia/Taipei
+
+url: http://localhost:4000
+root: /
+permalink: :year/:month/:day/:title/
+
+theme: landscape
+
+per_page: 10
+archive_generator:
+  per_page: 10
+  yearly: true
+  monthly: true
+
+tag_generator:
+  per_page: 10
+  search:
+  path: search.json
+  field: post
+  content: true
+  format: json

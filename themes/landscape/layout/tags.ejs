@@ -1,0 +1,16 @@
+<section class="tags-page">
+  <h1 class="section-title">Tags</h1>
+
+  <% if (site.tags && site.tags.length) { %>
+    <div class="tags-list-grid">
+      <% site.tags.each(function(tag) { %>
+        <a class="tag-card" href="<%= url_for(tag.path) %>">
+          <span class="tag-name">#<%= tag.name %></span>
+          <span class="tag-count"><%= tag.length %> posts</span>
+        </a>
+      <% }) %>
+    </div>
+  <% } else { %>
+    <p>No tags yet.</p>
+  <% } %>
+</section>

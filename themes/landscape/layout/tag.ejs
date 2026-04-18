@@ -1,0 +1,18 @@
+<section class="tag-page">
+  <h1 class="section-title">Tag: <%= page.tag.name %></h1>
+
+  <% if (page.posts && page.posts.length) { %>
+    <div class="writing-list">
+      <% page.posts.each(function(post) { %>
+        <article class="writing-item">
+          <div class="writing-date"><%= date(post.date, 'YYYY-MM-DD') %></div>
+          <div class="writing-title">
+            <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  <% } else { %>
+    <p>No posts in this tag.</p>
+  <% } %>
+</section>
