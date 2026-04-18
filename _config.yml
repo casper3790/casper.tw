@@ -6,7 +6,7 @@ language: en
 timezone: Asia/Taipei
 
 url: https://casper3790.github.io
-root: /
+root: /casper.tw/
 permalink: :year/:month/:day/:title/
 
 theme: landscape
