@@ -1,26 +1,240 @@
+# Hexo Configuration
+# Docs: https://hexo.io/docs/configuration.html
+
+# Site
 title: Casper's Blog
-subtitle:
-description: Personal blog about cybersecurity, CTF, robotics, and projects.
+subtitle: 我相信我的故事，有一天會被別人看見。
+description: Cybersecurity, CTF, Robotics, Web Development, and Student Life.
+keywords:
+  - Casper
+  - 0ping
+  - CTF
+  - Cybersecurity
+  - FRC
+  - Robotics
+  - Web Development
+  - Blog
 author: Casper
-language: en
+language: zh-TW
 timezone: Asia/Taipei
 
+# URL
+# 你的網站是 GitHub Pages 子路徑，所以這兩個一定要這樣
 url: https://casper3790.github.io
 root: /casper.tw/
 permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
 
-theme: landscape
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
 
+# Writing
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude:
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+meta_generator: true
+
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: mtime
+
+# Pagination
 per_page: 10
+pagination_dir: page
+
+# Theme
+theme: reimu
+
+# Deployment
+# 如果你使用 hexo deploy，這裡會把 public 部署到 gh-pages 分支
+deploy:
+  type: git
+  repo: https://github.com/casper3790/casper.tw.git
+  branch: gh-pages
+
+# Archive
 archive_generator:
   per_page: 10
   yearly: true
   monthly: true
+  daily: false
+  order_by: -date
 
+# Tag generator
 tag_generator:
   per_page: 10
-  search:
+  order_by: -date
+
+# Category generator
+category_generator:
+  per_page: 10
+  order_by: -date
+
+# Feed / RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+
+# Search
+# Reimu 可以搭配搜尋功能，先用本地 search.json
+search:
   path: search.json
   field: post
   content: true
   format: json
+
+# Markdown
+markdown:
+  preset: default
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: false
+    linkify: true
+    typographer: true
+  enable_rules:
+  disable_rules:
+  plugins:
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    permalink: false
+    permalinkClass: header-anchor
+    permalinkSide: left
+    permalinkSymbol: '#'
+
+# Related posts
+related_posts:
+  enable: true
+  filter_threshold: 0.1
+  related_count: 5
+
+# Comments
+# 今天先不要開留言，避免部署出錯
+comments:
+  enable: false
+
+# Reimu basic visual settings
+# 這些是給 Reimu 用的基礎設定，有些功能會依主題版本支援
+avatar: /casper.tw/images/avatar.webp
+favicon: /casper.tw/images/favicon.ico
+
+# Menu
+menu:
+  首頁: /casper.tw/
+  歸檔: /casper.tw/archives/
+  分類: /casper.tw/categories/
+  標籤: /casper.tw/tags/
+  關於: /casper.tw/about/
+  友鏈: /casper.tw/friend/
+
+# Social links
+social:
+  GitHub: https://github.com/casper3790
+  Blog: https://casper3790.github.io/casper.tw/
+
+# Footer
+since: 2025
+footer:
+  powered: true
+  theme: true
+  custom_text: "Built with Hexo & Reimu. 記錄學習、比賽、技術與成長。"
+
+# Assets
+cover:
+  default: /casper.tw/images/default-cover.jpg
+
+# Code block
+code_block:
+  copy: true
+  style: default
+
+# Table of contents
+toc:
+  enable: true
+  number: false
+  max_depth: 3
+  min_depth: 2
+
+# Math
+math:
+  enable: false
+
+# Mermaid
+mermaid:
+  enable: false
+
+# Lazyload
+lazyload:
+  enable: true
+
+# Pjax
+pjax:
+  enable: true
+
+# Dark mode
+darkmode:
+  enable: true
+  default: auto
+
+# CDN
+cdn:
+  enable: false

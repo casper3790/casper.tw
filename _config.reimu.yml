@@ -1,0 +1,471 @@
+# =========================================================
+# Casper's Blog - Reimu Theme Config
+# 檔案位置：Hexo 根目錄 / _config.reimu.yml
+# =========================================================
+
+# ---------------------------------------------------------
+# Menu / 導覽列
+# Reimu 會依照你的 language: zh-TW 自動顯示中文
+# ---------------------------------------------------------
+menu:
+  - name: home
+    url: /
+    icon:
+  - name: archives
+    url: /archives
+    icon:
+  - name: categories
+    url: /categories
+    icon:
+  - name: tags
+    url: /tags
+    icon:
+  - name: about
+    url: /about
+    icon:
+  - name: friend
+    url: /friend
+    icon:
+
+# ---------------------------------------------------------
+# Subtitle / 副標題
+# ---------------------------------------------------------
+subtitle:
+  typing:
+    enable: false
+    strings:
+      - 我相信我的故事，有一天會被別人看見。
+      - Cybersecurity / CTF / Web Development / Robotics
+    typeSpeed: 100
+    backSpeed: 50
+    backDelay: 2000
+    startDelay: 300
+    loop: true
+    shuffle: false
+    showCursor: true
+    cursorChar: "|"
+    smartBackspace: false
+
+# ---------------------------------------------------------
+# Banner / 背景大圖
+# 你的圖片請放在：source/images/banner.jpg
+# ---------------------------------------------------------
+banner: "/images/banner.jpg"
+
+banner_srcset:
+  enable: false
+  srcset:
+    - src: "/images/banner.jpg"
+      media: "(min-width: 800px)"
+
+# ---------------------------------------------------------
+# Favicon / 網站小圖示
+# 請放在：source/images/favicon.ico
+# ---------------------------------------------------------
+favicon: "/images/favicon.ico"
+
+# ---------------------------------------------------------
+# Avatar / 左側作者頭像
+# 注意：avatar 要放在 source/_data/avatar/avatar.webp
+# 這裡只寫檔名，不要寫完整路徑
+# ---------------------------------------------------------
+avatar: "avatar.webp"
+
+# ---------------------------------------------------------
+# Post Cover / 文章卡片封面
+# 你的圖片請放在：source/images/default-cover.jpg
+# 如果文章 Front Matter 有 cover，會優先使用文章自己的 cover
+# ---------------------------------------------------------
+cover: "/images/default-cover.jpg"
+
+# ---------------------------------------------------------
+# TOC / 文章目錄
+# ---------------------------------------------------------
+toc: true
+
+toc_options:
+  list_number: true
+  min_depth: 2
+  max_depth: 4
+
+# ---------------------------------------------------------
+# Open Graph / 分享圖片
+# ---------------------------------------------------------
+open_graph:
+  enable: true
+  options:
+    default_og_image: /images/banner.jpg
+
+# ---------------------------------------------------------
+# Content / 文章閱讀更多
+# ---------------------------------------------------------
+excerpt_link: Read More
+
+# ---------------------------------------------------------
+# RSS
+# ---------------------------------------------------------
+rss: atom.xml
+
+# ---------------------------------------------------------
+# Footer / 頁尾
+# ---------------------------------------------------------
+footer:
+  since: 2025
+  powered: true
+  count: true
+  busuanzi: false
+  icon:
+    url: "../images/taichi.png"
+    rotate: false
+    mask: true
+
+# ---------------------------------------------------------
+# Sidebar / 側邊欄
+# 你截圖那種左側作者卡 + 分類 + 標籤雲 + 彙整 + 最新文章
+# ---------------------------------------------------------
+sidebar:
+  position: left
+  menu: true
+  article:
+    show_common: true
+
+# ---------------------------------------------------------
+# Social / 社群連結
+# 會顯示在左側作者卡下面
+# ---------------------------------------------------------
+social:
+  email: mailto:casp3790er@gmail.com
+  github: https://github.com/casper3790
+  instagram:
+  discord:
+
+# ---------------------------------------------------------
+# Widgets / 側邊欄小工具
+# category      = 分類
+# tagcloud      = 標籤雲
+# archive       = 彙整
+# recent_posts  = 最新文章
+# ---------------------------------------------------------
+widgets:
+  - category
+  - tagcloud
+  - archive
+  - recent_posts
+
+# ---------------------------------------------------------
+# Widget Behavior / 小工具行為
+# ---------------------------------------------------------
+archive_type: "monthly"
+show_count: true
+
+tag_limits:
+tagcloud_limits: 30
+recent_posts_limits: 5
+
+only_show_capsule_in_index: false
+uppercase_capsule: false
+show_update_time: false
+
+# ---------------------------------------------------------
+# Summary / 文章摘要
+# ---------------------------------------------------------
+summary:
+  enable: false
+  style: 'subtitle'
+
+# ---------------------------------------------------------
+# Internationalization / 多語言
+# 你目前先不要開，避免變複雜
+# ---------------------------------------------------------
+i18n:
+  enable: false
+  type: [page, post]
+  generator: [archive, category, tag, index]
+  languages: [zh-TW, en]
+
+# ---------------------------------------------------------
+# GitHub 右上角三角徽章
+# 關掉，畫面比較乾淨
+# ---------------------------------------------------------
+triangle_badge:
+  enable: false
+  icon: github
+  link: https://github.com/casper3790
+
+# ---------------------------------------------------------
+# Layout / 版面寬度
+# ---------------------------------------------------------
+layout:
+  max_width: 1350px
+
+# ---------------------------------------------------------
+# Anchor Icon / 標題錨點符號
+# ---------------------------------------------------------
+anchor_icon:
+
+# ---------------------------------------------------------
+# Reimu Cursor / 特殊滑鼠游標
+# 你不想要奇怪滑鼠，所以關掉
+# ---------------------------------------------------------
+reimu_cursor:
+  enable: false
+  cursor:
+    default: ../images/cursor/reimu-cursor-default.png
+    pointer: ../images/cursor/reimu-cursor-pointer.png
+    text: ../images/cursor/reimu-cursor-text.png
+
+# ---------------------------------------------------------
+# Icon Font
+# ---------------------------------------------------------
+icon_font: 4552607_ex15nbittbh
+
+# ---------------------------------------------------------
+# Font / 字體
+# ---------------------------------------------------------
+custom_font:
+  enable: false
+  article:
+  code:
+
+font:
+  enable: true
+  article:
+    - Mulish
+    - Noto Serif TC
+    - Noto Sans TC
+  code:
+    - JetBrains Mono
+
+local_font:
+  article:
+    - "-apple-system"
+    - BlinkMacSystemFont
+    - "Segoe UI"
+    - "PingFang TC"
+    - "Microsoft JhengHei"
+    - sans-serif
+  code:
+    - Menlo
+    - Monaco
+    - Consolas
+    - monospace
+
+# ---------------------------------------------------------
+# Dark Mode / 深色模式
+# auto = 跟著系統
+# true = 預設深色
+# false = 預設淺色
+# ---------------------------------------------------------
+dark_mode:
+  enable: auto
+
+# ---------------------------------------------------------
+# Math / 數學公式
+# 目前先關掉，避免多裝套件
+# ---------------------------------------------------------
+math:
+  enable: false
+  katex:
+    enable: true
+    autoRender: false
+  mathjax:
+    enable: false
+    options:
+
+# ---------------------------------------------------------
+# Mermaid / 流程圖
+# 目前先關掉
+# ---------------------------------------------------------
+mermaid:
+  enable: false
+
+# ---------------------------------------------------------
+# Comments / 留言系統
+# 目前先關掉，避免部署出錯
+# ---------------------------------------------------------
+comment:
+  title:
+    en: Leave a comment
+    zh-CN: 说些什么吧！
+    zh-TW: 說些什麼吧！
+    ja: コメントを残す
+  default:
+
+disqus:
+  enable: false
+  shortname:
+  count: true
+
+valine:
+  enable: false
+
+waline:
+  enable: false
+
+twikoo:
+  enable: false
+
+giscus:
+  enable: false
+
+artalk:
+  enable: false
+
+# ---------------------------------------------------------
+# Search / 搜尋
+# 目前先關掉，之後想加站內搜尋再開
+# ---------------------------------------------------------
+algolia_search:
+  enable: false
+  hits:
+    per_page: 10
+
+generator_search:
+  enable: false
+  field: post
+  content: true
+
+# ---------------------------------------------------------
+# Preloader / 載入畫面
+# 關掉「少女祈禱中...」
+# ---------------------------------------------------------
+preloader:
+  enable: false
+  text:
+    zh-CN: Loading...
+    zh-TW: Loading...
+    en: Loading...
+    ja: Loading...
+  icon:
+  rotate: false
+
+# ---------------------------------------------------------
+# Animation / 滑動動畫
+# 想要乾淨一點，所以先關掉
+# ---------------------------------------------------------
+animation:
+  enable: false
+  options:
+    header:
+      title: slide-up
+      subTitle: slide-down
+    home:
+      post: fade-up
+      widget: fade-up
+      sidebar: fade-up
+    article:
+      whole: fade-up
+      date: zoom-in
+      category: zoom-in
+      tag: zoom-in
+      comment: zoom-in
+      reading: zoom-in
+      nav: fade-up
+    archive:
+      whole: fade-up
+      tag: zoom-in
+      category: zoom-in
+      section: fade-up
+      nav: fade-up
+
+# ---------------------------------------------------------
+# Firework / 點滑鼠特效
+# 關掉點滑鼠跑出奇怪特效
+# ---------------------------------------------------------
+firework:
+  enable: false
+  disable_on_mobile: true
+  options:
+    excludeElements: ["a", "button"]
+
+# ---------------------------------------------------------
+# Pjax / 頁面無刷新切換
+# 先關掉，比較穩
+# ---------------------------------------------------------
+pjax:
+  enable: false
+
+# ---------------------------------------------------------
+# Quicklink / 預載入連結
+# 先關掉
+# ---------------------------------------------------------
+quicklink:
+  enable: false
+  timeout: 3000
+  priority: true
+  ignores: []
+
+# ---------------------------------------------------------
+# Pace / 頂部載入條
+# 關掉比較乾淨
+# ---------------------------------------------------------
+pace:
+  enable: false
+
+# ---------------------------------------------------------
+# Service Worker
+# 先關掉，避免快取讓你改背景後還看到舊圖
+# ---------------------------------------------------------
+service_worker:
+  enable: false
+
+# ---------------------------------------------------------
+# Live2D / 小人
+# 全部關掉
+# ---------------------------------------------------------
+live2d:
+  enable: false
+  position: left
+
+live2d_widgets:
+  enable: false
+  position: left
+
+# ---------------------------------------------------------
+# Music Player / 音樂播放器
+# 先關掉
+# ---------------------------------------------------------
+player:
+  disable_on_mobile: true
+  position: before_sidebar
+  aplayer:
+    enable: false
+    options:
+      audio: []
+      fixed:
+      autoplay:
+      loop:
+      order:
+      preload:
+      volume:
+      mutex:
+      listFolded:
+      lrcType:
+  meting:
+    enable: false
+    meting_api:
+    options:
+      id:
+      server:
+      type:
+      auto:
+
+# ---------------------------------------------------------
+# pangu.js / 中文英文自動空格
+# 可以開，讓文章比較好讀
+# ---------------------------------------------------------
+pangu:
+  enable: true
+
+# ---------------------------------------------------------
+# Lazyload / 圖片懶載入
+# ---------------------------------------------------------
+lazyload:
+  enable: true
+
+# ---------------------------------------------------------
+# CDN
+# 先使用預設
+# ---------------------------------------------------------
+cdn:
+  enable: false
