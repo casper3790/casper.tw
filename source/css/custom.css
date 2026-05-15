@@ -1,449 +1,878 @@
-* {
-  box-sizing: border-box;
+/* =========================================================
+   Casper Blog - Stable Reimu CSS
+   目的：
+   1. 全站紅色改白色
+   2. 左側選單每一頁一致
+   3. 修掉白色空白框
+   4. 不再亂藏文章標題 / 日期 / 摘要
+   ========================================================= */
+
+:root {
+  --casper-bg: #1f242b;
+  --casper-card: #252b33;
+  --casper-card-2: #2b323b;
+  --casper-text: #f8fafc;
+  --casper-muted: #cbd5e1;
+  --casper-soft: #9ca3af;
+  --casper-border: rgba(255, 255, 255, 0.42);
+  --casper-border-strong: rgba(255, 255, 255, 0.75);
+  --casper-glow: rgba(255, 255, 255, 0.18);
+
+  --red-0: #ffffff !important;
+  --red-1: #ffffff !important;
+  --red-2: #ffffff !important;
+  --color-red: #ffffff !important;
+  --theme-red: #ffffff !important;
+  --primary-color: #ffffff !important;
+  --theme-color: #ffffff !important;
+  --main-color: #ffffff !important;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #0b1220;
-  color: #eaf2ff;
-  font-family: "Consolas", "Menlo", "Monaco", "Courier New", monospace;
-  line-height: 1.8;
-  font-size: 16px;
-}
+/* ---------- 全站文字 ---------- */
 
+html,
 body {
-  min-height: 100vh;
+  color: var(--casper-muted) !important;
 }
 
-a {
-  color: #eaf2ff;
-  text-decoration: underline;
+a,
+a:visited {
+  color: var(--casper-text) !important;
+  text-decoration: none !important;
 }
 
 a:hover {
-  color: #7cc7ff;
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
 }
 
-.site-wrapper {
-  width: 100%;
+/* ---------- 上方導覽列 ---------- */
+
+#header a,
+#header span,
+#nav a,
+#nav span,
+.navbar a,
+.navbar span,
+.nav-menu a,
+.nav-menu span,
+.menu a,
+.menu span,
+.menu-item a,
+.menu-item span {
+  color: var(--casper-text) !important;
 }
 
-.site-header,
-.main-container,
-.site-footer {
-  width: min(780px, calc(100% - 64px));
-  margin: 0 auto;
+#header i,
+#header svg,
+#header .iconfont,
+#nav i,
+#nav svg,
+#nav .iconfont,
+.navbar i,
+.navbar svg,
+.navbar .iconfont,
+.nav-menu i,
+.nav-menu svg,
+.nav-menu .iconfont,
+.menu i,
+.menu svg,
+.menu .iconfont,
+.menu-item i,
+.menu-item svg,
+.menu-item .iconfont {
+  color: var(--casper-text) !important;
+  fill: var(--casper-text) !important;
+  stroke: var(--casper-text) !important;
 }
 
-.site-header {
-  padding-top: 42px;
+/* ---------- 左側作者卡 ---------- */
+
+.sidebar,
+#sidebar,
+.aside,
+#aside-content,
+.aside-content,
+.sidebar-inner {
+  background: var(--casper-card) !important;
+  color: var(--casper-text) !important;
 }
 
-.brand-row {
-  display: flex;
-  justify-content: center;
+.sidebar h1,
+.sidebar h2,
+.sidebar h3,
+#aside-content h1,
+#aside-content h2,
+#aside-content h3,
+.author-name,
+.site-author-name,
+.site-title {
+  color: var(--casper-text) !important;
+  font-weight: 800 !important;
 }
 
-.brand-left {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  width: 100%;
+.sidebar p,
+.sidebar span,
+#aside-content p,
+#aside-content span,
+.site-description,
+.author-description {
+  color: var(--casper-muted) !important;
 }
 
-.site-logo {
-  font-size: 48px;
-  line-height: 1;
-  margin-top: 2px;
+/* ---------- 頭像 ---------- */
+
+.sidebar img,
+#aside-content img,
+.avatar,
+.site-author-image,
+.author-avatar img {
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.35),
+    0 0 22px rgba(255, 255, 255, 0.18) !important;
 }
 
-.site-title-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* =========================================================
+   左側選單核心修復
+   不要再有白色空白框
+   ========================================================= */
+
+/* 左側選單列表本身 */
+.sidebar ul,
+.sidebar ol,
+#sidebar ul,
+#sidebar ol,
+#aside-content ul,
+#aside-content ol {
+  list-style: none !important;
+  padding-left: 0 !important;
 }
 
-.site-title a {
-  color: #f4f8ff;
-  text-decoration: none;
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+/* 左側選單 li 不准有白底 */
+.sidebar li,
+#sidebar li,
+#aside-content li,
+.sidebar .menu-item,
+#sidebar .menu-item,
+#aside-content .menu-item {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
-.site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 17px;
+/* 左側選單所有按鈕 */
+.sidebar nav a,
+#sidebar nav a,
+#aside-content nav a,
+.sidebar .menu a,
+#sidebar .menu a,
+#aside-content .menu a,
+.sidebar .menu-item a,
+#sidebar .menu-item a,
+#aside-content .menu-item a,
+.sidebar ul li a,
+#sidebar ul li a,
+#aside-content ul li a {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  width: 100% !important;
+  min-height: 38px !important;
+  box-sizing: border-box !important;
+
+  margin: 8px 0 !important;
+  padding: 8px 12px !important;
+
+  color: var(--casper-text) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+
+  border: 2px solid var(--casper-border) !important;
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-align: center !important;
 }
 
-.site-nav a {
-  color: #63b3ff;
-  text-decoration: none;
+/* active/current 一律不要白底 */
+.sidebar .active,
+.sidebar .current,
+.sidebar .is-active,
+#sidebar .active,
+#sidebar .current,
+#sidebar .is-active,
+#aside-content .active,
+#aside-content .current,
+#aside-content .is-active,
+.sidebar .active a,
+.sidebar .current a,
+.sidebar .is-active a,
+#sidebar .active a,
+#sidebar .current a,
+#sidebar .is-active a,
+#aside-content .active a,
+#aside-content .current a,
+#aside-content .is-active a {
+  color: var(--casper-text) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: var(--casper-border-strong) !important;
+  box-shadow: 0 0 10px var(--casper-glow) !important;
 }
 
-.site-nav a:hover {
-  color: #9fd3ff;
-  text-decoration: underline;
+/* 防止 ::before / ::after 做出白色底 */
+.sidebar a::before,
+.sidebar a::after,
+.sidebar li::before,
+.sidebar li::after,
+#sidebar a::before,
+#sidebar a::after,
+#sidebar li::before,
+#sidebar li::after,
+#aside-content a::before,
+#aside-content a::after,
+#aside-content li::before,
+#aside-content li::after {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
-.nav-sep {
-  color: #5f6f86;
+/* 選單文字與 icon */
+.sidebar a span,
+.sidebar a i,
+.sidebar a svg,
+.sidebar .iconfont,
+#sidebar a span,
+#sidebar a i,
+#sidebar a svg,
+#sidebar .iconfont,
+#aside-content a span,
+#aside-content a i,
+#aside-content a svg,
+#aside-content .iconfont {
+  color: var(--casper-text) !important;
+  fill: var(--casper-text) !important;
+  stroke: var(--casper-text) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  margin: 0 !important;
 }
 
-.intro-links {
-  margin-top: 54px;
-  margin-bottom: 90px;
-  font-size: 18px;
+/* hover */
+.sidebar nav a:hover,
+#sidebar nav a:hover,
+#aside-content nav a:hover,
+.sidebar .menu a:hover,
+#sidebar .menu a:hover,
+#aside-content .menu a:hover,
+.sidebar .menu-item a:hover,
+#sidebar .menu-item a:hover,
+#aside-content .menu-item a:hover,
+.sidebar ul li a:hover,
+#sidebar ul li a:hover,
+#aside-content ul li a:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.22) !important;
 }
 
-.intro-links p {
-  margin: 0;
+/* ---------- 側邊欄小工具 ---------- */
+
+.widget,
+.widget-wrap,
+.card-widget,
+.sidebar .card,
+#aside-content .card,
+#aside-content .card-widget {
+  background: var(--casper-card) !important;
+  color: var(--casper-muted) !important;
+  border-radius: 12px !important;
 }
 
-.intro-links a {
-  color: #f4f8ff;
-  text-decoration: none;
+.widget-title,
+.card-title,
+.aside-title,
+.archive-title,
+.category-title,
+.tag-title {
+  color: var(--casper-text) !important;
+  font-weight: 800 !important;
 }
 
-.intro-links a:hover {
-  color: #7cc7ff;
+.widget a,
+.tagcloud a,
+.category a,
+.categories a,
+.archive-list a,
+.recent-posts a,
+.latest-posts a {
+  color: var(--casper-muted) !important;
 }
 
-.section-title {
-  color: #63b3ff;
-  font-size: 52px;
-  line-height: 1.2;
-  margin: 0 0 34px;
-  font-weight: 700;
+.widget a:hover,
+.tagcloud a:hover,
+.category a:hover,
+.categories a:hover,
+.archive-list a:hover,
+.recent-posts a:hover,
+.latest-posts a:hover {
+  color: #ffffff !important;
 }
 
-.writing-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* ---------- 首頁文章卡片 ---------- */
+
+.post,
+.article,
+.post-card,
+.article-card,
+.index-card,
+.index-post,
+.recent-post-item {
+  background: var(--casper-card) !important;
+  color: var(--casper-muted) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22) !important;
 }
 
-.writing-item {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 18px;
-  align-items: start;
-  font-size: 18px;
+.post-title,
+.post-title a,
+.article-title,
+.article-title a,
+.index-info .article-title,
+.index-info .article-title a,
+.recent-post-item-title,
+.recent-post-item-title a {
+  color: var(--casper-text) !important;
+  font-weight: 900 !important;
 }
 
-.writing-date {
-  color: #a9b8cc;
+.post-title a:hover,
+.article-title a:hover,
+.index-info .article-title a:hover {
+  color: #ffffff !important;
 }
 
-.writing-title a {
-  color: #eaf2ff;
-  text-decoration: underline;
+/* 摘要 */
+.post-excerpt,
+.article-excerpt,
+.index-excerpt,
+.index-info,
+.index-info p,
+.post-content,
+.article-content,
+.recent-post-item-excerpt,
+.recent-post-item-excerpt p {
+  color: var(--casper-soft) !important;
+  line-height: 1.9 !important;
 }
 
-.writing-title a:hover {
-  color: #7cc7ff;
+/* 日期 / 字數 / 閱讀時間 */
+.post-meta,
+.article-meta,
+.index-meta,
+.post-date,
+.article-date,
+.post-wordcount,
+.post-time,
+.recent-post-info,
+.recent-post-info span,
+.recent-post-info a,
+time {
+  color: var(--casper-soft) !important;
 }
 
-.page-content,
-.post-content {
-  font-size: 18px;
+.post-meta i,
+.article-meta i,
+.index-meta i,
+.recent-post-info i,
+.post-meta svg,
+.article-meta svg,
+.index-meta svg,
+.recent-post-info svg {
+  color: var(--casper-soft) !important;
+  fill: var(--casper-soft) !important;
+  stroke: var(--casper-soft) !important;
 }
 
-.page-body,
-.post-body {
-  margin-top: 24px;
+/* ---------- 圖片 ---------- */
+
+.post img,
+.article img,
+.post-card img,
+.article-card img,
+.index-card img,
+.index-post img,
+.recent-post-item img,
+.post-cover img,
+.article-cover img,
+.index-cover img,
+.cover img {
+  object-fit: cover !important;
+  border-radius: 8px !important;
 }
 
-.page-body h2,
-.post-body h2 {
-  color: #63b3ff;
-  font-size: 30px;
-  margin-top: 34px;
-  margin-bottom: 14px;
+/* ---------- 文章內頁 ---------- */
+
+.article-entry,
+.post-body,
+.markdown-body,
+.article-content {
+  color: var(--casper-muted) !important;
+  line-height: 2 !important;
 }
 
-.page-body h3,
-.post-body h3 {
-  color: #63b3ff;
-  font-size: 22px;
-  margin-top: 28px;
-  margin-bottom: 12px;
+.article-entry p,
+.post-body p,
+.markdown-body p {
+  color: var(--casper-muted) !important;
 }
 
-.page-body p,
-.post-body p {
-  margin: 14px 0;
+.article-entry h1,
+.article-entry h2,
+.article-entry h3,
+.article-entry h4,
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  color: var(--casper-text) !important;
+  font-weight: 900 !important;
 }
 
-.page-body ul,
-.post-body ul {
-  padding-left: 22px;
-  margin: 14px 0;
+.article-entry h1::before,
+.article-entry h2::before,
+.article-entry h3::before,
+.article-entry h4::before,
+.post-body h1::before,
+.post-body h2::before,
+.post-body h3::before,
+.post-body h4::before,
+.markdown-body h1::before,
+.markdown-body h2::before,
+.markdown-body h3::before,
+.markdown-body h4::before {
+  color: #ffffff !important;
 }
 
-.page-body blockquote,
-.post-body blockquote {
-  margin: 24px 0;
-  padding-left: 16px;
-  border-left: 3px solid #63b3ff;
-  color: #cdd9ea;
+.article-entry h1::after,
+.article-entry h2::after,
+.article-entry h3::after,
+.article-entry h4::after,
+.post-body h1::after,
+.post-body h2::after,
+.post-body h3::after,
+.post-body h4::after,
+.markdown-body h1::after,
+.markdown-body h2::after,
+.markdown-body h3::after,
+.markdown-body h4::after {
+
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.35) !important;
 }
 
-.post-title {
-  font-size: 40px;
-  color: #63b3ff;
-  margin: 0 0 10px;
-  line-height: 1.2;
+/* 引用 */
+.article-entry blockquote,
+.post-body blockquote,
+.markdown-body blockquote {
+  margin: 28px 0 !important;
+  padding: 22px 26px !important;
+  border-left: 4px solid rgba(255, 255, 255, 0.75) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+  color: var(--casper-text) !important;
 }
 
-.post-meta {
-  color: #a9b8cc;
-  font-size: 16px;
-  margin-bottom: 26px;
+/* 分隔線 */
+hr,
+.article-entry hr,
+.post-body hr,
+.markdown-body hr {
+  border: none !important;
+  border-top: 2px dashed rgba(255, 255, 255, 0.28) !important;
+  background: transparent !important;
 }
 
-.tags-inline a {
-  color: #63b3ff;
-  text-decoration: none;
-  margin-left: 10px;
+/* ---------- 標籤 / 分類 ---------- */
+
+.tag,
+.tags,
+.tag a,
+.tags a,
+.tagcloud,
+.tagcloud a,
+.category,
+.categories,
+.category a,
+.categories a {
+  color: var(--casper-text) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
 }
 
-.tags-inline a:hover {
-  color: #9fd3ff;
-  text-decoration: underline;
+.tag a:hover,
+.tags a:hover,
+.tagcloud a:hover,
+.category a:hover,
+.categories a:hover {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
 }
 
-.site-footer {
-  margin-top: 140px;
-  padding-bottom: 28px;
+/* ---------- 分頁，只限制 pagination，避免影響 sidebar ---------- */
+
+.pagination a,
+.pagination span,
+.pagination .page-number,
+.pagination .extend {
+  color: var(--casper-text) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  background: transparent !important;
 }
 
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  font-size: 15px;
-  color: #a9b8cc;
+.pagination .current,
+.pagination .page-number.current {
+  color: #111827 !important;
+  background: #ffffff !important;
+  border-color: #ffffff !important;
 }
 
-.footer-left {
-  color: #a9b8cc;
+/* sidebar 絕對不要吃 pagination 樣式 */
+.sidebar .current,
+.sidebar .page-number.current,
+#sidebar .current,
+#sidebar .page-number.current,
+#aside-content .current,
+#aside-content .page-number.current {
+  color: var(--casper-text) !important;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
-.footer-right {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
+/* ---------- 右上角工具按鈕 ---------- */
+
+#translate,
+.translate,
+.lang,
+.language,
+.icon-language,
+.tool-button,
+.sidebar-button,
+.rightside-button,
+#rightside,
+#rightside i,
+#rightside svg,
+#rightside .iconfont,
+button,
+.btn,
+.icon,
+.iconfont {
+  color: var(--casper-text) !important;
+  fill: var(--casper-text) !important;
+  stroke: var(--casper-text) !important;
 }
 
-.footer-right a {
-  color: #a9b8cc;
-  text-decoration: underline;
+/* ---------- Footer ---------- */
+
+footer,
+footer a,
+footer span,
+.footer,
+.footer a,
+.footer span {
+  color: var(--casper-soft) !important;
 }
 
-.footer-right a:hover {
-  color: #7cc7ff;
+footer a:hover,
+.footer a:hover {
+  color: #ffffff !important;
 }
 
-.footer-right span {
-  color: #5f6f86;
-}
+/* ---------- 手機版 ---------- */
 
-pre,
-code {
-  font-family: "Consolas", "Menlo", "Monaco", "Courier New", monospace;
-}
+@media (max-width: 768px) {
 
-pre {
-  background: #111b2e;
-  color: #eaf2ff;
-  padding: 16px;
-  overflow-x: auto;
-  border-radius: 4px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 700px) {
-  .site-header,
-  .main-container,
-  .site-footer {
-    width: calc(100% - 32px);
+  .sidebar nav a,
+  .sidebar .menu a,
+  .sidebar .menu-item a,
+  .sidebar ul li a,
+  #aside-content nav a,
+  #aside-content .menu a,
+  #aside-content .menu-item a,
+  #aside-content ul li a {
+    min-height: 40px !important;
+    font-size: 0.95rem !important;
   }
 
-  .brand-left {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .site-title a {
-    font-size: 28px;
-  }
-
-  .site-nav {
-    gap: 8px;
-    font-size: 15px;
-  }
-
-  .intro-links {
-    margin-top: 36px;
-    margin-bottom: 58px;
-    font-size: 16px;
-  }
-
-  .section-title {
-    font-size: 42px;
-    margin-bottom: 26px;
-  }
-
-  .writing-item {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-
-  .writing-date,
-  .writing-title {
-    font-size: 16px;
-  }
-
-  .post-title {
-    font-size: 32px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
+  .post-title,
+  .article-title,
+  .index-info .article-title {
+    font-size: 1.25rem !important;
   }
 }
-.search-box-wrap {
-  margin-top: 12px;
+
+/* =========================================================
+   KILL WHITE SIDEBAR BUTTON - FINAL
+   直接清掉左側選單所有白底
+   ========================================================= */
+
+/* 左側選單所有東西都不准白底 */
+.sidebar *,
+#sidebar *,
+#aside-content *,
+.aside-content * {
+  background-color: transparent !important;
 }
 
-.search-input {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid #27466f;
-  background: #111b2e;
-  color: #eaf2ff;
-  font-family: "Consolas", "Menlo", "Monaco", "Courier New", monospace;
-  font-size: 18px;
-  outline: none;
-  border-radius: 4px;
+/* 但保留左側卡片本身的深色背景 */
+.sidebar,
+#sidebar,
+#aside-content,
+.aside-content,
+.sidebar .card,
+#aside-content .card,
+.card-widget {
+  background-color: #252b33 !important;
 }
 
-.search-input:focus {
-  border-color: #63b3ff;
-  box-shadow: 0 0 0 2px rgba(99, 179, 255, 0.15);
+/* 左側選單按鈕統一 */
+.sidebar a,
+#sidebar a,
+#aside-content a,
+.aside-content a {
+  color: #ffffff !important;
 }
 
-.search-results {
-  margin-top: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* 左側選單中的每個按鈕 */
+.sidebar nav a,
+#sidebar nav a,
+#aside-content nav a,
+.sidebar .menu a,
+#sidebar .menu a,
+#aside-content .menu a,
+.sidebar .menu-item a,
+#sidebar .menu-item a,
+#aside-content .menu-item a,
+.sidebar ul li a,
+#sidebar ul li a,
+#aside-content ul li a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  width: 100% !important;
+  min-height: 40px !important;
+  box-sizing: border-box !important;
+
+  margin: 8px 0 !important;
+  padding: 8px 12px !important;
+
+  color: #ffffff !important;
+  background: #252b33 !important;
+  background-color: #252b33 !important;
+
+  border: 2px solid rgba(255, 255, 255, 0.65) !important;
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-.search-result-item {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 18px;
-  align-items: start;
+/* 首頁 / active / current 都不准白底 */
+.sidebar .active,
+.sidebar .current,
+.sidebar .is-active,
+#sidebar .active,
+#sidebar .current,
+#sidebar .is-active,
+#aside-content .active,
+#aside-content .current,
+#aside-content .is-active,
+.sidebar .active a,
+.sidebar .current a,
+.sidebar .is-active a,
+#sidebar .active a,
+#sidebar .current a,
+#sidebar .is-active a,
+#aside-content .active a,
+#aside-content .current a,
+#aside-content .is-active a {
+  color: #ffffff !important;
+  background: #252b33 !important;
+  background-color: #252b33 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.22) !important;
 }
 
-.search-result-date {
-  color: #a9b8cc;
-  font-size: 15px;
+/* 直接指定第一顆按鈕，也就是現在白掉的那顆 */
+.sidebar nav a:first-child,
+#sidebar nav a:first-child,
+#aside-content nav a:first-child,
+.sidebar .menu a:first-child,
+#sidebar .menu a:first-child,
+#aside-content .menu a:first-child,
+.sidebar ul li:first-child a,
+#sidebar ul li:first-child a,
+#aside-content ul li:first-child a {
+  color: #ffffff !important;
+  background: #252b33 !important;
+  background-color: #252b33 !important;
+  border-color: #ffffff !important;
 }
 
-.search-result-main {
-  min-width: 0;
+/* icon / 文字強制顯示 */
+.sidebar a span,
+.sidebar a i,
+.sidebar a svg,
+.sidebar .iconfont,
+#sidebar a span,
+#sidebar a i,
+#sidebar a svg,
+#sidebar .iconfont,
+#aside-content a span,
+#aside-content a i,
+#aside-content a svg,
+#aside-content .iconfont {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-.search-result-title {
-  color: #eaf2ff;
-  text-decoration: underline;
-  font-size: 19px;
-  word-break: break-word;
+/* 偽元素也不准白底 */
+.sidebar a::before,
+.sidebar a::after,
+.sidebar li::before,
+.sidebar li::after,
+#sidebar a::before,
+#sidebar a::after,
+#sidebar li::before,
+#sidebar li::after,
+#aside-content a::before,
+#aside-content a::after,
+#aside-content li::before,
+#aside-content li::after {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
-.search-result-title:hover {
-  color: #7cc7ff;
+/* hover */
+.sidebar nav a:hover,
+#sidebar nav a:hover,
+#aside-content nav a:hover,
+.sidebar .menu a:hover,
+#sidebar .menu a:hover,
+#aside-content .menu a:hover,
+.sidebar .menu-item a:hover,
+#sidebar .menu-item a:hover,
+#aside-content .menu-item a:hover,
+.sidebar ul li a:hover,
+#sidebar ul li a:hover,
+#aside-content ul li a:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: #ffffff !important;
 }
 
-.search-result-excerpt {
-  margin: 10px 0 0;
-  color: #cdd9ea;
-  font-size: 15px;
-  line-height: 1.8;
+/* =========================================================
+   強制刪除 / 隱藏「友鏈」選單
+   不管它是 /friend、/friend/、/casper.tw/friend/ 都藏掉
+   ========================================================= */
+
+/* 現代瀏覽器：直接隱藏含有 friend 連結的整個選單項目 */
+li:has(a[href*="friend"]),
+.menu-item:has(a[href*="friend"]),
+.nav-item:has(a[href*="friend"]),
+.sidebar li:has(a[href*="friend"]),
+#sidebar li:has(a[href*="friend"]),
+#aside-content li:has(a[href*="friend"]),
+nav li:has(a[href*="friend"]),
+.navbar li:has(a[href*="friend"]),
+.nav-menu li:has(a[href*="friend"]) {
+  display: none !important;
 }
 
-.search-hint,
-.search-empty {
-  color: #a9b8cc;
-  font-size: 16px;
+/* 如果上面沒吃到，至少把 friend 連結本身藏掉 */
+a[href*="friend"],
+a[href*="friend/"],
+a[href*="/friend"],
+a[href*="/friend/"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
 }
 
-mark {
-  background: rgba(99, 179, 255, 0.18);
-  color: #eaf2ff;
-  padding: 0 2px;
+/* 你的左側目前只剩四個：首頁、歸檔、關於、友鏈
+   所以如果還是出現，直接把第 4 個選單項目藏掉 */
+.sidebar .menu li:nth-child(4),
+#sidebar .menu li:nth-child(4),
+#aside-content .menu li:nth-child(4),
+.sidebar ul li:nth-child(4),
+#sidebar ul li:nth-child(4),
+#aside-content ul li:nth-child(4) {
+  display: none !important;
 }
 
-@media (max-width: 700px) {
-  .search-result-item {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
+/* =========================================================
+   強制移除左側第 4 顆選單：友鏈
+   目前左側順序是：首頁 / 歸檔 / 關於 / 友鏈
+   ========================================================= */
 
-  .search-input {
-    font-size: 16px;
-  }
+/* 常見 sidebar menu 結構 */
+.sidebar .menu li:nth-child(4),
+#sidebar .menu li:nth-child(4),
+#aside-content .menu li:nth-child(4),
+.aside-content .menu li:nth-child(4),
 
-  .search-result-title {
-    font-size: 17px;
-  }
-}
-.tags-list-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 24px;
-}
+.sidebar nav li:nth-child(4),
+#sidebar nav li:nth-child(4),
+#aside-content nav li:nth-child(4),
+.aside-content nav li:nth-child(4),
 
-.tag-card {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-width: 180px;
-  padding: 14px 16px;
-  border: 1px solid #1b3b63;
-  background: #101a2c;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: transform 0.15s ease, border-color 0.15s ease;
+.sidebar ul li:nth-child(4),
+#sidebar ul li:nth-child(4),
+#aside-content ul li:nth-child(4),
+.aside-content ul li:nth-child(4) {
+  display: none !important;
 }
 
-.tag-card:hover {
-  transform: translateY(-2px);
-  border-color: #63b3ff;
-  text-decoration: none;
+/* 如果它不是 li，而是 a 直接排列 */
+.sidebar .menu a:nth-child(4),
+#sidebar .menu a:nth-child(4),
+#aside-content .menu a:nth-child(4),
+.aside-content .menu a:nth-child(4),
+
+.sidebar nav a:nth-child(4),
+#sidebar nav a:nth-child(4),
+#aside-content nav a:nth-child(4),
+.aside-content nav a:nth-child(4) {
+  display: none !important;
 }
 
-.tag-name {
-  color: #63b3ff;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.tag-count {
-  color: #a9b8cc;
-  font-size: 14px;
+/* 另外再用 href 保險刪 friend */
+a[href*="friend"],
+a[href*="/friend"],
+a[href*="友鏈"],
+a[href*="友链"] {
+  display: none !important;
 }

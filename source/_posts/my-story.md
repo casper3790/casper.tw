@@ -1,51 +1,124 @@
 ---
-title: my story
-date: 2026-04-17
+title: 不是每個人都一定要走一樣的路
+date: 2026-04-18
+updated: 2026-05-15
+categories:
+  - 個人故事
 tags:
-  - blog
-  - writing
+  - my story
+  - 成長
+  - 資安
+  - 高中生活
+  - 選擇
+banner: /images/07.png
+cover: /images/07.png
+toc: true
 ---
-I used to spend a large part of my life in Taekwondo.
 
-During that time, I got used to training, pushing myself, and enduring pressure.  
-Taekwondo taught me more than techniques or competitions. It taught me how to face pressure, failure, and myself.
+![不是每個人都一定要走一樣的路](/images/07.png)
 
-But later, I left that path.
+## 不是每個人都一定要走一樣的路
 
-After leaving, there was a period of time when I honestly did not know where I was going next.  
-The rhythm of life I had known for so long was suddenly gone, and the direction I had worked toward no longer felt like the only future ahead of me.  
-It felt like I had been standing on a clear track for a long time, and then suddenly had to find a completely new one.
+在我人生中的某一段時間，幾乎身邊所有人都在為同一件事情做準備。
 
-That was when I slowly began turning my attention toward computers, websites, programming, and cybersecurity.
+到了高二下學期，大部分的人都已經開始思考高三、升學考試，以及那條大家認為理所當然應該走的未來。  
+整個環境的氛圍很明確：更努力讀書、更早開始準備，然後走在那條最常見的路上。
 
-At first, what attracted me was probably just curiosity.  
-I wanted to know how websites were built, how systems worked, how vulnerabilities were discovered, and what kind of logic was hidden behind attack and defense.  
-But the more I learned, the more I realized that this path felt strangely familiar.
+但我並不是用同樣的方式走那條路。
 
-It also required long-term effort.  
-It also required discipline.  
-It also meant failing again and again, getting stuck again and again, and doubting myself again and again.  
-But just like before, if I was willing to keep going, to keep training, and to keep thinking, I could slowly see myself becoming stronger.
+## 一位願意陪我一起走的老師
 
-So I started learning cybersecurity, solving CTF challenges, building websites, writing technical notes, and turning ideas that once only existed in my mind into things that could actually be seen.
+在那段時間裡，我遇到了一位願意和我一起奮戰的老師。
 
-Later, I found that my interests did not stop at security.  
-I also began moving into web development, engineering, robotics, and AI-related applications.  
-The more I learned, the more certain I became that I did not just want to study technology.  
-I wanted to become someone who could build things, break down problems, and leave behind something meaningful.
+他不只是站在講台上教課的人。  
+他是一個看見我正在努力尋找不同方向的人，而且他沒有把我拉回原本那條路，反而選擇站在我這一邊。
 
-If Taekwondo taught me how to face myself,  
-then cybersecurity and development taught me how to rebuild myself.
+我到現在都還記得，有一個改變我的時刻。
 
-I was not someone who always knew exactly who I wanted to become.  
-I simply began by leaving one path, slowly walked onto another, and along the way, started putting the pieces of myself together.
+那時候有一個資安研習的機會，對很多人來說，那也許只是一場普通的活動。  
+但對我來說，那像是一扇門突然被打開了。
 
-To me, this website is not just a portfolio.  
-It is a record.  
-A record of how I moved from who I used to be to who I am becoming now.  
-A record of how, after every turn in the road, I slowly found a direction that felt like my own.
+我幾乎是本能地朝那扇門衝過去，像是終於找到了一件值得自己全力去追的事情。
 
-I am still on the way.  
-But I believe that one day, the things I have done, the road I have walked, and the work I leave behind will be seen by more people.
+那時候的我，就像一隻已經衝出去的獵犬一樣——  
+只要和資訊安全有關，不管是研習、培訓，還是比賽，我都會毫不猶豫地撲上去。
 
-> I believe my story will be seen one day.
+我不是因為它很簡單才追逐它。  
+我是因為，第一次感覺到自己心裡有某個東西真的活了起來。
+
+大概也是在那段時間，那位老師對我說了一句我到現在都記得的話：
+
+> 如果你真的相信這是你的路，那就不要走一半。
+
+這句話一直留在我心裡。
+
+因為從那個時候開始，這件事情對我來說就不再只是單純的好奇。  
+它變成了一個選擇。
+
+## 當大家走向同一個方向時，我選擇了另一條路
+
+等到我進入高三之後，我的路和其他人的差異變得更加明顯。
+
+當身邊很多人都埋在課本、模擬考和申請資料裡的時候，我的夜晚常常長得很不一樣。
+
+有很多個晚上，當一天的課程已經結束，其他人都回去準備考試了，我卻還坐在螢幕前，一行一行地開發網站、修版面、測試想法、重寫內容，或者熬夜處理自己的專題與文章。
+
+房間裡很安靜，眼前最亮的東西就是螢幕，時間也一直往後走，遠遠超過我本來應該睡覺的時候。
+
+有時候我在寫程式。  
+有時候我在寫東西。  
+有時候我會被同一個問題卡住好幾個小時。
+
+但就算是在那樣疲憊的時候，我也知道，我正在做一件真正屬於自己的事情。
+
+## 這條路從來都不是捷徑
+
+這條路從來都不是捷徑。
+
+它需要紀律。  
+需要執著。  
+也需要在沒有人能保證你一定成功的情況下，依然繼續往前走的能力。
+
+當身邊所有人都朝同一個方向走的時候，選擇另外一條路，意味著你要自己承擔更多懷疑、更多壓力，也要背負更多責任。
+
+但我還是繼續走下去了。
+
+## 到了最後，我知道這條路是有結果的
+
+然後，到了高三下學期，有一件事情真正變成了現實。
+
+我知道，我已經有一所大學可以去了。
+
+我到現在都還記得那種感覺。
+
+那不是一種瞬間炸開的狂喜。  
+比較像是，一個人憋了很久很久的氣之後，終於可以好好呼吸。
+
+那是一種鬆一口氣的感覺。  
+但更重要的是，那也是一種證明。
+
+證明這條路不是白走的。  
+證明那些熬夜的日子、那些我拼命追的研習、那些我參加過的比賽，以及那些我一直不斷做下去的專案，真的把我帶到了某個真實的地方。
+
+也證明了，就算我的路看起來不像標準答案，它仍然是一條能夠繼續往前走的路。
+
+## 我想說的不是「讀書不重要」
+
+這個故事不是在告訴別人，讀書不重要。
+
+也不是在叫大家不要看書、不要準備考試。
+
+我真正想說的，其實很簡單：
+
+**讀書不是唯一的一條路。**
+
+對某些人來說，還有別的路值得去走。  
+那些路可能是靠專案、比賽、技術實作、研究、堅持，以及即使你的方向和別人不同，也還願意一直走下去的勇氣，一點一點走出來的。
+
+我不認為每個人都應該複製我的路。  
+但我相信，不是每個人都一定要走一樣的路。
+
+有時候，最重要的事情不是你的路看起來標不標準。  
+而是你有沒有真的願意為了那條路而戰。
+
+而對我來說，那就是我所選擇的道路。

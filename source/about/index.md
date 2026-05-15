@@ -30,6 +30,7 @@ Here are some competitions and results that are meaningful to me.
 
 | Year | Competition | Award / Ranking |
 |------|-------------|-----------------|
+| 2026 | 	全國高中職人工智慧與資訊生活應用創新競賽 | 佳作 |
 | 2026 | AIS3 EOF 初賽 | 參賽者 |
 | 2026 | picoCTF | Rank 1007 / 8748 |
 | 2026 | FhCTF | No. 8 |
@@ -47,13 +48,12 @@ These are some activities, conferences, and learning experiences that have influ
 
 | Year | Name | Role |
 |------|------|------|
+| 2026 | 資安大會 | Participant |
 | 2026 | Bak3 C00kie 會議 | Participant |
 | 2025 | HITCON | Participant |
 | 2025 | INFOSEC TAIWAN 國際資安組織大會 | Participant |
 | 2025 | CTF 資安種子培訓交流會（台北場） | Participant |
 | 2025 | CTF 資安種子培訓交流會（高雄場） | Participant |
-| 2024 | 校內外資訊安全與技術學習活動 | speaker |
-
 ---
 
 ## Contributed CTFs

@@ -1,16 +1,24 @@
 ---
-title: 2026 資安大會參訪心得：從展場看見資安產業的真實模樣
-date: 2026-05-09 20:00:00
-tags:
-  - 資安大會
-  - Cybersecurity
-  - AI Security
-  - Blue Team
-  - OT Security
-  - Medical Security
+title: 2026 資安大會參訪心得：從展場看見資安產業的真實樣貌
+date: 2026-05-09
+updated: 2026-05-15
 categories:
-  - 參訪心得
+  - 資安
+tags:
+  - CYBERSEC
+  - 2026 資安大會
+  - 零信任
+  - AI SOC
+  - 醫療資安
+  - OT 資安
+banner: /images/cybersec-2026.jpg
+cover: /images/cybersec-2026.jpg
+toc: true
 ---
+
+2026 資安大會參訪心得：從展場看見資安產業的真實樣貌這次參加 2026 資安大會，我花了三天時間觀察展場、聽議題、看不同廠商展示資安解決方案。
+
+
 
 # 2026 資安大會參訪心得：從展場看見資安產業的真實樣貌
 
