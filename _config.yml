@@ -179,12 +179,12 @@ favicon: /casper.tw/images/favicon.ico
 
 # Menu
 menu:
-  首頁: /casper.tw/
-  歸檔: /casper.tw/archives/
-  分類: /casper.tw/categories/
-  標籤: /casper.tw/tags/
-  關於: /casper.tw/about/
-  友鏈: /casper.tw/friend/
+  Home: /casper.tw/
+  Archives: /casper.tw/archives/
+  Categories: /casper.tw/categories/
+  Tags: /casper.tw/tags/
+  About: /casper.tw/about/
+  Friends: /casper.tw/friend/
 
 # Social links
 social:

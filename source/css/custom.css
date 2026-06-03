@@ -876,3 +876,45 @@ a[href*="友鏈"],
 a[href*="友链"] {
   display: none !important;
 }
+.terminal-hero {
+  background: #020617;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 18px;
+  padding: 24px;
+  margin: 32px 0;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
+  overflow-x: auto;
+}
+
+.ascii-logo {
+  color: #38bdf8;
+  font-family: "Courier New", monospace;
+  white-space: pre;
+  font-size: 14px;
+  line-height: 1.15;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 6px rgba(56, 189, 248, 0.5);
+  }
+  to {
+    text-shadow: 0 0 18px rgba(56, 189, 248, 1);
+  }
+}
+/* 把 Archives 頁面大標題改成英文 */
+.archive-title,
+.archive .article-title,
+.page-title,
+#page-title {
+  font-size: 0 !important;
+}
+
+.archive-title::after,
+.archive .article-title::after,
+.page-title::after,
+#page-title::after {
+  content: "Archives";
+  font-size: 42px;
+}

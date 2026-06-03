@@ -3,31 +3,23 @@
 # 檔案位置：_config.reimu.yml
 # =========================================================
 
-
-# =========================================================
-# Menu / 導覽列
-# 只保留：首頁、歸檔、關於
-# =========================================================
-
 menu:
-  - name: home
+  - name: Home
     url: /
     icon:
-  - name: archives
+  - name: Archives
     url: /archives
     icon:
-  - name: about
+  - name: About
     url: /about
     icon:
-
-
-# =========================================================
-# Subtitle / 首頁副標題
-# =========================================================
+  - name: Works
+    url: /works
+    icon:
 
 subtitle:
   typing:
-    enable: false
+    enable: true
     strings:
       - 我相信我的故事，有一天會被別人看見。
       - Cybersecurity / CTF / Web Development / Robotics
@@ -41,34 +33,16 @@ subtitle:
     cursorChar: "|"
     smartBackspace: false
 
-
-# =========================================================
-# Images / 圖片設定
-# =========================================================
-
-# 首頁大背景圖
-# 圖片位置：source/images/banner.jpg
 banner: "/images/banner.jpg"
 
 banner_srcset:
   enable: false
 
-# 網站小圖示
-# 圖片位置：source/images/favicon.ico
 favicon: "/images/05.jpg"
 
-# 左側作者頭像
-# 圖片位置：source/_data/avatar/avatar.png
 avatar: "avatar.png"
 
-# 預設文章封面
-# 圖片位置：source/images/default-cover.jpg
 cover: "/images/default-cover.jpg"
-
-
-# =========================================================
-# TOC / 文章目錄
-# =========================================================
 
 toc: true
 
@@ -77,28 +51,13 @@ toc_options:
   min_depth: 2
   max_depth: 4
 
-
-# =========================================================
-# Open Graph
-# =========================================================
-
 open_graph:
   enable: true
   options:
     default_og_image: /images/banner.jpg
 
-
-# =========================================================
-# Excerpt / RSS
-# =========================================================
-
 excerpt_link: Read More
-rss: atom.xml
-
-
-# =========================================================
-# Footer / 頁尾
-# =========================================================
+rss: 
 
 footer:
   since: 2025
@@ -110,21 +69,11 @@ footer:
     rotate: false
     mask: true
 
-
-# =========================================================
-# Sidebar / 側邊欄
-# =========================================================
-
 sidebar:
   position: left
   menu: true
   article:
     show_common: true
-
-
-# =========================================================
-# Social / 社群連結
-# =========================================================
 
 social:
   email: mailto:casp3790er@gmail.com
@@ -132,10 +81,8 @@ social:
   instagram:
   discord:
 
-
 # =========================================================
-# Widgets / 側邊欄小工具
-# 不顯示分類、標籤雲、友鏈
+# Widgets / Sidebar
 # =========================================================
 
 widgets:
@@ -143,27 +90,19 @@ widgets:
   - recent_posts
 
 archive_type: "monthly"
-show_count: true
+
+# false = 不顯示 2、1 那種文章數量
+show_count: false
+
 recent_posts_limits: 5
 
 only_show_capsule_in_index: false
 uppercase_capsule: false
 show_update_time: false
 
-
-# =========================================================
-# Summary / 摘要設定
-# =========================================================
-
 summary:
   enable: false
-  style: 'subtitle'
-
-
-# =========================================================
-# i18n / 多語言
-# 先關掉
-# =========================================================
+  style: "subtitle"
 
 i18n:
   enable: false
@@ -171,35 +110,15 @@ i18n:
   generator: [archive, category, tag, index]
   languages: [zh-TW, en]
 
-
-# =========================================================
-# GitHub 右上角徽章
-# =========================================================
-
 triangle_badge:
   enable: false
   icon: github
   link: https://github.com/casper3790
 
-
-# =========================================================
-# Layout / 版面寬度
-# =========================================================
-
 layout:
   max_width: 1350px
 
-
-# =========================================================
-# Anchor Icon / 標題錨點
-# =========================================================
-
 anchor_icon:
-
-
-# =========================================================
-# Cursor / 關掉特殊游標
-# =========================================================
 
 reimu_cursor:
   enable: false
@@ -208,17 +127,7 @@ reimu_cursor:
     pointer: ../images/cursor/reimu-cursor-pointer.png
     text: ../images/cursor/reimu-cursor-text.png
 
-
-# =========================================================
-# Icon Font
-# =========================================================
-
 icon_font: 4552607_ex15nbittbh
-
-
-# =========================================================
-# Font / 字體
-# =========================================================
 
 custom_font:
   enable: false
@@ -248,18 +157,8 @@ local_font:
     - Consolas
     - monospace
 
-
-# =========================================================
-# Dark Mode / 深色模式
-# =========================================================
-
 dark_mode:
   enable: auto
-
-
-# =========================================================
-# Math / 數學公式
-# =========================================================
 
 math:
   enable: false
@@ -270,19 +169,8 @@ math:
     enable: false
     options:
 
-
-# =========================================================
-# Mermaid / 流程圖
-# =========================================================
-
 mermaid:
   enable: false
-
-
-# =========================================================
-# Comments / 留言系統
-# 先全部關掉
-# =========================================================
 
 comment:
   title:
@@ -312,11 +200,6 @@ giscus:
 artalk:
   enable: false
 
-
-# =========================================================
-# Search / 搜尋
-# =========================================================
-
 algolia_search:
   enable: false
   hits:
@@ -327,11 +210,6 @@ generator_search:
   field: post
   content: true
 
-
-# =========================================================
-# Preloader / 關掉載入畫面
-# =========================================================
-
 preloader:
   enable: false
   text:
@@ -341,11 +219,6 @@ preloader:
     ja: Loading...
   icon:
   rotate: false
-
-
-# =========================================================
-# Animation / 動畫
-# =========================================================
 
 animation:
   enable: false
@@ -372,29 +245,14 @@ animation:
       section: fade-up
       nav: fade-up
 
-
-# =========================================================
-# Firework / 關掉點擊煙火
-# =========================================================
-
 firework:
   enable: false
   disable_on_mobile: true
   options:
     excludeElements: ["a", "button"]
 
-
-# =========================================================
-# Pjax / 關掉，避免快取和樣式問題
-# =========================================================
-
 pjax:
   enable: false
-
-
-# =========================================================
-# Quicklink
-# =========================================================
 
 quicklink:
   enable: false
@@ -402,26 +260,11 @@ quicklink:
   priority: true
   ignores: []
 
-
-# =========================================================
-# Pace / 載入條
-# =========================================================
-
 pace:
   enable: false
 
-
-# =========================================================
-# Service Worker / 關掉，避免快取
-# =========================================================
-
 service_worker:
   enable: false
-
-
-# =========================================================
-# Live2D / 小人
-# =========================================================
 
 live2d:
   enable: false
@@ -430,11 +273,6 @@ live2d:
 live2d_widgets:
   enable: false
   position: left
-
-
-# =========================================================
-# Music Player / 音樂播放器
-# =========================================================
 
 player:
   disable_on_mobile: true
@@ -461,72 +299,63 @@ player:
       type:
       auto:
 
-
-# =========================================================
-# pangu.js / 中英文自動空格
-# =========================================================
-
 pangu:
   enable: true
-
-
-# =========================================================
-# Lazyload / 圖片懶載入
-# =========================================================
 
 lazyload:
   enable: true
 
-
-# =========================================================
-# CDN
-# =========================================================
-
 cdn:
   enable: false
 
-
 # =========================================================
 # Injector
-# 注意：整份 _config.reimu.yml 只能有一個 injector
-# 功能：
 # 1. 載入 custom.css
-# 2. 強制移除友鏈 / friend
-# 3. 如果舊 HTML 還有友鏈，JS 會直接刪掉
+# 2. 隱藏 friend / 友鏈
+# 3. 強制黑色模式
+# 4. 移除主題切換按鈕
 # =========================================================
 
 injector:
   head_end: |
     <link rel="stylesheet" href="/casper.tw/css/custom.css">
     <style>
+      html,
+      body {
+        background: #12161d !important;
+        color: #e8edf5 !important;
+      }
+
+      html {
+        color-scheme: dark !important;
+      }
+
       a[href*="friend"],
       a[href*="friend/"],
       a[href*="/friend"],
       a[href*="/friend/"],
       li:has(a[href*="friend"]),
       .menu-item:has(a[href*="friend"]),
-      .nav-item:has(a[href*="friend"]),
-      .sidebar li:has(a[href*="friend"]),
-      #sidebar li:has(a[href*="friend"]),
-      #aside-content li:has(a[href*="friend"]) {
+      .nav-item:has(a[href*="friend"]) {
         display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        width: 0 !important;
-        height: 0 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        border: 0 !important;
       }
     </style>
 
   body_end: |
     <script>
       (function () {
-        function removeFriendMenu() {
-          const targets = document.querySelectorAll("a, li, .menu-item, .nav-item");
+        function forceDarkMode() {
+          document.documentElement.classList.add("dark");
+          document.documentElement.setAttribute("data-theme", "dark");
+          document.body.classList.add("dark");
 
-          targets.forEach(function (el) {
+          localStorage.setItem("theme", "dark");
+          localStorage.setItem("darkmode", "true");
+          localStorage.setItem("color-scheme", "dark");
+        }
+
+        function removeFriendMenu() {
+          document.querySelectorAll("a, li, .menu-item, .nav-item").forEach(function (el) {
             const text = (el.textContent || "").trim();
             const href = el.getAttribute && el.getAttribute("href");
 
@@ -537,33 +366,48 @@ injector:
               (href && href.toLowerCase().includes("friend"));
 
             if (isFriend) {
-              const li = el.closest("li");
-              const menuItem = el.closest(".menu-item");
-              const navItem = el.closest(".nav-item");
-
-              if (li) {
-                li.remove();
-              } else if (menuItem) {
-                menuItem.remove();
-              } else if (navItem) {
-                navItem.remove();
-              } else {
-                el.remove();
-              }
+              const target = el.closest("li, .menu-item, .nav-item") || el;
+              target.remove();
             }
           });
         }
 
-        document.addEventListener("DOMContentLoaded", removeFriendMenu);
-        window.addEventListener("load", removeFriendMenu);
-        setTimeout(removeFriendMenu, 300);
-        setTimeout(removeFriendMenu, 1000);
-        setTimeout(removeFriendMenu, 2000);
+        function removeThemeToggle() {
+          document.querySelectorAll("a, button, i, span, div").forEach(function (el) {
+            const cls = (el.className || "").toString().toLowerCase();
+            const title = (el.getAttribute("title") || "").toLowerCase();
+            const aria = (el.getAttribute("aria-label") || "").toLowerCase();
 
-        const observer = new MutationObserver(removeFriendMenu);
-        observer.observe(document.documentElement, {
-          childList: true,
-          subtree: true
-        });
+            const isThemeToggle =
+              cls.includes("moon") ||
+              cls.includes("sun") ||
+              cls.includes("theme") ||
+              cls.includes("dark") ||
+              cls.includes("light") ||
+              title.includes("theme") ||
+              title.includes("dark") ||
+              title.includes("light") ||
+              aria.includes("theme") ||
+              aria.includes("dark") ||
+              aria.includes("light");
+
+            if (isThemeToggle) {
+              const target = el.closest("a, button, li") || el;
+              target.remove();
+            }
+          });
+        }
+
+        function runFixes() {
+          forceDarkMode();
+          removeFriendMenu();
+          removeThemeToggle();
+        }
+
+        document.addEventListener("DOMContentLoaded", runFixes);
+        window.addEventListener("load", runFixes);
+        setTimeout(runFixes, 300);
+        setTimeout(runFixes, 1000);
+        setTimeout(runFixes, 2000);
       })();
     </script>
