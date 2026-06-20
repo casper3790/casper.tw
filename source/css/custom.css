@@ -1,920 +1,621 @@
-/* =========================================================
-   Casper Blog - Stable Reimu CSS
-   目的：
-   1. 全站紅色改白色
-   2. 左側選單每一頁一致
-   3. 修掉白色空白框
-   4. 不再亂藏文章標題 / 日期 / 摘要
-   ========================================================= */
-
 :root {
-  --casper-bg: #1f242b;
-  --casper-card: #252b33;
-  --casper-card-2: #2b323b;
-  --casper-text: #f8fafc;
-  --casper-muted: #cbd5e1;
-  --casper-soft: #9ca3af;
-  --casper-border: rgba(255, 255, 255, 0.42);
-  --casper-border-strong: rgba(255, 255, 255, 0.75);
-  --casper-glow: rgba(255, 255, 255, 0.18);
-
-  --red-0: #ffffff !important;
-  --red-1: #ffffff !important;
-  --red-2: #ffffff !important;
-  --color-red: #ffffff !important;
-  --theme-red: #ffffff !important;
-  --primary-color: #ffffff !important;
-  --theme-color: #ffffff !important;
-  --main-color: #ffffff !important;
+  --bg: #050505;
+  --card: #0d0d0d;
+  --card-hover: #141414;
+  --text: #f5f5f5;
+  --muted: #b8b8b8;
+  --soft: #777;
+  --border: #2a2a2a;
 }
-
-/* ---------- 全站文字 ---------- */
 
 html,
 body {
-  color: var(--casper-muted) !important;
+  margin: 0;
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: Arial, "Noto Sans TC", sans-serif !important;
 }
 
-a,
-a:visited {
-  color: var(--casper-text) !important;
+a {
+  color: var(--text) !important;
   text-decoration: none !important;
 }
 
 a:hover {
-  color: #ffffff !important;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+  opacity: 0.65;
 }
 
-/* ---------- 上方導覽列 ---------- */
-
-#header a,
-#header span,
-#nav a,
-#nav span,
-.navbar a,
-.navbar span,
-.nav-menu a,
-.nav-menu span,
-.menu a,
-.menu span,
-.menu-item a,
-.menu-item span {
-  color: var(--casper-text) !important;
+#container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 36px 24px;
 }
 
-#header i,
-#header svg,
-#header .iconfont,
-#nav i,
-#nav svg,
-#nav .iconfont,
-.navbar i,
-.navbar svg,
-.navbar .iconfont,
-.nav-menu i,
-.nav-menu svg,
-.nav-menu .iconfont,
-.menu i,
-.menu svg,
-.menu .iconfont,
-.menu-item i,
-.menu-item svg,
-.menu-item .iconfont {
-  color: var(--casper-text) !important;
-  fill: var(--casper-text) !important;
-  stroke: var(--casper-text) !important;
+#header {
+  margin-bottom: 42px;
 }
 
-/* ---------- 左側作者卡 ---------- */
-
-.sidebar,
-#sidebar,
-.aside,
-#aside-content,
-.aside-content,
-.sidebar-inner {
-  background: var(--casper-card) !important;
-  color: var(--casper-text) !important;
-}
-
-.sidebar h1,
-.sidebar h2,
-.sidebar h3,
-#aside-content h1,
-#aside-content h2,
-#aside-content h3,
-.author-name,
-.site-author-name,
+#header h1,
+#header .title,
 .site-title {
-  color: var(--casper-text) !important;
-  font-weight: 800 !important;
+  font-size: clamp(42px, 7vw, 86px) !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.06em !important;
+  font-weight: 900 !important;
+  margin: 18px 0 14px !important;
 }
 
-.sidebar p,
-.sidebar span,
-#aside-content p,
-#aside-content span,
-.site-description,
-.author-description {
-  color: var(--casper-muted) !important;
+#subtitle,
+.subtitle,
+.site-subtitle {
+  color: var(--muted) !important;
+  font-size: 17px !important;
 }
 
-/* ---------- 頭像 ---------- */
-
-.sidebar img,
-#aside-content img,
-.avatar,
-.site-author-image,
-.author-avatar img {
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  box-shadow:
-    0 0 0 2px rgba(255, 255, 255, 0.35),
-    0 0 22px rgba(255, 255, 255, 0.18) !important;
+#nav,
+#main-nav,
+#sub-nav {
+  margin-top: 16px;
+  font-size: 14px;
 }
 
-/* =========================================================
-   左側選單核心修復
-   不要再有白色空白框
-   ========================================================= */
-
-/* 左側選單列表本身 */
-.sidebar ul,
-.sidebar ol,
-#sidebar ul,
-#sidebar ol,
-#aside-content ul,
-#aside-content ol {
-  list-style: none !important;
-  padding-left: 0 !important;
+#nav a,
+#main-nav a,
+#sub-nav a,
+#footer a {
+  margin-right: 10px;
+  border-bottom: 1px solid var(--border);
 }
 
-/* 左側選單 li 不准有白底 */
-.sidebar li,
-#sidebar li,
-#aside-content li,
-.sidebar .menu-item,
-#sidebar .menu-item,
-#aside-content .menu-item {
-  background: transparent !important;
-  background-color: transparent !important;
+h1 {
+  font-size: 34px;
 }
 
-/* 左側選單所有按鈕 */
-.sidebar nav a,
-#sidebar nav a,
-#aside-content nav a,
-.sidebar .menu a,
-#sidebar .menu a,
-#aside-content .menu a,
-.sidebar .menu-item a,
-#sidebar .menu-item a,
-#aside-content .menu-item a,
-.sidebar ul li a,
-#sidebar ul li a,
-#aside-content ul li a {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-
-  width: 100% !important;
-  min-height: 38px !important;
-  box-sizing: border-box !important;
-
-  margin: 8px 0 !important;
-  padding: 8px 12px !important;
-
-  color: var(--casper-text) !important;
-  background: transparent !important;
-  background-color: transparent !important;
-
-  border: 2px solid var(--casper-border) !important;
-  border-radius: 0 !important;
-
-  box-shadow: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  text-align: center !important;
+h2 {
+  margin-top: 42px;
+  font-size: 24px;
 }
 
-/* active/current 一律不要白底 */
-.sidebar .active,
-.sidebar .current,
-.sidebar .is-active,
-#sidebar .active,
-#sidebar .current,
-#sidebar .is-active,
-#aside-content .active,
-#aside-content .current,
-#aside-content .is-active,
-.sidebar .active a,
-.sidebar .current a,
-.sidebar .is-active a,
-#sidebar .active a,
-#sidebar .current a,
-#sidebar .is-active a,
-#aside-content .active a,
-#aside-content .current a,
-#aside-content .is-active a {
-  color: var(--casper-text) !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border-color: var(--casper-border-strong) !important;
-  box-shadow: 0 0 10px var(--casper-glow) !important;
+p {
+  color: var(--muted);
+  line-height: 1.9;
 }
 
-/* 防止 ::before / ::after 做出白色底 */
-.sidebar a::before,
-.sidebar a::after,
-.sidebar li::before,
-.sidebar li::after,
-#sidebar a::before,
-#sidebar a::after,
-#sidebar li::before,
-#sidebar li::after,
-#aside-content a::before,
-#aside-content a::after,
-#aside-content li::before,
-#aside-content li::after {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-/* 選單文字與 icon */
-.sidebar a span,
-.sidebar a i,
-.sidebar a svg,
-.sidebar .iconfont,
-#sidebar a span,
-#sidebar a i,
-#sidebar a svg,
-#sidebar .iconfont,
-#aside-content a span,
-#aside-content a i,
-#aside-content a svg,
-#aside-content .iconfont {
-  color: var(--casper-text) !important;
-  fill: var(--casper-text) !important;
-  stroke: var(--casper-text) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  margin: 0 !important;
-}
-
-/* hover */
-.sidebar nav a:hover,
-#sidebar nav a:hover,
-#aside-content nav a:hover,
-.sidebar .menu a:hover,
-#sidebar .menu a:hover,
-#aside-content .menu a:hover,
-.sidebar .menu-item a:hover,
-#sidebar .menu-item a:hover,
-#aside-content .menu-item a:hover,
-.sidebar ul li a:hover,
-#sidebar ul li a:hover,
-#aside-content ul li a:hover {
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  border-color: #ffffff !important;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.22) !important;
-}
-
-/* ---------- 側邊欄小工具 ---------- */
-
-.widget,
-.widget-wrap,
-.card-widget,
-.sidebar .card,
-#aside-content .card,
-#aside-content .card-widget {
-  background: var(--casper-card) !important;
-  color: var(--casper-muted) !important;
-  border-radius: 12px !important;
-}
-
-.widget-title,
-.card-title,
-.aside-title,
-.archive-title,
-.category-title,
-.tag-title {
-  color: var(--casper-text) !important;
-  font-weight: 800 !important;
-}
-
-.widget a,
-.tagcloud a,
-.category a,
-.categories a,
-.archive-list a,
-.recent-posts a,
-.latest-posts a {
-  color: var(--casper-muted) !important;
-}
-
-.widget a:hover,
-.tagcloud a:hover,
-.category a:hover,
-.categories a:hover,
-.archive-list a:hover,
-.recent-posts a:hover,
-.latest-posts a:hover {
-  color: #ffffff !important;
-}
-
-/* ---------- 首頁文章卡片 ---------- */
-
-.post,
 .article,
-.post-card,
-.article-card,
-.index-card,
-.index-post,
-.recent-post-item {
-  background: var(--casper-card) !important;
-  color: var(--casper-muted) !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22) !important;
+.post,
+.archive-article,
+article {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 22px !important;
+  padding: 28px !important;
+  margin-bottom: 18px !important;
+  transition: 0.18s ease;
 }
 
-.post-title,
-.post-title a,
+.article:hover,
+.post:hover,
+.archive-article:hover,
+article:hover {
+  background: var(--card-hover) !important;
+  transform: translateY(-2px);
+}
+
+.archive-article-title,
+.archive-article-title a,
 .article-title,
 .article-title a,
-.index-info .article-title,
-.index-info .article-title a,
-.recent-post-item-title,
-.recent-post-item-title a {
-  color: var(--casper-text) !important;
-  font-weight: 900 !important;
+.post-title,
+.post-title a {
+  color: var(--text) !important;
+  font-size: 21px !important;
+  font-weight: 800 !important;
+  line-height: 1.5 !important;
 }
 
-.post-title a:hover,
-.article-title a:hover,
-.index-info .article-title a:hover {
-  color: #ffffff !important;
-}
-
-/* 摘要 */
-.post-excerpt,
-.article-excerpt,
-.index-excerpt,
-.index-info,
-.index-info p,
-.post-content,
-.article-content,
-.recent-post-item-excerpt,
-.recent-post-item-excerpt p {
-  color: var(--casper-soft) !important;
-  line-height: 1.9 !important;
-}
-
-/* 日期 / 字數 / 閱讀時間 */
-.post-meta,
-.article-meta,
-.index-meta,
-.post-date,
+.archive-article-date,
 .article-date,
-.post-wordcount,
-.post-time,
-.recent-post-info,
-.recent-post-info span,
-.recent-post-info a,
-time {
-  color: var(--casper-soft) !important;
+.post-date,
+time,
+.article-meta,
+.post-meta {
+  color: var(--soft) !important;
+  font-size: 14px !important;
 }
-
-.post-meta i,
-.article-meta i,
-.index-meta i,
-.recent-post-info i,
-.post-meta svg,
-.article-meta svg,
-.index-meta svg,
-.recent-post-info svg {
-  color: var(--casper-soft) !important;
-  fill: var(--casper-soft) !important;
-  stroke: var(--casper-soft) !important;
-}
-
-/* ---------- 圖片 ---------- */
-
-.post img,
-.article img,
-.post-card img,
-.article-card img,
-.index-card img,
-.index-post img,
-.recent-post-item img,
-.post-cover img,
-.article-cover img,
-.index-cover img,
-.cover img {
-  object-fit: cover !important;
-  border-radius: 8px !important;
-}
-
-/* ---------- 文章內頁 ---------- */
 
 .article-entry,
-.post-body,
-.markdown-body,
-.article-content {
-  color: var(--casper-muted) !important;
+.post-content,
+.article-content,
+.markdown-body {
+  color: var(--muted) !important;
   line-height: 2 !important;
 }
 
-.article-entry p,
-.post-body p,
-.markdown-body p {
-  color: var(--casper-muted) !important;
-}
-
-.article-entry h1,
-.article-entry h2,
-.article-entry h3,
-.article-entry h4,
-.post-body h1,
-.post-body h2,
-.post-body h3,
-.post-body h4,
-.markdown-body h1,
-.markdown-body h2,
-.markdown-body h3,
-.markdown-body h4 {
-  color: var(--casper-text) !important;
-  font-weight: 900 !important;
-}
-
-.article-entry h1::before,
-.article-entry h2::before,
-.article-entry h3::before,
-.article-entry h4::before,
-.post-body h1::before,
-.post-body h2::before,
-.post-body h3::before,
-.post-body h4::before,
-.markdown-body h1::before,
-.markdown-body h2::before,
-.markdown-body h3::before,
-.markdown-body h4::before {
-  color: #ffffff !important;
-}
-
-.article-entry h1::after,
-.article-entry h2::after,
-.article-entry h3::after,
-.article-entry h4::after,
-.post-body h1::after,
-.post-body h2::after,
-.post-body h3::after,
-.post-body h4::after,
-.markdown-body h1::after,
-.markdown-body h2::after,
-.markdown-body h3::after,
-.markdown-body h4::after {
-
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.35) !important;
-}
-
-/* 引用 */
-.article-entry blockquote,
-.post-body blockquote,
-.markdown-body blockquote {
-  margin: 28px 0 !important;
-  padding: 22px 26px !important;
-  border-left: 4px solid rgba(255, 255, 255, 0.75) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-radius: 12px !important;
-  color: var(--casper-text) !important;
-}
-
-/* 分隔線 */
-hr,
-.article-entry hr,
-.post-body hr,
-.markdown-body hr {
-  border: none !important;
-  border-top: 2px dashed rgba(255, 255, 255, 0.28) !important;
-  background: transparent !important;
-}
-
-/* ---------- 標籤 / 分類 ---------- */
-
-.tag,
-.tags,
-.tag a,
-.tags a,
-.tagcloud,
-.tagcloud a,
-.category,
-.categories,
-.category a,
-.categories a {
-  color: var(--casper-text) !important;
-  border-color: rgba(255, 255, 255, 0.45) !important;
-}
-
-.tag a:hover,
-.tags a:hover,
-.tagcloud a:hover,
-.category a:hover,
-.categories a:hover {
-  color: #ffffff !important;
-  border-color: #ffffff !important;
-}
-
-/* ---------- 分頁，只限制 pagination，避免影響 sidebar ---------- */
-
-.pagination a,
-.pagination span,
-.pagination .page-number,
-.pagination .extend {
-  color: var(--casper-text) !important;
-  border-color: rgba(255, 255, 255, 0.45) !important;
-  background: transparent !important;
-}
-
-.pagination .current,
-.pagination .page-number.current {
-  color: #111827 !important;
-  background: #ffffff !important;
-  border-color: #ffffff !important;
-}
-
-/* sidebar 絕對不要吃 pagination 樣式 */
-.sidebar .current,
-.sidebar .page-number.current,
-#sidebar .current,
-#sidebar .page-number.current,
-#aside-content .current,
-#aside-content .page-number.current {
-  color: var(--casper-text) !important;
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-/* ---------- 右上角工具按鈕 ---------- */
-
-#translate,
-.translate,
-.lang,
-.language,
-.icon-language,
-.tool-button,
-.sidebar-button,
-.rightside-button,
-#rightside,
-#rightside i,
-#rightside svg,
-#rightside .iconfont,
-button,
-.btn,
-.icon,
-.iconfont {
-  color: var(--casper-text) !important;
-  fill: var(--casper-text) !important;
-  stroke: var(--casper-text) !important;
-}
-
-/* ---------- Footer ---------- */
-
-footer,
-footer a,
-footer span,
-.footer,
-.footer a,
-.footer span {
-  color: var(--casper-soft) !important;
-}
-
-footer a:hover,
-.footer a:hover {
-  color: #ffffff !important;
-}
-
-/* ---------- 手機版 ---------- */
-
-@media (max-width: 768px) {
-
-  .sidebar nav a,
-  .sidebar .menu a,
-  .sidebar .menu-item a,
-  .sidebar ul li a,
-  #aside-content nav a,
-  #aside-content .menu a,
-  #aside-content .menu-item a,
-  #aside-content ul li a {
-    min-height: 40px !important;
-    font-size: 0.95rem !important;
-  }
-
-  .post-title,
-  .article-title,
-  .index-info .article-title {
-    font-size: 1.25rem !important;
-  }
-}
-
-/* =========================================================
-   KILL WHITE SIDEBAR BUTTON - FINAL
-   直接清掉左側選單所有白底
-   ========================================================= */
-
-/* 左側選單所有東西都不准白底 */
-.sidebar *,
-#sidebar *,
-#aside-content *,
-.aside-content * {
-  background-color: transparent !important;
-}
-
-/* 但保留左側卡片本身的深色背景 */
-.sidebar,
-#sidebar,
-#aside-content,
-.aside-content,
-.sidebar .card,
-#aside-content .card,
-.card-widget {
-  background-color: #252b33 !important;
-}
-
-/* 左側選單按鈕統一 */
-.sidebar a,
-#sidebar a,
-#aside-content a,
-.aside-content a {
-  color: #ffffff !important;
-}
-
-/* 左側選單中的每個按鈕 */
-.sidebar nav a,
-#sidebar nav a,
-#aside-content nav a,
-.sidebar .menu a,
-#sidebar .menu a,
-#aside-content .menu a,
-.sidebar .menu-item a,
-#sidebar .menu-item a,
-#aside-content .menu-item a,
-.sidebar ul li a,
-#sidebar ul li a,
-#aside-content ul li a {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-
-  width: 100% !important;
-  min-height: 40px !important;
-  box-sizing: border-box !important;
-
-  margin: 8px 0 !important;
-  padding: 8px 12px !important;
-
-  color: #ffffff !important;
-  background: #252b33 !important;
-  background-color: #252b33 !important;
-
-  border: 2px solid rgba(255, 255, 255, 0.65) !important;
-  border-radius: 0 !important;
-
-  box-shadow: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* 首頁 / active / current 都不准白底 */
-.sidebar .active,
-.sidebar .current,
-.sidebar .is-active,
-#sidebar .active,
-#sidebar .current,
-#sidebar .is-active,
-#aside-content .active,
-#aside-content .current,
-#aside-content .is-active,
-.sidebar .active a,
-.sidebar .current a,
-.sidebar .is-active a,
-#sidebar .active a,
-#sidebar .current a,
-#sidebar .is-active a,
-#aside-content .active a,
-#aside-content .current a,
-#aside-content .is-active a {
-  color: #ffffff !important;
-  background: #252b33 !important;
-  background-color: #252b33 !important;
-  border-color: #ffffff !important;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.22) !important;
-}
-
-/* 直接指定第一顆按鈕，也就是現在白掉的那顆 */
-.sidebar nav a:first-child,
-#sidebar nav a:first-child,
-#aside-content nav a:first-child,
-.sidebar .menu a:first-child,
-#sidebar .menu a:first-child,
-#aside-content .menu a:first-child,
-.sidebar ul li:first-child a,
-#sidebar ul li:first-child a,
-#aside-content ul li:first-child a {
-  color: #ffffff !important;
-  background: #252b33 !important;
-  background-color: #252b33 !important;
-  border-color: #ffffff !important;
-}
-
-/* icon / 文字強制顯示 */
-.sidebar a span,
-.sidebar a i,
-.sidebar a svg,
-.sidebar .iconfont,
-#sidebar a span,
-#sidebar a i,
-#sidebar a svg,
-#sidebar .iconfont,
-#aside-content a span,
-#aside-content a i,
-#aside-content a svg,
-#aside-content .iconfont {
-  color: #ffffff !important;
-  fill: #ffffff !important;
-  stroke: #ffffff !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* 偽元素也不准白底 */
-.sidebar a::before,
-.sidebar a::after,
-.sidebar li::before,
-.sidebar li::after,
-#sidebar a::before,
-#sidebar a::after,
-#sidebar li::before,
-#sidebar li::after,
-#aside-content a::before,
-#aside-content a::after,
-#aside-content li::before,
-#aside-content li::after {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-/* hover */
-.sidebar nav a:hover,
-#sidebar nav a:hover,
-#aside-content nav a:hover,
-.sidebar .menu a:hover,
-#sidebar .menu a:hover,
-#aside-content .menu a:hover,
-.sidebar .menu-item a:hover,
-#sidebar .menu-item a:hover,
-#aside-content .menu-item a:hover,
-.sidebar ul li a:hover,
-#sidebar ul li a:hover,
-#aside-content ul li a:hover {
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  border-color: #ffffff !important;
-}
-
-/* =========================================================
-   強制刪除 / 隱藏「友鏈」選單
-   不管它是 /friend、/friend/、/casper.tw/friend/ 都藏掉
-   ========================================================= */
-
-/* 現代瀏覽器：直接隱藏含有 friend 連結的整個選單項目 */
-li:has(a[href*="friend"]),
-.menu-item:has(a[href*="friend"]),
-.nav-item:has(a[href*="friend"]),
-.sidebar li:has(a[href*="friend"]),
-#sidebar li:has(a[href*="friend"]),
-#aside-content li:has(a[href*="friend"]),
-nav li:has(a[href*="friend"]),
-.navbar li:has(a[href*="friend"]),
-.nav-menu li:has(a[href*="friend"]) {
-  display: none !important;
-}
-
-/* 如果上面沒吃到，至少把 friend 連結本身藏掉 */
-a[href*="friend"],
-a[href*="friend/"],
-a[href*="/friend"],
-a[href*="/friend/"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 0 !important;
-}
-
-/* 你的左側目前只剩四個：首頁、歸檔、關於、友鏈
-   所以如果還是出現，直接把第 4 個選單項目藏掉 */
-.sidebar .menu li:nth-child(4),
-#sidebar .menu li:nth-child(4),
-#aside-content .menu li:nth-child(4),
-.sidebar ul li:nth-child(4),
-#sidebar ul li:nth-child(4),
-#aside-content ul li:nth-child(4) {
-  display: none !important;
-}
-
-/* =========================================================
-   強制移除左側第 4 顆選單：友鏈
-   目前左側順序是：首頁 / 歸檔 / 關於 / 友鏈
-   ========================================================= */
-
-/* 常見 sidebar menu 結構 */
-.sidebar .menu li:nth-child(4),
-#sidebar .menu li:nth-child(4),
-#aside-content .menu li:nth-child(4),
-.aside-content .menu li:nth-child(4),
-
-.sidebar nav li:nth-child(4),
-#sidebar nav li:nth-child(4),
-#aside-content nav li:nth-child(4),
-.aside-content nav li:nth-child(4),
-
-.sidebar ul li:nth-child(4),
-#sidebar ul li:nth-child(4),
-#aside-content ul li:nth-child(4),
-.aside-content ul li:nth-child(4) {
-  display: none !important;
-}
-
-/* 如果它不是 li，而是 a 直接排列 */
-.sidebar .menu a:nth-child(4),
-#sidebar .menu a:nth-child(4),
-#aside-content .menu a:nth-child(4),
-.aside-content .menu a:nth-child(4),
-
-.sidebar nav a:nth-child(4),
-#sidebar nav a:nth-child(4),
-#aside-content nav a:nth-child(4),
-.aside-content nav a:nth-child(4) {
-  display: none !important;
-}
-
-/* 另外再用 href 保險刪 friend */
-a[href*="friend"],
-a[href*="/friend"],
-a[href*="友鏈"],
-a[href*="友链"] {
-  display: none !important;
-}
-.terminal-hero {
-  background: #020617;
-  border: 1px solid rgba(56, 189, 248, 0.35);
+.article-entry img,
+.post-content img,
+img {
+  max-width: 100%;
   border-radius: 18px;
-  padding: 24px;
-  margin: 32px 0;
-  box-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
+}
+
+pre,
+.highlight {
+  background: #0b0b0b !important;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px !important;
   overflow-x: auto;
 }
 
-.ascii-logo {
-  color: #38bdf8;
-  font-family: "Courier New", monospace;
-  white-space: pre;
+code {
+  background: #181818 !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+blockquote {
+  background: #0f0f0f !important;
+  border-left: 4px solid var(--text) !important;
+  color: var(--muted) !important;
+  padding: 18px 22px !important;
+  border-radius: 12px;
+}
+
+#footer {
+  margin-top: 72px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--soft) !important;
   font-size: 14px;
-  line-height: 1.15;
-  animation: glow 2s ease-in-out infinite alternate;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 6px rgba(56, 189, 248, 0.5);
-  }
-  to {
-    text-shadow: 0 0 18px rgba(56, 189, 248, 1);
-  }
-}
-/* 把 Archives 頁面大標題改成英文 */
-.archive-title,
-.archive .article-title,
-.page-title,
-#page-title {
-  font-size: 0 !important;
+.project-grid,
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 28px 0;
 }
 
-.archive-title::after,
-.archive .article-title::after,
-.page-title::after,
-#page-title::after {
-  content: "Archives";
-  font-size: 42px;
+.project-card,
+.home-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 24px;
+}
+
+.project-card h3,
+.home-card h3 {
+  margin-top: 0;
+}
+
+.project-card p,
+.home-card p {
+  margin-bottom: 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.badge {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  #container {
+    padding: 24px 16px;
+  }
+
+  #header h1,
+  #header .title,
+  .site-title {
+    font-size: clamp(38px, 14vw, 64px) !important;
+  }
+
+  .project-grid,
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article,
+  .post,
+  .archive-article,
+  article {
+    padding: 22px !important;
+  }
+}
+.site-header {
+  margin: 28px 0 56px;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.brand-avatar {
+  width: 118px;
+  height: 118px;
+  flex: 0 0 118px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.brand-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+  display: block;
+}
+
+.brand-content {
+  min-width: 0;
+}
+
+.site-kicker {
+  color: var(--soft);
+  font-size: 14px;
+  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-title {
+  margin: 0;
+}
+
+.site-title a {
+  font-size: clamp(42px, 7vw, 82px) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.06em !important;
+  font-weight: 900 !important;
+}
+
+.site-subtitle {
+  color: var(--muted);
+  font-size: 17px;
+  margin-top: 12px;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.site-nav a {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text) !important;
+  font-size: 14px;
+}
+
+.site-nav a:hover {
+  background: var(--text);
+  color: var(--bg) !important;
+  opacity: 1;
+}
+
+.intro-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  margin-left: 146px;
+}
+
+.intro-links a {
+  color: var(--muted) !important;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .brand-row {
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .brand-avatar {
+    width: 72px;
+    height: 72px;
+    flex-basis: 72px;
+    border-radius: 18px;
+  }
+
+  .brand-avatar img {
+    border-radius: 18px;
+  }
+
+  .site-title a {
+    font-size: clamp(34px, 12vw, 56px) !important;
+  }
+
+  .site-subtitle {
+    font-size: 14px;
+  }
+
+  .intro-links {
+    margin-left: 90px;
+  }
+}
+
+.site-footer {
+  margin-top: 80px;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.footer-brand {
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+
+.footer-desc {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.footer-nav a {
+  color: var(--muted) !important;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-nav a:hover {
+  color: var(--text) !important;
+}
+
+.footer-copy {
+  color: var(--soft);
+  font-size: 14px;
+}
+
+.archive-article {
+  display: block;
+  min-height: 88px;
+}
+
+.archive-article-date {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--soft) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.03em;
+}
+
+.archive-article-title a {
+  display: inline-block;
+}
+
+.archive-article:hover .archive-article-title a {
+  transform: translateX(4px);
+}
+
+.archive-article-title a::after {
+  content: " →";
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.archive-article:hover .archive-article-title a::after {
+  opacity: 1;
+}
+
+.archive-article-title a {
+  transition: 0.2s ease;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #555;
+  background: #151515;
+}
+
+.project-card h3 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.project-card strong {
+  color: var(--text);
+}
+
+.project-card ul {
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.site-title a {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #d1d5db 50%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.site-title a:hover {
+  opacity: 1;
+}
+
+.brand-avatar {
+  transition: 0.3s ease;
+}
+
+.brand-avatar:hover {
+  transform: scale(1.05);
+}
+
+.site-nav a {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #333;
+  transition: 0.25s ease;
+}
+
+.site-nav a:hover {
+  background: #ffffff;
+  color: #000 !important;
+  border-color: #ffffff;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 36px 0;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.stat-label {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+@media (max-width:768px){
+  .stats-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+.intro-links {
+  justify-content: flex-end !important;
+  margin-left: 0 !important;
+  margin-top: 18px !important;
+  width: 100% !important;
+}
+
+.brand-content .intro-links {
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+.search-intro {
+  margin-bottom: 24px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+#local-search {
+  margin-top: 24px;
+}
+
+#local-search-input {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  color: var(--text);
+  font-size: 16px;
+  outline: none;
+}
+
+#local-search-input:focus {
+  border-color: #666;
+}
+
+#local-search-result {
+  margin-top: 24px;
+}
+
+.search-result-list {
+  list-style: none;
+  padding: 0;
+}
+
+.search-result-list li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+
+.search-result-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.search-result {
+  color: var(--muted);
+}
+
+.search-intro {
+  margin-bottom: 24px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+#local-search {
+  margin-top: 24px;
+}
+
+#local-search-input {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  color: var(--text);
+  font-size: 16px;
+  outline: none;
+}
+
+#local-search-input:focus {
+  border-color: #666;
+}
+
+#local-search-result {
+  margin-top: 24px;
 }

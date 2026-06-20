@@ -1,0 +1,73 @@
+# Site
+title: Casper's SECURITY LAB
+subtitle: Cybersecurity · CTF · Robotics · AI
+description: Cybersecurity, CTF, Web Development, Robotics, IoT, AI
+keywords: 資安, CTF, Web Security, Robotics, IoT, AI, Casper
+author: Casper
+language: zh-TW
+timezone: Asia/Taipei
+
+# URL
+url: https://casper3790.github.io
+root: /casper.tw/
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+
+# Home page
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: notes
+category_map:
+tag_map:
+
+# Metadata
+meta_generator: true
+
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: mtime
+
+# Pagination
+per_page: 10
+pagination_dir: page
+
+# Theme
+theme: landscape
+
+# Deployment
+deploy:
+  type: git
+  repo: https://github.com/casper3790/casper.tw.git
+  branch: gh-pages
