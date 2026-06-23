@@ -4,11 +4,11 @@ date: 2026-06-13
 layout: page
 ---
 
-在這裡搜尋我的文章、專案與技術筆記。
+Search my articles, projects, and technical notes here.
 
 <div class="search-intro">
 
-搜尋內容包含：
+Search covers:
 
 - Cybersecurity
 - CTF Writeups

@@ -1,8 +1,12 @@
+---
+title: About
+comments: true
+---
 
 # About
 
-My name is **Casper**.  
-I am a student builder from Taiwan, focusing on **Cybersecurity**, **CTF**, **Web Development**, **Robotics**, and **AI applications**.
+My name is **Casper**. I am a member of **RCEs CTF Team**.  
+I focus on **Cybersecurity**, **CTF**, **Web Development**, **Robotics**, and **AI Applications**.
 
 I learn by building, testing, breaking, fixing, and writing things down.  
 This website is not only a blog. It is my technical archive, project portfolio, and growth record.
@@ -66,16 +70,16 @@ AI × Security, AI × Daily Life, privacy protection, and public-service-oriente
 |------|-------------|-----------------|
 
 | 2026 | My First CTF | Participant |
-| 2026 | 全國高中職人工智慧與資訊生活應用創新競賽 | 佳作 |
-| 2026 | AIS3 EOF 初賽 | Participant |
+| 2026 | National High School AI and Information Life Application Innovation Competition | Commendable Work |
+| 2026 | AIS3 EOF Preliminary | Participant |
 | 2026 | picoCTF | Rank 1007 / 8748 |
 | 2026 | FhCTF | No. 8 |
-| 2025 | 第30屆大專院校資訊應用服務創新競賽 | 大專組佳作 |
-| 2025 | 第30屆大專院校資訊應用服務創新競賽 | 高中職 / 大專組入圍決賽 |
-| 2025 | Daydream 遊戲開發黑客松 | 佳作 |
-| 2025 | 金盾獎 | 初賽參賽 |
-| 2025 | 北區高中職程式安全黑客松 | 挖蛋專家獎 |
-| 2024 | PowerTech 青少年科技創作競賽 | 全國佳作 |
+| 2025 | 30th University Information Application Service Innovation Competition | Commendable Work (University) |
+| 2025 | 30th University Information Application Service Innovation Competition | Finalist (High School / University) |
+| 2025 | Daydream Game Development Hackathon | Commendable Work |
+| 2025 | Cyber Shield Awards | Preliminary Participant |
+| 2025 | Northern High School Program Security Hackathon | Egg Hunting Expert Award |
+| 2024 | PowerTech Youth Technology Creation Competition | National Commendable Work |
 
 ---
 
@@ -83,12 +87,12 @@ AI × Security, AI × Daily Life, privacy protection, and public-service-oriente
 
 | Year | Name | Role |
 |------|------|------|
-| 2026 | 資安大會 | Participant |
-| 2026 | Bak3 C00kie 會議 | Participant |
+| 2026 | Cybersecurity Conference | Participant |
+| 2026 | Bak3 C00kie Conference | Participant |
 | 2025 | HITCON | Participant |
-| 2025 | INFOSEC TAIWAN 國際資安組織大會 | Participant |
-| 2025 | CTF 資安種子培訓交流會（台北場） | Participant |
-| 2025 | CTF 資安種子培訓交流會（高雄場） | Participant |
+| 2025 | INFOSEC TAIWAN International Cybersecurity Organization Conference | Participant |
+| 2025 | CTF Cybersecurity Seed Training Exchange (Taipei) | Participant |
+| 2025 | CTF Cybersecurity Seed Training Exchange (Kaohsiung) | Participant |
 
 ---
 
@@ -149,6 +153,6 @@ Besides cybersecurity, I am also interested in how AI can be applied to real-lif
 
 | Year | Project / Competition | Role |
 |------|------------------------|------|
-| 2026 | 國立宜蘭大學程式設計暨資訊及AI應用競賽決賽 | excellent work |
-| 2026 | 全國高中職人工智慧與資訊生活應用創新競賽 | Project Participant |
+| 2026 | National Yilan University Programming and Information & AI Application Competition Finals | Excellent Work |
+| 2026 | National High School AI and Information Life Application Innovation Competition | Project Participant |
 | 2025 | AI × Weather × Daily Risk Project | Developer |

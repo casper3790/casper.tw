@@ -21,7 +21,7 @@ subtitle:
   typing:
     enable: true
     strings:
-      - 我相信我的故事，有一天會被別人看見。
+      - I believe my story will be seen one day.
       - Cybersecurity / CTF / Web Development / Robotics
     typeSpeed: 100
     backSpeed: 50
@@ -108,7 +108,7 @@ i18n:
   enable: false
   type: [page, post]
   generator: [archive, category, tag, index]
-  languages: [zh-TW, en]
+  languages: [en, zh-TW]
 
 triangle_badge:
   enable: false
