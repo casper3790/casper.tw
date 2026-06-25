@@ -43,6 +43,8 @@ These tools are practical learning projects rather than finished products.
 
 <div class="project-card">
 
+<span id="nihs-control-team"></span>
+
 ### NIHS Control Team Platform
 
 A team platform experiment for organizing competition information, calendar data, CTFd links, Discord integration, and simple dashboard views.
@@ -71,6 +73,8 @@ This blog is also part of that learning process.
 
 <div class="project-card">
 
+<span id="autonomous-robot"></span>
+
 ### ROS2 Autonomous Robot
 
 A hands-on robotics project using ROS2, Ubuntu, Raspberry Pi, LiDAR, motor control, and basic autonomous movement experiments.
@@ -98,6 +102,8 @@ Most progress here comes from testing, failing, adjusting, and testing again.
 <div class="project-grid">
 
 <div class="project-card">
+
+<span id="medical-cybersecurity"></span>
 
 ### Healthcare Security Notes
 
