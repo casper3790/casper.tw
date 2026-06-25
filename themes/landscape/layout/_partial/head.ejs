@@ -1,8 +1,47 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title><%= page.title ? page.title + ' | ' + config.title : config.title %></title>
-<meta name="description" content="<%= config.description || '' %>">
+<%
+  const siteTitle = config.title || '';
+  const metaTitle = page.title ? page.title + ' | ' + siteTitle : siteTitle;
+  const rawDescription = page.description || page.excerpt || page.content || config.description || '';
+  const metaDescription = (strip_html(rawDescription).replace(/\s+/g, ' ').trim() || config.description || '').slice(0, 160);
+  const baseUrl = (config.url || '').replace(/\/$/, '');
+  const absoluteUrl = function(path) {
+    if (/^https?:\/\//.test(path)) return path;
+    return baseUrl + url_for(path).replace(/index\.html$/, '');
+  };
+  const canonicalUrl = absoluteUrl(page.path || '/');
+  const shareImage = absoluteUrl(page.cover || page.image || '/images/casper.png');
+  const shareImageAlt = page.title ? page.title + ' preview image' : siteTitle + ' preview image';
+  const metaType = page.layout === 'post' || page.date ? 'article' : 'website';
+%>
+
+<title><%= metaTitle %></title>
+<meta name="description" content="<%= metaDescription %>">
+<meta name="author" content="<%= config.author || '' %>">
+<link rel="canonical" href="<%= canonicalUrl %>">
+
+<meta property="og:site_name" content="<%= siteTitle %>">
+<meta property="og:title" content="<%= metaTitle %>">
+<meta property="og:description" content="<%= metaDescription %>">
+<meta property="og:type" content="<%= metaType %>">
+<meta property="og:url" content="<%= canonicalUrl %>">
+<meta property="og:image" content="<%= shareImage %>">
+<meta property="og:image:alt" content="<%= shareImageAlt %>">
+<meta property="og:locale" content="en_US">
+<% if (page.date) { %>
+<meta property="article:published_time" content="<%= date_xml(page.date) %>">
+<% } %>
+<% if (page.updated) { %>
+<meta property="article:modified_time" content="<%= date_xml(page.updated) %>">
+<% } %>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= metaTitle %>">
+<meta name="twitter:description" content="<%= metaDescription %>">
+<meta name="twitter:image" content="<%= shareImage %>">
+<meta name="twitter:image:alt" content="<%= shareImageAlt %>">
 
 <link rel="stylesheet" href="<%= url_for('/css/custom.css') %>?v=12">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">

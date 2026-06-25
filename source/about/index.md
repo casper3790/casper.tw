@@ -1,5 +1,6 @@
 ---
 title: About
+description: About Casper, a student builder in Taiwan learning cybersecurity, web development, robotics, and medical cybersecurity.
 comments: true
 ---
 

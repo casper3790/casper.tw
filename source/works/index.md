@@ -1,5 +1,6 @@
 ---
 title: Works
+description: Projects and experiments by Casper across cybersecurity, CTF, web development, robotics, and medical cybersecurity.
 ---
 
 # Works
