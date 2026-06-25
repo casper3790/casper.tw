@@ -7,12 +7,17 @@
   const rawDescription = page.description || page.excerpt || page.content || config.description || '';
   const metaDescription = (strip_html(rawDescription).replace(/\s+/g, ' ').trim() || config.description || '').slice(0, 160);
   const baseUrl = (config.url || '').replace(/\/$/, '');
+  const rootPath = config.root || '/';
   const absoluteUrl = function(path) {
     if (/^https?:\/\//.test(path)) return path;
-    return baseUrl + url_for(path).replace(/index\.html$/, '');
+    let localPath = url_for(path).replace(/index\.html$/, '');
+    if (rootPath !== '/' && localPath.indexOf(rootPath) === 0) {
+      localPath = localPath.slice(rootPath.length - 1);
+    }
+    return baseUrl + localPath;
   };
   const canonicalUrl = absoluteUrl(page.path || '/');
-  const shareImage = absoluteUrl(page.cover || page.image || '/images/casper.png');
+  const shareImage = absoluteUrl('/images/casper-og.png');
   const shareImageAlt = page.title ? page.title + ' preview image' : siteTitle + ' preview image';
   const metaType = page.layout === 'post' || page.date ? 'article' : 'website';
 %>
@@ -43,5 +48,7 @@
 <meta name="twitter:image" content="<%= shareImage %>">
 <meta name="twitter:image:alt" content="<%= shareImageAlt %>">
 
+<link rel="icon" type="image/svg+xml" href="<%= url_for('/favicon.svg') %>">
+<link rel="shortcut icon" href="<%= url_for('/favicon.svg') %>">
 <link rel="stylesheet" href="<%= url_for('/css/custom.css') %>?v=12">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">

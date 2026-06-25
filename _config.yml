@@ -6,7 +6,7 @@ author: Casper
 language: en
 timezone: Asia/Taipei
 
-url: https://casper3790.github.io
+url: https://casper3790.github.io/casper.tw
 root: /casper.tw/
 
 theme: landscape
@@ -15,3 +15,11 @@ deploy:
   type: git
   repo: https://github.com/casper3790/casper.tw.git
   branch: gh-pages
+
+feed:
+  type: atom
+  path: feed.xml
+  limit: 20
+
+sitemap:
+  path: sitemap.xml

@@ -292,6 +292,21 @@ blockquote {
   margin-top: 12px;
 }
 
+.site-subtitle span {
+  display: inline-block;
+}
+
+.site-subtitle span + span::before {
+  content: " / ";
+  color: var(--soft);
+}
+
+.site-mantra {
+  color: var(--soft);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
 .site-nav {
   display: flex;
   flex-wrap: wrap;
@@ -349,6 +364,18 @@ blockquote {
 
   .site-subtitle {
     font-size: 14px;
+  }
+
+  .site-subtitle span {
+    display: block;
+  }
+
+  .site-subtitle span + span::before {
+    content: "";
+  }
+
+  .site-mantra {
+    font-size: 13px;
   }
 
   .intro-links {
@@ -586,6 +613,75 @@ blockquote {
   gap: 14px;
 }
 
+.home-hero {
+  padding: 34px 0 42px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-hero-kicker,
+.home-hero-mantra {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.home-hero-title {
+  margin: 8px 0 10px;
+  color: var(--text);
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.home-hero-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.home-hero-roles span {
+  color: var(--text);
+  font-size: clamp(18px, 2.4vw, 24px);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.home-hero-roles span + span::before {
+  content: "/";
+  margin-right: 12px;
+  color: var(--soft);
+  font-weight: 400;
+}
+
+.not-found-page {
+  padding: 48px 0 24px;
+}
+
+.not-found-code {
+  color: var(--text);
+  font-size: clamp(64px, 12vw, 120px);
+  line-height: 0.95;
+  font-weight: 900;
+}
+
+.not-found-link {
+  display: inline-flex;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text) !important;
+}
+
+.not-found-link:hover {
+  background: var(--text);
+  color: var(--bg) !important;
+  opacity: 1;
+}
+
 .writing-item {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr);
@@ -745,6 +841,20 @@ blockquote {
     grid-template-columns: 1fr;
     gap: 6px;
     padding: 18px !important;
+  }
+
+  .home-hero {
+    padding: 22px 0 32px;
+  }
+
+  .home-hero-roles {
+    display: grid;
+    gap: 4px;
+  }
+
+  .home-hero-roles span + span::before {
+    content: "";
+    margin: 0;
   }
 
   .writing-title a {
