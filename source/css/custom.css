@@ -765,6 +765,54 @@ blockquote {
   opacity: 0.78;
 }
 
+.project-index-grid {
+  margin-top: 28px;
+}
+
+.project-page-hero {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-page-hero h1 {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: clamp(34px, 6vw, 56px);
+  line-height: 1.08;
+  font-weight: 900;
+}
+
+.project-page-hero p {
+  max-width: 720px;
+  margin: 0;
+}
+
+.project-status {
+  display: inline-flex;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 22px;
+}
+
+.project-stack span {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.2;
+}
+
 .writing-item {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr);
