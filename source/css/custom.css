@@ -143,7 +143,7 @@ img {
 
 pre,
 .highlight {
-  background: #0b0b0b !important;
+  background: #f1f5f9 !important;
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 20px !important;
@@ -151,7 +151,7 @@ pre,
 }
 
 code {
-  background: #181818 !important;
+  background: #eef6fb !important;
   color: var(--text) !important;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -159,7 +159,7 @@ code {
 }
 
 blockquote {
-  background: #0f0f0f !important;
+  background: #f0fdfa !important;
   border-left: 4px solid var(--text) !important;
   color: var(--muted) !important;
   padding: 18px 22px !important;
@@ -471,8 +471,8 @@ blockquote {
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: #555;
-  background: #151515;
+  border-color: #b8d7e6;
+  background: #f1f8fb;
 }
 
 .project-card h3 {
@@ -596,6 +596,87 @@ blockquote {
 
 #local-search-result {
   margin-top: 24px;
+}
+
+/* Final light-theme override for GitHub Pages cache and legacy theme styles. */
+html,
+body,
+#container,
+.outer,
+.site-wrapper,
+.main-container {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  box-shadow: none !important;
+}
+
+.site-header,
+#header {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  box-shadow: none !important;
+}
+
+main,
+section,
+.page-content,
+.post-content,
+.article,
+.post,
+.archive-article,
+article,
+.project-card,
+.home-card,
+.stat-card,
+.search-result-list li {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: none !important;
+}
+
+.home-hero,
+.project-page-hero,
+.labs-hero {
+  background: #eff6ff !important;
+  color: #0f172a !important;
+  border-color: #dbeafe !important;
+}
+
+.featured-projects,
+.tag-cloud,
+.labs-stat-card,
+.labs-card {
+  color: #0f172a !important;
+  box-shadow: none !important;
+}
+
+.featured-projects {
+  background: #f1f5f9 !important;
+}
+
+.tag-cloud {
+  background: #ecfeff !important;
+}
+
+.labs-stat-card,
+.labs-card {
+  background: #ffffff !important;
+}
+
+.article:hover,
+.post:hover,
+.archive-article:hover,
+article:hover,
+.project-card:hover {
+  background: #f8fafc !important;
+  box-shadow: none !important;
+}
+
+pre,
+.highlight,
+code,
+blockquote {
+  box-shadow: none !important;
 }
 
 .main-container {
