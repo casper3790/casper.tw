@@ -1,12 +1,50 @@
 <section class="home-page">
   <section class="home-hero" aria-labelledby="home-hero-title">
-    <p class="home-hero-kicker">Hi, I'm Casper.</p>
-    <h1 id="home-hero-title" class="home-hero-title">Cybersecurity Student</h1>
+    <p class="home-hero-kicker">Hi, I'm <strong>Casper</strong>.</p>
     <div class="home-hero-roles">
-      <span>Web Developer</span>
-      <span>Robotics Builder</span>
+      <strong id="home-hero-title">Cybersecurity Student</strong>
+      <strong>Web Developer</strong>
+      <strong>Robotics Builder</strong>
     </div>
     <p class="home-hero-mantra">Learning. Building. Sharing.</p>
+  </section>
+
+  <section class="featured-projects" aria-labelledby="featured-projects-title">
+    <h2 id="featured-projects-title" class="section-title">Featured Projects</h2>
+    <div class="featured-project-grid">
+      <article class="featured-project-card">
+        <h3>NIHS Control Team</h3>
+        <p>A team platform experiment for organizing competition links, schedules, and dashboard workflows.</p>
+        <div class="featured-project-tags" aria-label="Tech stack">
+          <span>React</span>
+          <span>FastAPI</span>
+          <span>SQLite</span>
+        </div>
+        <a class="featured-project-link" href="<%= url_for('/works/#web-development') %>">Read More</a>
+      </article>
+
+      <article class="featured-project-card">
+        <h3>Medical Cybersecurity</h3>
+        <p>Notes and project ideas around healthcare systems, medical devices, privacy, and clinical workflows.</p>
+        <div class="featured-project-tags" aria-label="Tech stack">
+          <span>Security</span>
+          <span>Healthcare</span>
+          <span>Risk</span>
+        </div>
+        <a class="featured-project-link" href="<%= url_for('/works/#medical-cybersecurity') %>">Read More</a>
+      </article>
+
+      <article class="featured-project-card">
+        <h3>Autonomous Robot</h3>
+        <p>A hands-on robotics build focused on sensors, motor control, ROS2, and autonomous movement.</p>
+        <div class="featured-project-tags" aria-label="Tech stack">
+          <span>ROS2</span>
+          <span>Raspberry Pi</span>
+          <span>LiDAR</span>
+        </div>
+        <a class="featured-project-link" href="<%= url_for('/works/#robotics') %>">Read More</a>
+      </article>
+    </div>
   </section>
 
   <h2 class="section-title">Recent Posts</h2>
@@ -24,5 +62,38 @@
     </div>
   <% } else { %>
     <p>No posts yet.</p>
+  <% } %>
+
+  <%
+    const tagList = [];
+    if (site.tags && site.tags.length) {
+      site.tags.each(function(tag) {
+        tagList.push(tag);
+      });
+    }
+    const tagCounts = tagList.map(function(tag) { return tag.length || 0; });
+    const minTagCount = tagCounts.length ? Math.min.apply(null, tagCounts) : 0;
+    const maxTagCount = tagCounts.length ? Math.max.apply(null, tagCounts) : 0;
+    const tagSize = function(count) {
+      if (maxTagCount === minTagCount) return '1rem';
+      return (0.9 + ((count - minTagCount) / (maxTagCount - minTagCount)) * 0.65).toFixed(2) + 'rem';
+    };
+  %>
+  <% if (tagList.length) { %>
+    <section class="tag-cloud" aria-labelledby="tag-cloud-title">
+      <h2 id="tag-cloud-title" class="section-title">Tags</h2>
+      <div class="tag-cloud-list">
+        <% tagList.sort(function(a, b) { return String(a.name).localeCompare(String(b.name)); }).forEach(function(tag) { %>
+          <a
+            class="tag-cloud-link"
+            href="<%= url_for(tag.path) %>"
+            style="font-size: <%= tagSize(tag.length || 0) %>"
+            aria-label="<%= tag.name %>, <%= tag.length %> post<%= tag.length === 1 ? '' : 's' %>"
+          >
+            <%= tag.name %>
+          </a>
+        <% }) %>
+      </div>
+    </section>
   <% } %>
 </section>
