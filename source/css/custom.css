@@ -1,11 +1,14 @@
 :root {
-  --bg: #050505;
-  --card: #0d0d0d;
-  --card-hover: #141414;
-  --text: #f5f5f5;
-  --muted: #b8b8b8;
-  --soft: #777;
-  --border: #2a2a2a;
+  --bg: #f8fbfd;
+  --card: #ffffff;
+  --card-hover: #f1f8fb;
+  --text: #102033;
+  --muted: #4d6475;
+  --soft: #7890a0;
+  --border: #d8e5ec;
+  --tint-blue: #eef7ff;
+  --tint-cyan: #eefbf9;
+  --tint-gray: #f3f6f8;
 }
 
 html,
@@ -489,9 +492,9 @@ blockquote {
 .site-title a {
   background: linear-gradient(
     90deg,
-    #ffffff 0%,
-    #d1d5db 50%,
-    #ffffff 100%
+    #102033 0%,
+    #25637a 50%,
+    #102033 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -614,9 +617,11 @@ blockquote {
 }
 
 .home-hero {
-  padding: 34px 0 42px;
+  padding: 34px;
   margin-bottom: 8px;
-  border-bottom: 1px solid var(--border);
+  background: var(--tint-blue);
+  border: 1px solid var(--border);
+  border-radius: 18px;
 }
 
 .home-hero-kicker,
@@ -670,8 +675,10 @@ blockquote {
 
 .tag-cloud {
   margin-top: 42px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
+  padding: 32px;
+  background: var(--tint-cyan);
+  border: 1px solid var(--border);
+  border-radius: 18px;
 }
 
 .tag-cloud-list {
@@ -688,6 +695,7 @@ blockquote {
   padding: 6px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
+  background: #ffffff;
   color: var(--muted) !important;
   line-height: 1.2;
 }
@@ -700,6 +708,10 @@ blockquote {
 
 .featured-projects {
   margin: 34px 0 42px;
+  padding: 30px;
+  background: var(--tint-gray);
+  border: 1px solid var(--border);
+  border-radius: 18px;
 }
 
 .featured-project-grid {
@@ -713,8 +725,8 @@ blockquote {
   flex-direction: column;
   min-height: 260px;
   padding: 22px;
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
+  background: #ffffff !important;
+  border: 1px solid #d8e5ec !important;
   border-radius: 8px;
   color: #111111;
 }
@@ -742,7 +754,8 @@ blockquote {
 
 .featured-project-tags span {
   padding: 5px 9px;
-  border: 1px solid #d7d7d7;
+  background: #f2fbff;
+  border: 1px solid #cfe5ef;
   border-radius: 999px;
   color: #333333;
   font-size: 12px;
@@ -771,8 +784,10 @@ blockquote {
 
 .project-page-hero {
   margin-bottom: 28px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--border);
+  padding: 30px;
+  background: var(--tint-blue);
+  border: 1px solid var(--border);
+  border-radius: 18px;
 }
 
 .project-page-hero h1 {
@@ -791,6 +806,7 @@ blockquote {
 .project-status {
   display: inline-flex;
   padding: 7px 12px;
+  background: var(--tint-cyan);
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--text);
@@ -806,6 +822,7 @@ blockquote {
 
 .project-stack span {
   padding: 6px 10px;
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--muted);
@@ -815,8 +832,10 @@ blockquote {
 
 .labs-hero {
   margin-bottom: 34px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--border);
+  padding: 30px;
+  background: var(--tint-blue);
+  border: 1px solid var(--border);
+  border-radius: 18px;
 }
 
 .labs-hero h1 {
@@ -848,8 +867,8 @@ blockquote {
 
 .labs-stat-card,
 .labs-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
   border-radius: 18px;
   padding: 20px;
 }
@@ -888,6 +907,7 @@ blockquote {
 
 .labs-card-meta span {
   padding: 5px 9px;
+  background: var(--tint-cyan);
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--muted);
