@@ -1,13 +1,42 @@
+---
+title: Works
+---
 
-# Projects
+# Works
 
-I love learning technology through hands-on building and experimentation.
-
-From cybersecurity, web development, Discord bots, ROS2 robotics, to AI and hackathon projects—these works document my learning journey and technical growth.
+These are the areas I am currently learning and building in. Some projects are active, some are experiments, and some are notes from competitions or practice.
 
 ---
 
-## Featured Projects
+## Cybersecurity / CTF
+
+<div class="project-grid">
+
+<div class="project-card">
+
+### CTF Practice
+
+I practice CTF challenges to improve my understanding of web security, forensics, basic cryptography, Linux, and problem solving.
+
+I use writeups and notes to review what I missed, not just to record final answers.
+
+</div>
+
+<div class="project-card">
+
+### Team Tools
+
+I have been building small tools to support CTF team operations, including competition information, reminders, resource links, and dashboard experiments.
+
+These tools are practical learning projects rather than finished products.
+
+</div>
+
+</div>
+
+---
+
+## Web Development
 
 <div class="project-grid">
 
@@ -15,87 +44,19 @@ From cybersecurity, web development, Discord bots, ROS2 robotics, to AI and hack
 
 ### NIHS Control Team Platform
 
-A team management platform for CTF competitions.
+A team platform experiment for organizing competition information, calendar data, CTFd links, Discord integration, and simple dashboard views.
 
-Integrations:
-
-- Account login system
-- Competition information management
-- Discord integration
-- Calendar system
-- CTFd integration
-- SOC Dashboard
-
-**Tech Stack**
-
-React · FastAPI · SQLite · GitHub Pages · CTFd
-
-**Status:** Active Development
+**Stack:** React, FastAPI, SQLite, GitHub Pages
 
 </div>
 
 <div class="project-card">
 
-### Discord CTF Bot
+### Personal Websites
 
-A Discord bot designed specifically for team operations.
+I maintain personal and project websites to practice frontend structure, static site deployment, UI writing, and content organization.
 
-Features include:
-
-- Calendar reminders
-- CTF score queries
-- Educational resource navigation
-- Discord announcements
-- Platform integration
-
-**Tech Stack**
-
-Python · Discord.py · FastAPI
-
-**Status:** Active Development
-
-</div>
-
-<div class="project-card">
-
-### ROS2 Autonomous Robot
-
-An autonomous mobile robot research project.
-
-Components include:
-
-- Ubuntu
-- ROS2 Jazzy
-- Raspberry Pi
-- YDLidar
-- Motor control
-- Path planning
-
-**Tech Stack**
-
-ROS2 · Ubuntu · Python · Raspberry Pi
-
-**Status:** Research
-
-</div>
-
-<div class="project-card">
-
-### AI Privacy Guard
-
-AI-powered privacy protection tool.
-
-Helps users before sharing data:
-
-- Personal information detection
-- Risk analysis
-- Protection recommendations
-
-**Tech Stack**
-
-AI · NLP · Web Application
-
-**Status:** Concept & Prototype
+This blog is also part of that learning process.
 
 </div>
 
@@ -103,44 +64,27 @@ AI · NLP · Web Application
 
 ---
 
-## Competition Projects
+## Robotics
 
 <div class="project-grid">
 
 <div class="project-card">
 
-### Weather × Cybersecurity × AI
+### ROS2 Autonomous Robot
 
-Integration of:
+A hands-on robotics project using ROS2, Ubuntu, Raspberry Pi, LiDAR, motor control, and basic autonomous movement experiments.
 
-- Weather data
-- Cybersecurity intelligence
-- AI assistant
-
-Building visualization and decision support systems.
-
-**Tech Stack**
-
-Flask · OpenWeather API · AI
+The main goal is to understand the full system, from hardware setup to software debugging.
 
 </div>
 
 <div class="project-card">
 
-### Smart City Hackathon
+### Hardware Experiments
 
-Projects related to smart city and information service innovation competition.
+I use small robotics and IoT experiments to learn how sensors, motors, embedded boards, and software control loops work together.
 
-Research directions:
-
-- AI public services
-- Smart governance
-- Data analysis
-- Privacy protection
-
-**Tech Stack**
-
-AI · Cloud · Data Analysis
+Most progress here comes from testing, failing, adjusting, and testing again.
 
 </div>
 
@@ -148,31 +92,28 @@ AI · Cloud · Data Analysis
 
 ---
 
-## Technical Interests
+## Medical Cybersecurity
 
-<div class="badges">
-  <span class="badge">Cybersecurity</span>
-  <span class="badge">CTF</span>
-  <span class="badge">Web Development</span>
-  <span class="badge">Robotics</span>
-  <span class="badge">ROS2</span>
-  <span class="badge">IoT</span>
-  <span class="badge">AI</span>
-  <span class="badge">Cloud</span>
+<div class="project-grid">
+
+<div class="project-card">
+
+### Healthcare Security Notes
+
+I am exploring how cybersecurity connects to hospital systems, medical devices, privacy, and real-world clinical workflows.
+
+My focus is to understand the problems carefully before proposing solutions.
+
 </div>
 
----
+<div class="project-card">
 
-## Future Projects
+### Medical Security Project Ideas
 
-Currently planned projects:
+I am collecting ideas around medical data protection, risk awareness, connected devices, and safer information sharing in healthcare environments.
 
-- AI Security Assistant
-- CTF Training Platform
-- ROS2 Competition Robot
-- Personal Knowledge Base
-- Cybersecurity Learning Platform
+These are early-stage learning directions, not completed research claims.
 
----
+</div>
 
-> Build. Break. Learn. Repeat.
+</div>

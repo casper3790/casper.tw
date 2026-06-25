@@ -5,26 +5,15 @@ comments: true
 
 # About
 
-My name is **Casper**. I am a member of **RCEs CTF Team**.  
-I focus on **Cybersecurity**, **CTF**, **Web Development**, **Robotics**, and **AI Applications**.
+Hi, I am **Casper**, a student builder from Taiwan.
 
-I learn by building, testing, breaking, fixing, and writing things down.  
-This website is not only a blog. It is my technical archive, project portfolio, and growth record.
+I spend most of my time learning and building around **cybersecurity**, **web development**, **robotics**, and small experiments that connect software with real-world problems.
 
-> I believe my story will be seen one day.
-
-<div class="badges">
-  <span class="badge">Cybersecurity</span>
-  <span class="badge">CTF</span>
-  <span class="badge">Web Security</span>
-  <span class="badge">Robotics</span>
-  <span class="badge">AI</span>
-  <span class="badge">IoT</span>
-</div>
+This site is my public notebook. I use it to record what I am learning, what I am building, and what I am still trying to understand.
 
 ---
 
-## Focus Areas
+## What I Work On
 
 <div class="project-grid">
 
@@ -32,7 +21,7 @@ This website is not only a blog. It is my technical archive, project portfolio, 
 
 ### Cybersecurity
 
-Web Security, CTF practice, Blue Team learning, SOC concepts, and security project development.
+I practice CTF, web security, basic blue team concepts, and security tooling. I am still learning, so I try to document both technical notes and personal reflections.
 
 </div>
 
@@ -40,7 +29,7 @@ Web Security, CTF practice, Blue Team learning, SOC concepts, and security proje
 
 ### Web Development
 
-Personal websites, team platforms, dashboards, frontend design, and backend API integration.
+I build small platforms, dashboards, personal sites, and tools for teams or projects. My focus is usually on making things usable, maintainable, and clear enough to keep improving.
 
 </div>
 
@@ -48,15 +37,15 @@ Personal websites, team platforms, dashboards, frontend design, and backend API 
 
 ### Robotics
 
-ROS2, Ubuntu, Raspberry Pi, LiDAR, motor control, and autonomous robot development.
+I work with ROS2, Ubuntu, Raspberry Pi, LiDAR, motor control, and autonomous robot experiments. Most of this is hands-on learning through building and debugging.
 
 </div>
 
 <div class="project-card">
 
-### AI Applications
+### Medical Cybersecurity
 
-AI × Security, AI × Daily Life, privacy protection, and public-service-oriented AI systems.
+I am interested in how cybersecurity affects healthcare systems, hospital workflows, connected devices, and patient safety. This is a topic I am still exploring through reading, writing, and project ideas.
 
 </div>
 
@@ -64,95 +53,25 @@ AI × Security, AI × Daily Life, privacy protection, and public-service-oriente
 
 ---
 
-## Selected CTFs / Awards
+## How I Use This Blog
 
-| Year | Competition | Award / Ranking |
-|------|-------------|-----------------|
+- To keep notes from CTF practice and security learning.
+- To write about projects while they are still imperfect.
+- To record lessons from web, robotics, and AI experiments.
+- To think through cybersecurity topics in plain language.
 
-| 2026 | My First CTF | Participant |
-| 2026 | National High School AI and Information Life Application Innovation Competition | Commendable Work |
-| 2026 | AIS3 EOF Preliminary | Participant |
-| 2026 | picoCTF | Rank 1007 / 8748 |
-| 2026 | FhCTF | No. 8 |
-| 2025 | 30th University Information Application Service Innovation Competition | Commendable Work (University) |
-| 2025 | 30th University Information Application Service Innovation Competition | Finalist (High School / University) |
-| 2025 | Daydream Game Development Hackathon | Commendable Work |
-| 2025 | Cyber Shield Awards | Preliminary Participant |
-| 2025 | Northern High School Program Security Hackathon | Egg Hunting Expert Award |
-| 2024 | PowerTech Youth Technology Creation Competition | National Commendable Work |
+I do not want this site to look like a polished resume. I want it to be closer to a learning log: useful, honest, and easy to revisit later.
 
 ---
 
-## Activities / Lectures
+## Current Interests
 
-| Year | Name | Role |
-|------|------|------|
-| 2026 | Cybersecurity Conference | Participant |
-| 2026 | Bak3 C00kie Conference | Participant |
-| 2025 | HITCON | Participant |
-| 2025 | INFOSEC TAIWAN International Cybersecurity Organization Conference | Participant |
-| 2025 | CTF Cybersecurity Seed Training Exchange (Taipei) | Participant |
-| 2025 | CTF Cybersecurity Seed Training Exchange (Kaohsiung) | Participant |
-
----
-
-## Projects I Care About
-
-<div class="project-grid">
-
-<div class="project-card">
-
-### NIHS Control Team Platform
-
-A team platform for competition information, calendar management, CTFd integration, Discord connection, and SOC dashboard experiments.
-
+<div class="badges">
+  <span class="badge">Cybersecurity</span>
+  <span class="badge">CTF</span>
+  <span class="badge">Web Security</span>
+  <span class="badge">Web Development</span>
+  <span class="badge">Robotics</span>
+  <span class="badge">ROS2</span>
+  <span class="badge">Medical Cybersecurity</span>
 </div>
-
-<div class="project-card">
-
-### Discord CTF Bot
-
-A Discord bot designed for team operations, learning resources, reminders, and cybersecurity training support.
-
-</div>
-
-<div class="project-card">
-
-### AI Privacy Guard
-
-An AI-based privacy protection project that helps users detect sensitive information before sharing content.
-
-</div>
-
-<div class="project-card">
-
-### ROS2 Autonomous Robot
-
-A robotics project involving Ubuntu, ROS2, LiDAR, Raspberry Pi, motor control, and autonomous movement.
-
-</div>
-
-</div>
-
----
-
-## CTF Notes
-
-This section is still under construction.  
-In the future, I want to organize my writeups, challenge ideas, and learning records here.
-
-- Personal Writeups: coming soon
-- CTF Practice Notes: coming soon
-- Challenge Ideas: coming soon
-
----
-
-## AI / ML
-
-Besides cybersecurity, I am also interested in how AI can be applied to real-life problems.
-
-| Year | Project / Competition | Role |
-|------|------------------------|------|
-| 2026 | National Yilan University Programming and Information & AI Application Competition Finals | Excellent Work |
-| 2026 | National High School AI and Information Life Application Innovation Competition | Project Participant |
-| 2025 | AI × Weather × Daily Risk Project | Developer |
