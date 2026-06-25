@@ -1,14 +1,14 @@
 :root {
-  --bg: #f8fbfd;
-  --card: #ffffff;
-  --card-hover: #f1f8fb;
-  --text: #102033;
-  --muted: #4d6475;
-  --soft: #7890a0;
-  --border: #d8e5ec;
-  --tint-blue: #eef7ff;
-  --tint-cyan: #eefbf9;
-  --tint-gray: #f3f6f8;
+  --bg: #eef2f6;
+  --card: #f8fafc;
+  --card-hover: #f1f5f9;
+  --text: #1e293b;
+  --muted: #64748b;
+  --soft: #8794a3;
+  --border: #cbd5e1;
+  --tint-blue: #e3edf7;
+  --tint-cyan: #e6f1f2;
+  --tint-gray: #f5f7fa;
 }
 
 html,
@@ -492,9 +492,9 @@ blockquote {
 .site-title a {
   background: linear-gradient(
     90deg,
-    #102033 0%,
-    #25637a 50%,
-    #102033 100%
+    #1e293b 0%,
+    #3f6478 50%,
+    #1e293b 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -515,14 +515,14 @@ blockquote {
 .site-nav a {
   padding: 10px 16px;
   border-radius: 999px;
-  border: 1px solid #333;
+  border: 1px solid var(--border);
   transition: 0.25s ease;
 }
 
 .site-nav a:hover {
-  background: #ffffff;
-  color: #000 !important;
-  border-color: #ffffff;
+  background: #f8fafc;
+  color: #1e293b !important;
+  border-color: #cbd5e1;
 }
 
 .stats-grid {
@@ -605,15 +605,15 @@ body,
 .outer,
 .site-wrapper,
 .main-container {
-  background: #f8fafc !important;
-  color: #0f172a !important;
+  background: #eef2f6 !important;
+  color: #1e293b !important;
   box-shadow: none !important;
 }
 
 .site-header,
 #header {
-  background: #f8fafc !important;
-  color: #0f172a !important;
+  background: #eef2f6 !important;
+  color: #1e293b !important;
   box-shadow: none !important;
 }
 
@@ -629,38 +629,38 @@ article,
 .home-card,
 .stat-card,
 .search-result-list li {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
   box-shadow: none !important;
 }
 
 .home-hero,
 .project-page-hero,
 .labs-hero {
-  background: #eff6ff !important;
-  color: #0f172a !important;
-  border-color: #dbeafe !important;
+  background: #e3edf7 !important;
+  color: #1e293b !important;
+  border-color: #cbd5e1 !important;
 }
 
 .featured-projects,
 .tag-cloud,
 .labs-stat-card,
 .labs-card {
-  color: #0f172a !important;
+  color: #1e293b !important;
   box-shadow: none !important;
 }
 
 .featured-projects {
-  background: #f1f5f9 !important;
+  background: #f5f7fa !important;
 }
 
 .tag-cloud {
-  background: #ecfeff !important;
+  background: #e6f1f2 !important;
 }
 
 .labs-stat-card,
 .labs-card {
-  background: #ffffff !important;
+  background: #f8fafc !important;
 }
 
 .article:hover,
@@ -668,7 +668,7 @@ article,
 .archive-article:hover,
 article:hover,
 .project-card:hover {
-  background: #f8fafc !important;
+  background: #f1f5f9 !important;
   box-shadow: none !important;
 }
 
@@ -776,7 +776,7 @@ blockquote {
   padding: 6px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: #ffffff;
+  background: #f8fafc;
   color: var(--muted) !important;
   line-height: 1.2;
 }
@@ -806,15 +806,15 @@ blockquote {
   flex-direction: column;
   min-height: 260px;
   padding: 22px;
-  background: #ffffff !important;
-  border: 1px solid #d8e5ec !important;
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
   border-radius: 8px;
-  color: #111111;
+  color: #1e293b;
 }
 
 .featured-project-card h3 {
   margin: 0 0 12px;
-  color: #111111;
+  color: #1e293b;
   font-size: 21px;
   line-height: 1.3;
   font-weight: 900;
@@ -822,7 +822,7 @@ blockquote {
 
 .featured-project-card p {
   margin: 0;
-  color: #444444;
+  color: #64748b;
   line-height: 1.75;
 }
 
@@ -835,8 +835,8 @@ blockquote {
 
 .featured-project-tags span {
   padding: 5px 9px;
-  background: #f2fbff;
-  border: 1px solid #cfe5ef;
+  background: #e6f1f2;
+  border: 1px solid #cbd5e1;
   border-radius: 999px;
   color: #333333;
   font-size: 12px;
@@ -903,7 +903,7 @@ blockquote {
 
 .project-stack span {
   padding: 6px 10px;
-  background: #ffffff;
+  background: #f8fafc;
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--muted);
@@ -948,7 +948,7 @@ blockquote {
 
 .labs-stat-card,
 .labs-card {
-  background: #ffffff !important;
+  background: #f8fafc !important;
   border: 1px solid var(--border) !important;
   border-radius: 18px;
   padding: 20px;
