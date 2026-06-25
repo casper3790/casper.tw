@@ -4,6 +4,13 @@
 
     <div class="post-meta">
       <time><%= date(page.date, 'YYYY-MM-DD') %></time>
+      <% if (page.categories && page.categories.length) { %>
+        <span class="categories-inline">
+          <% page.categories.each(function(category) { %>
+            <a href="<%= url_for(category.path) %>"><%= category.name %></a>
+          <% }) %>
+        </span>
+      <% } %>
       <% if (page.tags && page.tags.length) { %>
         <span class="tags-inline">
           <% page.tags.each(function(tag) { %>
