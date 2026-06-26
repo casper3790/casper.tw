@@ -1,11 +1,13 @@
 ---
 title: Experience
+description: Experience of Casper, also known as Hong Xin-Fu, across cybersecurity, robotics, full stack development, AI, and embedded systems.
 comments: true
 ---
 
 # Experience
 
-**Hong Xin-Fu**  
+**Casper**  
+Real name: **Hong Xin-Fu**  
 Cybersecurity Engineer | Robotics Developer | Full Stack Developer | AI & Embedded Systems Enthusiast
 
 ---

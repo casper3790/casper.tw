@@ -32,6 +32,48 @@
         <a href="<%= url_for('/ja/about/') %>" lang="ja">日本語</a>
       </nav>
 
+      <button class="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false">
+        <span class="mobile-menu-label">Menu</span>
+        <span class="mobile-menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="<%= url_for('/') %>">Home</a>
+        <a href="<%= url_for('/works/') %>">Projects</a>
+        <a href="<%= url_for('/experience/') %>">Experience</a>
+        <a href="<%= url_for('/labs/') %>">Labs</a>
+        <a href="<%= url_for('/archives/') %>">Writing</a>
+        <a href="<%= url_for('/about/') %>">About</a>
+        <a href="<%= url_for('/') %>" lang="en">EN</a>
+        <a href="<%= url_for('/zh/about/') %>" lang="zh-Hant">中文</a>
+        <a href="<%= url_for('/ja/about/') %>" lang="ja">日本語</a>
+      </nav>
+
     </div>
   </div>
 </header>
+
+<script>
+  (function() {
+    var button = document.querySelector('.mobile-menu-button');
+    var menu = document.getElementById('mobile-nav');
+    if (!button || !menu) return;
+
+    button.addEventListener('click', function() {
+      var isOpen = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!isOpen));
+      menu.hidden = isOpen;
+    });
+
+    menu.addEventListener('click', function(event) {
+      if (event.target && event.target.tagName === 'A') {
+        button.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
+    });
+  })();
+</script>

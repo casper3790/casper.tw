@@ -1,12 +1,14 @@
 ---
 title: About
-description: About Casper, a student builder in Taiwan learning cybersecurity, web development, robotics, and medical cybersecurity.
+description: About Casper, also known as Hong Xin-Fu, a student builder in Taiwan learning cybersecurity, web development, robotics, and medical cybersecurity.
 comments: true
 ---
 
 # About
 
 Hi, I'm **Casper**.
+
+My name is **Hong Xin-Fu**, but most people know me as **Casper**.
 
 I am a cybersecurity student, web developer, and robotics builder in Taiwan. I like building practical systems, learning by doing, and writing down what I discover along the way.
 
