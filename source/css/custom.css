@@ -240,6 +240,7 @@ blockquote {
 }
 .site-header {
   margin: 28px 0 56px;
+  padding: 0 18px;
 }
 
 .brand-row {
@@ -283,9 +284,9 @@ blockquote {
 }
 
 .site-title a {
-  font-size: clamp(42px, 7vw, 82px) !important;
+  font-size: clamp(36px, 5.8vw, 68px) !important;
   line-height: 0.9 !important;
-  letter-spacing: -0.06em !important;
+  letter-spacing: 0 !important;
   font-weight: 900 !important;
 }
 
@@ -362,7 +363,7 @@ blockquote {
   }
 
   .site-title a {
-    font-size: clamp(34px, 12vw, 56px) !important;
+    font-size: clamp(30px, 10vw, 46px) !important;
   }
 
   .site-subtitle {
@@ -826,19 +827,48 @@ blockquote {
   line-height: 1.75;
 }
 
+.featured-project-meta {
+  display: grid;
+  gap: 4px;
+  margin: 18px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid #cbd5e1;
+}
+
+.featured-project-meta span,
+.featured-project-tags span {
+  color: #8794a3;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.featured-project-meta strong {
+  color: #1e293b;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 .featured-project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 18px 0 20px;
+  margin: 16px 0 20px;
 }
 
 .featured-project-tags span {
+  flex-basis: 100%;
+}
+
+.featured-project-tags strong {
   padding: 5px 9px;
   background: #e6f1f2;
   border: 1px solid #cbd5e1;
   border-radius: 999px;
   color: #333333;
+  font-weight: 500;
   font-size: 12px;
   line-height: 1.2;
 }
