@@ -1,6 +1,53 @@
 <header class="site-header">
+  <%
+    const normalizedPath = String(page.path || '')
+      .replace(/index\.html$/, '')
+      .replace(/\/$/, '');
+    const pathParts = normalizedPath.split('/').filter(Boolean);
+    const currentLang = pathParts[0] === 'zh' ? 'zh' : (pathParts[0] === 'ja' ? 'ja' : 'en');
+    const localPathParts = currentLang === 'en' ? pathParts : pathParts.slice(1);
+    const firstPathPart = localPathParts[0] || '';
+    const currentSection =
+      firstPathPart === '' ? 'home' :
+      firstPathPart === 'works' ? 'projects' :
+      firstPathPart === 'archives' ? 'writing' :
+      ['about', 'experience', 'projects', 'labs', 'writing'].includes(firstPathPart) ? firstPathPart :
+      'home';
+    const localizedPaths = {
+      en: {
+        home: '/',
+        projects: '/works/',
+        experience: '/experience/',
+        labs: '/labs/',
+        writing: '/archives/',
+        about: '/about/'
+      },
+      zh: {
+        home: '/zh/',
+        projects: '/zh/projects/',
+        experience: '/zh/experience/',
+        labs: '/zh/labs/',
+        writing: '/zh/writing/',
+        about: '/zh/about/'
+      },
+      ja: {
+        home: '/ja/',
+        projects: '/ja/projects/',
+        experience: '/ja/experience/',
+        labs: '/ja/labs/',
+        writing: '/ja/writing/',
+        about: '/ja/about/'
+      }
+    };
+    const navPath = function(section) {
+      return localizedPaths[currentLang][section];
+    };
+    const langPath = function(lang) {
+      return localizedPaths[lang][currentSection];
+    };
+  %>
   <div class="brand-row">
-    <a class="brand-avatar" href="<%= url_for('/') %>" aria-label="Home">
+    <a class="brand-avatar" href="<%= url_for(navPath('home')) %>" aria-label="Home">
       <img src="<%= url_for('/images/casper.png') %>" alt="Casper avatar">
     </a>
 
@@ -10,7 +57,7 @@
       </div>
 
       <div class="site-title">
-        <a href="<%= url_for('/') %>"><%= config.title %></a>
+        <a href="<%= url_for(navPath('home')) %>"><%= config.title %></a>
       </div>
 
       <div class="site-mantra">
@@ -18,18 +65,18 @@
       </div>
 
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="<%= url_for('/') %>">Home</a>
-        <a href="<%= url_for('/works/') %>">Projects</a>
-        <a href="<%= url_for('/experience/') %>">Experience</a>
-        <a href="<%= url_for('/labs/') %>">Labs</a>
-        <a href="<%= url_for('/archives/') %>">Writing</a>
-        <a href="<%= url_for('/about/') %>">About</a>
+        <a href="<%= url_for(navPath('home')) %>">Home</a>
+        <a href="<%= url_for(navPath('projects')) %>">Projects</a>
+        <a href="<%= url_for(navPath('experience')) %>">Experience</a>
+        <a href="<%= url_for(navPath('labs')) %>">Labs</a>
+        <a href="<%= url_for(navPath('writing')) %>">Writing</a>
+        <a href="<%= url_for(navPath('about')) %>">About</a>
       </nav>
 
       <nav class="site-nav language-switcher" aria-label="Language switcher">
-        <a href="<%= url_for('/') %>" lang="en">EN</a>
-        <a href="<%= url_for('/zh/about/') %>" lang="zh-Hant">中文</a>
-        <a href="<%= url_for('/ja/about/') %>" lang="ja">日本語</a>
+        <a href="<%= url_for(langPath('en')) %>" lang="en">EN</a>
+        <a href="<%= url_for(langPath('zh')) %>" lang="zh-Hant">中文</a>
+        <a href="<%= url_for(langPath('ja')) %>" lang="ja">日本語</a>
       </nav>
 
       <button class="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false">
@@ -42,15 +89,15 @@
       </button>
 
       <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
-        <a href="<%= url_for('/') %>">Home</a>
-        <a href="<%= url_for('/works/') %>">Projects</a>
-        <a href="<%= url_for('/experience/') %>">Experience</a>
-        <a href="<%= url_for('/labs/') %>">Labs</a>
-        <a href="<%= url_for('/archives/') %>">Writing</a>
-        <a href="<%= url_for('/about/') %>">About</a>
-        <a href="<%= url_for('/') %>" lang="en">EN</a>
-        <a href="<%= url_for('/zh/about/') %>" lang="zh-Hant">中文</a>
-        <a href="<%= url_for('/ja/about/') %>" lang="ja">日本語</a>
+        <a href="<%= url_for(navPath('home')) %>">Home</a>
+        <a href="<%= url_for(navPath('projects')) %>">Projects</a>
+        <a href="<%= url_for(navPath('experience')) %>">Experience</a>
+        <a href="<%= url_for(navPath('labs')) %>">Labs</a>
+        <a href="<%= url_for(navPath('writing')) %>">Writing</a>
+        <a href="<%= url_for(navPath('about')) %>">About</a>
+        <a href="<%= url_for(langPath('en')) %>" lang="en">EN</a>
+        <a href="<%= url_for(langPath('zh')) %>" lang="zh-Hant">中文</a>
+        <a href="<%= url_for(langPath('ja')) %>" lang="ja">日本語</a>
       </nav>
 
     </div>
