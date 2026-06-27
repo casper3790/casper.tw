@@ -19,13 +19,39 @@
   const canonicalUrl = absoluteUrl(page.path || '/');
   const shareImage = absoluteUrl('/images/casper-og.png');
   const shareImageAlt = page.title ? page.title + ' preview image' : siteTitle + ' preview image';
-  const metaType = page.layout === 'post' || page.date ? 'article' : 'website';
+  const metaType = page.layout === 'post' ? 'article' : 'website';
+  const headPath = String(page.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
+  const headParts = headPath.split('/').filter(Boolean);
+  const headLang = headParts[0] === 'zh' ? 'zh' : (headParts[0] === 'ja' ? 'ja' : 'en');
+  const ogLocales = { en: 'en_US', zh: 'zh_TW', ja: 'ja_JP' };
+  const localHeadParts = headLang === 'en' ? headParts : headParts.slice(1);
+  const firstHeadPart = localHeadParts[0] || '';
+  const headSection =
+    firstHeadPart === '' ? 'home' :
+    firstHeadPart === 'works' ? 'projects' :
+    firstHeadPart === 'archives' ? 'writing' :
+    ['about', 'experience', 'projects', 'labs', 'writing'].includes(firstHeadPart) && localHeadParts.length === 1 ? firstHeadPart :
+    null;
+  const hreflangPaths = headSection ? {
+    home: { en: '/', zh: '/zh/', ja: '/ja/' },
+    about: { en: '/about/', zh: '/zh/about/', ja: '/ja/about/' },
+    experience: { en: '/experience/', zh: '/zh/experience/', ja: '/ja/experience/' },
+    projects: { en: '/projects/', zh: '/zh/projects/', ja: '/ja/projects/' },
+    labs: { en: '/labs/', zh: '/zh/labs/', ja: '/ja/labs/' },
+    writing: { en: '/writing/', zh: '/zh/writing/', ja: '/ja/writing/' }
+  }[headSection] : null;
 %>
 
 <title><%= metaTitle %></title>
 <meta name="description" content="<%= metaDescription %>">
 <meta name="author" content="<%= config.author || '' %>">
 <link rel="canonical" href="<%= canonicalUrl %>">
+<% if (hreflangPaths) { %>
+<link rel="alternate" hreflang="en" href="<%= absoluteUrl(hreflangPaths.en) %>">
+<link rel="alternate" hreflang="zh-TW" href="<%= absoluteUrl(hreflangPaths.zh) %>">
+<link rel="alternate" hreflang="ja" href="<%= absoluteUrl(hreflangPaths.ja) %>">
+<link rel="alternate" hreflang="x-default" href="<%= absoluteUrl(hreflangPaths.en) %>">
+<% } %>
 
 <meta property="og:site_name" content="<%= siteTitle %>">
 <meta property="og:title" content="<%= metaTitle %>">
@@ -34,7 +60,7 @@
 <meta property="og:url" content="<%= canonicalUrl %>">
 <meta property="og:image" content="<%= shareImage %>">
 <meta property="og:image:alt" content="<%= shareImageAlt %>">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="<%= ogLocales[headLang] %>">
 <% if (page.date) { %>
 <meta property="article:published_time" content="<%= date_xml(page.date) %>">
 <% } %>
