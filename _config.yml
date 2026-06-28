@@ -23,3 +23,4 @@ feed:
 
 sitemap:
   path: sitemap.xml
+  template: ./sitemap_template.xml

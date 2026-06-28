@@ -1,5 +1,10 @@
+<%
+  const htmlPath = String(page.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
+  const htmlParts = htmlPath.split('/').filter(Boolean);
+  const htmlLang = htmlParts[0] === 'zh' ? 'zh-Hant' : (htmlParts[0] === 'ja' ? 'ja' : 'en');
+%>
 <!DOCTYPE html>
-<html lang="<%= config.language || 'en' %>">
+<html lang="<%= htmlLang %>">
 <head>
   <%- partial('_partial/head') %>
 </head>

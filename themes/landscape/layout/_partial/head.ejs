@@ -26,20 +26,47 @@
   const ogLocales = { en: 'en_US', zh: 'zh_TW', ja: 'ja_JP' };
   const localHeadParts = headLang === 'en' ? headParts : headParts.slice(1);
   const firstHeadPart = localHeadParts[0] || '';
+  const localHeadPath = localHeadParts.join('/');
   const headSection =
     firstHeadPart === '' ? 'home' :
+    firstHeadPart === 'dashboard' ? 'dashboard' :
     firstHeadPart === 'works' ? 'projects' :
     firstHeadPart === 'archives' ? 'writing' :
-    ['about', 'experience', 'projects', 'labs', 'writing'].includes(firstHeadPart) && localHeadParts.length === 1 ? firstHeadPart :
+    ['about', 'experience', 'projects', 'labs', 'writing', 'timeline'].includes(firstHeadPart) && localHeadParts.length === 1 ? firstHeadPart :
     null;
-  const hreflangPaths = headSection ? {
+  const trilingualDetailPaths = [
+    'experience/competitions',
+    'experience/awards',
+    'experience/workshops',
+    'experience/speaking',
+    'experience/community-teaching',
+    'experience/certifications',
+    'experience/leadership',
+    'projects/nihs-control-team',
+    'projects/medical-cybersecurity',
+    'projects/autonomous-robot',
+    'labs/esp32-uart-test',
+    'labs/ros2-topic-communication',
+    'labs/web-security',
+    'labs/medical-cybersecurity-research',
+    'labs/ctf-web-practice'
+  ];
+  const detailHreflangPaths = trilingualDetailPaths.includes(localHeadPath) ? {
+    en: '/' + localHeadPath + '/',
+    zh: '/zh/' + localHeadPath + '/',
+    ja: '/ja/' + localHeadPath + '/'
+  } : null;
+  const sectionHreflangPaths = headSection ? {
     home: { en: '/', zh: '/zh/', ja: '/ja/' },
+    dashboard: { en: '/dashboard/', zh: '/zh/dashboard/', ja: '/ja/dashboard/' },
     about: { en: '/about/', zh: '/zh/about/', ja: '/ja/about/' },
     experience: { en: '/experience/', zh: '/zh/experience/', ja: '/ja/experience/' },
     projects: { en: '/projects/', zh: '/zh/projects/', ja: '/ja/projects/' },
     labs: { en: '/labs/', zh: '/zh/labs/', ja: '/ja/labs/' },
-    writing: { en: '/writing/', zh: '/zh/writing/', ja: '/ja/writing/' }
+    writing: { en: '/writing/', zh: '/zh/writing/', ja: '/ja/writing/' },
+    timeline: { en: '/timeline/', zh: '/zh/timeline/', ja: '/ja/timeline/' }
   }[headSection] : null;
+  const hreflangPaths = detailHreflangPaths || sectionHreflangPaths;
 %>
 
 <title><%= metaTitle %></title>
@@ -76,4 +103,13 @@
 
 <link rel="icon" type="image/svg+xml" href="<%= url_for('/favicon.svg') %>">
 <link rel="shortcut icon" href="<%= url_for('/favicon.svg') %>">
-<link rel="stylesheet" href="<%= url_for('/css/custom.css') %>?v=14">
+<script>
+  (function() {
+    try {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('casper-theme') || 'dark');
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="<%= url_for('/css/custom.css') %>?v=20">

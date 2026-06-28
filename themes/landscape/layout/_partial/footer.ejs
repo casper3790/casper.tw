@@ -1,19 +1,42 @@
 <footer class="site-footer">
-  <div class="footer-brand">Casper's SECURITY LAB</div>
-
-  <div class="footer-desc">
-    Cybersecurity · CTF · Robotics · AI · Web Development
+  <%
+    const footerPath = String(page.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
+    const footerParts = footerPath.split('/').filter(Boolean);
+    const footerLang = footerParts[0] === 'zh' ? 'zh' : (footerParts[0] === 'ja' ? 'ja' : 'en');
+    const footerCopy = {
+      en: { home: 'Home', about: 'About', projects: 'Projects', experience: 'Experience', labs: 'Labs', writing: 'Writing', search: 'Search' },
+      zh: { home: '首頁', about: '關於', projects: '專案', experience: '經歷', labs: 'Labs', writing: '文章', search: '搜尋' },
+      ja: { home: 'ホーム', about: 'About', projects: 'プロジェクト', experience: '経歴', labs: 'Labs', writing: '記事', search: '検索' }
+    };
+    const footerPaths = {
+      en: { home: '/', projects: '/projects/', experience: '/experience/', labs: '/labs/', writing: '/writing/', timeline: '/timeline/', about: '/about/' },
+      zh: { home: '/zh/', projects: '/zh/projects/', experience: '/zh/experience/', labs: '/zh/labs/', writing: '/zh/writing/', timeline: '/zh/timeline/', about: '/zh/about/' },
+      ja: { home: '/ja/', projects: '/ja/projects/', experience: '/ja/experience/', labs: '/ja/labs/', writing: '/ja/writing/', timeline: '/ja/timeline/', about: '/ja/about/' }
+    };
+    const f = footerCopy[footerLang];
+    f.dashboard = f.dashboard || 'Dashboard';
+    const fp = footerPaths[footerLang];
+  %>
+  <div class="footer-terminal-line">
+    <span>casper@security-lab:~$ exit</span>
+    <span>logout</span>
+    <span>Connection closed.</span>
+    <span>See you next build.</span>
   </div>
 
   <nav class="footer-nav">
-    <a href="<%= url_for('/') %>">Home</a>
-    <a href="<%= url_for('/about/') %>">About</a>
-    <a href="<%= url_for('/works/') %>">Projects</a>
-    <a href="<%= url_for('/archives/') %>">Writing</a>
-    <a href="<%= url_for('/search/') %>">Search</a>
+    <a href="<%= url_for(fp.home) %>"><%= f.home %></a>
+    <a href="<%= url_for(fp.dashboard || (footerLang === 'en' ? '/dashboard/' : '/' + footerLang + '/dashboard/')) %>"><%= f.dashboard %></a>
+    <a href="<%= url_for(fp.about) %>"><%= f.about %></a>
+    <a href="<%= url_for(fp.projects) %>"><%= f.projects %></a>
+    <a href="<%= url_for(fp.experience) %>"><%= f.experience %></a>
+    <a href="<%= url_for(fp.labs) %>"><%= f.labs %></a>
+    <a href="<%= url_for(fp.writing) %>"><%= f.writing %></a>
+    <a href="<%= url_for(fp.timeline) %>">Timeline</a>
+    <a href="<%= url_for('/search/') %>"><%= f.search %></a>
   </nav>
 
   <div class="footer-copy">
-    © <%= date(new Date(), 'YYYY') %> Casper. Built with Hexo.
+    &copy; <%= date(new Date(), 'YYYY') %> Casper's Security Lab.
   </div>
 </footer>

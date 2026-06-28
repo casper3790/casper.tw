@@ -1,9 +1,24 @@
-<article class="post-content">
-  <header class="post-header">
+<%
+  const rawPostText = strip_html(page.content || '').replace(/\s+/g, ' ').trim();
+  const cjkPostChars = (rawPostText.match(/[\u4e00-\u9fff\u3040-\u30ff\u3400-\u4dbf]/g) || []).length;
+  const postWords = rawPostText.replace(/[\u4e00-\u9fff\u3040-\u30ff\u3400-\u4dbf]/g, ' ').split(/\s+/).filter(Boolean).length;
+  const postMinutes = Math.max(1, Math.ceil((postWords + cjkPostChars / 2) / 220));
+  const headings = [];
+  String(page.content || '').replace(/<h([23]) id="([^"]+)">([\s\S]*?)<\/h\1>/g, function(_, level, id, title) {
+    headings.push({ level: level, id: id, title: strip_html(title).replace(/\s+/g, ' ').trim() });
+  });
+%>
+
+<div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
+
+<article class="post-content os-reading-layout">
+  <header class="post-header os-post-hero">
+    <div class="post-kicker">Knowledge Base</div>
     <h1 class="post-title"><%= page.title %></h1>
 
     <div class="post-meta">
       <time><%= date(page.date, 'YYYY-MM-DD') %></time>
+      <span><%= postMinutes %> min read</span>
       <% if (page.categories && page.categories.length) { %>
         <span class="categories-inline">
           <% page.categories.each(function(category) { %>
@@ -21,7 +36,25 @@
     </div>
   </header>
 
+  <% if (headings.length) { %>
+    <aside class="post-toc" aria-label="Table of contents">
+      <strong>On this page</strong>
+      <% headings.forEach(function(heading) { %>
+        <a class="toc-level-<%= heading.level %>" href="#<%= heading.id %>"><%= heading.title %></a>
+      <% }) %>
+    </aside>
+  <% } %>
+
   <div class="post-body">
     <%- page.content %>
   </div>
+
+  <nav class="post-after-actions" aria-label="Post actions">
+    <a class="os-button os-button-secondary" href="<%= url_for('/writing/') %>">Writing</a>
+    <a class="os-button os-button-secondary" href="<%= url_for('/projects/') %>">Projects</a>
+  </nav>
 </article>
+
+<button class="back-to-top-button" type="button" data-back-top hidden>Top</button>
+
+<%- partial('_partial/os-post-tools') %>

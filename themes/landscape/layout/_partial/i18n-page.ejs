@@ -1,0 +1,619 @@
+<%
+  const i18nPath = String(page.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
+  const i18nParts = i18nPath.split('/').filter(Boolean);
+  const lang = i18nParts[0] === 'zh' ? 'zh' : (i18nParts[0] === 'ja' ? 'ja' : 'en');
+  const localParts = lang === 'en' ? i18nParts : i18nParts.slice(1);
+  const firstPart = localParts[0] || '';
+  const section =
+    firstPart === '' ? 'home' :
+    firstPart === 'dashboard' ? 'dashboard' :
+    firstPart === 'works' ? 'projects' :
+    firstPart === 'archives' ? 'writing' :
+    ['about', 'experience', 'projects', 'labs', 'writing', 'timeline'].includes(firstPart) ? firstPart :
+    'home';
+
+  const paths = {
+    en: { home: '/', dashboard: '/dashboard/', projects: '/projects/', experience: '/experience/', labs: '/labs/', writing: '/writing/', timeline: '/timeline/', search: '/search/', about: '/about/' },
+    zh: { home: '/zh/', dashboard: '/zh/dashboard/', projects: '/zh/projects/', experience: '/zh/experience/', labs: '/zh/labs/', writing: '/zh/writing/', timeline: '/zh/timeline/', search: '/search/', about: '/zh/about/' },
+    ja: { home: '/ja/', dashboard: '/ja/dashboard/', projects: '/ja/projects/', experience: '/ja/experience/', labs: '/ja/labs/', writing: '/ja/writing/', timeline: '/ja/timeline/', search: '/search/', about: '/ja/about/' }
+  };
+  const withLang = function(slug) {
+    return lang === 'en' ? '/' + slug + '/' : '/' + lang + '/' + slug + '/';
+  };
+
+  const copy = {
+    en: {
+      readMore: 'Read More',
+      viewAll: 'View All',
+      stack: 'Stack',
+      status: 'Status',
+      tags: 'Tags',
+      recentPosts: 'Recent Posts',
+      featuredProjects: 'Featured Projects',
+      labs: 'Labs',
+      guide: 'Explore',
+      readArrow: 'Read ->',
+      openLab: 'Open Lab ->',
+      viewExperience: 'View Experience ->',
+      noPosts: 'No posts yet.',
+      terminalCleared: 'terminal cleared',
+      readTimeSuffix: 'min read',
+      labels: { status: 'Status', role: 'Role', stack: 'Stack', published: 'Published', experiments: 'Experiments', currentlyBuilding: 'Currently Building', awards: 'Awards', workshops: 'Workshops', competitions: 'Competitions', repositories: 'Repositories', progress: 'Progress', difficulty: 'Difficulty', tech: 'Tech' },
+      stats: { projects: 'Projects', articles: 'Articles', labs: 'Labs', awards: 'Awards', workshops: 'Workshops', competitions: 'Competitions', repositories: 'Repositories' },
+      nav: { home: 'Home', projects: 'Projects', experience: 'Experience', labs: 'Labs', writing: 'Writing', about: 'About' },
+      hero: {
+        home: { title: ['Cybersecurity Student', 'Web Developer', 'Robotics Builder'] },
+        about: { title: 'About', body: 'I am Casper, also known as Hong Xin-Fu. This site is my public engineering notebook while I learn Cybersecurity, Web development, Robotics, Embedded systems, and Medical Cybersecurity.' },
+        experience: { title: 'Experience', body: 'A structured record of competitions, awards, workshops, teaching support, community work, and certifications.' },
+        projects: { title: 'Projects', body: 'Selected projects across Cybersecurity, Medical Cybersecurity, Robotics, full stack development, and embedded systems.' },
+        labs: { title: 'Labs', body: 'Small experiments, prototypes, and notes that help turn rough ideas into working systems.' },
+        writing: { title: 'Writing', body: 'Technical notes, competition reflections, and personal essays from the path of learning and building.' }
+      },
+      brand: { eyebrow: "Casper's Security Lab", mission: ['Build Secure Systems.', 'Share Knowledge.', 'Never Stop Learning.'] },
+      profile: {
+        title: 'Profile Panel',
+        intro: 'I design and build security-minded systems, developer tools, robotics prototypes, and technical notes from a student builder perspective.',
+        mission: 'Build practical systems, learn in public, and turn Cybersecurity knowledge into usable products.',
+        quote: 'If you truly believe this is your path, never give up halfway.'
+      },
+      aboutSections: [
+        ['Intro', 'I am Casper, real name Hong Xin-Fu. I am still growing as an engineering student, and I care more about building honest working systems than writing perfect-looking concepts.'],
+        ['What I Build', 'My current learning path connects Cybersecurity, Web development, Robotics, Embedded systems, and Medical Cybersecurity. I like projects that force hardware, software, security, and real users to meet.'],
+        ['How I Learn', 'I learn by joining competitions, attending workshops, failing, debugging, rebuilding, and writing down the process. The notes are not only success records; they also keep the mistakes visible.'],
+        ['Why This Site Exists', 'Casper Security Lab OS is my public engineering notebook. I use it to Build in Public, organize projects and labs, and share what I am learning with people who are walking a similar path.'],
+        ['My Quote', 'If you truly believe this is your path, never give up halfway.']
+      ],
+      timeline: {
+        title: 'Journey Timeline',
+        items: [
+          ['2024', 'Foundation', 'Built programming, electronics, Cybersecurity, and Robotics fundamentals through labs and competitions.'],
+          ['2025', 'Portfolio', 'Expanded into Web, CTF, teaching support, community work, and public writing.'],
+          ['2026', 'Security Lab OS', 'Connecting Cybersecurity, Medical Cybersecurity, ROS2, and full stack systems into a public portfolio.'],
+          ['Future', 'Research Builder', 'Keep building secure systems, autonomous robots, and knowledge resources for global readers.']
+        ]
+      },
+      cta: { title: 'Explore the Lab', body: 'Choose a section and continue the path.', projects: 'Projects', experience: 'Experience', writing: 'Writing', labs: 'Labs' },
+      experienceCards: [
+        ['Competitions', 'InnoServe, Cybersecurity Hackathon, Robotics competitions, FTC, Programming / AI competitions, and finalist experiences.', 'experience/competitions'],
+        ['Awards', 'A record of merit awards, OSINT recognition, creativity, innovation, and honorable mention results.', 'experience/awards'],
+        ['Workshops', 'HITCON, COSCUP, AWS Summit Taiwan, Build with AI, GDG Taipei, Medical design, Quantum Computing, and Smart Manufacturing learning notes.', 'experience/workshops'],
+        ['Speaking & Training', 'CTF Instructor, Raspberry Pi Instructor, Cybersecurity Teaching Assistant, Workshop Support, and Training Support work.', 'experience/speaking'],
+        ['Community & Teaching', 'NIHSCEDIWHC White Hat Community, Cybersecurity community building, student representative work, CTF training, and Raspberry Pi teaching.', 'experience/community-teaching'],
+        ['Certifications', 'Computer hardware, computer network, lifeguard, and World Taekwondo certification records.', 'experience/certifications']
+      ],
+      projects: [
+        ['NIHS Control Team', 'A team platform experiment for organizing competition links, schedules, announcements, portfolio workflows, CTFd, and dashboards.', 'In Progress', ['React', 'FastAPI', 'SQLite'], '/projects/nihs-control-team/'],
+        ['Medical Cybersecurity', 'Research notes and project ideas around healthcare systems, medical devices, data validation, privacy, and clinical workflows.', 'Research Notes', ['Security', 'Healthcare', 'Risk'], '/projects/medical-cybersecurity/'],
+        ['Autonomous Robot', 'A hands-on Robotics build focused on sensors, motor control, ROS2, LiDAR, SLAM, Navigation2, and autonomous movement.', 'Prototype', ['ROS2', 'Raspberry Pi', 'LiDAR'], '/projects/autonomous-robot/']
+      ],
+      labsList: [
+        ['2026-06-24', 'Robotics', 'Completed', 'ESP32 UART Test', 'Testing UART communication between ESP32 and edge devices.', 'labs/esp32-uart-test'],
+        ['2026-06-20', 'Robotics', 'In Progress', 'ROS2 Topic Communication', 'Documenting publish / subscribe flows in ROS2.', 'labs/ros2-topic-communication'],
+        ['2026-06-10', 'Healthcare', 'In Progress', 'Medical Cybersecurity Research', 'Collecting observations around clinical data input, validation, and risk.', 'labs/medical-cybersecurity-research'],
+        ['2026-06-02', 'Security', 'Archived', 'CTF Web Practice', 'Notes from Web Security, Linux, OSINT, and CTF practice.', 'labs/ctf-web-practice']
+      ]
+    },
+    zh: {
+      readMore: '閱讀更多',
+      viewAll: '查看全部',
+      stack: '技術',
+      status: '狀態',
+      tags: '標籤',
+      recentPosts: '近期文章',
+      featuredProjects: '精選專案',
+      labs: 'Labs',
+      guide: '主要內容導覽',
+      readArrow: '閱讀 ->',
+      openLab: '開啟實驗 ->',
+      viewExperience: '查看經歷 ->',
+      noPosts: '目前沒有文章。',
+      terminalCleared: 'terminal 已清空',
+      readTimeSuffix: '分鐘閱讀',
+      labels: { status: '狀態', role: '角色', stack: '技術', published: '已發布', experiments: '實驗紀錄', currentlyBuilding: '建置中', awards: '獎項', workshops: '研習', competitions: '競賽', repositories: 'Repositories', progress: '進度', difficulty: '難度', tech: '技術' },
+      stats: { projects: '專案', articles: '文章', labs: 'Labs', awards: '獎項', workshops: '研習', competitions: '競賽', repositories: 'Repositories' },
+      nav: { home: '首頁', projects: '專案', experience: '經歷', labs: 'Labs', writing: '文章', about: '關於' },
+      hero: {
+        home: { title: ['Cybersecurity Student', 'Web Developer', 'Robotics Builder'] },
+        about: { title: '關於', body: '我是 Casper，本名洪新富。這個網站是我學習 Cybersecurity、Web development、Robotics、Embedded systems 與 Medical Cybersecurity 的 public engineering notebook。' },
+        experience: { title: '經歷', body: '整理競賽、獎項、研習、教學支援、社群參與與證照紀錄。' },
+        projects: { title: '專案', body: '橫跨 Cybersecurity、Medical Cybersecurity、Robotics、full stack development 與 embedded systems 的實作專案。' },
+        labs: { title: 'Labs', body: '把想法做成小實驗、prototype 與可回顧的技術筆記。' },
+        writing: { title: '文章', body: '技術筆記、競賽反思，以及正在學習與建置路上的紀錄。' }
+      },
+      brand: { eyebrow: "Casper's Security Lab", mission: ['Build Secure Systems.', 'Share Knowledge.', 'Never Stop Learning.'] },
+      profile: {
+        title: 'Profile Panel',
+        intro: '我從學生 builder 的角度，實作重視安全性的系統、developer tools、Robotics prototype 與技術筆記。',
+        mission: '把系統真的做出來，公開記錄學習過程，讓 Cybersecurity 知識變成可以使用的作品。',
+        quote: '如果你真的認為這是你的路，那就不要半途而廢。'
+      },
+      aboutSections: [
+        ['Intro', '我是 Casper，本名洪新富。我還在成長中，比起把概念寫得很漂亮，我更在意能不能把系統真的做出來。'],
+        ['What I Build', '我正在學 Cybersecurity、Web development、Robotics、Embedded systems 與 Medical Cybersecurity。我喜歡會讓硬體、軟體、安全與真實使用情境交會的題目。'],
+        ['How I Learn', '我透過比賽、研習、失敗、debug、重做與紀錄來學習。這些筆記不只放成果，也保留過程中的卡關與修正。'],
+        ['Why This Site Exists', 'Casper Security Lab OS 是我的 public engineering notebook。我用它 Build in Public，整理專案、Labs 與學習路線，也把過程分享給同樣在路上的人。'],
+        ['My Quote', '如果你真的認為這是你的路，那就不要半途而廢。']
+      ],
+      timeline: {
+        title: '學習時間線',
+        items: [
+          ['2024', '基礎累積', '透過 lab 與競賽建立 programming、electronics、Cybersecurity 與 Robotics 基礎。'],
+          ['2025', '作品整理', '延伸到 Web、CTF、教學支援、社群參與與公開寫作。'],
+          ['2026', 'Security Lab OS', '把 Cybersecurity、Medical Cybersecurity、ROS2 與 full stack systems 整理成公開 portfolio。'],
+          ['Future', 'Research Builder', '持續建置 secure systems、autonomous robots 與能被更多人使用的知識資源。']
+        ]
+      },
+      cta: { title: '探索 Lab', body: '選一個方向繼續往下看。', projects: '專案', experience: '經歷', writing: '文章', labs: 'Labs' },
+      experienceCards: [
+        ['競賽', 'InnoServe、Cybersecurity Hackathon、Robotics competitions、FTC、Programming / AI competitions 與決賽經驗。', 'experience/competitions'],
+        ['獎項', '整理 Merit Award、OSINT Excellence Award、Creativity Award、Innovation Award 與 Honorable Mention。', 'experience/awards'],
+        ['研習', 'HITCON、COSCUP、AWS Summit Taiwan、Build with AI、GDG Taipei、Medical design、Quantum Computing 與 Smart Manufacturing 研習紀錄。', 'experience/workshops'],
+        ['教學與訓練', 'CTF Instructor、Raspberry Pi Instructor、Cybersecurity Teaching Assistant、Workshop Support 與 Training Support。', 'experience/speaking'],
+        ['社群與教學', 'NIHSCEDIWHC White Hat Community、Cybersecurity 社群建立、學生代表、CTF training 與 Raspberry Pi teaching。', 'experience/community-teaching'],
+        ['證照', 'Computer Hardware、Computer Network、Certified Lifeguard 與 World Taekwondo 證照紀錄。', 'experience/certifications']
+      ],
+      projects: [
+        ['NIHS Control Team', '協助團隊整理競賽連結、時程、公告、portfolio workflow、CTFd 與 dashboard 的平台實驗。', '進行中', ['React', 'FastAPI', 'SQLite'], '/projects/nihs-control-team/'],
+        ['Medical Cybersecurity', '圍繞 healthcare systems、medical devices、data validation、privacy 與 clinical workflows 的研究筆記與專案想法。', '研究筆記', ['Security', 'Healthcare', 'Risk'], '/projects/medical-cybersecurity/'],
+        ['Autonomous Robot', '以 ROS2、Raspberry Pi、LiDAR、SLAM、Navigation2 為核心的 Robotics 實作。', 'Prototype', ['ROS2', 'Raspberry Pi', 'LiDAR'], '/projects/autonomous-robot/']
+      ],
+      labsList: [
+        ['2026-06-24', 'Robotics', 'Completed', 'ESP32 UART Test', '測試 ESP32 與 edge devices 之間的 UART communication。', 'labs/esp32-uart-test'],
+        ['2026-06-20', 'Robotics', 'In Progress', 'ROS2 Topic Communication', '記錄 ROS2 publish / subscribe flows。', 'labs/ros2-topic-communication'],
+        ['2026-06-10', 'Healthcare', 'In Progress', 'Medical Cybersecurity Research', '整理 clinical data input、validation 與 risk 的觀察。', 'labs/medical-cybersecurity-research'],
+        ['2026-06-02', 'Security', 'Archived', 'CTF Web Practice', 'Web Security、Linux、OSINT 與 CTF 練習筆記。', 'labs/ctf-web-practice']
+      ]
+    },
+    ja: {
+      readMore: '続きを読む',
+      viewAll: 'すべて見る',
+      stack: '技術',
+      status: '状態',
+      tags: 'タグ',
+      recentPosts: '最近の記事',
+      featuredProjects: '注目プロジェクト',
+      labs: 'Labs',
+      guide: '主要コンテンツ',
+      readArrow: '読む ->',
+      openLab: 'ラボを開く ->',
+      viewExperience: '経歴を見る ->',
+      noPosts: '記事はまだありません。',
+      terminalCleared: 'terminal cleared',
+      readTimeSuffix: '分で読めます',
+      labels: { status: '状態', role: '役割', stack: '技術', published: '公開済み', experiments: '実験', currentlyBuilding: '開発中', awards: '受賞', workshops: 'ワークショップ', competitions: 'コンペティション', repositories: 'Repositories', progress: '進捗', difficulty: '難易度', tech: '技術' },
+      stats: { projects: 'プロジェクト', articles: '記事', labs: 'Labs', awards: '受賞', workshops: 'ワークショップ', competitions: 'コンペティション', repositories: 'Repositories' },
+      nav: { home: 'ホーム', projects: 'プロジェクト', experience: '経歴', labs: 'Labs', writing: '記事', about: 'About' },
+      hero: {
+        home: { title: ['Cybersecurity Student', 'Web Developer', 'Robotics Builder'] },
+        about: { title: 'About', body: 'Casper、本名ホン・シンフです。このサイトは Cybersecurity、Web development、Robotics、Embedded systems、Medical Cybersecurity を学ぶための public engineering notebook です。' },
+        experience: { title: '経歴', body: 'コンペティション、受賞、ワークショップ、教育サポート、コミュニティ活動、資格を整理しています。' },
+        projects: { title: 'プロジェクト', body: 'Cybersecurity、Medical Cybersecurity、Robotics、full stack development、embedded systems の実装プロジェクトです。' },
+        labs: { title: 'Labs', body: 'アイデアを小さな実験、prototype、振り返れる技術ノートにする場所です。' },
+        writing: { title: '記事', body: '技術メモ、コンペティションの振り返り、学びながら作る過程の記録です。' }
+      },
+      brand: { eyebrow: "Casper's Security Lab", mission: ['Build Secure Systems.', 'Share Knowledge.', 'Never Stop Learning.'] },
+      profile: {
+        title: 'Profile Panel',
+        intro: '学生 builder の視点で、Security を意識した systems、developer tools、Robotics prototype、技術ノートを作っています。',
+        mission: '実際に動くものを作り、学びを公開し、Cybersecurity の知識を使える形にしていきます。',
+        quote: 'これが自分の道だと本気で思うなら、途中で諦めるな。'
+      },
+      aboutSections: [
+        ['Intro', 'Casper、本名ホン・シンフです。まだ成長途中の engineering student として、きれいな概念よりも実際に動くシステムを作ることを大切にしています。'],
+        ['What I Build', 'Cybersecurity、Web development、Robotics、Embedded systems、Medical Cybersecurity を学んでいます。hardware、software、security、実際の利用場面が交わるテーマが好きです。'],
+        ['How I Learn', 'コンペティション、ワークショップ、失敗、debug、作り直し、記録を通して学んでいます。成果だけではなく、詰まった点や修正も残します。'],
+        ['Why This Site Exists', 'Casper Security Lab OS は私の public engineering notebook です。Build in Public として、プロジェクト、Labs、学習の道筋を整理し、同じ道を歩く人に共有します。'],
+        ['My Quote', 'これが自分の道だと本気で思うなら、途中で諦めるな。']
+      ],
+      timeline: {
+        title: 'Journey Timeline',
+        items: [
+          ['2024', '基礎作り', 'lab とコンペティションを通して programming、electronics、Cybersecurity、Robotics の基礎を作りました。'],
+          ['2025', 'Portfolio', 'Web、CTF、教育サポート、コミュニティ活動、公開 writing に広げました。'],
+          ['2026', 'Security Lab OS', 'Cybersecurity、Medical Cybersecurity、ROS2、full stack systems を public portfolio として整理しています。'],
+          ['Future', 'Research Builder', 'secure systems、autonomous robots、世界の読者に届く知識リソースを作り続けます。']
+        ]
+      },
+      cta: { title: 'Lab を探索', body: '次に見るセクションを選んでください。', projects: 'プロジェクト', experience: '経歴', writing: '記事', labs: 'Labs' },
+      experienceCards: [
+        ['コンペティション', 'InnoServe、Cybersecurity Hackathon、Robotics competitions、FTC、Programming / AI competitions、ファイナリスト経験。', 'experience/competitions'],
+        ['受賞', 'Merit Award、OSINT Excellence Award、Creativity Award、Innovation Award、Honorable Mention の記録。', 'experience/awards'],
+        ['ワークショップ', 'HITCON、COSCUP、AWS Summit Taiwan、Build with AI、GDG Taipei、Medical design、Quantum Computing、Smart Manufacturing の学習記録。', 'experience/workshops'],
+        ['登壇・指導', 'CTF Instructor、Raspberry Pi Instructor、Cybersecurity Teaching Assistant、Workshop Support、Training Support。', 'experience/speaking'],
+        ['コミュニティ・教育', 'NIHSCEDIWHC White Hat Community、Cybersecurity community building、Student Representative、CTF training、Raspberry Pi teaching。', 'experience/community-teaching'],
+        ['資格', 'Computer Hardware、Computer Network、Certified Lifeguard、World Taekwondo の資格記録。', 'experience/certifications']
+      ],
+      projects: [
+        ['NIHS Control Team', 'コンペティションのリンク、予定、告知、portfolio workflow、CTFd、dashboard を整理するための team platform 実験。', '進行中', ['React', 'FastAPI', 'SQLite'], '/projects/nihs-control-team/'],
+        ['Medical Cybersecurity', 'healthcare systems、medical devices、data validation、privacy、clinical workflows に関する研究ノートとプロジェクト案。', '研究ノート', ['Security', 'Healthcare', 'Risk'], '/projects/medical-cybersecurity/'],
+        ['Autonomous Robot', 'ROS2、Raspberry Pi、LiDAR、SLAM、Navigation2 を中心にした Robotics build。', 'Prototype', ['ROS2', 'Raspberry Pi', 'LiDAR'], '/projects/autonomous-robot/']
+      ],
+      labsList: [
+        ['2026-06-24', 'Robotics', 'Completed', 'ESP32 UART Test', 'ESP32 と edge devices 間の UART communication を検証します。', 'labs/esp32-uart-test'],
+        ['2026-06-20', 'Robotics', 'In Progress', 'ROS2 Topic Communication', 'ROS2 の publish / subscribe flows を記録します。', 'labs/ros2-topic-communication'],
+        ['2026-06-10', 'Healthcare', 'In Progress', 'Medical Cybersecurity Research', 'clinical data input、validation、risk に関する観察を整理します。', 'labs/medical-cybersecurity-research'],
+        ['2026-06-02', 'Security', 'Archived', 'CTF Web Practice', 'Web Security、Linux、OSINT、CTF の練習ノート。', 'labs/ctf-web-practice']
+      ]
+    }
+  };
+
+  const t = copy[lang];
+  Object.assign(t.nav, {
+    dashboard: t.nav.dashboard || 'Dashboard',
+    timeline: t.nav.timeline || 'Timeline',
+    search: t.nav.search || 'Search'
+  });
+  if (!t.experienceCards.some(function(card) { return card[2] === 'experience/leadership'; })) {
+    t.experienceCards.push(['Leadership', 'Team coordination, student representative work, community support, documentation, and handoff workflows.', 'experience/leadership']);
+  }
+  if (!t.labsList.some(function(lab) { return lab[5] === 'labs/web-security'; })) {
+    t.labsList.splice(2, 0, ['2026-06-16', 'Security', 'Completed', 'Web Security Notes', 'Recording Web Security basics, request flows, and common vulnerability practice.', 'labs/web-security']);
+  }
+  const href = function(targetLang, key) { return url_for(paths[targetLang || lang][key]); };
+  const localHref = function(key) { return url_for(paths[lang][key]); };
+  const detailHref = function(slug) { return url_for(withLang(slug)); };
+  const projectHref = function(projectPath) {
+    const normalizedProjectPath = String(projectPath || '').replace(/^\/+|\/+$/g, '');
+    return url_for(withLang(normalizedProjectPath));
+  };
+
+  const recentPosts = [];
+  if (site.posts && site.posts.length) {
+    site.posts.toArray().sort(function(a, b) { return b.date - a.date; }).slice(0, 3).forEach(function(post) { recentPosts.push(post); });
+  }
+  const tagList = [];
+  if (site.tags && site.tags.length) site.tags.each(function(tag) { tagList.push(tag); });
+  const tagCounts = tagList.map(function(tag) { return tag.length || 0; });
+  const minTagCount = tagCounts.length ? Math.min.apply(null, tagCounts) : 0;
+  const maxTagCount = tagCounts.length ? Math.max.apply(null, tagCounts) : 0;
+  const tagSize = function(count) {
+    if (maxTagCount === minTagCount) return '1rem';
+    return (0.9 + ((count - minTagCount) / (maxTagCount - minTagCount)) * 0.65).toFixed(2) + 'rem';
+  };
+  const awards = ['InnoServe Merit', 'OSINT Excellence', 'Creativity Award', 'Innovation Award', 'Honorable Mention'];
+  const stats = [
+    [String(t.projects.length).padStart(2, '0'), t.stats.projects, t.labels.currentlyBuilding, 'projects'],
+    [String(site.posts && site.posts.length ? site.posts.length : 0).padStart(2, '0'), t.stats.articles, t.labels.published, 'writing'],
+    [String(t.labsList.length).padStart(2, '0'), t.stats.labs, t.labels.experiments, 'labs'],
+    [String(awards.length).padStart(2, '0'), t.stats.awards, t.labels.awards, 'experience/awards'],
+    ['10', t.stats.workshops, t.labels.workshops, 'experience/workshops'],
+    ['06', t.stats.competitions, t.labels.competitions, 'experience/competitions'],
+    [String(t.projects.length + t.labsList.length).padStart(2, '0'), t.stats.repositories, t.labels.repositories, 'projects']
+  ];
+  const latestPost = recentPosts[0];
+  const latestPostTitle = latestPost ? latestPost.title : t.noPosts;
+  const latestLab = t.labsList.slice().sort(function(a, b) { return String(b[0]).localeCompare(String(a[0])); })[0];
+  const latestLabTitle = latestLab ? latestLab[3] : 'No labs yet';
+  const projectRoles = ['Full Stack Developer', 'Researcher', 'Robotics Developer'];
+  const readingMinutes = function(post) {
+    const raw = strip_html(post.content || post.excerpt || '').replace(/\s+/g, ' ').trim();
+    const cjk = (raw.match(/[\u4e00-\u9fff\u3040-\u30ff\u3400-\u4dbf]/g) || []).length;
+    const words = raw.replace(/[\u4e00-\u9fff\u3040-\u30ff\u3400-\u4dbf]/g, ' ').split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.ceil((words + cjk / 2) / 220));
+  };
+  const firstTag = function(post) {
+    if (!post.tags || !post.tags.length) return 'Note';
+    const tags = post.tags.toArray ? post.tags.toArray() : post.tags.data || [];
+    return tags.length ? tags[0].name : 'Note';
+  };
+%>
+
+<% function renderHomeHero() { %>
+  <section id="terminal-hero" class="home-hero terminal-hero interactive-terminal-hero" aria-labelledby="<%= lang %>-home-hero-title">
+    <div class="terminal-card" aria-label="Security Lab terminal">
+      <div class="terminal-titlebar">
+        <span class="terminal-dot terminal-dot-red"></span>
+        <span class="terminal-dot terminal-dot-yellow"></span>
+        <span class="terminal-dot terminal-dot-green"></span>
+        <span class="terminal-title">casper@security-lab:~</span>
+      </div>
+      <div class="terminal-screen" data-terminal-screen>
+        <div class="terminal-output" data-terminal-output>
+          <div class="terminal-command-row"><span class="terminal-prompt">$</span> <button type="button" class="terminal-command" data-terminal-action="whoami">whoami</button></div>
+          <div class="terminal-response">Casper<br>Hong Xin-Fu</div>
+          <div class="terminal-command-row"><span class="terminal-prompt">$</span> <span class="terminal-command-label">role</span></div>
+          <div class="terminal-response">Cybersecurity Student<br>Web Developer<br>Robotics Builder</div>
+          <div class="terminal-command-row"><span class="terminal-prompt">$</span> <span class="terminal-command-label">currently_working_on</span></div>
+          <div class="terminal-response">NIHS Control Team Platform<br><br>ROS2 Autonomous Robot<br><br>Medical Cybersecurity Research</div>
+          <div class="terminal-command-row"><span class="terminal-prompt">$</span> <span class="terminal-command-label">latest_post</span></div>
+          <div class="terminal-response"><%= latestPostTitle %></div>
+          <div class="terminal-command-row"><span class="terminal-prompt">$</span> <span class="terminal-command-label">latest_lab</span></div>
+          <div class="terminal-response"><%= latestLabTitle %></div>
+          <div class="terminal-command-row"><span class="terminal-prompt">$</span> <span class="terminal-command-label">help</span></div>
+          <div class="terminal-help-grid">
+            <button type="button" class="terminal-command" data-terminal-action="whoami">whoami</button>
+            <a class="terminal-command" href="<%= localHref('projects') %>">projects</a>
+            <a class="terminal-command" href="<%= localHref('labs') %>">labs</a>
+            <a class="terminal-command" href="<%= localHref('experience') %>">experience</a>
+            <a class="terminal-command" href="<%= localHref('writing') %>">writing</a>
+            <button type="button" class="terminal-command" data-terminal-action="clear">clear</button>
+          </div>
+        </div>
+        <div class="terminal-command-row terminal-input-line"><span class="terminal-prompt">$</span> <span class="terminal-cursor" aria-hidden="true"></span></div>
+      </div>
+    </div>
+    <aside class="wolf-brand-area" aria-labelledby="<%= lang %>-home-hero-title">
+      <div class="wolf-mark" aria-hidden="true">
+        <svg viewBox="0 0 160 160" role="img" focusable="false">
+          <path d="M22 126 L42 38 L70 66 L82 22 L96 66 L124 38 L138 126 L106 142 L80 130 L54 142 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M54 82 L74 92 L60 102 M106 82 L86 92 L100 102" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M70 118 L80 108 L90 118 M55 142 L80 130 L105 142" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42 38 L54 142 M124 38 L106 142 M82 22 L80 130" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.48"/>
+        </svg>
+      </div>
+      <p class="brand-eyebrow"><%= t.brand.eyebrow %></p>
+      <div class="brand-roles">
+        <% t.hero.home.title.forEach(function(line, index) { %>
+          <strong<%- index === 0 ? ' id="' + lang + '-home-hero-title"' : '' %>><%= line %></strong>
+        <% }) %>
+      </div>
+      <div class="brand-mission">
+        <% t.brand.mission.forEach(function(line) { %><span><%= line %></span><% }) %>
+      </div>
+    </aside>
+  </section>
+  <script>
+    (function() {
+      var hero = document.getElementById('terminal-hero');
+      if (!hero) return;
+      var output = hero.querySelector('[data-terminal-output]');
+      if (!output) return;
+      var original = output.innerHTML;
+      var restoreTimer;
+      var clearedText = <%- JSON.stringify(t.terminalCleared) %>;
+      hero.addEventListener('click', function(event) {
+        var trigger = event.target.closest('[data-terminal-action]');
+        if (!trigger) return;
+        var action = trigger.getAttribute('data-terminal-action');
+        if (action === 'whoami') {
+          event.preventDefault();
+          hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (action === 'clear') {
+          event.preventDefault();
+          output.innerHTML = '<div class="terminal-response terminal-cleared">' + clearedText + '</div>';
+          window.clearTimeout(restoreTimer);
+          restoreTimer = window.setTimeout(function() { output.innerHTML = original; }, 3000);
+        }
+      });
+    })();
+  </script>
+<% } %>
+
+<% function renderStats() { %>
+  <section class="terminal-stats-grid" aria-label="Security Lab statistics">
+    <% stats.forEach(function(stat) { %>
+      <a class="terminal-stat-card" href="<%= detailHref(stat[3]) %>">
+        <div class="terminal-stat-number"><%= stat[0] %></div>
+        <div class="terminal-stat-label"><%= stat[1] %></div>
+        <div class="terminal-stat-caption"><%= stat[2] %></div>
+      </a>
+    <% }) %>
+  </section>
+<% } %>
+
+<% function renderProfilePanel() { %>
+  <section class="os-section os-profile-panel" aria-labelledby="<%= lang %>-profile-title">
+    <div class="os-section-header">
+      <p class="os-section-kicker">Profile</p>
+      <h2 id="<%= lang %>-profile-title" class="section-title"><%= t.profile.title %></h2>
+    </div>
+    <div class="profile-panel-grid">
+      <div class="profile-photo-wrap"><img class="profile-photo" src="<%= url_for('/images/casper.png') %>" alt="Casper profile"></div>
+      <div class="profile-panel-body">
+        <p><%= t.profile.intro %></p>
+        <p><%= t.profile.mission %></p>
+        <blockquote class="profile-quote">"<%= t.profile.quote %>"</blockquote>
+      </div>
+    </div>
+  </section>
+<% } %>
+
+<% function renderPageHero(key) { %>
+  <section class="project-page-hero" aria-labelledby="<%= lang %>-<%= key %>-hero-title">
+    <h1 id="<%= lang %>-<%= key %>-hero-title"><%= t.hero[key].title %></h1>
+    <p><%= t.hero[key].body %></p>
+  </section>
+<% } %>
+
+<% function renderProjects() { %>
+  <section class="featured-projects" aria-labelledby="<%= lang %>-featured-projects-title">
+    <h2 id="<%= lang %>-featured-projects-title" class="section-title"><%= t.featuredProjects %></h2>
+    <div class="featured-project-grid">
+      <% t.projects.forEach(function(project, index) { %>
+        <a class="featured-project-card repo-card" href="<%= projectHref(project[4]) %>">
+          <h3><%= project[0] %></h3>
+          <p><%= project[1] %></p>
+          <div class="repo-card-meta">
+            <div><span><%= t.labels.status %></span><strong><%= project[2] %></strong></div>
+            <div><span><%= t.labels.role %></span><strong><%= projectRoles[index] || 'Builder' %></strong></div>
+          </div>
+          <div class="featured-project-tags" aria-label="<%= t.stack %>">
+            <span><%= t.labels.stack %></span>
+            <% project[3].forEach(function(item) { %><strong><%= item %></strong><% }) %>
+          </div>
+          <div class="repo-progress" aria-label="<%= t.labels.progress %>">
+            <span><%= t.labels.progress %></span>
+            <div class="repo-progress-track"><i style="width: <%= index === 0 ? '72' : (index === 1 ? '48' : '62') %>%"></i></div>
+          </div>
+          <span class="featured-project-link"><%= t.readArrow %></span>
+        </a>
+      <% }) %>
+    </div>
+  </section>
+<% } %>
+
+<% function renderRecentPosts() { %>
+  <section aria-labelledby="<%= lang %>-recent-posts-title">
+    <h2 id="<%= lang %>-recent-posts-title" class="section-title"><%= t.recentPosts %></h2>
+    <% if (recentPosts.length) { %>
+      <div class="writing-list">
+        <% recentPosts.forEach(function(post) { %>
+          <a class="writing-item post-command-card" href="<%= url_for(post.path) %>">
+            <div class="writing-date"><%= date(post.date, 'YYYY-MM-DD') %></div>
+            <div class="writing-title">
+              <span><%= post.title %></span>
+              <div class="post-card-meta"><span><%= readingMinutes(post) %> <%= t.readTimeSuffix %></span><span><%= firstTag(post) %></span></div>
+              <span class="post-read-link"><%= t.readArrow %></span>
+            </div>
+          </a>
+        <% }) %>
+      </div>
+    <% } else { %><p><%= t.noPosts %></p><% } %>
+    <p><a class="featured-project-link" href="<%= localHref('writing') %>"><%= t.viewAll %></a></p>
+  </section>
+<% } %>
+
+<% function renderLabs() { %>
+  <section class="featured-projects" aria-labelledby="<%= lang %>-labs-title">
+    <h2 id="<%= lang %>-labs-title" class="section-title"><%= t.labs %></h2>
+    <div class="labs-card-grid">
+      <% t.labsList.forEach(function(lab) { %>
+        <a class="labs-card" href="<%= detailHref(lab[5]) %>">
+          <div class="labs-card-meta">
+            <span><%= lab[0] %></span>
+            <span><%= lab[1] %></span>
+            <span><%= lab[2] %></span>
+            <span><%= t.labels.difficulty %>: <%= lab[1] === 'Robotics' ? 'Medium' : 'Advanced' %></span>
+          </div>
+          <h3><%= lab[3] %></h3>
+          <p><%= lab[4] %></p>
+          <div class="featured-project-tags labs-tech-list" aria-label="<%= t.labels.tech %>">
+            <span><%= t.labels.tech %></span>
+            <strong><%= lab[1] %></strong>
+            <strong><%= lab[3].indexOf('ESP32') >= 0 ? 'ESP32' : (lab[3].indexOf('ROS2') >= 0 ? 'ROS2' : 'Security') %></strong>
+          </div>
+          <span class="labs-read-more"><%= t.openLab %></span>
+        </a>
+      <% }) %>
+    </div>
+  </section>
+<% } %>
+
+<% function renderGuide() { %>
+  <section class="tag-cloud" aria-labelledby="<%= lang %>-guide-title">
+    <h2 id="<%= lang %>-guide-title" class="section-title"><%= t.guide %></h2>
+    <div class="tag-cloud-list">
+      <a class="tag-cloud-link" href="<%= localHref('projects') %>"><%= t.nav.projects %></a>
+      <a class="tag-cloud-link" href="<%= localHref('experience') %>"><%= t.nav.experience %></a>
+      <a class="tag-cloud-link" href="<%= localHref('labs') %>"><%= t.nav.labs %></a>
+      <a class="tag-cloud-link" href="<%= localHref('writing') %>"><%= t.nav.writing %></a>
+      <a class="tag-cloud-link" href="<%= localHref('timeline') %>"><%= t.nav.timeline %></a>
+      <a class="tag-cloud-link" href="<%= localHref('search') %>"><%= t.nav.search %></a>
+      <a class="tag-cloud-link" href="<%= localHref('about') %>"><%= t.nav.about %></a>
+    </div>
+  </section>
+<% } %>
+
+<% function renderTagCloud() { %>
+  <% if (tagList.length) { %>
+    <section class="tag-cloud" aria-labelledby="<%= lang %>-tags-title">
+      <h2 id="<%= lang %>-tags-title" class="section-title"><%= t.tags %></h2>
+      <div class="tag-cloud-list">
+        <% tagList.sort(function(a, b) { return String(a.name).localeCompare(String(b.name)); }).forEach(function(tag) { %>
+          <a class="tag-cloud-link" href="<%= url_for(tag.path) %>" style="font-size: <%= tagSize(tag.length || 0) %>" aria-label="<%= tag.name %>, <%= tag.length %>"><%= tag.name %></a>
+        <% }) %>
+      </div>
+    </section>
+  <% } %>
+<% } %>
+
+<% function renderAbout() { %>
+  <section class="featured-projects" aria-labelledby="<%= lang %>-about-content-title">
+    <h2 id="<%= lang %>-about-content-title" class="section-title"><%= t.hero.about.title %></h2>
+    <div class="featured-project-grid">
+      <% t.aboutSections.forEach(function(item) { %>
+        <a class="featured-project-card" href="<%= localHref('about') %>">
+          <h3><%= item[0] %></h3>
+          <p><%= item[1] %></p>
+        </a>
+      <% }) %>
+    </div>
+    <div class="cta-actions">
+      <a class="os-button os-button-primary" href="<%= localHref('experience') %>"><%= t.nav.experience %></a>
+      <a class="os-button os-button-secondary" href="<%= localHref('projects') %>"><%= t.nav.projects %></a>
+      <a class="os-button os-button-secondary" href="<%= localHref('labs') %>"><%= t.nav.labs %></a>
+    </div>
+  </section>
+<% } %>
+
+<% function renderExperienceCards() { %>
+  <section class="featured-projects" aria-labelledby="<%= lang %>-experience-cards-title">
+    <h2 id="<%= lang %>-experience-cards-title" class="section-title"><%= t.hero.experience.title %></h2>
+    <div class="featured-project-grid">
+      <% t.experienceCards.forEach(function(card) { %>
+        <a class="featured-project-card" href="<%= detailHref(card[2]) %>">
+          <h3><%= card[0] %></h3>
+          <p><%= card[1] %></p>
+          <span class="featured-project-link"><%= t.viewExperience %></span>
+        </a>
+      <% }) %>
+    </div>
+  </section>
+<% } %>
+
+<% function renderTimeline() { %>
+  <section class="os-section os-timeline-section" aria-labelledby="<%= lang %>-timeline-title">
+    <div class="os-section-header">
+      <p class="os-section-kicker">Timeline</p>
+      <h2 id="<%= lang %>-timeline-title" class="section-title"><%= t.timeline.title %></h2>
+    </div>
+    <div class="os-timeline">
+      <% t.timeline.items.forEach(function(item) { %>
+        <article class="timeline-card"><time><%= item[0] %></time><div><h3><%= item[1] %></h3><p><%= item[2] %></p></div></article>
+      <% }) %>
+    </div>
+  </section>
+<% } %>
+
+<% function renderCTA() { %>
+  <section class="os-section os-cta" aria-labelledby="<%= lang %>-cta-title">
+    <div>
+      <p class="os-section-kicker">Next</p>
+      <h2 id="<%= lang %>-cta-title" class="section-title"><%= t.cta.title %></h2>
+      <p><%= t.cta.body %></p>
+    </div>
+    <div class="cta-actions">
+      <a class="os-button os-button-primary" href="<%= localHref('projects') %>"><%= t.cta.projects %></a>
+      <a class="os-button os-button-secondary" href="<%= localHref('experience') %>"><%= t.cta.experience %></a>
+      <a class="os-button os-button-secondary" href="<%= localHref('writing') %>"><%= t.cta.writing %></a>
+      <a class="os-button os-button-secondary" href="<%= localHref('labs') %>"><%= t.cta.labs %></a>
+    </div>
+  </section>
+<% } %>
+
+<section class="home-page i18n-page i18n-page-<%= section %>" lang="<%= lang === 'zh' ? 'zh-Hant' : lang %>">
+  <% if (section === 'home' || section === 'dashboard') { %>
+    <% renderHomeHero(); %>
+    <% renderProfilePanel(); %>
+    <% renderStats(); %>
+    <% renderProjects(); %>
+    <% renderRecentPosts(); %>
+    <% renderLabs(); %>
+    <% renderTimeline(); %>
+    <% renderCTA(); %>
+    <% renderTagCloud(); %>
+  <% } else if (section === 'about') { %>
+    <% renderPageHero('about'); %>
+    <% renderAbout(); %>
+    <% renderGuide(); %>
+  <% } else if (section === 'experience') { %>
+    <% renderPageHero('experience'); %>
+    <% renderExperienceCards(); %>
+  <% } else if (section === 'projects') { %>
+    <% renderPageHero('projects'); %>
+    <% renderProjects(); %>
+    <% renderLabs(); %>
+  <% } else if (section === 'labs') { %>
+    <% renderPageHero('labs'); %>
+    <% renderLabs(); %>
+    <% renderProjects(); %>
+  <% } else if (section === 'writing') { %>
+    <% renderPageHero('writing'); %>
+    <% renderRecentPosts(); %>
+    <% renderTagCloud(); %>
+  <% } else if (section === 'timeline') { %>
+    <% renderTimeline(); %>
+    <% renderGuide(); %>
+  <% } %>
+</section>

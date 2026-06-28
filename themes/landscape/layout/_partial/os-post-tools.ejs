@@ -1,0 +1,56 @@
+<script>
+  (function() {
+    var progress = document.querySelector('[data-reading-progress]');
+    var article = document.querySelector('.post-content');
+    var backTop = document.querySelector('[data-back-top]');
+
+    function updateProgress() {
+      if (!progress || !article) return;
+      var rect = article.getBoundingClientRect();
+      var total = Math.max(1, article.offsetHeight - window.innerHeight);
+      var read = Math.min(Math.max(-rect.top, 0), total);
+      progress.style.width = (read / total * 100).toFixed(2) + '%';
+      if (backTop) backTop.hidden = window.scrollY < 500;
+    }
+
+    document.querySelectorAll('.post-body h2, .post-body h3').forEach(function(heading) {
+      if (!heading.id) {
+        heading.id = heading.textContent.trim().toLowerCase().replace(/[^\w\u4e00-\u9fff\u3040-\u30ff]+/g, '-').replace(/^-|-$/g, '');
+      }
+      var link = document.createElement('a');
+      link.className = 'heading-anchor';
+      link.href = '#' + heading.id;
+      link.setAttribute('aria-label', 'Link to section');
+      link.textContent = '#';
+      heading.appendChild(link);
+    });
+
+    document.querySelectorAll('.post-body pre').forEach(function(pre) {
+      var button = document.createElement('button');
+      button.className = 'code-copy-button';
+      button.type = 'button';
+      button.textContent = 'Copy';
+      button.addEventListener('click', async function() {
+        var code = pre.textContent || '';
+        try {
+          await navigator.clipboard.writeText(code);
+          button.textContent = 'Copied';
+          window.setTimeout(function() { button.textContent = 'Copy'; }, 1400);
+        } catch (error) {
+          button.textContent = 'Failed';
+        }
+      });
+      pre.appendChild(button);
+    });
+
+    if (backTop) {
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+  })();
+</script>
