@@ -1,40 +1,109 @@
+﻿---
+title: 発表と指導
+description: CTF、Raspberry Pi、Cybersecurity 支援、技術セッション指導に関する記録です。
+summary: CTF、Raspberry Pi、Cybersecurity 支援、技術セッション指導に関する記録です。
+organization: Multiple records
+experience_date: 2025
+category: Speaking
+role: Instructor / Teaching assistant / Support staff
+result: Structured engineering portfolio records
+keywords: CTF Instructor, Raspberry Pi Instructor, Cybersecurity Teaching Assistant
+skills:
+  - Technical explanation
+  - Student support
+  - Troubleshooting
+  - Session operation
+technologies:
+  - CTF
+  - Web Security
+  - Linux
+  - Raspberry Pi
+  - Python
+cover: /images/casper-og.png
+related_categories:
+  - Experience
+gallery: []
+related_links: []
 ---
-title: 登壇・指導
-description: Casper の指導・トレーニング支援記録。CTF Instructor、Raspberry Pi Instructor、Cybersecurity Teaching Assistant、Workshop Support、Training Support を含みます。
+
+# 発表と指導
+
+CTF、Raspberry Pi、Cybersecurity 支援、技術セッション指導に関する記録です。
+
 ---
 
-# 登壇・指導
-
-## Overview
-
-このページでは teaching と training support の役割を整理しています。正式な conference speaker ではないものは Speaker と書かず、hands-on support として正確に記録します。
-
-## Cards
+## 経験リスト
 
 ### CTF Instructor
 
-Web Security、Linux basics、OSINT、CTF practice workflows の学習を支援しました。
+* 年：2025
+* 主催：Cybersecurity 学習イベント
+* 開催地：台北、台湾
+* 種類：技術発表
+* 役割：指導者
+* テーマ：CTF、Web Security、Linux、OSINT
+* 使用技術：CTF、OSINT、Web Security、Linux
+* 身につけたスキル：教学、技術説明、課題振り返り
+* 成果：練習支援を完了
+* 学んだこと：例と練習を通してセキュリティ推論を説明することを学びました。
 
+---
 ### Raspberry Pi Instructor
 
-**Raspberry Pi**、Linux、GPIO concepts、Python、簡単な IoT experiments の学習を支援しました。
+* 年：2025
+* 主催：技術学習イベント
+* 開催地：台北、台湾
+* 種類：技術指導
+* 役割：指導者
+* テーマ：Raspberry Pi、Linux、GPIO、Python
+* 使用技術：Raspberry Pi、Linux、Python、GPIO
+* 身につけたスキル：ハードウェア設定、組込み Linux 指導、デバッグ
+* 成果：指導支援を完了
+* 学んだこと：学習者がハードウェアとソフトウェアの手順を見えるようにすることを学びました。
 
+---
 ### Cybersecurity Teaching Assistant
 
-Cybersecurity の学習活動、練習の流れ、学生の技術的な質問を支援しました。
+* 年：2025
+* 主催：內湖高工
+* 開催地：台北、台湾
+* 種類：指導支援
+* 役割：指導補助
+* テーマ：Cybersecurity practice support
+* 使用技術：Cybersecurity、CTF、Web Security、Linux
+* 身につけたスキル：学生支援、デバッグ、説明
+* 成果：授業と練習支援を完了
+* 学んだこと：自分の理解をさらに明確にすべき部分に気づきました。
 
-### Workshop Support
+---
+### Technical Session Support
 
-資料準備、参加者の案内、workshop の進行サポートを行いました。
+* 年：2025
+* 主催：多場学習イベント
+* 開催地：台北、台湾
+* 種類：イベント支援
+* 役割：支援担当
+* テーマ：Hands-on technical session operation
+* 使用技術：AI、Cybersecurity、Raspberry Pi、Linux
+* 身につけたスキル：教材準備、参加者引導、デバッグ
+* 成果：セッション支援を完了
+* 学んだこと：設定問題が起きても技術活動を進め続ける方法を学びました。
 
-### Training Support
+---
+### Technical 練習 Support
 
-training session で setup の debug、手順理解、問題解決を支援しました。
+* 年：2025
+* 主催：多場学習イベント
+* 開催地：台北、台湾
+* 種類：練習支援
+* 役割：支援担当
+* テーマ：Participant guidance and task explanation
+* 使用技術：Linux、Python、CTF、Raspberry Pi
+* 身につけたスキル：分步説明、デバッグ、学習者支援
+* 成果：練習支援を完了
+* 学んだこと：不明確な技術タスクを扱いやすい手順に分けることを学びました。
 
-## Notes
+---
 
-教えることは、自分の理解の穴を見つける機会です。うまく説明できない概念は、もう一度学び直す必要があります。
 
-## Related Links
 
-- [経歴へ戻る](../)

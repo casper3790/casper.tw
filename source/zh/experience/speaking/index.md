@@ -1,40 +1,108 @@
+﻿---
+title: 分享與教學
+description: 以資料庫格式整理 CTF、Raspberry Pi、Cybersecurity 支援與技術活動引導紀錄。
+summary: 以資料庫格式整理 CTF、Raspberry Pi、Cybersecurity 支援與技術活動引導紀錄。
+organization: Multiple records
+experience_date: 2025
+category: Speaking
+role: Instructor / Teaching assistant / Support staff
+result: 結構化工程履歷紀錄
+keywords: CTF Instructor, Raspberry Pi Instructor, Cybersecurity 教學助理
+skills:
+  - Technical explanation
+  - Student support
+  - Troubleshooting
+  - Session operation
+technologies:
+  - CTF
+  - Web Security
+  - Linux
+  - Raspberry Pi
+  - Python
+cover: /images/casper-og.png
+related_categories:
+  - 經歷
+gallery: []
+related_links: []
 ---
-title: 教學與訓練
-description: Casper 的教學與訓練支援紀錄，包含 CTF Instructor、Raspberry Pi Instructor、Cybersecurity Teaching Assistant、Workshop Support 與 Training Support。
+
+# 分享與教學
+
+以資料庫格式整理 CTF、Raspberry Pi、Cybersecurity 支援與技術活動引導紀錄。
+
 ---
 
-# 教學與訓練
-
-## Overview
-
-這一頁整理教學與 training support 相關角色。若不是正式 conference speaker，我不會把自己寫成 Speaker；這些多數是實作課程、社群訓練或 workshop 的支援。
-
-## Cards
+## 經歷列表
 
 ### CTF Instructor
 
-支援 Web Security、Linux 基礎、OSINT 與 CTF practice workflow。
+* 年份：2025
+* 主辦單位：Cybersecurity 學習活動
+* 地點：台北，台灣
+* 活動類型：技術分享
+* 角色：講解者
+* 主題：CTF、Web Security、Linux、OSINT
+* 相關技術：CTF、OSINT、Web Security、Linux
+* 學習能力：教學、技術說明、題目複盤
+* 成果：完成訓練支援
+* 我的收穫：我學到透過範例與練習說明安全推理。
 
+---
 ### Raspberry Pi Instructor
 
-協助學習 **Raspberry Pi**、Linux、GPIO concepts、Python 與簡單 IoT experiments。
+* 年份：2025
+* 主辦單位：技術學習活動
+* 地點：台北，台灣
+* 活動類型：技術教學
+* 角色：講解者
+* 主題：Raspberry Pi、Linux、GPIO、Python
+* 相關技術：Raspberry Pi、Linux、Python、GPIO
+* 學習能力：硬體設定、嵌入式 Linux 教學、除錯
+* 成果：完成教學支援
+* 我的收穫：我學到讓學習者看見硬體與軟體步驟。
 
-### Cybersecurity Teaching Assistant
+---
+### Cybersecurity 教學助理
 
-支援 Cybersecurity 學習活動、練習流程與學生的技術問題。
+* 年份：2025
+* 主辦單位：內湖高工
+* 地點：台北，台灣
+* 活動類型：教學支援
+* 角色：教學助理
+* 主題：Cybersecurity practice support
+* 相關技術：Cybersecurity、CTF、Web Security、Linux
+* 學習能力：學生支援、除錯、說明
+* 成果：完成課程與練習支援
+* 我的收穫：我學到自己哪些理解還需要更清楚。
 
-### Workshop Support
+---
+### Technical Session Support
 
-協助準備材料、引導參與者，並讓 workshop 流程順利進行。
+* 年份：2025
+* 主辦單位：多場學習活動
+* 地點：台北，台灣
+* 活動類型：活動支援
+* 角色：支援人員
+* 主題：Hands-on technical session operation
+* 相關技術：AI、Cybersecurity、Raspberry Pi、Linux
+* 學習能力：教材準備、參與者引導、除錯
+* 成果：完成場次支援
+* 我的收穫：我學到在設定問題發生時維持技術活動進行。
 
-### Training Support
+---
+### 技術訓練支援
 
-協助 training session 中的環境 debug、任務步驟理解與問題排除。
+* 年份：2025
+* 主辦單位：多場學習活動
+* 地點：台北，台灣
+* 活動類型：訓練支援
+* 角色：支援人員
+* 主題：Participant guidance and task explanation
+* 相關技術：Linux、Python、CTF、Raspberry Pi
+* 學習能力：分步說明、除錯、學習者支援
+* 成果：完成訓練支援
+* 我的收穫：我學到把不清楚的技術任務拆成可處理步驟。
 
-## Notes
+---
 
-教學支援會讓我看見自己理解不足的地方。如果一個概念講不清楚，就代表我需要重新學一次。
 
-## Related Links
-
-- [回到經歷](../)

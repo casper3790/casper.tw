@@ -1,36 +1,92 @@
+﻿---
+title: 證照紀錄
+description: 以資料庫格式整理電腦硬體、電腦網路、安全應變與長期練習相關證照。
+summary: 以資料庫格式整理電腦硬體、電腦網路、安全應變與長期練習相關證照。
+organization: Multiple records
+experience_date: 2024
+category: Certifications
+role: Candidate / Practitioner
+result: 結構化工程履歷紀錄
+keywords: Computer Hardware, Computer Network, Certified Lifeguard, World Taekwondo
+skills:
+  - Hardware installation
+  - Network installation
+  - Troubleshooting
+  - Safety awareness
+  - Discipline
+technologies:
+  - Computer hardware
+  - Computer networks
+cover: /images/casper-og.png
+related_categories:
+  - 經歷
+gallery: []
+related_links: []
 ---
-title: 證照
-description: Casper 的證照紀錄，包含 Computer Hardware Installation Technician Level C、Computer Network Installation Technician Level C、Certified Lifeguard 與 World Taekwondo Black Belt 3rd Dan。
+
+# 證照紀錄
+
+以資料庫格式整理電腦硬體、電腦網路、安全應變與長期練習相關證照。
+
 ---
 
-# 證照
-
-## Overview
-
-這一頁整理我的證照與 license 紀錄，作為學習背景的一部分。
-
-## Cards
+## 經歷列表
 
 ### Computer Hardware Installation Technician Level C
 
-電腦硬體裝修、維護概念與實務安裝基礎。
+* 年份：2024
+* 主辦單位：國家證照單位
+* 地點：台灣
+* 活動類型：技術證照
+* 角色：應試者
+* 主題：電腦硬體裝修與維護
+* 相關技術：電腦硬體
+* 學習能力：安裝、維護基礎、實作設定
+* 成果：取得證照
+* 我的收穫：我學到支撐後續系統工作的硬體基礎。
 
+---
 ### Computer Network Installation Technician Level C
 
-網路架設、線路、設定概念與 troubleshooting 基礎。
+* 年份：2024
+* 主辦單位：國家證照單位
+* 地點：台灣
+* 活動類型：技術證照
+* 角色：應試者
+* 主題：電腦網路架設
+* 相關技術：電腦網路、佈線、設定
+* 學習能力：網路架設、除錯、設定基礎
+* 成果：取得證照
+* 我的收穫：我學到網路系統背後的實作基礎。
 
+---
 ### Certified Lifeguard
 
-與安全、責任、緊急應變相關的訓練。
+* 年份：2024
+* 主辦單位：救生員證照單位
+* 地點：台灣
+* 活動類型：安全證照
+* 角色：應試者
+* 主題：安全應變與救援練習
+* 相關技術：不適用
+* 學習能力：安全意識、責任感、緊急應變
+* 成果：取得證照
+* 我的收穫：我學到在壓力下保持責任感。
 
+---
 ### World Taekwondo Black Belt 3rd Dan
 
-長期訓練、紀律、體能實作與持續投入的紀錄。
+* 年份：2024
+* 主辦單位：World Taekwondo 相關認證
+* 地點：台灣
+* 活動類型：武術段位認證
+* 角色：練習者
+* 主題：長期武術練習
+* 相關技術：不適用
+* 學習能力：紀律、持續練習、體能訓練
+* 成果：黑帶三段
+* 我的收穫：我學到長期練習與穩定投入的價值。
 
-## Notes
+---
 
-這些證照不全都直接跟 software 有關，但它們反映了實作訓練、責任感與長期投入。
 
-## Related Links
-
-- [回到經歷](../)

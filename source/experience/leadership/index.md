@@ -1,25 +1,92 @@
----
+﻿---
 title: Leadership
-description: Leadership experience across team coordination, student representative work, community support, documentation, and handoff workflows.
+description: Structured leadership records from technical community work, teaching support, student coordination, and competition preparation.
+summary: Structured leadership records from technical community work, teaching support, student coordination, and competition preparation.
+organization: Multiple records
+experience_date: 2025
+category: Leadership
+role: Lead / Representative / Coordinator
+result: Structured engineering portfolio records
+keywords: Cybersecurity, Community Lead, Student Representative, Teaching Assistant
+skills:
+  - Leadership
+  - Planning
+  - Coordination
+  - Technical communication
+technologies:
+  - Cybersecurity
+  - CTF
+  - Linux
+  - Documentation
+cover: /images/casper-og.png
+related_categories:
+  - Experience
+gallery: []
+related_links: []
 ---
 
 # Leadership
 
-## Focus
+Structured leadership records from technical community work, teaching support, student coordination, and competition preparation.
 
-Leadership here means practical coordination work: helping a team stay organized, keeping technical context visible, and making sure knowledge can be handed off.
+---
 
-## Cards
+## Experience List
 
-- Team coordination
-- Student representative work
-- Community support
-- Documentation and handoff
-- Training support
+### White Hat Community Lead
 
-## Notes
+* Year: 2025
+* Organizer: NIHSCEDIWHC White Hat Community
+* Location: Taipei, Taiwan
+* Type: Technical leadership
+* Role: Founder / Community lead
+* Topic: Cybersecurity learning group operation
+* Technologies: Cybersecurity, CTF, Linux
+* Skills: Leadership, planning, knowledge sharing
+* Outcome: Community learning space established
+* Reflection: I learned to create structure for peers to keep practicing.
 
-This page collects leadership work that does not fit cleanly into competitions, workshops, speaking, awards, or certifications.
+---
+### Cybersecurity Teaching Assistant
 
-- [Back to Experience](../)
+* Year: 2025
+* Organizer: Nei-Hu Industrial High School
+* Location: Taipei, Taiwan
+* Type: Education leadership support
+* Role: Teaching assistant
+* Topic: Security course and competition practice
+* Technologies: Cybersecurity, Web Security, CTF
+* Skills: Mentoring, debugging, technical explanation
+* Outcome: Learner support completed
+* Reflection: I learned leadership through direct support rather than title alone.
+
+---
+### Student Representative
+
+* Year: 2025
+* Organizer: Department of Control Engineering
+* Location: Taipei, Taiwan
+* Type: Student leadership
+* Role: Representative
+* Topic: Activity coordination and class communication
+* Technologies: Documentation, coordination tools
+* Skills: Communication, planning, responsibility
+* Outcome: Coordination role completed
+* Reflection: I learned to translate needs between classmates and teachers.
+
+---
+### Competition Preparation Lead
+
+* Year: 2025
+* Organizer: Student team activity
+* Location: Taipei, Taiwan
+* Type: Team coordination
+* Role: Preparation coordinator
+* Topic: Competition planning, materials, and review
+* Technologies: Documentation, Git, presentation tools
+* Skills: Planning, review, presentation preparation
+* Outcome: Competition preparation supported
+* Reflection: I learned to reduce confusion by making tasks and deadlines visible.
+
+---
 
