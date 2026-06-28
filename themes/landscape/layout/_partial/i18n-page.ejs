@@ -78,7 +78,7 @@
         ['Awards', 'A record of merit awards, OSINT recognition, creativity, innovation, and honorable mention results.', 'experience/awards'],
         ['Workshops', 'HITCON, COSCUP, AWS Summit Taiwan, Build with AI, GDG Taipei, Medical design, Quantum Computing, and Smart Manufacturing learning notes.', 'experience/workshops'],
         ['Speaking & Training', 'CTF Instructor, Raspberry Pi Instructor, Cybersecurity Teaching Assistant, Workshop Support, and Training Support work.', 'experience/speaking'],
-        ['Community & Teaching', 'NIHSCEDIWHC White Hat Community, Cybersecurity community building, student representative work, CTF training, and Raspberry Pi teaching.', 'experience/community-teaching'],
+        ['Community', 'NIHSCEDIWHC White Hat Community, Cybersecurity community building, student representative work, CTF training, and Raspberry Pi teaching.', 'experience/community'],
         ['Certifications', 'Computer hardware, computer network, lifeguard, and World Taekwondo certification records.', 'experience/certifications']
       ],
       projects: [
@@ -149,7 +149,7 @@
         ['獎項', '整理 Merit Award、OSINT Excellence Award、Creativity Award、Innovation Award 與 Honorable Mention。', 'experience/awards'],
         ['研習', 'HITCON、COSCUP、AWS Summit Taiwan、Build with AI、GDG Taipei、Medical design、Quantum Computing 與 Smart Manufacturing 研習紀錄。', 'experience/workshops'],
         ['教學與訓練', 'CTF Instructor、Raspberry Pi Instructor、Cybersecurity Teaching Assistant、Workshop Support 與 Training Support。', 'experience/speaking'],
-        ['社群與教學', 'NIHSCEDIWHC White Hat Community、Cybersecurity 社群建立、學生代表、CTF training 與 Raspberry Pi teaching。', 'experience/community-teaching'],
+        ['社群', 'NIHSCEDIWHC White Hat Community、Cybersecurity 社群建立、學生代表、CTF 訓練與 Raspberry Pi 教學。', 'experience/community'],
         ['證照', 'Computer Hardware、Computer Network、Certified Lifeguard 與 World Taekwondo 證照紀錄。', 'experience/certifications']
       ],
       projects: [
@@ -220,7 +220,7 @@
         ['受賞', 'Merit Award、OSINT Excellence Award、Creativity Award、Innovation Award、Honorable Mention の記録。', 'experience/awards'],
         ['ワークショップ', 'HITCON、COSCUP、AWS Summit Taiwan、Build with AI、GDG Taipei、Medical design、Quantum Computing、Smart Manufacturing の学習記録。', 'experience/workshops'],
         ['登壇・指導', 'CTF Instructor、Raspberry Pi Instructor、Cybersecurity Teaching Assistant、Workshop Support、Training Support。', 'experience/speaking'],
-        ['コミュニティ・教育', 'NIHSCEDIWHC White Hat Community、Cybersecurity community building、Student Representative、CTF training、Raspberry Pi teaching。', 'experience/community-teaching'],
+        ['コミュニティ', 'NIHSCEDIWHC White Hat Community、Cybersecurity コミュニティ運営、学生代表、CTF トレーニング、Raspberry Pi 指導。', 'experience/community'],
         ['資格', 'Computer Hardware、Computer Network、Certified Lifeguard、World Taekwondo の資格記録。', 'experience/certifications']
       ],
       projects: [
@@ -238,14 +238,46 @@
   };
 
   const t = copy[lang];
+  t.experienceCards = {
+    en: [
+      ['Competitions', 'Competition experience across cybersecurity, robotics, programming, AI, project demos, and finalist preparation.', 'experience/competitions', '2024-2025', 'Competitions', 'Multiple competitions', 'Cybersecurity,CTF,OSINT,Web Security,Linux,Robotics,AI'],
+      ['Awards', 'Award and recognition records from project, cybersecurity, robotics, and technical competition experiences.', 'experience/awards', '2024-2025', 'Awards', 'Multiple competitions', 'OSINT,Web Security,CTF,Presentation'],
+      ['Certifications', 'Certification records covering computer hardware, computer networks, safety training, and long-term martial arts practice.', 'experience/certifications', '2024', 'Certifications', 'Multiple certification bodies', 'Computer hardware,Computer networks,Troubleshooting'],
+      ['Workshops', 'Workshop and learning event records across Cybersecurity, cloud, AI, open source, healthcare design, and smart manufacturing.', 'experience/workshops', '2025', 'Workshops', 'Multiple workshops and community events', 'Cybersecurity,AI,Cloud Run,Open source'],
+      ['Speaking', 'Hands-on teaching and training support experience for CTF, Raspberry Pi, Cybersecurity learning, workshops, and technical training.', 'experience/speaking', '2025', 'Speaking', 'Multiple learning activities', 'CTF,Web Security,Linux,Raspberry Pi,Python'],
+      ['Community', 'Community work around Cybersecurity learning, student coordination, CTF practice, and Raspberry Pi teaching.', 'experience/community', '2025', 'Community', 'NIHSCEDIWHC White Hat Community', 'Cybersecurity,CTF,Web Security,Linux,Raspberry Pi'],
+      ['CTF Experience', 'CTF and Web Security experience from hackathon practice, OSINT recognition, teaching support, and lab notes.', 'experience/ctf', '2025-2026', 'CTF Experience', 'Cybersecurity Hackathon and learning activities', 'CTF,OSINT,Web Security,Linux'],
+      ['Projects', 'Project experience across team platforms, medical cybersecurity research, and autonomous robotics.', 'experience/projects', '2025-2026', 'Projects', 'Personal and team projects', 'React,FastAPI,SQLite,ROS2,Raspberry Pi'],
+      ['Research', 'Research-oriented learning around Medical Cybersecurity, healthcare workflows, clinical data validation, and system risk.', 'experience/research', '2026', 'Research', 'Personal research notes', 'Medical Cybersecurity,Healthcare,Risk analysis']
+    ],
+    zh: [
+      ['競賽', '整理 Cybersecurity、機器人、程式設計、AI、專題展示與決賽準備相關競賽經歷。', 'experience/competitions', '2024-2025', '競賽', '多項競賽', 'Cybersecurity,CTF,OSINT,Web Security,Linux,Robotics,AI'],
+      ['獎項', '整理專題、Cybersecurity、機器人與技術競賽中的獲獎與入選紀錄。', 'experience/awards', '2024-2025', '獎項', '多項競賽', 'OSINT,Web Security,CTF,簡報'],
+      ['證照', '整理電腦硬體、電腦網路、安全訓練與長期跆拳道訓練相關證照。', 'experience/certifications', '2024', '證照', '多個證照單位', '電腦硬體,電腦網路,故障排除'],
+      ['研習', '整理 Cybersecurity、雲端、AI、開源、醫療設計與智慧製造相關研習紀錄。', 'experience/workshops', '2025', '研習', '多場研習與社群活動', 'Cybersecurity,AI,Cloud Run,開源'],
+      ['教學與分享', '整理 CTF、Raspberry Pi、Cybersecurity 學習、研習與技術訓練的實作教學支援經歷。', 'experience/speaking', '2025', '教學與分享', '多項學習活動', 'CTF,Web Security,Linux,Raspberry Pi,Python'],
+      ['社群', '整理 Cybersecurity 學習社群、學生協調、CTF 練習與 Raspberry Pi 教學支援。', 'experience/community', '2025', '社群', 'NIHSCEDIWHC White Hat Community', 'Cybersecurity,CTF,Web Security,Linux,Raspberry Pi'],
+      ['CTF 經歷', '整理 Cybersecurity Hackathon、OSINT 獎項、教學支援與 Web Security 練習紀錄。', 'experience/ctf', '2025-2026', 'CTF 經歷', 'Cybersecurity Hackathon 與學習活動', 'CTF,OSINT,Web Security,Linux'],
+      ['專案', '整理團隊平台、Medical Cybersecurity 研究與自主機器人相關專案經歷。', 'experience/projects', '2025-2026', '專案', '個人與團隊專案', 'React,FastAPI,SQLite,ROS2,Raspberry Pi'],
+      ['研究', '整理 Medical Cybersecurity、醫療流程、臨床資料驗證與系統風險相關研究型學習。', 'experience/research', '2026', '研究', '個人研究筆記', 'Medical Cybersecurity,醫療系統,風險分析']
+    ],
+    ja: [
+      ['コンペティション', 'Cybersecurity、ロボット、プログラミング、AI、プロジェクト発表、ファイナリスト準備に関する競技経験をまとめています。', 'experience/competitions', '2024-2025', 'コンペティション', '複数の競技', 'Cybersecurity,CTF,OSINT,Web Security,Linux,Robotics,AI'],
+      ['受賞歴', 'プロジェクト、Cybersecurity、ロボット、技術競技に関する受賞と評価の記録です。', 'experience/awards', '2024-2025', '受賞歴', '複数の競技', 'OSINT,Web Security,CTF,発表'],
+      ['資格', 'コンピュータハードウェア、ネットワーク、安全訓練、継続的なテコンドー練習に関する資格記録です。', 'experience/certifications', '2024', '資格', '複数の認定機関', 'コンピュータハードウェア,ネットワーク,トラブルシューティング'],
+      ['ワークショップ', 'Cybersecurity、クラウド、AI、オープンソース、医療デザイン、スマート製造に関する学習イベントの記録です。', 'experience/workshops', '2025', 'ワークショップ', '複数のワークショップとコミュニティイベント', 'Cybersecurity,AI,Cloud Run,オープンソース'],
+      ['登壇・指導', 'CTF、Raspberry Pi、Cybersecurity 学習、ワークショップ、技術研修に関する実践的な指導支援の経験です。', 'experience/speaking', '2025', '登壇・指導', '複数の学習活動', 'CTF,Web Security,Linux,Raspberry Pi,Python'],
+      ['コミュニティ', 'Cybersecurity 学習、学生間の調整、CTF 練習、Raspberry Pi 指導に関するコミュニティ活動です。', 'experience/community', '2025', 'コミュニティ', 'NIHSCEDIWHC White Hat Community', 'Cybersecurity,CTF,Web Security,Linux,Raspberry Pi'],
+      ['CTF 経験', 'Cybersecurity Hackathon、OSINT の評価、指導支援、Web Security 練習記録をまとめています。', 'experience/ctf', '2025-2026', 'CTF 経験', 'Cybersecurity Hackathon と学習活動', 'CTF,OSINT,Web Security,Linux'],
+      ['プロジェクト', 'チーム向けプラットフォーム、Medical Cybersecurity 研究、自律ロボットに関するプロジェクト経験です。', 'experience/projects', '2025-2026', 'プロジェクト', '個人およびチームプロジェクト', 'React,FastAPI,SQLite,ROS2,Raspberry Pi'],
+      ['研究', 'Medical Cybersecurity、医療ワークフロー、臨床データ検証、システムリスクに関する研究型の学習記録です。', 'experience/research', '2026', '研究', '個人研究ノート', 'Medical Cybersecurity,医療システム,リスク分析']
+    ]
+  }[lang];
   Object.assign(t.nav, {
     dashboard: t.nav.dashboard || 'Dashboard',
     timeline: t.nav.timeline || 'Timeline',
     search: t.nav.search || 'Search'
   });
-  if (!t.experienceCards.some(function(card) { return card[2] === 'experience/leadership'; })) {
-    t.experienceCards.push(['Leadership', 'Team coordination, student representative work, community support, documentation, and handoff workflows.', 'experience/leadership']);
-  }
   if (!t.labsList.some(function(lab) { return lab[5] === 'labs/web-security'; })) {
     t.labsList.splice(2, 0, ['2026-06-16', 'Security', 'Completed', 'Web Security Notes', 'Recording Web Security basics, request flows, and common vulnerability practice.', 'labs/web-security']);
   }
@@ -258,8 +290,12 @@
   };
 
   const recentPosts = [];
+  const allPosts = [];
   if (site.posts && site.posts.length) {
-    site.posts.toArray().sort(function(a, b) { return b.date - a.date; }).slice(0, 3).forEach(function(post) { recentPosts.push(post); });
+    site.posts.toArray().sort(function(a, b) { return b.date - a.date; }).forEach(function(post, index) {
+      allPosts.push(post);
+      if (index < 3) recentPosts.push(post);
+    });
   }
   const tagList = [];
   if (site.tags && site.tags.length) site.tags.each(function(tag) { tagList.push(tag); });
@@ -296,6 +332,26 @@
     const tags = post.tags.toArray ? post.tags.toArray() : post.tags.data || [];
     return tags.length ? tags[0].name : 'Note';
   };
+  const postTags = function(post) {
+    if (!post.tags || !post.tags.length) return [];
+    const tags = post.tags.toArray ? post.tags.toArray() : post.tags.data || [];
+    return tags.map(function(tag) { return tag.name; }).filter(Boolean);
+  };
+  const postCategory = function(post) {
+    if (!post.categories || !post.categories.length) return 'Notes';
+    const categories = post.categories.toArray ? post.categories.toArray() : post.categories.data || [];
+    return categories.length ? categories[0].name : 'Notes';
+  };
+  const postSummary = function(post) {
+    const raw = post.description || post.excerpt || post.content || '';
+    const text = strip_html(String(raw)).replace(/\s+/g, ' ').trim();
+    return text.length > 150 ? text.slice(0, 150).replace(/\s+\S*$/, '') + '...' : text;
+  };
+  const writingCopy = {
+    en: { all: 'All Articles', viewAll: 'View All Articles', date: 'Date', category: 'Category', tags: 'Tags', read: 'Read ->', empty: 'No articles yet.' },
+    zh: { all: '全部文章', viewAll: '查看全部文章', date: '日期', category: '分類', tags: '標籤', read: '閱讀 ->', empty: '目前沒有文章。' },
+    ja: { all: 'すべての記事', viewAll: 'すべての記事を見る', date: '日付', category: '分類', tags: 'タグ', read: '読む ->', empty: '記事はまだありません。' }
+  }[lang];
 %>
 
 <% function renderHomeHero() { %>
@@ -460,7 +516,33 @@
         <% }) %>
       </div>
     <% } else { %><p><%= t.noPosts %></p><% } %>
-    <p><a class="featured-project-link" href="<%= localHref('writing') %>"><%= t.viewAll %></a></p>
+    <p><a class="featured-project-link" href="<%= localHref('writing') %>"><%= writingCopy.viewAll %></a></p>
+  </section>
+<% } %>
+
+<% function renderAllPosts() { %>
+  <section class="featured-projects writing-index-section" aria-labelledby="<%= lang %>-all-posts-title">
+    <h2 id="<%= lang %>-all-posts-title" class="section-title"><%= writingCopy.all %></h2>
+    <% if (allPosts.length) { %>
+      <div class="writing-all-list">
+        <% allPosts.forEach(function(post) { const tags = postTags(post); %>
+          <a class="writing-all-card" href="<%= url_for(post.path) %>">
+            <div class="writing-all-date"><span><%= writingCopy.date %></span><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time></div>
+            <div class="writing-all-body">
+              <h3><%= post.title %></h3>
+              <% if (postSummary(post)) { %><p><%= postSummary(post) %></p><% } %>
+              <div class="writing-all-meta">
+                <span><%= writingCopy.category %>: <strong><%= postCategory(post) %></strong></span>
+                <span><%= writingCopy.tags %>: <strong><%= tags.length ? tags.join(', ') : firstTag(post) %></strong></span>
+              </div>
+              <span class="post-read-link"><%= writingCopy.read %></span>
+            </div>
+          </a>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <p><%= writingCopy.empty %></p>
+    <% } %>
   </section>
 <% } %>
 
@@ -540,15 +622,80 @@
 <% function renderExperienceCards() { %>
   <section class="featured-projects" aria-labelledby="<%= lang %>-experience-cards-title">
     <h2 id="<%= lang %>-experience-cards-title" class="section-title"><%= t.hero.experience.title %></h2>
+    <div class="search-box-wrap" role="search" aria-label="Filter experience">
+      <input id="<%= lang %>-experience-search" class="search-input" type="search" placeholder="Search experience" autocomplete="off" data-exp-search>
+      <div class="tag-cloud-list" aria-label="Experience filters">
+        <select class="search-input" data-exp-filter="year" aria-label="Filter by year">
+          <option value="">All years</option>
+          <% Array.from(new Set(t.experienceCards.map(function(card) { return card[3]; }))).forEach(function(year) { %><option value="<%= year %>"><%= year %></option><% }) %>
+        </select>
+        <select class="search-input" data-exp-filter="category" aria-label="Filter by category">
+          <option value="">All categories</option>
+          <% Array.from(new Set(t.experienceCards.map(function(card) { return card[4]; }))).forEach(function(category) { %><option value="<%= category %>"><%= category %></option><% }) %>
+        </select>
+        <select class="search-input" data-exp-filter="organization" aria-label="Filter by organization">
+          <option value="">All organizations</option>
+          <% Array.from(new Set(t.experienceCards.map(function(card) { return card[5]; }))).forEach(function(org) { %><option value="<%= org %>"><%= org %></option><% }) %>
+        </select>
+        <select class="search-input" data-exp-filter="skills" aria-label="Filter by skills">
+          <option value="">All skills</option>
+          <% Array.from(new Set(t.experienceCards.flatMap(function(card) { return String(card[6] || '').split(','); }).map(function(skill) { return skill.trim(); }).filter(Boolean))).forEach(function(skill) { %><option value="<%= skill %>"><%= skill %></option><% }) %>
+        </select>
+      </div>
+    </div>
+    <div class="os-timeline" aria-label="Experience timeline">
+      <% t.experienceCards.forEach(function(card) { %>
+        <article class="timeline-card" data-exp-item data-year="<%= card[3] %>" data-category="<%= card[4] %>" data-organization="<%= card[5] %>" data-skills="<%= card[6] %>">
+          <time><%= card[3] %></time>
+          <div>
+            <h3><a href="<%= detailHref(card[2]) %>"><%= card[0] %></a></h3>
+            <p><%= card[1] %></p>
+          </div>
+        </article>
+      <% }) %>
+    </div>
     <div class="featured-project-grid">
       <% t.experienceCards.forEach(function(card) { %>
-        <a class="featured-project-card" href="<%= detailHref(card[2]) %>">
+        <a class="featured-project-card" href="<%= detailHref(card[2]) %>" data-exp-item data-year="<%= card[3] %>" data-category="<%= card[4] %>" data-organization="<%= card[5] %>" data-skills="<%= card[6] %>">
           <h3><%= card[0] %></h3>
           <p><%= card[1] %></p>
+          <div class="featured-project-tags" aria-label="Experience metadata">
+            <span><%= card[4] %></span>
+            <strong><%= card[3] %></strong>
+            <strong><%= card[5] %></strong>
+          </div>
           <span class="featured-project-link"><%= t.viewExperience %></span>
         </a>
       <% }) %>
     </div>
+    <script>
+      (function() {
+        var root = document.currentScript.closest('.featured-projects');
+        if (!root) return;
+        var input = root.querySelector('[data-exp-search]');
+        var filters = Array.prototype.slice.call(root.querySelectorAll('[data-exp-filter]'));
+        var items = Array.prototype.slice.call(root.querySelectorAll('[data-exp-item]'));
+        function matches(item) {
+          var text = item.textContent.toLowerCase();
+          var query = input ? input.value.trim().toLowerCase() : '';
+          if (query && text.indexOf(query) === -1) return false;
+          return filters.every(function(filter) {
+            var value = filter.value;
+            if (!value) return true;
+            var key = filter.getAttribute('data-exp-filter');
+            var data = item.getAttribute('data-' + key) || '';
+            return data.indexOf(value) >= 0;
+          });
+        }
+        function applyFilters() {
+          items.forEach(function(item) {
+            item.hidden = !matches(item);
+          });
+        }
+        if (input) input.addEventListener('input', applyFilters);
+        filters.forEach(function(filter) { filter.addEventListener('change', applyFilters); });
+      })();
+    </script>
   </section>
 <% } %>
 
@@ -610,7 +757,7 @@
     <% renderProjects(); %>
   <% } else if (section === 'writing') { %>
     <% renderPageHero('writing'); %>
-    <% renderRecentPosts(); %>
+    <% renderAllPosts(); %>
     <% renderTagCloud(); %>
   <% } else if (section === 'timeline') { %>
     <% renderTimeline(); %>
