@@ -1,17 +1,17 @@
----
+﻿---
 title: ESP32 UART Test
-description: 測試 ESP32 與 edge devices 之間 UART communication 的 Lab 筆記。
+description: 測試 ESP32 與 邊緣裝置 之間 UART 通訊 的 Lab 筆記。
 ---
 
 # ESP32 UART Test
 
-- **Status:** Completed
+- **狀態:** 已完成
 - **Date:** 2026-06-24
 - **Category:** Robotics / Embedded systems
 
 ## Purpose
 
-在把 **ESP32** 放進更大的 Robotics 或 sensor workflow 前，先確認基本 UART communication 是否穩定。
+在把 **ESP32** 放進更大的 Robotics 或 sensor workflow 前，先確認基本 UART 通訊 是否穩定。
 
 ## Setup
 
@@ -31,7 +31,7 @@ description: 測試 ESP32 與 edge devices 之間 UART communication 的 Lab 筆
 
 當 wiring 與 baud rate 正確時，ESP32 可以送出可預期的 serial messages。
 
-## Notes
+## 筆記
 
 主要問題通常來自 wiring 方向、baud rate 不一致，以及 log 不夠清楚。
 

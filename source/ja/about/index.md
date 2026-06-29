@@ -1,6 +1,6 @@
----
+﻿---
 title: About
-description: Casper、本名ホン・シンフについて。Cybersecurity、Web development、Robotics、Embedded systems、Medical Cybersecurity の学習を記録する public engineering notebook です。
+description: Casper、本名ホン・シンフについて。Cybersecurity、Web development、Robotics、Embedded systems、Medical Cybersecurity の学習を記録する 公開エンジニアリングノート です。
 comments: true
 ---
 
@@ -20,8 +20,8 @@ comments: true
 
 - Cybersecurity と CTF practice
 - FastAPI と frontend workflow を使った web systems
-- ROS2、Raspberry Pi、ESP32、Robotics prototypes
-- Medical Cybersecurity と data validation
+- ROS2、Raspberry Pi、ESP32、Robotics 試作s
+- Medical Cybersecurity と data 検証
 - チームの技術作業を整理する tools
 
 ## How I Learn
@@ -32,9 +32,9 @@ comments: true
 
 ## Why This Site Exists
 
-このサイトは私の **public engineering notebook** です。
+このサイトは私の **公開エンジニアリングノート** です。
 
-**Build in Public** を実践し、Projects と Labs を整理し、学びの過程をそのまま残すために使っています。完成したページもあれば、まだノートに近いページもあります。大切なのは、学びを見える形にしながら進み続けることです。
+**Build in Public** を実践し、プロジェクト と Labs を整理し、学びの過程をそのまま残すために使っています。完成したページもあれば、まだノートに近いページもあります。大切なのは、学びを見える形にしながら進み続けることです。
 
 ## My Quote
 

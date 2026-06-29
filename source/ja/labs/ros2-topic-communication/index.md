@@ -1,11 +1,11 @@
----
+﻿---
 title: ROS2 Topic Communication
-description: ROS2 publish / subscribe topic communication を記録する Lab note。
+description: ROS2 publish / subscribe topic 通信 を記録する Lab note。
 ---
 
 # ROS2 Topic Communication
 
-- **Status:** In Progress
+- **状態:** 進行中
 - **Date:** 2026-06-20
 - **Category:** Robotics
 
@@ -31,7 +31,7 @@ description: ROS2 publish / subscribe topic communication を記録する Lab no
 
 基本的な publish / subscribe flow が動作し、sensors、control logic、robot state をつなぐ考え方が明確になりました。
 
-## Notes
+## メモ
 
 topic names は重要です。topic names と message types が不一致だと debug が難しくなります。
 

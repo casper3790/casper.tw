@@ -284,7 +284,7 @@ related_links: []
 * 活動類型：AI 實作活動
 * 角色：參與者
 * 主題：AI 應用開發
-* 相關技術：AI, Gemini, developer tools
+* 相關技術：AI, Gemini, 開發工具
 * 學習能力：AI 應用模式、工具評估、原型製作
 * 成果：完成學習紀錄
 * 我的收穫：我學到如何把 AI 工具連到實際產品流程。
@@ -298,7 +298,7 @@ related_links: []
 * 活動類型：開發者社群活動
 * 角色：參與者
 * 主題：Google 開發者生態與實作
-* 相關技術：AI, Google Cloud, developer tools
+* 相關技術：AI, Google Cloud, 開發工具
 * 學習能力：開發流程、技術實作、社群學習
 * 成果：完成學習紀錄
 * 我的收穫：我從在地開發者分享中學到實務流程。
@@ -396,7 +396,7 @@ related_links: []
 * 活動類型：學生協調
 * 角色：學生代表
 * 主題：班級協調與活動溝通
-* 相關技術：Documentation、communication tools
+* 相關技術：Documentation、通訊 tools
 * 學習能力：協調、責任感、規劃、溝通
 * 成果：完成學生溝通支援
 * 我的收穫：我學到更清楚地連接學生、老師與技術活動。
@@ -732,13 +732,13 @@ related_links: []
 * 活動類型：研究實驗記錄
 * 角色：紀錄者
 * 主題：臨床資料驗證與流程風險
-* 相關技術：Medical Cybersecurity, data validation
+* 相關技術：Medical Cybersecurity, data 驗證
 * 學習能力：觀察、風險定義、技術寫作
 * 成果：持續整理實驗記錄
 * 我的收穫：我學到記錄假設與風險，而不是急著下結論。
 
 ---
-### Healthcare Security Reflection
+### 醫療 Security Reflection
 
 * 年份：2026
 * 主辦單位：個人寫作
@@ -822,5 +822,3 @@ related_links: []
 * 我的收穫：我學到把不清楚的技術任務拆成可處理步驟。
 
 ---
-
-

@@ -21,7 +21,7 @@ technologies:
   - Python
 cover: /images/casper-og.png
 related_categories:
-  - Experience
+  - 経歴
 gallery: []
 related_links: []
 ---
@@ -104,6 +104,3 @@ CTF、Raspberry Pi、Cybersecurity 支援、技術セッション指導に関す
 * 学んだこと：不明確な技術タスクを扱いやすい手順に分けることを学びました。
 
 ---
-
-
-

@@ -6,6 +6,7 @@
   const metaTitle = page.title ? page.title + ' | ' + siteTitle : siteTitle;
   const rawDescription = page.description || page.excerpt || page.content || config.description || '';
   const metaDescription = (strip_html(rawDescription).replace(/\s+/g, ' ').trim() || config.description || '').slice(0, 160);
+  const metaKeywords = Array.isArray(page.keywords) ? page.keywords.join(', ') : (page.keywords || config.keywords || '');
   const baseUrl = (config.url || '').replace(/\/$/, '');
   const rootPath = config.root || '/';
   const absoluteUrl = function(path) {
@@ -17,7 +18,7 @@
     return baseUrl + localPath;
   };
   const canonicalUrl = absoluteUrl(page.path || '/');
-  const shareImage = absoluteUrl('/images/casper-og.png');
+  const shareImage = absoluteUrl(page.cover || '/images/casper-og.png');
   const shareImageAlt = page.title ? page.title + ' preview image' : siteTitle + ' preview image';
   const metaType = page.layout === 'post' ? 'article' : 'website';
   const headPath = String(page.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
@@ -39,9 +40,11 @@
     'experience/awards',
     'experience/workshops',
     'experience/speaking',
-    'experience/community-teaching',
+    'experience/community',
+    'experience/ctf',
+    'experience/projects',
+    'experience/research',
     'experience/certifications',
-    'experience/leadership',
     'projects/nihs-control-team',
     'projects/medical-cybersecurity',
     'projects/autonomous-robot',
@@ -71,6 +74,7 @@
 
 <title><%= metaTitle %></title>
 <meta name="description" content="<%= metaDescription %>">
+<% if (metaKeywords) { %><meta name="keywords" content="<%= metaKeywords %>"><% } %>
 <meta name="author" content="<%= config.author || '' %>">
 <link rel="canonical" href="<%= canonicalUrl %>">
 <% if (hreflangPaths) { %>

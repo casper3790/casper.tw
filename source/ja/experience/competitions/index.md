@@ -22,7 +22,7 @@ technologies:
   - CTF
 cover: /images/casper-og.png
 related_categories:
-  - Experience
+  - 経歴
 gallery: []
 related_links: []
 ---
@@ -147,6 +147,3 @@ Cybersecurity、Robotics、プログラミング、AI、エンジニアリング
 * 学んだこと：実践例を通してセキュリティ概念を説明する方法を学びました。
 
 ---
-
-
-

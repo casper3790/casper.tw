@@ -1,11 +1,11 @@
----
+﻿---
 title: CTF Web Practice
 description: Web Security、Linux、OSINT 與 CTF practice 的 Lab 筆記。
 ---
 
 # CTF Web Practice
 
-- **Status:** Archived
+- **狀態:** 已封存
 - **Date:** 2026-06-02
 - **Category:** Security
 
@@ -15,7 +15,7 @@ description: Web Security、Linux、OSINT 與 CTF practice 的 Lab 筆記。
 
 ## Setup
 
-- Browser developer tools
+- Browser 開發工具
 - Linux terminal
 - Basic HTTP inspection tools
 - Practice challenges
@@ -31,7 +31,7 @@ description: Web Security、Linux、OSINT 與 CTF practice 的 Lab 筆記。
 
 這些練習讓我更能放慢速度、檢查細節，避免太快下結論。
 
-## Notes
+## 筆記
 
 最有價值的不只是解出 challenge，而是解完後能不能寫出清楚說明。
 

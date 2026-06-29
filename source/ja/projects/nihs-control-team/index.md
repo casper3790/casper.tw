@@ -1,4 +1,4 @@
----
+﻿---
 title: NIHS Control Team
 description: NIHS Control Team platform experiment, including status, overview, stack, features, development log, and future plans.
 ---
@@ -7,19 +7,19 @@ description: NIHS Control Team platform experiment, including status, overview, 
 
 # NIHS Control Team
 
-Team platform experiment for organizing competition links, schedules, and dashboard workflows.
+Team platform experiment for organizing competition links, schedules, and ダッシュボード workflows.
 
 </section>
 
-## Project Status
+## Project 状態
 
 <div class="project-status">Active learning project</div>
 
-## Overview
+## 概要
 
 NIHS Control Team is a practical web platform idea for keeping team competition information in one place. The goal is to learn how a real team tool should organize links, schedules, notes, and operational context.
 
-## Tech Stack
+## Tech 技術
 
 <div class="project-stack">
   <span>React</span>
@@ -39,7 +39,7 @@ NIHS Control Team is a practical web platform idea for keeping team competition 
 ## Development Log
 
 - Started from a team workflow problem: information gets scattered across links and messages.
-- Built early dashboard concepts to understand what data should be visible first.
+- Built early ダッシュボード concepts to understand what data should be visible first.
 - Used the project to practice frontend structure, API design, and deployment constraints.
 
 ## Future Plans

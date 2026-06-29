@@ -7,15 +7,15 @@ experience_date: 2026
 category: Research
 role: Researcher / Note taker
 result: 結構化工程履歷紀錄
-keywords: Medical Cybersecurity, Healthcare, Risk Analysis, Clinical Workflows
+keywords: Medical Cybersecurity, 醫療, Risk Analysis, Clinical Workflows
 skills:
   - Research notes
   - Risk analysis
-  - Healthcare workflow observation
+  - 醫療 workflow observation
   - Documentation
 technologies:
   - Medical Cybersecurity
-  - Healthcare systems
+  - 醫療 systems
   - AI
 cover: /images/casper-og.png
 related_categories:
@@ -54,13 +54,13 @@ related_links: []
 * 活動類型：研究實驗記錄
 * 角色：紀錄者
 * 主題：臨床資料驗證與流程風險
-* 相關技術：Medical Cybersecurity, data validation
+* 相關技術：Medical Cybersecurity, data 驗證
 * 學習能力：觀察、風險定義、技術寫作
 * 成果：持續整理實驗記錄
 * 我的收穫：我學到記錄假設與風險，而不是急著下結論。
 
 ---
-### Healthcare Security Reflection
+### 醫療 Security Reflection
 
 * 年份：2026
 * 主辦單位：個人寫作
@@ -74,5 +74,3 @@ related_links: []
 * 我的收穫：我學到人的工作流程會改變安全設計方式。
 
 ---
-
-

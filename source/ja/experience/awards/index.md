@@ -20,7 +20,7 @@ technologies:
   - CTF
 cover: /images/casper-og.png
 related_categories:
-  - Experience
+  - 経歴
 gallery: []
 related_links: []
 ---
@@ -117,6 +117,3 @@ related_links: []
 * 学んだこと：全国レベルの評価が今後改善すべき弱点を明らかにすることを学びました。
 
 ---
-
-
-

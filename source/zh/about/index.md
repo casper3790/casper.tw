@@ -1,6 +1,6 @@
----
+﻿---
 title: 關於
-description: 關於 Casper，也就是洪新富，以及這個 public engineering notebook 如何記錄 Cybersecurity、Web development、Robotics、Embedded systems 與 Medical Cybersecurity 的學習過程。
+description: 關於 Casper，也就是洪新富，以及這個 公開工程筆記 如何記錄 Cybersecurity、Web development、Robotics、Embedded systems 與 Medical Cybersecurity 的學習過程。
 comments: true
 ---
 
@@ -20,8 +20,8 @@ comments: true
 
 - Cybersecurity 與 CTF 練習
 - 使用 FastAPI 與 frontend workflow 做 web systems
-- ROS2、Raspberry Pi、ESP32 與 Robotics prototypes
-- Medical Cybersecurity 與 data validation 問題
+- ROS2、Raspberry Pi、ESP32 與 Robotics 原型s
+- Medical Cybersecurity 與 data 驗證 問題
 - 幫助團隊整理技術工作的工具
 
 ## How I Learn
@@ -32,9 +32,9 @@ comments: true
 
 ## Why This Site Exists
 
-這個網站是我的 **public engineering notebook**。
+這個網站是我的 **公開工程筆記**。
 
-我用它實踐 **Build in Public**，整理 Projects 和 Labs，也把學習路上的真實樣子留下來。有些頁面比較完整，有些還是筆記，但重點是持續前進，讓學習過程被看見。
+我用它實踐 **Build in Public**，整理 專案 和 Labs，也把學習路上的真實樣子留下來。有些頁面比較完整，有些還是筆記，但重點是持續前進，讓學習過程被看見。
 
 ## My Quote
 

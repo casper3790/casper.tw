@@ -1,9 +1,9 @@
----
-title: Web Security Notes
-description: Web Security basics, HTTP request flows, authentication, input validation, and common vulnerability practice.
+﻿---
+title: Web Security 筆記
+description: Web Security basics, HTTP request flows, authentication, input 驗證, and common vulnerability practice.
 ---
 
-# Web Security Notes
+# Web Security 筆記
 
 ## Goal
 
@@ -13,13 +13,12 @@ description: Web Security basics, HTTP request flows, authentication, input vali
 
 - HTTP request and response flow
 - Authentication and session behavior
-- Input validation
+- Input 驗證
 - Common web vulnerability patterns
 - Safe local practice environments notes
 
-## Status
+## 狀態
 
 這是學習用 Lab，用來整理概念與防禦理解，不用於攻擊真實系統。
 
 - [Back to Labs](../)
-

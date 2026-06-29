@@ -1,11 +1,11 @@
----
+﻿---
 title: CTF Web Practice
 description: Web Security、Linux、OSINT、CTF practice の Lab note。
 ---
 
 # CTF Web Practice
 
-- **Status:** Archived
+- **状態:** 保存済み
 - **Date:** 2026-06-02
 - **Category:** Security
 
@@ -15,7 +15,7 @@ description: Web Security、Linux、OSINT、CTF practice の Lab note。
 
 ## Setup
 
-- Browser developer tools
+- Browser 開発ツール
 - Linux terminal
 - Basic HTTP inspection tools
 - Practice challenges
@@ -31,7 +31,7 @@ description: Web Security、Linux、OSINT、CTF practice の Lab note。
 
 細部を確認し、早く決めつけすぎない姿勢を練習できました。
 
-## Notes
+## メモ
 
 重要なのは challenge を解くだけではなく、解いた後に clear explanation を書けることです。
 

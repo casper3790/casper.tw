@@ -4,7 +4,7 @@ description: Casper のエンジニアリングポートフォリオデータベ
 summary: Casper のエンジニアリングポートフォリオデータベースです。Cybersecurity、Robotics、AI、フルスタック開発、組込みシステム、リーダーシップ、指導を扱います。
 organization: Multiple records
 experience_date: 2024-2026
-category: Experience
+category: 経歴
 role: 開発者 / 研究者 / 指導者
 result: Structured engineering portfolio records
 keywords: Cybersecurity, AI, Robotics, FastAPI, ROS2, Docker, Linux, ESP32, CTF
@@ -25,7 +25,7 @@ technologies:
   - CTF
 cover: /images/casper-og.png
 related_categories:
-  - Experience
+  - 経歴
 gallery: []
 related_links: []
 ---
@@ -284,7 +284,7 @@ related_links: []
 * 種類：AI 実践活動
 * 役割：参加者
 * テーマ：AI 応用開発
-* 使用技術：AI, Gemini, developer tools
+* 使用技術：AI, Gemini, 開発ツール
 * 身につけたスキル：AI 応用パターン、ツール評価、試作
 * 成果：学習記録を完了
 * 学んだこと：AI ツールを実際のプロダクトフローへつなげる方法を学びました。
@@ -298,7 +298,7 @@ related_links: []
 * 種類：開発者コミュニティ活動
 * 役割：参加者
 * テーマ：Google 開発者エコシステムと実践
-* 使用技術：AI, Google Cloud, developer tools
+* 使用技術：AI, Google Cloud, 開発ツール
 * 身につけたスキル：開発フロー、技術実践、コミュニティ学習
 * 成果：学習記録を完了
 * 学んだこと：地域の開発者の共有から実務フローを学びました。
@@ -396,7 +396,7 @@ related_links: []
 * 種類：学生調整
 * 役割：学生代表
 * テーマ：班級調整と活動コミュニケーション
-* 使用技術：Documentation、communication tools
+* 使用技術：Documentation、通信 tools
 * 身につけたスキル：調整、責任感、計画、コミュニケーション
 * 成果：学生コミュニケーション支援を完了
 * 学んだこと：学生、教員、技術活動をより明確につなぐことを学びました。
@@ -732,13 +732,13 @@ related_links: []
 * 種類：研究実験記録
 * 役割：記録者
 * テーマ：臨床資料検証とフローリスク
-* 使用技術：Medical Cybersecurity, data validation
+* 使用技術：Medical Cybersecurity, data 検証
 * 身につけたスキル：観察、リスク定義、技術執筆
 * 成果：実験記録を継続整理
 * 学んだこと：急いで結論を出すのではなく、仮説とリスクを記録することを学びました。
 
 ---
-### Healthcare Security Reflection
+### 医療 Security Reflection
 
 * 年：2026
 * 主催：個人執筆
@@ -822,6 +822,3 @@ related_links: []
 * 学んだこと：不明確な技術タスクを扱いやすい手順に分けることを学びました。
 
 ---
-
-
-

@@ -12,7 +12,7 @@ skills:
   - Leadership
   - Planning
   - Coordination
-  - Technical communication
+  - Technical 通訊
 technologies:
   - Cybersecurity
   - CTF
@@ -89,5 +89,3 @@ related_links: []
 * 我的收穫：我學到透過清楚任務與時程降低混亂。
 
 ---
-
-

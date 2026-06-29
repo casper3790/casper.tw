@@ -1,4 +1,4 @@
----
+﻿---
 title: Autonomous Robot
 description: Hands-on autonomous robot build using ROS2, Raspberry Pi, LiDAR, sensors, and motor control.
 ---
@@ -11,15 +11,15 @@ A hands-on robotics build focused on sensors, motor control, ROS2, and autonomou
 
 </section>
 
-## Project Status
+## Project 状態
 
-<div class="project-status">Prototype and experimentation</div>
+<div class="project-status">試作と実験</div>
 
-## Overview
+## 概要
 
 Autonomous Robot is a robotics learning project for understanding how hardware, Linux, sensors, motors, and software control loops work together. The goal is to learn the full system by building, testing, debugging, and improving the robot step by step.
 
-## Tech Stack
+## Tech 技術
 
 <div class="project-stack">
   <span>ROS2</span>

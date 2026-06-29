@@ -19,7 +19,7 @@ technologies:
   - Computer networks
 cover: /images/casper-og.png
 related_categories:
-  - Experience
+  - 経歴
 gallery: []
 related_links: []
 ---
@@ -88,6 +88,3 @@ related_links: []
 * 学んだこと：長期練習と継続的な取り組みの価値を学びました。
 
 ---
-
-
-

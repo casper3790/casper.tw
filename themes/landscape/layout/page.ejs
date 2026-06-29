@@ -4,6 +4,7 @@
   const pageLang = pageParts[0] === 'zh' ? 'zh' : (pageParts[0] === 'ja' ? 'ja' : 'en');
   const localPageParts = pageLang === 'en' ? pageParts : pageParts.slice(1);
   const pageSection = localPageParts[0] || 'home';
+  const isExperienceDetail = pageSection === 'experience' && localPageParts.length === 2;
   const i18nPagePaths = [
     '',
     'dashboard',
@@ -33,7 +34,9 @@
   const isI18nPage = i18nPagePaths.includes(normalizedPagePath);
 %>
 
-<% if (isI18nPage) { %>
+<% if (isExperienceDetail) { %>
+  <%- partial('_partial/experience-detail') %>
+<% } else if (isI18nPage) { %>
   <%- partial('_partial/i18n-page') %>
 <% } else { %>
   <article class="page-content">

@@ -1,9 +1,9 @@
----
-title: Web Security Notes
-description: Web Security basics, HTTP request flows, authentication, input validation, and common vulnerability practice.
+﻿---
+title: Web Security メモ
+description: Web Security basics, HTTP request flows, authentication, input 検証, and common vulnerability practice.
 ---
 
-# Web Security Notes
+# Web Security メモ
 
 ## Goal
 
@@ -13,11 +13,11 @@ Record Web Security practice separately from CTF writeups so the fundamentals st
 
 - HTTP request and response flow
 - Authentication and session behavior
-- Input validation
+- Input 検証
 - Common web vulnerability patterns
-- Notes from safe local practice environments
+- メモ： safe local practice environments
 
-## Status
+## 状態
 
 This is a learning lab for concepts and defensive understanding, not for attacking real systems.
 

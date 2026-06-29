@@ -5,8 +5,8 @@
     const footerLang = footerParts[0] === 'zh' ? 'zh' : (footerParts[0] === 'ja' ? 'ja' : 'en');
     const footerCopy = {
       en: { home: 'Home', about: 'About', projects: 'Projects', experience: 'Experience', labs: 'Labs', writing: 'Writing', search: 'Search' },
-      zh: { home: '首頁', about: '關於', projects: '專案', experience: '經歷', labs: 'Labs', writing: '文章', search: '搜尋' },
-      ja: { home: 'ホーム', about: 'About', projects: 'プロジェクト', experience: '経歴', labs: 'Labs', writing: '記事', search: '検索' }
+      zh: { home: '首頁', about: '關於', projects: '專案', experience: '經歷', labs: 'Labs', writing: '文章', timeline: '時間軸', search: '搜尋' },
+      ja: { home: 'ホーム', about: 'About', projects: 'プロジェクト', experience: '経歴', labs: 'Labs', writing: '記事', timeline: 'タイムライン', search: '検索' }
     };
     const footerPaths = {
       en: { home: '/', projects: '/projects/', experience: '/experience/', labs: '/labs/', writing: '/writing/', timeline: '/timeline/', about: '/about/' },
@@ -14,7 +14,8 @@
       ja: { home: '/ja/', projects: '/ja/projects/', experience: '/ja/experience/', labs: '/ja/labs/', writing: '/ja/writing/', timeline: '/ja/timeline/', about: '/ja/about/' }
     };
     const f = footerCopy[footerLang];
-    f.dashboard = f.dashboard || 'Dashboard';
+    f.dashboard = f.dashboard || (footerLang === 'zh' ? '儀表板' : (footerLang === 'ja' ? 'ダッシュボード' : 'Dashboard'));
+    f.timeline = f.timeline || (footerLang === 'zh' ? '時間軸' : (footerLang === 'ja' ? 'タイムライン' : 'Timeline'));
     const fp = footerPaths[footerLang];
   %>
   <div class="footer-terminal-line">
@@ -32,7 +33,7 @@
     <a href="<%= url_for(fp.experience) %>"><%= f.experience %></a>
     <a href="<%= url_for(fp.labs) %>"><%= f.labs %></a>
     <a href="<%= url_for(fp.writing) %>"><%= f.writing %></a>
-    <a href="<%= url_for(fp.timeline) %>">Timeline</a>
+    <a href="<%= url_for(fp.timeline) %>"><%= f.timeline %></a>
     <a href="<%= url_for('/search/') %>"><%= f.search %></a>
   </nav>
 

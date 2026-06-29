@@ -12,7 +12,7 @@ skills:
   - Leadership
   - Planning
   - Coordination
-  - Technical communication
+  - Technical 通信
 technologies:
   - Cybersecurity
   - CTF
@@ -20,7 +20,7 @@ technologies:
   - Documentation
 cover: /images/casper-og.png
 related_categories:
-  - Experience
+  - 経歴
 gallery: []
 related_links: []
 ---
@@ -89,6 +89,3 @@ related_links: []
 * 学んだこと：タスクと予定を明確にすることで混乱を減らせると学びました。
 
 ---
-
-
-
