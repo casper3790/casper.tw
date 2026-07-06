@@ -1,50 +1,36 @@
 ---
 title: Medical Cybersecurity
-description: A project page for learning notes and project ideas around healthcare systems, medical devices, privacy, and clinical workflows.
+description: A case study about learning where trust, data validation, and workflow risk appear in healthcare systems.
 ---
 
 <section class="project-page-hero">
 
 # Medical Cybersecurity
 
-Learning notes and project ideas around healthcare systems, medical devices, privacy, and clinical workflows.
+A case study about asking better questions before proposing security solutions for healthcare systems.
 
 </section>
 
-## Project Status
+## Why This Project
 
-<div class="project-status">Research and notes</div>
+I started this direction because medical security feels close to real people. A small data problem, a device trust issue, or a workflow misunderstanding can become more than a technical incident. I wanted to study the problem carefully before claiming that I had an answer.
 
-## Overview
+## The Problem
 
-Medical Cybersecurity is a learning track focused on how security problems appear in real healthcare environments. The project is about understanding clinical workflows, connected devices, data protection, and risk awareness before jumping to solutions.
+Healthcare systems are not only computers and devices. They include clinical routines, time pressure, human judgment, privacy needs, and equipment that may not be easy to replace. Security decisions have to respect that environment.
 
-## Tech Stack
+## My Approach
 
-<div class="project-stack">
-  <span>Security Research</span>
-  <span>Healthcare Workflows</span>
-  <span>Risk Analysis</span>
-  <span>Documentation</span>
-</div>
+I began with notes, scenarios, and questions instead of a finished tool. I looked at where clinical data is created, where it is trusted, and where someone might notice that something is wrong. The goal was to map risk before designing controls.
 
-## Features
+## What I Built
 
-- Healthcare security notes
-- Medical device risk observations
-- Privacy and data protection learning
-- Incident and workflow analysis
-- Early project idea collection
+I built a structured research track for medical device trust, data validation, privacy, and workflow risk. The work is still mostly notes and early concepts, but it gives me a clearer base for future prototypes.
 
-## Development Log
+## What I Learned
 
-- Started from reading and reflecting on real healthcare security contexts.
-- Collected notes about hospital systems, connected devices, and user workflows.
-- Focused on asking better questions before proposing technical controls.
+I learned that healthcare security needs humility. It is easy to imagine a technical fix, but much harder to understand whether that fix would help real users in a clinical setting. The better starting point is usually a careful question.
 
-## Future Plans
+## Built with
 
-- Build a structured note index for healthcare security topics.
-- Compare common hospital workflow risks with practical security controls.
-- Explore small awareness tools for safer information handling.
-- Keep claims careful and grounded in learning evidence.
+Security Research · Healthcare Workflows · Risk Analysis · Documentation

@@ -1,51 +1,36 @@
-﻿---
+---
 title: Autonomous Robot
-description: Hands-on autonomous robot build using ROS2, Raspberry Pi, LiDAR, sensors, and motor control.
+description: 一篇關於透過建置、測試與除錯學習自主機器人的案例研究。
 ---
 
 <section class="project-page-hero">
 
 # Autonomous Robot
 
-A hands-on robotics build focused on sensors, motor control, ROS2, and autonomous movement.
+這是一篇關於機器人的案例研究：我想理解軟體、硬體、感測器與不確定性如何在同一台機器裡相遇。
 
 </section>
 
-## Project 狀態
+## Why This Project
 
-<div class="project-status">原型與實驗</div>
+我開始做這個專案，是因為機器人會逼理論面對現實世界。程式看起來正確，仍然可能因為接線、電源、感測器、時間差，或地面狀況而失敗。我需要一個能讓失敗被看見的題目。
 
-## 概覽
+## The Problem
 
-Autonomous Robot is a robotics learning project for understanding how hardware, Linux, sensors, motors, and software control loops work together. The goal is to learn the full system by building, testing, debugging, and improving the robot step by step.
+自主機器人不是單一問題，而是一串不穩定的小系統：Linux 環境、感測器輸入、馬達控制、ROS2 通訊、地圖建立與移動。如果其中一層不穩定，整台機器人就很難被信任。
 
-## Tech 技術
+## My Approach
 
-<div class="project-stack">
-  <span>ROS2</span>
-  <span>Ubuntu</span>
-  <span>Raspberry Pi</span>
-  <span>LiDAR</span>
-  <span>Motor Control</span>
-</div>
+我從底層往上做。先測硬體與環境設定，再嘗試讓機器人具備自主行為。每一次失敗都變成檢查點，幫我記錄自己對電源、通訊或控制流程的誤解。
 
-## Features
+## What I Built
 
-- ROS2 environment setup
-- Sensor and LiDAR experiments
-- Motor control testing
-- Basic autonomous movement
-- Hardware debugging notes
+我建立了一條原型路徑，包含 ROS2 環境、Raspberry Pi 整合、LiDAR 與感測器實驗、馬達測試，以及基礎移動測試。它目前仍是實驗，不是完成品。
 
-## Development Log
+## What I Learned
 
-- Started from hardware setup and basic Linux environment work.
-- Tested how sensors and motors behave before connecting everything into one system.
-- Used failures as debugging checkpoints for power, wiring, software, and control logic.
+我學到機器人專案比起誇大的成果，更需要耐心。真正有用的進度，常常是讓某一層變得可重複，然後記下它上一次為什麼失敗。除錯紀錄和移動本身一樣重要。
 
-## Future Plans
+## Built with
 
-- Improve repeatable setup documentation.
-- Add clearer movement tests and debug logs.
-- Explore mapping and navigation basics.
-- Make the robot easier to maintain between experiments.
+ROS2 · Ubuntu · Raspberry Pi · LiDAR · Motor Control

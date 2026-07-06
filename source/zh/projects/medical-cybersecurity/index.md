@@ -1,50 +1,36 @@
-﻿---
+---
 title: Medical Cybersecurity
-description: Learning notes and project ideas around healthcare systems, medical devices, privacy, and 臨床流程.
+description: 一篇關於醫療系統信任、資料驗證與流程風險的案例研究。
 ---
 
 <section class="project-page-hero">
 
 # Medical Cybersecurity
 
-Learning notes and project ideas around healthcare systems, medical devices, privacy, and 臨床流程.
+這是一篇關於醫療資安的案例研究：在提出解法以前，我想先把問題問清楚。
 
 </section>
 
-## Project 狀態
+## Why This Project
 
-<div class="project-status">Research and notes</div>
+我開始研究這個方向，是因為醫療資安離真實的人很近。資料異常、設備信任問題，或流程中的誤解，都可能不只是技術事件。我不想太快宣稱自己有答案，而是想先把風險看清楚。
 
-## 概覽
+## The Problem
 
-Medical Cybersecurity is a learning track focused on how security problems appear in real healthcare environments. The project is about understanding 臨床流程, connected devices, data protection, and 風險 awareness before jumping to solutions.
+醫療系統不只是電腦和設備。它也包含臨床流程、時間壓力、人的判斷、隱私需求，以及不一定能立刻替換的設備。資安設計必須理解這些限制。
 
-## Tech 技術
+## My Approach
 
-<div class="project-stack">
-  <span>Security Research</span>
-  <span>醫療 Workflows</span>
-  <span>Risk Analysis</span>
-  <span>Documentation</span>
-</div>
+我從筆記、情境與問題開始，而不是先做工具。我觀察臨床資料在哪裡產生、在哪裡被信任，以及什麼情況下人可能發現資料不合理。目標是先畫出風險，再談控制方式。
 
-## Features
+## What I Built
 
-- 醫療 security notes
-- Medical device 風險 observations
-- Privacy and data protection learning
-- Incident and workflow analysis
-- Early project idea collection
+我整理了一條研究脈絡，包含醫療設備信任、資料驗證、隱私與流程風險。現在它仍以筆記和早期概念為主，但它讓我之後做原型時，不會只憑想像開始。
 
-## Development Log
+## What I Learned
 
-- Started from reading and reflecting on real healthcare security contexts.
-- Collected notes about hospital systems, connected devices, and user workflows.
-- Focused on asking better questions before proposing technical controls.
+我學到醫療資安需要謙遜。想像一個技術解法很容易，但理解它在臨床現場是否真的有幫助困難得多。比較好的起點，通常是一個更小心的問題。
 
-## Future Plans
+## Built with
 
-- Build a structured note index for healthcare security topics.
-- Compare common hospital workflow 風險s with practical security controls.
-- Explore small awareness tools for safer information handling.
-- Keep claims careful and grounded in learning evidence.
+Security Research · Healthcare Workflows · Risk Analysis · Documentation

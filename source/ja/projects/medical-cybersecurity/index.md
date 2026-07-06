@@ -1,50 +1,36 @@
-﻿---
+---
 title: Medical Cybersecurity
-description: Learning notes and project ideas around healthcare systems, medical devices, privacy, and 臨床ワークフロー.
+description: 医療システムにおける信頼、データ検証、ワークフロー上のリスクを考えるケーススタディ。
 ---
 
 <section class="project-page-hero">
 
 # Medical Cybersecurity
 
-Learning notes and project ideas around healthcare systems, medical devices, privacy, and 臨床ワークフロー.
+医療セキュリティについて、解決策を急ぐ前に問いを整理するためのケーススタディです。
 
 </section>
 
-## Project 状態
+## Why This Project
 
-<div class="project-status">Research and notes</div>
+この方向に取り組み始めたのは、医療セキュリティが実際の人の生活に近いからです。データの異常、機器への信頼、ワークフローの誤解は、単なる技術的な問題で終わらないことがあります。答えを急がず、まずリスクを丁寧に見たいと思いました。
 
-## 概要
+## The Problem
 
-Medical Cybersecurity is a learning track focused on how security problems appear in real healthcare environments. The project is about understanding 臨床ワークフロー, connected devices, data protection, and リスク awareness before jumping to solutions.
+医療システムは、コンピュータと機器だけで成り立っているわけではありません。臨床の流れ、時間的な制約、人の判断、プライバシー、すぐには交換できない設備も含まれます。セキュリティを考えるには、その環境を尊重する必要があります。
 
-## Tech 技術
+## My Approach
 
-<div class="project-stack">
-  <span>Security Research</span>
-  <span>医療 Workflows</span>
-  <span>Risk Analysis</span>
-  <span>Documentation</span>
-</div>
+私は完成したツールからではなく、メモ、シナリオ、問いから始めました。臨床データがどこで生まれ、どこで信頼され、どの場面で異常に気づけるのかを見ました。制御策を考える前に、リスクの位置を整理することを優先しました。
 
-## Features
+## What I Built
 
-- 医療 security notes
-- Medical device リスク observations
-- Privacy and data protection learning
-- Incident and workflow analysis
-- Early project idea collection
+医療機器の信頼、データ検証、プライバシー、ワークフロー上のリスクについて、研究ノートとして整理しました。まだ初期段階ですが、将来の prototype を考えるための土台になっています。
 
-## Development Log
+## What I Learned
 
-- Started from reading and reflecting on real healthcare security contexts.
-- Collected notes about hospital systems, connected devices, and user workflows.
-- Focused on asking better questions before proposing technical controls.
+医療セキュリティには謙虚さが必要だと学びました。技術的な解決策を想像することは簡単ですが、それが臨床現場で本当に役に立つかを理解することは難しいです。よい出発点は、たいてい慎重な問いです。
 
-## Future Plans
+## Built with
 
-- Build a structured note index for healthcare security topics.
-- Compare common hospital workflow リスクs with practical security controls.
-- Explore small awareness tools for safer information handling.
-- Keep claims careful and grounded in learning evidence.
+Security Research · Healthcare Workflows · Risk Analysis · Documentation

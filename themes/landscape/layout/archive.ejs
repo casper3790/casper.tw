@@ -1,18 +1,89 @@
-<section class="archive-page">
-  <h1 class="section-title"><%= page.title || 'Archives' %></h1>
+<%
+  const archivePosts = page.posts || site.posts || [];
+  const rawPostsArray = archivePosts.toArray ? archivePosts.toArray() : (archivePosts.data || archivePosts || []);
+  const postTime = function(post) {
+    if (!post || !post.date) return 0;
+    if (typeof post.date.valueOf === 'function') return post.date.valueOf();
+    const parsed = new Date(post.date).getTime();
+    return Number.isNaN(parsed) ? 0 : parsed;
+  };
+  const postsArray = rawPostsArray.slice().sort(function(a, b) {
+    return postTime(b) - postTime(a);
+  });
+  const postExcerpt = function(post) {
+    const raw = post.description || post.excerpt || post.content || '';
+    const text = strip_html(String(raw)).replace(/\s+/g, ' ').trim();
+    return text.length > 170 ? text.slice(0, 170).replace(/\s+\S*$/, '') + '...' : text;
+  };
+  const postHref = function(post) {
+    return url_for(post.path);
+  };
+  const groupedPosts = postsArray.reduce(function(groups, post) {
+    const year = date(post.date, 'YYYY');
+    if (!groups[year]) groups[year] = [];
+    groups[year].push(post);
+    return groups;
+  }, {});
+  const years = Object.keys(groupedPosts).sort(function(a, b) { return Number(b) - Number(a); });
+  const archivePath = String(page.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
+  const archiveParts = archivePath.split('/').filter(Boolean);
+  const archiveLang = archiveParts[0] === 'zh' ? 'zh' : (archiveParts[0] === 'ja' ? 'ja' : 'en');
+  const archiveCopy = {
+    en: {
+      kicker: 'Field Notes',
+      title: 'Field Notes Archive',
+      intro: 'A chronological index of learning notes, experiments, mistakes, and ideas I want to keep.',
+      empty: 'No field notes yet.',
+      read: 'Read Note →'
+    },
+    zh: {
+      kicker: '探索筆記',
+      title: '探索筆記索引',
+      intro: '依時間整理學習筆記、實驗紀錄、犯錯後留下的想法，以及值得保存的問題。',
+      empty: '目前還沒有探索筆記。',
+      read: '閱讀筆記 →'
+    },
+    ja: {
+      kicker: '探索ノート',
+      title: '探索ノート索引',
+      intro: '学びの記録、実験、失敗から残した考え、あとで読み返したい問いを時系列でまとめています。',
+      empty: '探索ノートはまだありません。',
+      read: 'ノートを読む →'
+    }
+  }[archiveLang];
+%>
 
-  <% if (page.posts && page.posts.length) { %>
-    <div class="writing-list">
-      <% page.posts.each(function(post) { %>
-        <article class="writing-item">
-          <div class="writing-date"><%= date(post.date, 'YYYY-MM-DD') %></div>
-          <div class="writing-title">
-            <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+<section class="archive-page field-notes-index" aria-labelledby="field-notes-index-title">
+  <header class="field-notes-index-header">
+    <p class="field-notes-index-kicker"><%= archiveCopy.kicker %></p>
+    <h1 id="field-notes-index-title"><%= archiveCopy.title %></h1>
+    <p><%= archiveCopy.intro %></p>
+  </header>
+
+  <% if (years.length) { %>
+    <div class="field-notes-year-list">
+      <% years.forEach(function(year) { %>
+        <section class="field-notes-year" aria-labelledby="field-notes-year-<%= year %>">
+          <h2 id="field-notes-year-<%= year %>"><%= year %></h2>
+          <div class="field-notes-list">
+            <% groupedPosts[year].forEach(function(post) {
+              const excerpt = postExcerpt(post);
+              const href = postHref(post);
+            %>
+              <article class="field-notes-index-item">
+                <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+                <div class="field-notes-index-body">
+                  <h3><a class="field-notes-index-link" href="<%= href %>"><%= post.title %></a></h3>
+                  <% if (excerpt) { %><p><%= excerpt %></p><% } %>
+                  <a class="field-notes-index-cta" href="<%= href %>"><%= archiveCopy.read %></a>
+                </div>
+              </article>
+            <% }) %>
           </div>
-        </article>
+        </section>
       <% }) %>
     </div>
   <% } else { %>
-    <p>No posts found.</p>
+    <p class="field-notes-empty"><%= archiveCopy.empty %></p>
   <% } %>
 </section>

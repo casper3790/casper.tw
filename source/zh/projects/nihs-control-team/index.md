@@ -1,50 +1,36 @@
-﻿---
+---
 title: NIHS Control Team
-description: NIHS Control Team platform experiment, including status, overview, stack, features, development log, and future plans.
+description: 一篇關於學生技術團隊內部平台的案例研究。
 ---
 
 <section class="project-page-hero">
 
 # NIHS Control Team
 
-Team platform experiment for organizing competition links, schedules, and 儀表板 workflows.
+這是一篇關於團隊工具的案例研究：我想知道，怎麼讓資訊被整理起來，而不是把它包裝成一個漂亮產品。
 
 </section>
 
-## Project 狀態
+## Why This Project
 
-<div class="project-status">Active learning project</div>
+我開始做這個專案，是因為團隊資訊太容易散掉。競賽連結、時程、筆記、CTF 操作流程，常常分散在不同訊息或文件裡。我想先理解一個小型內部平台真正該解決什麼，再決定要做成什麼樣子。
 
-## 概覽
+## The Problem
 
-NIHS Control Team is a practical web platform idea for keeping team competition information in one place. The goal is to learn how a real team tool should organize links, schedules, notes, and operational context.
+問題不只是資料不見，而是脈絡會消失。當一個隊員要準備比賽時，他需要的不只是連結，還包括哪個連結重要、目前進度是什麼、誰負責、下一步要做什麼。
 
-## Tech 技術
+## My Approach
 
-<div class="project-stack">
-  <span>React</span>
-  <span>FastAPI</span>
-  <span>SQLite</span>
-  <span>GitHub Pages</span>
-</div>
+我把這個平台當成團隊工作流程的研究筆記，而不是一開始就當成產品。我先觀察資訊在哪些時刻變得混亂，再決定介面和資料結構應該先讓哪些東西被看見。
 
-## Features
+## What I Built
 
-- Competition link collection
-- Calendar and schedule notes
-- Dashboard experiments
-- Team resource organization
-- Simple backend API practice
+我做了早期的 dashboard 與資源整理流程，用來放競賽連結、時程筆記、公告，以及團隊交接時需要的脈絡。範圍刻意維持很小，因為我想先測試結構，而不是太早追求完成度。
 
-## Development Log
+## What I Learned
 
-- Started from a team workflow problem: information gets scattered across links and messages.
-- Built early 儀表板 concepts to understand what data should be visible first.
-- Used the project to practice frontend structure, API design, and deployment constraints.
+我學到團隊工具真正重要的是信任與時機。只有在成員需要資訊的當下，工具能幫他找到正確脈絡，它才有價值。我也學到要分清楚哪些功能真的被團隊使用，哪些只是看起來很完整。
 
-## Future Plans
+## Built with
 
-- Improve data model for competitions and events.
-- Add cleaner admin workflows for updating links and notes.
-- Explore better reminders and team handoff flows.
-- Keep the scope small enough to be useful and maintainable.
+React · FastAPI · SQLite · GitHub Pages

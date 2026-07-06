@@ -1,50 +1,36 @@
-﻿---
+---
 title: NIHS Control Team
-description: NIHS Control Team platform experiment, including status, overview, stack, features, development log, and future plans.
+description: 学生技術チームのための小さな内部プラットフォームを作るケーススタディ。
 ---
 
 <section class="project-page-hero">
 
 # NIHS Control Team
 
-Team platform experiment for organizing competition links, schedules, and ダッシュボード workflows.
+学生チームの情報を整理するために、何を作るべきかを考えたケーススタディです。
 
 </section>
 
-## Project 状態
+## Why This Project
 
-<div class="project-status">Active learning project</div>
+このプロジェクトを始めた理由は、チームの情報が簡単に散らばってしまうからです。コンテストのリンク、予定、メモ、CTF の運用手順が、別々のチャットや文書に残っていました。まず、小さな内部ツールが本当に助けるべきことを理解したいと思いました。
 
-## 概要
+## The Problem
 
-NIHS Control Team is a practical web platform idea for keeping team competition information in one place. The goal is to learn how a real team tool should organize links, schedules, notes, and operational context.
+問題は、情報が足りないことだけではありません。文脈が失われることです。メンバーがコンテストの準備をするとき、必要なのはリンクだけではなく、どのリンクが重要か、何が変わったか、誰が担当しているか、次に何をするべきかという流れです。
 
-## Tech 技術
+## My Approach
 
-<div class="project-stack">
-  <span>React</span>
-  <span>FastAPI</span>
-  <span>SQLite</span>
-  <span>GitHub Pages</span>
-</div>
+私はこのプラットフォームを、製品ではなくチーム運用の研究ノートとして扱いました。情報が散らばる場面を観察し、その場面からインターフェースとデータ構造で先に見せるべきものを考えました。
 
-## Features
+## What I Built
 
-- Competition link collection
-- Calendar and schedule notes
-- Dashboard experiments
-- Team resource organization
-- Simple backend API practice
+コンテストリンク、予定メモ、連絡事項、引き継ぎに必要な文脈を整理するための初期 dashboard とリソース整理の流れを作りました。完成度よりも構造を検証するため、範囲は意図的に小さく保っています。
 
-## Development Log
+## What I Learned
 
-- Started from a team workflow problem: information gets scattered across links and messages.
-- Built early ダッシュボード concepts to understand what data should be visible first.
-- Used the project to practice frontend structure, API design, and deployment constraints.
+チーム向けのツールでは、信頼とタイミングが大切だと学びました。必要な瞬間に正しい文脈へたどり着けるとき、そのツールには価値があります。見栄えのする機能と、実際に使われる機能は分けて考える必要がありました。
 
-## Future Plans
+## Built with
 
-- Improve data model for competitions and events.
-- Add cleaner admin workflows for updating links and notes.
-- Explore better reminders and team handoff flows.
-- Keep the scope small enough to be useful and maintainable.
+React · FastAPI · SQLite · GitHub Pages

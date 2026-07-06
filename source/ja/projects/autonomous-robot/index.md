@@ -1,51 +1,36 @@
-﻿---
+---
 title: Autonomous Robot
-description: Hands-on autonomous robot build using ROS2, Raspberry Pi, LiDAR, sensors, and motor control.
+description: 物理的なロボットを作り、試し、デバッグしながら学ぶケーススタディ。
 ---
 
 <section class="project-page-hero">
 
 # Autonomous Robot
 
-A hands-on robotics build focused on sensors, motor control, ROS2, and autonomous movement.
+ソフトウェア、ハードウェア、センサー、不確実性が一つのロボットの中でどう交わるかを学ぶケーススタディです。
 
 </section>
 
-## Project 状態
+## Why This Project
 
-<div class="project-status">試作と実験</div>
+このプロジェクトを始めたのは、ロボットが理論を現実の環境に引き出してくれるからです。コードが正しく見えても、配線、電源、センサー、タイミング、床の状態で失敗します。その失敗を見える形で学びたいと思いました。
 
-## 概要
+## The Problem
 
-Autonomous Robot is a robotics learning project for understanding how hardware, Linux, sensors, motors, and software control loops work together. The goal is to learn the full system by building, testing, debugging, and improving the robot step by step.
+自律ロボットは一つの問題ではありません。Linux 環境、センサー入力、モーター制御、ROS2 通信、地図作成、移動制御がつながった小さな不確実性の集まりです。一つの層が不安定だと、ロボット全体を信頼しにくくなります。
 
-## Tech 技術
+## My Approach
 
-<div class="project-stack">
-  <span>ROS2</span>
-  <span>Ubuntu</span>
-  <span>Raspberry Pi</span>
-  <span>LiDAR</span>
-  <span>Motor Control</span>
-</div>
+私は下の層から順に進めました。すぐに自律動作を目指すのではなく、まずハードウェアと環境設定を試しました。失敗するたびに、電源、通信、制御のどこを誤解していたのかを記録しました。
 
-## Features
+## What I Built
 
-- ROS2 environment setup
-- Sensor and LiDAR experiments
-- Motor control testing
-- Basic autonomous movement
-- Hardware debugging notes
+ROS2 のセットアップ、Raspberry Pi の統合、LiDAR とセンサー実験、モーター試験、基本的な移動テストまでの prototype の流れを作りました。これは完成品ではなく、まだ実験として扱っています。
 
-## Development Log
+## What I Learned
 
-- Started from hardware setup and basic Linux environment work.
-- Tested how sensors and motors behave before connecting everything into one system.
-- Used failures as debugging checkpoints for power, wiring, software, and control logic.
+ロボット開発では、大きな成果を語るよりも忍耐が必要だと学びました。一つの層を再現可能にし、前回なぜ失敗したのかを記録することが大切です。デバッグノートは、動いた瞬間と同じくらい価値があります。
 
-## Future Plans
+## Built with
 
-- Improve repeatable setup documentation.
-- Add clearer movement tests and debug logs.
-- Explore mapping and navigation basics.
-- Make the robot easier to maintain between experiments.
+ROS2 · Ubuntu · Raspberry Pi · LiDAR · Motor Control

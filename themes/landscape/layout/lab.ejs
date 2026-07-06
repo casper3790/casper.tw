@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="<%= url_for('/css/lab.css') %>?v=2">
+
+<section class="lab-page" data-lab-page>
+  <section class="lab-hero lab-reveal" aria-labelledby="lab-title">
+    <div class="lab-hero-grid">
+      <div class="lab-hero-copy">
+        <p class="lab-kicker">public-lab://casper</p>
+        <h1 id="lab-title">Casper Lab</h1>
+        <p class="lab-subtitle">A public experimental lab for research in progress, prototypes in motion, and systems still being tested.</p>
+        <div class="lab-tags" aria-label="Research areas">
+          <span>Cybersecurity</span>
+          <span>ROS2</span>
+          <span>Medical Security</span>
+          <span>Web Dev</span>
+        </div>
+      </div>
+
+      <aside class="lab-console" aria-label="Lab console status">
+        <div class="lab-console-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+          <strong>lab-console</strong>
+        </div>
+        <div class="lab-console-body">
+          <p><span class="lab-prompt">$</span> ./status --scope public</p>
+          <p><span class="lab-muted">mode</span> experimental</p>
+          <p><span class="lab-muted">focus</span> security + robotics + healthcare</p>
+          <p><span class="lab-muted">signal</span> research, experiment, develop</p>
+          <p><span class="lab-prompt">$</span> tail -f activity.log<span class="lab-cursor" aria-hidden="true"></span></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="lab-section lab-reveal" aria-labelledby="experiments-title">
+    <div class="lab-section-heading">
+      <p class="lab-section-kicker">Current Experiments</p>
+      <h2 id="experiments-title">Work in progress</h2>
+    </div>
+
+    <div class="lab-card-grid">
+      <article class="lab-card">
+        <span class="lab-card-index">01</span>
+        <h3>ROS2 Robot</h3>
+        <p>Robot base experiments around ROS2 communication, navigation, sensing, and control reliability.</p>
+        <div class="lab-card-meta">
+          <span>Robotics</span>
+          <span>ROS2</span>
+        </div>
+      </article>
+
+      <article class="lab-card">
+        <span class="lab-card-index">02</span>
+        <h3>Medical Security Gateway</h3>
+        <p>Trust boundaries, logging, and device-facing security models for medical network environments.</p>
+        <div class="lab-card-meta">
+          <span>Healthcare</span>
+          <span>Security</span>
+        </div>
+      </article>
+
+      <article class="lab-card">
+        <span class="lab-card-index">03</span>
+        <h3>NIHS Platform</h3>
+        <p>Platform notes and control-team tooling for cybersecurity training, operations, and event support.</p>
+        <div class="lab-card-meta">
+          <span>Platform</span>
+          <span>Web</span>
+        </div>
+      </article>
+
+      <article class="lab-card">
+        <span class="lab-card-index">04</span>
+        <h3>CTF Writeups</h3>
+        <p>Practical writeups from web security practice, challenge analysis, and repeatable learning notes.</p>
+        <div class="lab-card-meta">
+          <span>CTF</span>
+          <span>Writeups</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="lab-section lab-reveal" aria-labelledby="notes-title">
+    <div class="lab-section-heading">
+      <p class="lab-section-kicker">Research Notes</p>
+      <h2 id="notes-title">Open notebook</h2>
+    </div>
+
+    <div class="lab-notes">
+      <article>
+        <span>LEO</span>
+        <h3>LEO Satellite Security</h3>
+        <p>Threat models, communication surfaces, and resilient security assumptions for low earth orbit systems.</p>
+      </article>
+      <article>
+        <span>QSEC</span>
+        <h3>Quantum Security</h3>
+        <p>Post-quantum migration notes, practical risk framing, and long-term cryptographic planning.</p>
+      </article>
+      <article>
+        <span>MED</span>
+        <h3>Medical Cybersecurity</h3>
+        <p>Device trust, operational constraints, and security patterns for healthcare environments.</p>
+      </article>
+      <article>
+        <span>BOT</span>
+        <h3>Robotics Security</h3>
+        <p>ROS2 attack surfaces, control paths, sensor integrity, and safe experiment documentation.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="lab-section lab-reveal" aria-labelledby="logs-title">
+    <div class="lab-section-heading">
+      <p class="lab-section-kicker">Activity / Logs</p>
+      <h2 id="logs-title">Latest lab stream</h2>
+    </div>
+
+    <div class="lab-log-panel" role="list" aria-label="Lab activity logs">
+      <p role="listitem"><span>[active]</span> Building ROS2 robot base</p>
+      <p role="listitem"><span>[research]</span> Medical device trust model</p>
+      <p role="listitem"><span>[writeup]</span> CTF learning notes</p>
+      <p role="listitem"><span>[web]</span> Improving casper.tw<span class="lab-cursor" aria-hidden="true"></span></p>
+    </div>
+  </section>
+
+  <section class="lab-cta lab-reveal" aria-label="Lab links">
+    <div>
+      <p class="lab-section-kicker">Next command</p>
+      <h2>Explore the rest of the lab.</h2>
+    </div>
+    <div class="lab-actions">
+      <a href="<%= url_for('/writing/') %>">Read Articles</a>
+      <a href="<%= url_for('/projects/') %>">View Projects</a>
+      <a href="https://github.com/casper3790" rel="noopener noreferrer" target="_blank">View GitHub</a>
+    </div>
+  </section>
+</section>
+
+<script src="<%= url_for('/js/lab.js') %>?v=1" defer></script>

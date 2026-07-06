@@ -1,51 +1,36 @@
 ---
 title: Autonomous Robot
-description: A project page for a hands-on autonomous robot build using ROS2, Raspberry Pi, LiDAR, sensors, and motor control.
+description: A case study about learning robotics by building, testing, and debugging a physical system.
 ---
 
 <section class="project-page-hero">
 
 # Autonomous Robot
 
-A hands-on robotics build focused on sensors, motor control, ROS2, and autonomous movement.
+A case study about learning how software, hardware, sensors, and uncertainty meet inside one robot.
 
 </section>
 
-## Project Status
+## Why This Project
 
-<div class="project-status">Prototype and experimentation</div>
+I started this project because robotics forces theory to meet the physical world. Code that looks correct can still fail because of wiring, power, sensors, timing, or the floor under the robot. I wanted a project that would make those failures visible.
 
-## Overview
+## The Problem
 
-Autonomous Robot is a robotics learning project for understanding how hardware, Linux, sensors, motors, and software control loops work together. The goal is to learn the full system by building, testing, debugging, and improving the robot step by step.
+An autonomous robot is not one problem. It is a chain of small uncertain systems: Linux setup, sensor input, motor control, ROS2 communication, mapping, and movement. If one layer is unstable, the whole robot becomes hard to trust.
 
-## Tech Stack
+## My Approach
 
-<div class="project-stack">
-  <span>ROS2</span>
-  <span>Ubuntu</span>
-  <span>Raspberry Pi</span>
-  <span>LiDAR</span>
-  <span>Motor Control</span>
-</div>
+I worked from the bottom up. I tested hardware and environment setup before trying to make the robot feel autonomous. Each failure became a checkpoint for documenting what I misunderstood about power, communication, or control flow.
 
-## Features
+## What I Built
 
-- ROS2 environment setup
-- Sensor and LiDAR experiments
-- Motor control testing
-- Basic autonomous movement
-- Hardware debugging notes
+I built a prototype path for ROS2 setup, Raspberry Pi integration, LiDAR and sensor experiments, motor testing, and basic movement trials. The robot is still an experiment, not a finished product.
 
-## Development Log
+## What I Learned
 
-- Started from hardware setup and basic Linux environment work.
-- Tested how sensors and motors behave before connecting everything into one system.
-- Used failures as debugging checkpoints for power, wiring, software, and control logic.
+I learned that robotics rewards patience more than big claims. The useful progress is often in making one layer repeatable, then recording why it failed the last time. Debug notes matter as much as movement.
 
-## Future Plans
+## Built with
 
-- Improve repeatable setup documentation.
-- Add clearer movement tests and debug logs.
-- Explore mapping and navigation basics.
-- Make the robot easier to maintain between experiments.
+ROS2 · Ubuntu · Raspberry Pi · LiDAR · Motor Control

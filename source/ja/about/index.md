@@ -1,47 +1,74 @@
-﻿---
-title: About
-description: Casper、本名ホン・シンフについて。Cybersecurity、Web development、Robotics、Embedded systems、Medical Cybersecurity の学習を記録する 公開エンジニアリングノート です。
+---
+title: Casper について
+description: "Casper について。公開研究ノートのための作者紹介。"
 comments: true
 ---
 
-# About
+<section class="about-v1-hero" aria-labelledby="about-v1-title">
+  <p class="about-v1-kicker">作者紹介</p>
+  <h1 id="about-v1-title">About Casper</h1>
+  <p>どんな旅にも、始まりの場所があります。</p>
+</section>
 
-## Intro
+<section class="about-v1-chapter">
+  <p class="about-v1-chapter-number">第1章</p>
+  <h2>起点</h2>
+  <p>最初からはっきりした地図があったわけではありません。</p>
+  <p>技術は、私にとって好奇心の行き先でした。知らないものを開き、小さく分けて、なぜそう動くのかを少しずつ理解していく感覚が好きでした。</p>
+  <p>Casper の始まりは、完成した肩書きではありません。世界をもう少し丁寧に見るための、静かな記録でした。</p>
+</section>
 
-**Casper**、本名 **ホン・シンフ** です。
+<section class="about-v1-chapter">
+  <p class="about-v1-chapter-number">第2章</p>
+  <h2>一つの選択</h2>
+  <p>ある時、自分の学び方を選ぶ必要がありました。</p>
+  <p>準備ができるまで待つのか。それとも、まだ分からないまま始めてみるのか。私は後者を選びました。</p>
+  <p>少し作り、少し失敗し、起きたことを書き残して、また戻ってくる。その選択は、進歩の見方を変えました。</p>
+</section>
 
-台湾で engineering と security を学んでいる学生です。現在は **Cybersecurity**、**Web development**、**Robotics**、**Embedded systems**、**Medical Cybersecurity** を中心に学んでいます。このサイトは完成された会社向けの履歴書ではなく、作りながら学び、失敗し、debug し、もう一度直していく過程を残す場所です。
+<section class="about-v1-chapter">
+  <p class="about-v1-chapter-number">第3章</p>
+  <h2>自分だけではなくなる</h2>
+  <p>長い間、学ぶことはとても個人的なものだと思っていました。</p>
+  <p>それは自分の迷い、自分のノート、小さな成果、そして失敗でした。</p>
+  <p>けれど書き続けるうちに、記録は誰かの出発点にもなり得ると気づきました。自分のためのノートが、いつか誰かの迷いを少し減らすかもしれない。</p>
+  <p>だからこのサイトは公開されています。すべてを知っていることを示すためではなく、過程そのものにも残す価値があると思うからです。</p>
+</section>
 
-## What I Build
+<section class="about-v1-chapter">
+  <p class="about-v1-chapter-number">第4章</p>
+  <h2>私の北極星</h2>
+  <p>私の北極星は、職業名でも資格でも、完璧な計画でもありません。</p>
+  <p>それは、学び続け、作り続け、人に影響するシステムをより丁寧に見るための方向です。</p>
+  <p>迷ったとき、私は一つの問いに戻ります。時間がかかっても、もっと深く理解する価値があるものは何だろう。</p>
+</section>
 
-私は、スライド上の概念だけではなく、実際に動くシステムを作ることが好きです。今の学習は web platform、security の考え方、Robotics 実験、embedded devices、医療分野の security 課題につながっています。
+<section class="about-v1-chapter">
+  <p class="about-v1-chapter-number">第5章</p>
+  <h2>今日</h2>
+  <p>今日の Casper は、まだ途中にあります。</p>
+  <p>より良い問いを立てること、より慎重に作ること、そして未完成な部分を隠さずに書くことを、今も学んでいます。</p>
+  <p>このページは能力の一覧ではありません。まだ前に進んでいる人の、今の一枚の記録です。</p>
+</section>
 
-よく扱うテーマは次の通りです。
+<section class="about-v1-chapter">
+  <p class="about-v1-chapter-number">第6章</p>
+  <h2>何を残したいのか</h2>
+  <p>残したいのは、完成したものだけではありません。</p>
+  <p>どう学んだのかも残したい。遠回りした道、問い直したこと、作り直した時間、そして少しだけ理解できた瞬間。</p>
+  <p>もしこのサイトが、始めたばかりの誰かに「自分だけではない」と思わせることができるなら、それだけで意味があります。</p>
+</section>
 
-- Cybersecurity と CTF practice
-- FastAPI と frontend workflow を使った web systems
-- ROS2、Raspberry Pi、ESP32、Robotics 試作s
-- Medical Cybersecurity と data 検証
-- チームの技術作業を整理する tools
-
-## How I Learn
-
-私は実作業を通して学びます。コンペティション、ワークショップ、失敗した実験、debug、プロジェクトノートは、すべて学習の記録です。
-
-何かが壊れたときは、何が起きたのか、何を誤解していたのか、最後に何を変えたのかを書き残すようにしています。散らばった努力を、あとで見返せる形にするためです。
-
-## Why This Site Exists
-
-このサイトは私の **公開エンジニアリングノート** です。
-
-**Build in Public** を実践し、プロジェクト と Labs を整理し、学びの過程をそのまま残すために使っています。完成したページもあれば、まだノートに近いページもあります。大切なのは、学びを見える形にしながら進み続けることです。
-
-## My Quote
-
-> これが自分の道だと本気で思うなら、途中で諦めるな。
-
-## Explore
-
-- [経歴](../experience/)
-- [プロジェクト](../projects/)
-- [Labs](../labs/)
+<section class="about-v1-final-page">
+  <p>このページを読んでいるあなたへ。</p>
+  <p>今のあなたが、</p>
+  <p>まだ自分に何が合うのか分からなくても。</p>
+  <p>大丈夫です。</p>
+  <p>私も同じ場所に立っていました。</p>
+  <p>急いで誰かと比べなくていい。</p>
+  <p>まずは一つ、</p>
+  <p>続けたいと思えるものを見つけてください。</p>
+  <p>残りは、</p>
+  <p>時間に任せればいい。</p>
+  <p class="about-v1-signature">—— Casper</p>
+</section>

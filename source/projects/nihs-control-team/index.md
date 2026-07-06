@@ -1,50 +1,36 @@
 ---
 title: NIHS Control Team
-description: A project page for the NIHS Control Team platform experiment, including status, overview, stack, features, development log, and future plans.
+description: A case study about building a small internal platform for a student technical team.
 ---
 
 <section class="project-page-hero">
 
 # NIHS Control Team
 
-A team platform experiment for organizing competition links, schedules, and dashboard workflows.
+A case study about keeping a student technical team organized without turning the tool into a product pitch.
 
 </section>
 
-## Project Status
+## Why This Project
 
-<div class="project-status">Active learning project</div>
+I started this project because team information was too easy to lose. Competition links, schedules, notes, and CTF operations often lived in different chats or documents. I wanted to understand what a small internal platform should do before I tried to make it look complete.
 
-## Overview
+## The Problem
 
-NIHS Control Team is a practical web platform idea for helping a team keep competition information in one place. The goal is not to build a large product first, but to learn how a real team tool should organize links, schedules, notes, and operational context.
+The problem was not only missing data. It was context loss. When a team member needed to prepare for a competition, they also needed to know which link mattered, what had changed, who was responsible, and what should happen next.
 
-## Tech Stack
+## My Approach
 
-<div class="project-stack">
-  <span>React</span>
-  <span>FastAPI</span>
-  <span>SQLite</span>
-  <span>GitHub Pages</span>
-</div>
+I treated the platform as a research notebook for team workflow. I looked at the moments where information became scattered, then used those moments to decide what the interface and data model should make visible first.
 
-## Features
+## What I Built
 
-- Competition link collection
-- Calendar and schedule notes
-- Dashboard experiments
-- Team resource organization
-- Simple backend API practice
+I built early dashboard and resource-collection flows for competition links, schedule notes, announcements, and team handoff context. The implementation stayed small on purpose so I could keep testing the structure instead of polishing a product too early.
 
-## Development Log
+## What I Learned
 
-- Started from a team workflow problem: information gets scattered across links and messages.
-- Built early dashboard concepts to understand what data should be visible first.
-- Used the project to practice frontend structure, API design, and deployment constraints.
+I learned that team tools are mostly about trust and timing. A platform is useful only when it helps people find the right context at the moment they need it. I also learned to separate what the team actually uses from what only looks impressive in a feature list.
 
-## Future Plans
+## Built with
 
-- Improve data model for competitions and events.
-- Add cleaner admin workflows for updating links and notes.
-- Explore better reminders and team handoff flows.
-- Keep the scope small enough to be useful and maintainable.
+React · FastAPI · SQLite · GitHub Pages

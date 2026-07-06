@@ -158,8 +158,154 @@
     keywords: expTags.concat(expSkills).join(', '),
     about: page.category || 'Experience'
   };
+  const researchCopy = {
+    en: {
+      kicker: 'Research',
+      title: 'Research Directions',
+      subtitles: ['Questions worth spending years on.'],
+      labels: {
+        question: 'Research Question',
+        why: 'Why it matters',
+        direction: 'Current Direction'
+      },
+      items: [
+        {
+          title: 'Medical Security',
+          question: 'How can data, devices, and people inside a clinical workflow form a trustworthy validation relationship?',
+          why: 'Medical security is not a single-system problem. Risk appears where clinical workflow, data input, device trust, and human judgment meet.',
+          direction: 'Start from data validation, device trust, and workflow risk, then turn the observations into research notes that can be traced and discussed.'
+        },
+        {
+          title: 'Industrial Security',
+          question: 'How can the security boundary of an industrial control system be understood without interrupting the process?',
+          why: 'Industrial environments depend on stability and continuity, so security work has to understand real operations instead of applying a generic IT model.',
+          direction: 'Observe PLC logic, control behavior, and communication flows, then build a path from basic experiments to risk analysis.'
+        },
+        {
+          title: 'Communication Security',
+          question: 'When systems exchange data, how can they know that a message really came from a trusted source?',
+          why: 'Many risks appear between transmission, validation, and trust boundaries. Communication security decides whether systems can cooperate reliably.',
+          direction: 'Begin with networking fundamentals, protocol behavior, and data validation, then document experiments that can be reproduced.'
+        },
+        {
+          title: 'Security Education',
+          question: 'How can beginners understand security without being overwhelmed by frustration?',
+          why: 'Security education is not only about tools. It should help people build problem awareness, validation habits, and a direction for continued learning.',
+          direction: 'Organize CTF, Web security, networking, and hands-on teaching experience into quieter learning material that can keep growing.'
+        }
+      ]
+    },
+    zh: {
+      kicker: '研究',
+      title: '研究方向',
+      subtitles: ['值得花上好幾年探索的問題。'],
+      labels: {
+        question: '研究問題',
+        why: '為什麼重要',
+        direction: '目前方向'
+      },
+      items: [
+        {
+          title: '醫療安全',
+          question: '醫療流程中的資料、設備與人，如何建立足夠可信的驗證關係？',
+          why: '醫療安全不是單一系統問題，而是臨床流程、資料輸入、設備信任與人員判斷交會後產生的風險。',
+          direction: '從資料驗證、設備信任與流程風險開始，整理可被追蹤與討論的研究筆記。'
+        },
+        {
+          title: '工業安全',
+          question: '工業控制系統中的安全邊界，如何在不中斷流程的前提下被理解？',
+          why: '工業環境重視穩定與連續運作，安全設計必須理解現場流程，而不是只套用一般 IT 模型。',
+          direction: '觀察 PLC、控制邏輯與通訊流程，建立從基礎實驗到風險分析的學習路徑。'
+        },
+        {
+          title: '通訊安全',
+          question: '系統之間交換資料時，如何確認訊息真的來自可信來源？',
+          why: '許多風險發生在資料傳輸、驗證與信任邊界之間，通訊安全決定系統能否可靠協作。',
+          direction: '從網路基礎、協定行為與資料驗證開始，逐步整理可重現的實驗紀錄。'
+        },
+        {
+          title: '安全教育',
+          question: '如何讓初學者在不被挫折淹沒的情況下，真正理解安全問題？',
+          why: '安全教育不只是教工具，而是幫助人建立問題意識、驗證習慣與持續學習的方向感。',
+          direction: '整理 CTF、Web security、networking 與實作教學經驗，形成更安靜且可延續的學習材料。'
+        }
+      ]
+    },
+    ja: {
+      kicker: '研究',
+      title: '研究の方向性',
+      subtitles: ['何年もかけて探る価値のある問い。'],
+      labels: {
+        question: '研究の問い',
+        why: 'なぜ重要なのか',
+        direction: '現在の方向性'
+      },
+      items: [
+        {
+          title: '医療セキュリティ',
+          question: '医療ワークフローの中で、データ、機器、人はどのように信頼できる検証関係を作れるのか。',
+          why: '医療セキュリティは一つのシステムだけの問題ではありません。臨床ワークフロー、データ入力、機器への信頼、人の判断が交わる場所でリスクが生まれます。',
+          direction: 'データ検証、機器への信頼、ワークフロー上のリスクから始め、追跡し議論できる研究ノートとして整理します。'
+        },
+        {
+          title: '産業セキュリティ',
+          question: '産業制御システムのセキュリティ境界を、運用を止めずにどう理解できるのか。',
+          why: '産業環境では安定性と継続運用が重要です。そのため、一般的な IT モデルを当てはめるだけでなく、現場の流れを理解する必要があります。',
+          direction: 'PLC、制御ロジック、通信の流れを観察し、基礎実験からリスク分析へ進む学習経路を作ります。'
+        },
+        {
+          title: '通信セキュリティ',
+          question: 'システム同士がデータを交換するとき、メッセージが本当に信頼できる相手から来たとどう確認できるのか。',
+          why: '多くのリスクは、転送、検証、信頼境界の間で発生します。通信セキュリティは、システム同士が確実に協調できるかを左右します。',
+          direction: 'ネットワーク基礎、プロトコルの挙動、データ検証から始め、再現できる実験記録を整理します。'
+        },
+        {
+          title: 'セキュリティ教育',
+          question: '初心者が挫折に飲み込まれず、本当にセキュリティの問題を理解するにはどうすればよいのか。',
+          why: 'セキュリティ教育は道具を教えるだけではありません。問題意識、検証する習慣、学び続ける方向感覚を育てることが大切です。',
+          direction: 'CTF、Web security、networking、実践的な指導経験を整理し、静かに続けられる学習資料にしていきます。'
+        }
+      ]
+    }
+  }[expLang];
 %>
 
+<% if (expSlug === 'research') { %>
+<article class="research-v1-page" itemscope itemtype="https://schema.org/CreativeWork">
+  <header class="research-v1-header">
+    <p><%= researchCopy.kicker %></p>
+    <h1 itemprop="name"><%= researchCopy.title %></h1>
+    <div class="research-v1-subtitle" itemprop="description">
+      <% researchCopy.subtitles.forEach(function(line) { %><span><%= line %></span><% }) %>
+    </div>
+  </header>
+
+  <div class="research-direction-list">
+    <% researchCopy.items.forEach(function(item, index) { %>
+      <article class="research-direction-item">
+        <span class="research-direction-index"><%= String(index + 1).padStart(2, '0') %></span>
+        <h2><%= item.title %></h2>
+        <dl>
+          <div>
+            <dt><%= researchCopy.labels.question %></dt>
+            <dd><%= item.question %></dd>
+          </div>
+          <div>
+            <dt><%= researchCopy.labels.why %></dt>
+            <dd><%= item.why %></dd>
+          </div>
+          <div>
+            <dt><%= researchCopy.labels.direction %></dt>
+            <dd><%= item.direction %></dd>
+          </div>
+        </dl>
+      </article>
+    <% }) %>
+  </div>
+
+  <script type="application/ld+json"><%- JSON.stringify(schema) %></script>
+</article>
+<% } else { %>
 <article class="page-content experience-detail" itemscope itemtype="https://schema.org/CreativeWork">
   <nav class="tag-cloud-list experience-breadcrumbs" aria-label="Breadcrumbs">
     <a class="tag-cloud-link" href="<%= url_for(expLang === 'en' ? '/' : '/' + expLang + '/') %>"><%= expText.home %></a>
@@ -281,3 +427,4 @@
 
   <script type="application/ld+json"><%- JSON.stringify(schema) %></script>
 </article>
+<% } %>

@@ -4,21 +4,21 @@
       .replace(/index\.html$/, '')
       .replace(/\/$/, '');
     const pathParts = normalizedPath.split('/').filter(Boolean);
-    const currentLang = pathParts[0] === 'zh' ? 'zh' : (pathParts[0] === 'ja' ? 'ja' : 'en');
-    const localPathParts = currentLang === 'en' ? pathParts : pathParts.slice(1);
+    const rawHeaderText = strip_html(page.content || page.description || '').replace(/\s+/g, ' ').trim();
+    const headerCjkChars = (rawHeaderText.match(/[\u4e00-\u9fff\u3040-\u30ff\u3400-\u4dbf]/g) || []).length;
+    const headerKanaChars = (rawHeaderText.match(/[\u3040-\u30ff]/g) || []).length;
+    const headerLatinChars = (rawHeaderText.match(/[A-Za-z]/g) || []).length;
+    const inferredContentLang = headerKanaChars > 12 ? 'ja' : (headerCjkChars > headerLatinChars ? 'zh' : 'en');
+    const isDatedPostPath = /^\d{4}\/\d{2}\/\d{2}\//.test(normalizedPath);
+    const explicitLang = pathParts[0] === 'zh' ? 'zh' : (pathParts[0] === 'ja' ? 'ja' : '');
+    const currentLang = explicitLang || (isDatedPostPath ? inferredContentLang : 'en');
+    const localPathParts = explicitLang ? pathParts.slice(1) : pathParts;
     const firstPathPart = localPathParts[0] || '';
     const localDetailPath = localPathParts.join('/');
-    const currentSection =
-      firstPathPart === '' ? 'home' :
-      firstPathPart === 'dashboard' ? 'dashboard' :
-      firstPathPart === 'works' ? 'projects' :
-      firstPathPart === 'archives' ? 'writing' :
-      ['about', 'experience', 'projects', 'labs', 'writing', 'timeline'].includes(firstPathPart) ? firstPathPart :
-      'home';
     const localizedPaths = {
-      en: { home: '/', dashboard: '/dashboard/', projects: '/projects/', experience: '/experience/', labs: '/labs/', writing: '/writing/', timeline: '/timeline/', about: '/about/' },
-      zh: { home: '/zh/', dashboard: '/zh/dashboard/', projects: '/zh/projects/', experience: '/zh/experience/', labs: '/zh/labs/', writing: '/zh/writing/', timeline: '/zh/timeline/', about: '/zh/about/' },
-      ja: { home: '/ja/', dashboard: '/ja/dashboard/', projects: '/ja/projects/', experience: '/ja/experience/', labs: '/ja/labs/', writing: '/ja/writing/', timeline: '/ja/timeline/', about: '/ja/about/' }
+      en: { home: '/', about: '/about/', writing: '/archives/', projects: '/projects/', labs: '/labs/', research: '/experience/research/', contact: '#contact' },
+      zh: { home: '/zh/', about: '/zh/about/', writing: '/zh/archives/', projects: '/zh/projects/', labs: '/zh/labs/', research: '/zh/experience/research/', contact: '#contact' },
+      ja: { home: '/ja/', about: '/ja/about/', writing: '/ja/archives/', projects: '/ja/projects/', labs: '/ja/labs/', research: '/ja/experience/research/', contact: '#contact' }
     };
     const trilingualDetails = [
       'experience/competitions',
@@ -43,17 +43,81 @@
       return lang === 'en' ? '/' + detail + '/' : '/' + lang + '/' + detail + '/';
     };
     const navPath = function(section) { return localizedPaths[currentLang][section]; };
+    const targetLangPath = function(lang, detail) {
+      const cleanDetail = String(detail || '').replace(/^\/+|\/+$/g, '');
+      return lang === 'en' ? '/' + (cleanDetail ? cleanDetail + '/' : '') : '/' + lang + '/' + (cleanDetail ? cleanDetail + '/' : '');
+    };
+    const targetFieldNotesPath = function(lang) {
+      return targetLangPath(lang, 'archives');
+    };
+    const sitePagePathExists = function(targetPath) {
+      const cleanTarget = String(targetPath || '').replace(/^\/+|\/+$/g, '');
+      if (!cleanTarget) return true;
+      if (site.pages && site.pages.findOne) {
+        const direct = site.pages.findOne({ path: cleanTarget + '/index.html' }) || site.pages.findOne({ path: cleanTarget + '.html' });
+        if (direct) return true;
+      }
+      if (site.posts && site.posts.findOne) {
+        const post = site.posts.findOne({ path: cleanTarget + '/index.html' }) || site.posts.findOne({ path: cleanTarget + '.html' });
+        if (post) return true;
+      }
+      return false;
+    };
     const langPath = function(lang) {
+      if (!localDetailPath) return localizedPaths[lang].home;
+      if (localDetailPath === 'archives' || localDetailPath.indexOf('archives/') === 0) {
+        return targetFieldNotesPath(lang);
+      }
+      if (isDatedPostPath) {
+        const translatedPostPath = targetLangPath(lang, localDetailPath);
+        if (sitePagePathExists(translatedPostPath)) return translatedPostPath;
+        if (lang === currentLang) return targetLangPath(explicitLang || 'en', localDetailPath);
+        return targetFieldNotesPath(lang);
+      }
       if (trilingualDetails.includes(localDetailPath)) return detailLangPath(lang, localDetailPath);
-      return localizedPaths[lang][currentSection];
+      return targetLangPath(lang, localDetailPath);
     };
-    const headerCopy = {
-      en: { kicker: 'Security Lab Portfolio', mantra: 'Build · Secure · Share', home: 'Home', projects: 'Projects', experience: 'Experience', labs: 'Labs', writing: 'Writing', about: 'About', menu: 'Menu', search: 'Search' },
-      zh: { kicker: 'Security Lab Portfolio', mantra: 'Build · Secure · Share', home: '首頁', projects: '專案', experience: '經歷', labs: 'Labs', writing: '文章', about: '關於', menu: '選單', search: '搜尋' },
-      ja: { kicker: 'Security Lab Portfolio', mantra: 'Build · Secure · Share', home: 'ホーム', projects: 'プロジェクト', experience: '経歴', labs: 'Labs', writing: '記事', about: 'About', menu: 'メニュー', search: '検索' }
-    };
-    const h = headerCopy[currentLang];
-    h.dashboard = h.dashboard || 'Dashboard';
+    const h = {
+      en: {
+        home: 'Home',
+        about: 'About',
+        articles: 'Field Notes',
+        projects: 'Case Studies',
+        labs: 'Labs',
+        research: 'Research',
+        contact: 'Contact',
+        menu: 'Menu',
+        light: 'Light',
+        dark: 'Dark',
+        toggleTheme: 'Toggle color theme'
+      },
+      zh: {
+        home: '首頁',
+        about: '關於',
+        articles: '探索筆記',
+        projects: '案例研究',
+        labs: '實驗室',
+        research: '研究',
+        contact: '頁尾',
+        menu: '選單',
+        light: '明亮',
+        dark: '深色',
+        toggleTheme: '切換色彩模式'
+      },
+      ja: {
+        home: 'ホーム',
+        about: '紹介',
+        articles: '探索ノート',
+        projects: 'ケーススタディ',
+        labs: '実験室',
+        research: '研究',
+        contact: 'フッター',
+        menu: 'メニュー',
+        light: 'ライト',
+        dark: 'ダーク',
+        toggleTheme: 'カラーテーマを切り替える'
+      }
+    }[currentLang];
   %>
   <div class="brand-row">
     <a class="brand-avatar" href="<%= url_for(navPath('home')) %>" aria-label="<%= h.home %>">
@@ -61,36 +125,30 @@
     </a>
 
     <div class="brand-content">
-      <div class="site-kicker"><%= h.kicker %></div>
-
       <div class="site-title">
-        <a href="<%= url_for(navPath('home')) %>"><span>Casper Security</span> <span>Lab OS</span></a>
+        <a href="<%= url_for(navPath('home')) %>"><span>Casper</span></a>
       </div>
 
-      <div class="site-mantra"><%= h.mantra %></div>
+      <div class="site-subtitle">Find Your Polaris.</div>
 
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="<%= url_for(navPath('dashboard')) %>"><%= h.dashboard %></a>
+        <a href="<%= url_for(navPath('home')) %>"><%= h.home %></a>
+        <a href="<%= url_for(navPath('about')) %>"><%= h.about %></a>
+        <a href="<%= url_for(navPath('writing')) %>"><%= h.articles %></a>
         <a href="<%= url_for(navPath('projects')) %>"><%= h.projects %></a>
         <a href="<%= url_for(navPath('labs')) %>"><%= h.labs %></a>
-        <a href="<%= url_for(navPath('writing')) %>"><%= h.writing %></a>
-        <a href="<%= url_for(navPath('experience')) %>"><%= h.experience %></a>
-        <a href="<%= url_for(navPath('about')) %>"><%= h.about %></a>
+        <a href="<%= url_for(navPath('research')) %>"><%= h.research %></a>
+        <a href="<%= navPath('contact') %>"><%= h.contact %></a>
       </nav>
 
       <div class="header-controls">
-        <form class="header-search" action="<%= url_for('/search/') %>" role="search">
-          <label class="sr-only" for="header-search-input"><%= h.search %></label>
-          <input id="header-search-input" name="q" type="search" placeholder="<%= h.search %>" autocomplete="off">
-        </form>
-
         <nav class="site-nav language-switcher" aria-label="Language switcher">
           <a href="<%= url_for(langPath('en')) %>" lang="en">EN</a>
-          <a href="<%= url_for(langPath('zh')) %>" lang="zh-Hant">中文</a>
-          <a href="<%= url_for(langPath('ja')) %>" lang="ja">日本語</a>
+          <a href="<%= url_for(langPath('zh')) %>" lang="zh-Hant">ZH</a>
+          <a href="<%= url_for(langPath('ja')) %>" lang="ja">JA</a>
         </nav>
 
-        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Toggle color theme">Dark</button>
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="<%= h.toggleTheme %>"><%= h.light %></button>
       </div>
 
       <button class="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false">
@@ -103,18 +161,35 @@
       </button>
 
       <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
-        <a href="<%= url_for(navPath('home')) %>"><%= h.home %></a>
-        <a href="<%= url_for(navPath('dashboard')) %>"><%= h.dashboard %></a>
-        <a href="<%= url_for(navPath('projects')) %>"><%= h.projects %></a>
-        <a href="<%= url_for(navPath('labs')) %>"><%= h.labs %></a>
-        <a href="<%= url_for(navPath('writing')) %>"><%= h.writing %></a>
-        <a href="<%= url_for(navPath('experience')) %>"><%= h.experience %></a>
-        <a href="<%= url_for(navPath('about')) %>"><%= h.about %></a>
-        <a href="<%= url_for(langPath('en')) %>" lang="en">EN</a>
-        <a href="<%= url_for(langPath('zh')) %>" lang="zh-Hant">中文</a>
-        <a href="<%= url_for(langPath('ja')) %>" lang="ja">日本語</a>
-        <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle>Dark</button>
-        <a href="<%= url_for('/search/') %>"><%= h.search %></a>
+        <section class="mobile-nav-section mobile-nav-section-navigation" aria-labelledby="mobile-nav-navigation-label">
+          <p id="mobile-nav-navigation-label" class="mobile-nav-label">Navigation</p>
+          <div class="mobile-nav-links">
+            <a href="<%= url_for(navPath('home')) %>"><%= h.home %></a>
+            <a href="<%= url_for(navPath('about')) %>"><%= h.about %></a>
+            <a href="<%= url_for(navPath('writing')) %>"><%= h.articles %></a>
+            <a href="<%= url_for(navPath('projects')) %>"><%= h.projects %></a>
+            <a href="<%= url_for(navPath('labs')) %>"><%= h.labs %></a>
+            <a href="<%= url_for(navPath('research')) %>"><%= h.research %></a>
+          </div>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-language" aria-labelledby="mobile-nav-language-label">
+          <p id="mobile-nav-language-label" class="mobile-nav-label">Language</p>
+          <nav class="mobile-language-switcher" aria-label="Language switcher">
+            <a href="<%= url_for(langPath('en')) %>" lang="en" <%= currentLang === 'en' ? 'aria-current="true"' : '' %>>EN</a>
+            <a href="<%= url_for(langPath('zh')) %>" lang="zh-Hant" <%= currentLang === 'zh' ? 'aria-current="true"' : '' %>>ZH</a>
+            <a href="<%= url_for(langPath('ja')) %>" lang="ja" <%= currentLang === 'ja' ? 'aria-current="true"' : '' %>>JA</a>
+          </nav>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-appearance" aria-labelledby="mobile-nav-appearance-label">
+          <p id="mobile-nav-appearance-label" class="mobile-nav-label">Appearance</p>
+          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle><%= h.light %></button>
+        </section>
       </nav>
     </div>
   </div>
@@ -127,18 +202,18 @@
     var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-theme-toggle]'));
 
     function applyTheme(theme) {
-      var nextTheme = theme === 'light' ? 'light' : 'dark';
+      var nextTheme = theme === 'dark' ? 'dark' : 'light';
       root.setAttribute('data-theme', nextTheme);
       buttons.forEach(function(button) {
-        button.textContent = nextTheme === 'light' ? 'Light' : 'Dark';
-        button.setAttribute('aria-pressed', String(nextTheme === 'light'));
+        button.textContent = nextTheme === 'light' ? '<%= h.light %>' : '<%= h.dark %>';
+        button.setAttribute('aria-pressed', String(nextTheme === 'dark'));
       });
     }
 
     try {
-      applyTheme(localStorage.getItem(storageKey) || 'dark');
+      applyTheme(localStorage.getItem(storageKey) || 'light');
     } catch (error) {
-      applyTheme('dark');
+      applyTheme('light');
     }
 
     buttons.forEach(function(button) {

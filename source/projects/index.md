@@ -1,6 +1,5 @@
 ---
-title: Projects
-description: Project index for Casper's work across Cybersecurity, Medical Cybersecurity, Robotics, full stack development, and embedded systems.
+title: Case Studies
+description: Case study index for the things Casper is building and the research questions behind them.
 comments: true
 ---
-

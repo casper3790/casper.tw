@@ -75,11 +75,7 @@ sidebar:
   article:
     show_common: true
 
-social:
-  email: mailto:casp3790er@gmail.com
-  github: https://github.com/casper3790
-  instagram:
-  discord:
+social: {}
 
 # =========================================================
 # Widgets / Sidebar
@@ -112,8 +108,8 @@ i18n:
 
 triangle_badge:
   enable: false
-  icon: github
-  link: https://github.com/casper3790
+  icon:
+  link:
 
 layout:
   max_width: 1350px
