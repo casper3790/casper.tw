@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Autonomous Robot | Casper&#39;s SECURITY LAB</title>
+<meta name="description" content="一篇關於透過建置、測試與除錯學習自主機器人的案例研究。">
+<meta name="keywords" content="資安, CTF, Web, Robotics, IoT">
+<meta name="author" content="Casper">
+<link rel="canonical" href="https://casper3790.github.io/casper.tw/zh/projects/autonomous-robot/">
+
+<link rel="alternate" hreflang="en" href="https://casper3790.github.io/casper.tw/projects/autonomous-robot/">
+<link rel="alternate" hreflang="zh-TW" href="https://casper3790.github.io/casper.tw/zh/projects/autonomous-robot/">
+<link rel="alternate" hreflang="ja" href="https://casper3790.github.io/casper.tw/ja/projects/autonomous-robot/">
+<link rel="alternate" hreflang="x-default" href="https://casper3790.github.io/casper.tw/projects/autonomous-robot/">
+
+
+<meta property="og:site_name" content="Casper&#39;s SECURITY LAB">
+<meta property="og:title" content="Autonomous Robot | Casper&#39;s SECURITY LAB">
+<meta property="og:description" content="一篇關於透過建置、測試與除錯學習自主機器人的案例研究。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://casper3790.github.io/casper.tw/zh/projects/autonomous-robot/">
+<meta property="og:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
+<meta property="og:image:alt" content="Autonomous Robot preview image">
+<meta property="og:locale" content="zh_TW">
+
+<meta property="article:published_time" content="2026-07-06T07:47:00.588Z">
+
+
+<meta property="article:modified_time" content="2026-07-06T07:47:00.588Z">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Autonomous Robot | Casper&#39;s SECURITY LAB">
+<meta name="twitter:description" content="一篇關於透過建置、測試與除錯學習自主機器人的案例研究。">
+<meta name="twitter:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
+<meta name="twitter:image:alt" content="Autonomous Robot preview image">
+
+<link rel="icon" type="image/svg+xml" href="/casper.tw/favicon.svg">
+<link rel="shortcut icon" href="/casper.tw/favicon.svg">
+<script>
+  (function() {
+    try {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('casper-theme') || 'light');
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="/casper.tw/css/custom.css?v=20">
+
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/casper.tw/feed.xml" title="Casper's SECURITY LAB" type="application/atom+xml">
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+  
+  <div class="brand-row">
+    <a class="brand-avatar" href="/casper.tw/zh/" aria-label="首頁">
+      <img src="/casper.tw/images/casper.png" alt="Casper avatar">
+    </a>
+
+    <div class="brand-content">
+      <div class="site-title">
+        <a href="/casper.tw/zh/"><span>Casper</span></a>
+      </div>
+
+      <div class="site-subtitle">Find Your Polaris.</div>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/casper.tw/zh/">首頁</a>
+        <a href="/casper.tw/zh/about/">關於</a>
+        <a href="/casper.tw/zh/archives/">探索筆記</a>
+        <a href="/casper.tw/zh/projects/">案例研究</a>
+        <a href="/casper.tw/zh/labs/">實驗室</a>
+        <a href="/casper.tw/zh/experience/research/">研究</a>
+        <a href="#contact">頁尾</a>
+      </nav>
+
+      <div class="header-controls">
+        <nav class="site-nav language-switcher" aria-label="Language switcher">
+          <a href="/casper.tw/projects/autonomous-robot/" lang="en">EN</a>
+          <a href="/casper.tw/zh/projects/autonomous-robot/" lang="zh-Hant">ZH</a>
+          <a href="/casper.tw/ja/projects/autonomous-robot/" lang="ja">JA</a>
+        </nav>
+
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="切換色彩模式">明亮</button>
+      </div>
+
+      <button class="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false">
+        <span class="mobile-menu-label">選單</span>
+        <span class="mobile-menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <section class="mobile-nav-section mobile-nav-section-navigation" aria-labelledby="mobile-nav-navigation-label">
+          <p id="mobile-nav-navigation-label" class="mobile-nav-label">Navigation</p>
+          <div class="mobile-nav-links">
+            <a href="/casper.tw/zh/">首頁</a>
+            <a href="/casper.tw/zh/about/">關於</a>
+            <a href="/casper.tw/zh/archives/">探索筆記</a>
+            <a href="/casper.tw/zh/projects/">案例研究</a>
+            <a href="/casper.tw/zh/labs/">實驗室</a>
+            <a href="/casper.tw/zh/experience/research/">研究</a>
+          </div>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-language" aria-labelledby="mobile-nav-language-label">
+          <p id="mobile-nav-language-label" class="mobile-nav-label">Language</p>
+          <nav class="mobile-language-switcher" aria-label="Language switcher">
+            <a href="/casper.tw/projects/autonomous-robot/" lang="en" >EN</a>
+            <a href="/casper.tw/zh/projects/autonomous-robot/" lang="zh-Hant" aria-current=&#34;true&#34;>ZH</a>
+            <a href="/casper.tw/ja/projects/autonomous-robot/" lang="ja" >JA</a>
+          </nav>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-appearance" aria-labelledby="mobile-nav-appearance-label">
+          <p id="mobile-nav-appearance-label" class="mobile-nav-label">Appearance</p>
+          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle>明亮</button>
+        </section>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var storageKey = 'casper-theme';
+    var root = document.documentElement;
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-theme-toggle]'));
+
+    function applyTheme(theme) {
+      var nextTheme = theme === 'dark' ? 'dark' : 'light';
+      root.setAttribute('data-theme', nextTheme);
+      buttons.forEach(function(button) {
+        button.textContent = nextTheme === 'light' ? '明亮' : '深色';
+        button.setAttribute('aria-pressed', String(nextTheme === 'dark'));
+      });
+    }
+
+    try {
+      applyTheme(localStorage.getItem(storageKey) || 'light');
+    } catch (error) {
+      applyTheme('light');
+    }
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        try {
+          localStorage.setItem(storageKey, nextTheme);
+        } catch (error) {}
+      });
+    });
+
+    var menuButton = document.querySelector('.mobile-menu-button');
+    var menu = document.getElementById('mobile-nav');
+    var header = document.querySelector('.site-header');
+    function updateHeaderState() {
+      if (!header) return;
+      header.classList.toggle('is-scrolled', window.scrollY > 12);
+    }
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+    if (!menuButton || !menu) return;
+
+    menuButton.addEventListener('click', function() {
+      var isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menu.hidden = isOpen;
+    });
+
+    menu.addEventListener('click', function(event) {
+      if (event.target && event.target.tagName === 'A') {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
+    });
+  })();
+</script>
+
+
+    <main class="main-container">
+      
+
+
+  <article class="page-content notebook-page">
+    <header class="page-header">
+      <div class="page-kicker">筆記頁</div>
+      <h1 class="section-title">Autonomous Robot</h1>
+    </header>
+
+    <div class="page-body">
+      
+        <section class="project-page-hero">
+
+<h1 id="Autonomous-Robot"><a href="#Autonomous-Robot" class="headerlink" title="Autonomous Robot"></a>Autonomous Robot</h1><p>這是一篇關於機器人的案例研究：我想理解軟體、硬體、感測器與不確定性如何在同一台機器裡相遇。</p>
+</section>
+
+<h2 id="Why-This-Project"><a href="#Why-This-Project" class="headerlink" title="Why This Project"></a>Why This Project</h2><p>我開始做這個專案，是因為機器人會逼理論面對現實世界。程式看起來正確，仍然可能因為接線、電源、感測器、時間差，或地面狀況而失敗。我需要一個能讓失敗被看見的題目。</p>
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>自主機器人不是單一問題，而是一串不穩定的小系統：Linux 環境、感測器輸入、馬達控制、ROS2 通訊、地圖建立與移動。如果其中一層不穩定，整台機器人就很難被信任。</p>
+<h2 id="My-Approach"><a href="#My-Approach" class="headerlink" title="My Approach"></a>My Approach</h2><p>我從底層往上做。先測硬體與環境設定，再嘗試讓機器人具備自主行為。每一次失敗都變成檢查點，幫我記錄自己對電源、通訊或控制流程的誤解。</p>
+<h2 id="What-I-Built"><a href="#What-I-Built" class="headerlink" title="What I Built"></a>What I Built</h2><p>我建立了一條原型路徑，包含 ROS2 環境、Raspberry Pi 整合、LiDAR 與感測器實驗、馬達測試，以及基礎移動測試。它目前仍是實驗，不是完成品。</p>
+<h2 id="What-I-Learned"><a href="#What-I-Learned" class="headerlink" title="What I Learned"></a>What I Learned</h2><p>我學到機器人專案比起誇大的成果，更需要耐心。真正有用的進度，常常是讓某一層變得可重複，然後記下它上一次為什麼失敗。除錯紀錄和移動本身一樣重要。</p>
+<h2 id="Built-with"><a href="#Built-with" class="headerlink" title="Built with"></a>Built with</h2><p>ROS2 · Ubuntu · Raspberry Pi · LiDAR · Motor Control</p>
+
+      
+    </div>
+  </article>
+
+
+    </main>
+
+    
+<footer id="contact" class="site-footer polaris-footer" aria-label="網站頁尾">
+  <p class="polaris-footer-title">Find Your Polaris.</p>
+  <p class="polaris-footer-note">保持好奇，比急著證明自己更重要。</p>
+  <p class="footer-copy">&copy; 2026 Casper.</p>
+</footer>
+
+  </div>
+</body>
+</html>

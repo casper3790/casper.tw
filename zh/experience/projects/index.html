@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>工程專案 | Casper&#39;s SECURITY LAB</title>
+<meta name="description" content="以資料庫格式整理團隊平台、Medical Cybersecurity、自主 Robotics、嵌入式系統與網頁系統專案。">
+<meta name="keywords" content="FastAPI, ROS2, Docker, ESP32, Raspberry Pi, AI, Cybersecurity">
+<meta name="author" content="Casper">
+<link rel="canonical" href="https://casper3790.github.io/casper.tw/zh/experience/projects/">
+
+<link rel="alternate" hreflang="en" href="https://casper3790.github.io/casper.tw/experience/projects/">
+<link rel="alternate" hreflang="zh-TW" href="https://casper3790.github.io/casper.tw/zh/experience/projects/">
+<link rel="alternate" hreflang="ja" href="https://casper3790.github.io/casper.tw/ja/experience/projects/">
+<link rel="alternate" hreflang="x-default" href="https://casper3790.github.io/casper.tw/experience/projects/">
+
+
+<meta property="og:site_name" content="Casper&#39;s SECURITY LAB">
+<meta property="og:title" content="工程專案 | Casper&#39;s SECURITY LAB">
+<meta property="og:description" content="以資料庫格式整理團隊平台、Medical Cybersecurity、自主 Robotics、嵌入式系統與網頁系統專案。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://casper3790.github.io/casper.tw/zh/experience/projects/">
+<meta property="og:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
+<meta property="og:image:alt" content="工程專案 preview image">
+<meta property="og:locale" content="zh_TW">
+
+<meta property="article:published_time" content="2026-06-28T16:13:48.370Z">
+
+
+<meta property="article:modified_time" content="2026-06-28T16:13:48.370Z">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="工程專案 | Casper&#39;s SECURITY LAB">
+<meta name="twitter:description" content="以資料庫格式整理團隊平台、Medical Cybersecurity、自主 Robotics、嵌入式系統與網頁系統專案。">
+<meta name="twitter:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
+<meta name="twitter:image:alt" content="工程專案 preview image">
+
+<link rel="icon" type="image/svg+xml" href="/casper.tw/favicon.svg">
+<link rel="shortcut icon" href="/casper.tw/favicon.svg">
+<script>
+  (function() {
+    try {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('casper-theme') || 'light');
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="/casper.tw/css/custom.css?v=20">
+
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/casper.tw/feed.xml" title="Casper's SECURITY LAB" type="application/atom+xml">
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+  
+  <div class="brand-row">
+    <a class="brand-avatar" href="/casper.tw/zh/" aria-label="首頁">
+      <img src="/casper.tw/images/casper.png" alt="Casper avatar">
+    </a>
+
+    <div class="brand-content">
+      <div class="site-title">
+        <a href="/casper.tw/zh/"><span>Casper</span></a>
+      </div>
+
+      <div class="site-subtitle">Find Your Polaris.</div>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/casper.tw/zh/">首頁</a>
+        <a href="/casper.tw/zh/about/">關於</a>
+        <a href="/casper.tw/zh/archives/">探索筆記</a>
+        <a href="/casper.tw/zh/projects/">案例研究</a>
+        <a href="/casper.tw/zh/labs/">實驗室</a>
+        <a href="/casper.tw/zh/experience/research/">研究</a>
+        <a href="#contact">頁尾</a>
+      </nav>
+
+      <div class="header-controls">
+        <nav class="site-nav language-switcher" aria-label="Language switcher">
+          <a href="/casper.tw/experience/projects/" lang="en">EN</a>
+          <a href="/casper.tw/zh/experience/projects/" lang="zh-Hant">ZH</a>
+          <a href="/casper.tw/ja/experience/projects/" lang="ja">JA</a>
+        </nav>
+
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="切換色彩模式">明亮</button>
+      </div>
+
+      <button class="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false">
+        <span class="mobile-menu-label">選單</span>
+        <span class="mobile-menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <section class="mobile-nav-section mobile-nav-section-navigation" aria-labelledby="mobile-nav-navigation-label">
+          <p id="mobile-nav-navigation-label" class="mobile-nav-label">Navigation</p>
+          <div class="mobile-nav-links">
+            <a href="/casper.tw/zh/">首頁</a>
+            <a href="/casper.tw/zh/about/">關於</a>
+            <a href="/casper.tw/zh/archives/">探索筆記</a>
+            <a href="/casper.tw/zh/projects/">案例研究</a>
+            <a href="/casper.tw/zh/labs/">實驗室</a>
+            <a href="/casper.tw/zh/experience/research/">研究</a>
+          </div>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-language" aria-labelledby="mobile-nav-language-label">
+          <p id="mobile-nav-language-label" class="mobile-nav-label">Language</p>
+          <nav class="mobile-language-switcher" aria-label="Language switcher">
+            <a href="/casper.tw/experience/projects/" lang="en" >EN</a>
+            <a href="/casper.tw/zh/experience/projects/" lang="zh-Hant" aria-current=&#34;true&#34;>ZH</a>
+            <a href="/casper.tw/ja/experience/projects/" lang="ja" >JA</a>
+          </nav>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-appearance" aria-labelledby="mobile-nav-appearance-label">
+          <p id="mobile-nav-appearance-label" class="mobile-nav-label">Appearance</p>
+          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle>明亮</button>
+        </section>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var storageKey = 'casper-theme';
+    var root = document.documentElement;
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-theme-toggle]'));
+
+    function applyTheme(theme) {
+      var nextTheme = theme === 'dark' ? 'dark' : 'light';
+      root.setAttribute('data-theme', nextTheme);
+      buttons.forEach(function(button) {
+        button.textContent = nextTheme === 'light' ? '明亮' : '深色';
+        button.setAttribute('aria-pressed', String(nextTheme === 'dark'));
+      });
+    }
+
+    try {
+      applyTheme(localStorage.getItem(storageKey) || 'light');
+    } catch (error) {
+      applyTheme('light');
+    }
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        try {
+          localStorage.setItem(storageKey, nextTheme);
+        } catch (error) {}
+      });
+    });
+
+    var menuButton = document.querySelector('.mobile-menu-button');
+    var menu = document.getElementById('mobile-nav');
+    var header = document.querySelector('.site-header');
+    function updateHeaderState() {
+      if (!header) return;
+      header.classList.toggle('is-scrolled', window.scrollY > 12);
+    }
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+    if (!menuButton || !menu) return;
+
+    menuButton.addEventListener('click', function() {
+      var isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menu.hidden = isOpen;
+    });
+
+    menu.addEventListener('click', function(event) {
+      if (event.target && event.target.tagName === 'A') {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
+    });
+  })();
+</script>
+
+
+    <main class="main-container">
+      
+
+
+  
+
+
+<article class="page-content experience-detail" itemscope itemtype="https://schema.org/CreativeWork">
+  <nav class="tag-cloud-list experience-breadcrumbs" aria-label="Breadcrumbs">
+    <a class="tag-cloud-link" href="/casper.tw/zh/">首頁</a>
+    <a class="tag-cloud-link" href="/casper.tw/zh/experience/">經歷</a>
+    <span class="tag-cloud-link" aria-current="page">工程專案</span>
+  </nav>
+
+  <header class="project-page-hero experience-hero">
+    <img src="/casper.tw/images/casper-og.png" alt="工程專案 cover image" loading="lazy">
+    <h1 itemprop="name">工程專案</h1>
+    <p itemprop="description">以資料庫格式整理團隊平台、Medical Cybersecurity、自主 Robotics、嵌入式系統與網頁系統專案。</p>
+    
+      <div class="featured-project-tags" aria-label="標籤">
+        <span>標籤</span>
+        <strong>FastAPI</strong><strong>ROS2</strong><strong>Docker</strong><strong>ESP32</strong><strong>Raspberry Pi</strong><strong>AI</strong><strong>Cybersecurity</strong>
+      </div>
+    
+  </header>
+
+  <section class="featured-projects" aria-labelledby="experience-meta-title">
+    <h2 id="experience-meta-title" class="section-title">摘要</h2>
+    <div class="featured-project-grid">
+      
+        <article class="featured-project-card">
+          <h3>標題</h3>
+          <p>工程專案</p>
+        </article>
+      
+        <article class="featured-project-card">
+          <h3>組織</h3>
+          <p>Multiple records</p>
+        </article>
+      
+        <article class="featured-project-card">
+          <h3>日期</h3>
+          <p>2025-2026</p>
+        </article>
+      
+        <article class="featured-project-card">
+          <h3>分類</h3>
+          <p>專案</p>
+        </article>
+      
+        <article class="featured-project-card">
+          <h3>角色</h3>
+          <p>Developer / Researcher</p>
+        </article>
+      
+        <article class="featured-project-card">
+          <h3>成果 / 成就</h3>
+          <p>結構化工程履歷紀錄</p>
+        </article>
+      
+    </div>
+  </section>
+
+  <section class="os-section os-timeline-section" aria-labelledby="experience-timeline-title">
+    <div class="os-section-header">
+      <p class="os-section-kicker">經歷</p>
+      <h2 id="experience-timeline-title" class="section-title">時間軸</h2>
+    </div>
+    <div class="os-timeline">
+      <article class="timeline-card">
+        <time>2025-2026</time>
+        <div>
+          <h3>工程專案</h3>
+          <p>以資料庫格式整理團隊平台、Medical Cybersecurity、自主 Robotics、嵌入式系統與網頁系統專案。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-body" itemprop="text">
+    <p>以資料庫格式整理團隊平台、Medical Cybersecurity、自主 Robotics、嵌入式系統與網頁系統專案。</p>
+<hr>
+<h2 id="經歷列表"><a href="#經歷列表" class="headerlink" title="經歷列表"></a>經歷列表</h2><h3 id="NIHS-Control-Team-Platform"><a href="#NIHS-Control-Team-Platform" class="headerlink" title="NIHS Control Team Platform"></a>NIHS Control Team Platform</h3><ul>
+<li>年份：2025</li>
+<li>主辦單位：NIHS Control Team</li>
+<li>地點：台北，台灣</li>
+<li>活動類型：團隊平台</li>
+<li>角色：全端開發者</li>
+<li>主題：競賽管理與團隊流程</li>
+<li>相關技術：React, FastAPI, PostgreSQL, JWT, Docker</li>
+<li>學習能力：系統設計、後端開發、儀表板流程</li>
+<li>成果：進行中的學習專案</li>
+<li>我的收穫：我學到把團隊需求整理成可維護的產品功能。</li>
+</ul>
+<hr>
+<h3 id="Autonomous-Mobile-Robot"><a href="#Autonomous-Mobile-Robot" class="headerlink" title="Autonomous Mobile Robot"></a>Autonomous Mobile Robot</h3><ul>
+<li>年份：2026</li>
+<li>主辦單位：Personal &#x2F; team robotics learning</li>
+<li>地點：台灣</li>
+<li>活動類型：機器人原型</li>
+<li>角色：Robotics 開發者</li>
+<li>主題：建圖、定位與自主導航</li>
+<li>相關技術：ROS2, Raspberry Pi, Ubuntu, LiDAR, SLAM, Navigation2</li>
+<li>學習能力：Robotics 整合、感測器測試、馬達控制、除錯</li>
+<li>成果：原型與實驗紀錄</li>
+<li>我的收穫：我學到自主移動需要多層工程一起運作。</li>
+</ul>
+<hr>
+<h3 id="Medical-Cybersecurity-Vital-Sign-Verification-System"><a href="#Medical-Cybersecurity-Vital-Sign-Verification-System" class="headerlink" title="Medical Cybersecurity Vital Sign Verification System"></a>Medical Cybersecurity Vital Sign Verification System</h3><ul>
+<li>年份：2026</li>
+<li>主辦單位：Personal research project</li>
+<li>地點：台灣</li>
+<li>活動類型：Medical Cybersecurity 專案</li>
+<li>角色：研究者 &#x2F; 開發者</li>
+<li>主題：生命徵象驗證與病人安全</li>
+<li>相關技術：ESP32, Raspberry Pi, MQTT, FastAPI, AI</li>
+<li>學習能力：風險分析、系統設計、醫療流程觀察</li>
+<li>成果：研究與原型方向</li>
+<li>我的收穫：我學到提出技術修正前要先研究臨床流程。</li>
+</ul>
+<hr>
+<h3 id="Discord-社群管理-Bot"><a href="#Discord-社群管理-Bot" class="headerlink" title="Discord 社群管理 Bot"></a>Discord 社群管理 Bot</h3><ul>
+<li>年份：2025</li>
+<li>主辦單位：社群專案</li>
+<li>地點：線上</li>
+<li>活動類型：自動化專案</li>
+<li>角色：後端開發者</li>
+<li>主題：驗證、身分組、通知與隊伍管理</li>
+<li>相關技術：Python, Discord.py, SQLite</li>
+<li>學習能力：自動化、資料庫設計、後端邏輯</li>
+<li>成果：社群管理工具紀錄</li>
+<li>我的收穫：我學到自動化重複社群流程時仍要保持角色清楚。</li>
+</ul>
+<hr>
+<h3 id="ESP32-IoT-Gateway"><a href="#ESP32-IoT-Gateway" class="headerlink" title="ESP32 IoT Gateway"></a>ESP32 IoT Gateway</h3><ul>
+<li>年份：2026</li>
+<li>主辦單位：Personal embedded project</li>
+<li>地點：台灣</li>
+<li>活動類型：嵌入式系統專案</li>
+<li>角色：嵌入式系統開發者</li>
+<li>主題：邊緣閘道與感測器整合</li>
+<li>相關技術：ESP32, Arduino, Raspberry Pi, UART</li>
+<li>學習能力：嵌入式通訊、感測器整合、除錯</li>
+<li>成果：原型方向</li>
+<li>我的收穫：我學到硬體通訊也是系統可靠性的一部分。</li>
+</ul>
+<hr>
+<h3 id="Secure-Weather-Intelligence-Platform"><a href="#Secure-Weather-Intelligence-Platform" class="headerlink" title="Secure Weather Intelligence Platform"></a>Secure Weather Intelligence Platform</h3><ul>
+<li>年份：2025</li>
+<li>主辦單位：Personal web project</li>
+<li>地點：線上</li>
+<li>活動類型：全端網頁專案</li>
+<li>角色：全端開發者</li>
+<li>主題：安全 API 整合與天氣資料呈現</li>
+<li>相關技術：Python, JavaScript, Weather API</li>
+<li>學習能力：API 整合、Web Security 意識、資料視覺化</li>
+<li>成果：專案紀錄</li>
+<li>我的收穫：我學到把有用資料呈現與更安全的 API 處理結合。</li>
+</ul>
+<hr>
+
+  </section>
+
+  
+    <section class="tag-cloud" aria-labelledby="experience-skills-title">
+      <h2 id="experience-skills-title" class="section-title">技能與技術</h2>
+      <div class="tag-cloud-list">
+        
+          <span class="tag-cloud-link">System development</span>
+        
+          <span class="tag-cloud-link">Research notes</span>
+        
+          <span class="tag-cloud-link">Robotics prototyping</span>
+        
+          <span class="tag-cloud-link">Documentation</span>
+        
+          <span class="tag-cloud-link">React</span>
+        
+          <span class="tag-cloud-link">FastAPI</span>
+        
+          <span class="tag-cloud-link">ROS2</span>
+        
+          <span class="tag-cloud-link">Raspberry Pi</span>
+        
+          <span class="tag-cloud-link">ESP32</span>
+        
+      </div>
+    </section>
+  
+
+  <section class="featured-projects" aria-labelledby="experience-gallery-title">
+    <h2 id="experience-gallery-title" class="section-title">圖集</h2>
+    
+      <p>目前尚無圖集。</p>
+    
+  </section>
+
+  <section class="tag-cloud" aria-labelledby="experience-links-title">
+    <h2 id="experience-links-title" class="section-title">相關連結</h2>
+    <div class="tag-cloud-list">
+      
+      <a class="tag-cloud-link" href="/casper.tw/zh/experience/">返回經歷</a>
+    </div>
+  </section>
+
+  
+
+  <nav class="post-after-actions" aria-label="經歷導覽">
+    <a class="os-button os-button-secondary" href="/casper.tw/zh/experience/ctf/">上一頁: CTF 經歷</a>
+    <a class="os-button os-button-secondary" href="/casper.tw/zh/experience/research/">下一頁: 研究</a>
+  </nav>
+
+  <nav class="tag-cloud-list" aria-label="分享這筆經歷">
+    <a class="tag-cloud-link" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcasper3790.github.io%2Fcasper.tw%2Fzh%2Fexperience%2Fprojects%2F">分享到 LinkedIn</a>
+    <a class="tag-cloud-link" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcasper3790.github.io%2Fcasper.tw%2Fzh%2Fexperience%2Fprojects%2F&text=%E5%B7%A5%E7%A8%8B%E5%B0%88%E6%A1%88">分享到 X</a>
+  </nav>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"工程專案","description":"以資料庫格式整理團隊平台、Medical Cybersecurity、自主 Robotics、嵌入式系統與網頁系統專案。","url":"https://casper3790.github.io/casper.tw/zh/experience/projects/","image":"https://casper3790.github.io/casper.tw/images/casper-og.png","datePublished":"2026-06-28T16:13:48.370Z","keywords":"FastAPI, ROS2, Docker, ESP32, Raspberry Pi, AI, Cybersecurity, System development, Research notes, Robotics prototyping, Documentation","about":"專案"}</script>
+</article>
+
+
+
+
+    </main>
+
+    
+<footer id="contact" class="site-footer polaris-footer" aria-label="網站頁尾">
+  <p class="polaris-footer-title">Find Your Polaris.</p>
+  <p class="polaris-footer-note">保持好奇，比急著證明自己更重要。</p>
+  <p class="footer-copy">&copy; 2026 Casper.</p>
+</footer>
+
+  </div>
+</body>
+</html>

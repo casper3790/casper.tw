@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /casper.tw/
+
+Sitemap: https://casper3790.github.io/casper.tw/sitemap.xml

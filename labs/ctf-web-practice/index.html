@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>CTF Web Practice | Casper&#39;s SECURITY LAB</title>
+<meta name="description" content="Lab note for Web Security, Linux, OSINT, and CTF practice.">
+<meta name="keywords" content="資安, CTF, Web, Robotics, IoT">
+<meta name="author" content="Casper">
+<link rel="canonical" href="https://casper3790.github.io/casper.tw/labs/ctf-web-practice/">
+
+<link rel="alternate" hreflang="en" href="https://casper3790.github.io/casper.tw/labs/ctf-web-practice/">
+<link rel="alternate" hreflang="zh-TW" href="https://casper3790.github.io/casper.tw/zh/labs/ctf-web-practice/">
+<link rel="alternate" hreflang="ja" href="https://casper3790.github.io/casper.tw/ja/labs/ctf-web-practice/">
+<link rel="alternate" hreflang="x-default" href="https://casper3790.github.io/casper.tw/labs/ctf-web-practice/">
+
+
+<meta property="og:site_name" content="Casper&#39;s SECURITY LAB">
+<meta property="og:title" content="CTF Web Practice | Casper&#39;s SECURITY LAB">
+<meta property="og:description" content="Lab note for Web Security, Linux, OSINT, and CTF practice.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://casper3790.github.io/casper.tw/labs/ctf-web-practice/">
+<meta property="og:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
+<meta property="og:image:alt" content="CTF Web Practice preview image">
+<meta property="og:locale" content="en_US">
+
+<meta property="article:published_time" content="2026-06-27T18:08:12.350Z">
+
+
+<meta property="article:modified_time" content="2026-06-27T18:08:12.350Z">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CTF Web Practice | Casper&#39;s SECURITY LAB">
+<meta name="twitter:description" content="Lab note for Web Security, Linux, OSINT, and CTF practice.">
+<meta name="twitter:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
+<meta name="twitter:image:alt" content="CTF Web Practice preview image">
+
+<link rel="icon" type="image/svg+xml" href="/casper.tw/favicon.svg">
+<link rel="shortcut icon" href="/casper.tw/favicon.svg">
+<script>
+  (function() {
+    try {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('casper-theme') || 'light');
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="/casper.tw/css/custom.css?v=20">
+
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/casper.tw/feed.xml" title="Casper's SECURITY LAB" type="application/atom+xml">
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+  
+  <div class="brand-row">
+    <a class="brand-avatar" href="/casper.tw/" aria-label="Home">
+      <img src="/casper.tw/images/casper.png" alt="Casper avatar">
+    </a>
+
+    <div class="brand-content">
+      <div class="site-title">
+        <a href="/casper.tw/"><span>Casper</span></a>
+      </div>
+
+      <div class="site-subtitle">Find Your Polaris.</div>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/casper.tw/">Home</a>
+        <a href="/casper.tw/about/">About</a>
+        <a href="/casper.tw/archives/">Field Notes</a>
+        <a href="/casper.tw/projects/">Case Studies</a>
+        <a href="/casper.tw/labs/">Labs</a>
+        <a href="/casper.tw/experience/research/">Research</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-controls">
+        <nav class="site-nav language-switcher" aria-label="Language switcher">
+          <a href="/casper.tw/labs/ctf-web-practice/" lang="en">EN</a>
+          <a href="/casper.tw/zh/labs/ctf-web-practice/" lang="zh-Hant">ZH</a>
+          <a href="/casper.tw/ja/labs/ctf-web-practice/" lang="ja">JA</a>
+        </nav>
+
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Toggle color theme">Light</button>
+      </div>
+
+      <button class="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false">
+        <span class="mobile-menu-label">Menu</span>
+        <span class="mobile-menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <section class="mobile-nav-section mobile-nav-section-navigation" aria-labelledby="mobile-nav-navigation-label">
+          <p id="mobile-nav-navigation-label" class="mobile-nav-label">Navigation</p>
+          <div class="mobile-nav-links">
+            <a href="/casper.tw/">Home</a>
+            <a href="/casper.tw/about/">About</a>
+            <a href="/casper.tw/archives/">Field Notes</a>
+            <a href="/casper.tw/projects/">Case Studies</a>
+            <a href="/casper.tw/labs/">Labs</a>
+            <a href="/casper.tw/experience/research/">Research</a>
+          </div>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-language" aria-labelledby="mobile-nav-language-label">
+          <p id="mobile-nav-language-label" class="mobile-nav-label">Language</p>
+          <nav class="mobile-language-switcher" aria-label="Language switcher">
+            <a href="/casper.tw/labs/ctf-web-practice/" lang="en" aria-current=&#34;true&#34;>EN</a>
+            <a href="/casper.tw/zh/labs/ctf-web-practice/" lang="zh-Hant" >ZH</a>
+            <a href="/casper.tw/ja/labs/ctf-web-practice/" lang="ja" >JA</a>
+          </nav>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-appearance" aria-labelledby="mobile-nav-appearance-label">
+          <p id="mobile-nav-appearance-label" class="mobile-nav-label">Appearance</p>
+          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle>Light</button>
+        </section>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var storageKey = 'casper-theme';
+    var root = document.documentElement;
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-theme-toggle]'));
+
+    function applyTheme(theme) {
+      var nextTheme = theme === 'dark' ? 'dark' : 'light';
+      root.setAttribute('data-theme', nextTheme);
+      buttons.forEach(function(button) {
+        button.textContent = nextTheme === 'light' ? 'Light' : 'Dark';
+        button.setAttribute('aria-pressed', String(nextTheme === 'dark'));
+      });
+    }
+
+    try {
+      applyTheme(localStorage.getItem(storageKey) || 'light');
+    } catch (error) {
+      applyTheme('light');
+    }
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        try {
+          localStorage.setItem(storageKey, nextTheme);
+        } catch (error) {}
+      });
+    });
+
+    var menuButton = document.querySelector('.mobile-menu-button');
+    var menu = document.getElementById('mobile-nav');
+    var header = document.querySelector('.site-header');
+    function updateHeaderState() {
+      if (!header) return;
+      header.classList.toggle('is-scrolled', window.scrollY > 12);
+    }
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+    if (!menuButton || !menu) return;
+
+    menuButton.addEventListener('click', function() {
+      var isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menu.hidden = isOpen;
+    });
+
+    menu.addEventListener('click', function(event) {
+      if (event.target && event.target.tagName === 'A') {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
+    });
+  })();
+</script>
+
+
+    <main class="main-container">
+      
+
+
+  <article class="page-content notebook-page">
+    <header class="page-header">
+      <div class="page-kicker">Notebook Page</div>
+      <h1 class="section-title">CTF Web Practice</h1>
+    </header>
+
+    <div class="page-body">
+      
+        <h1 id="CTF-Web-Practice"><a href="#CTF-Web-Practice" class="headerlink" title="CTF Web Practice"></a>CTF Web Practice</h1><ul>
+<li><strong>Status:</strong> Archived</li>
+<li><strong>Date:</strong> 2026-06-02</li>
+<li><strong>Category:</strong> Security</li>
+</ul>
+<h2 id="Purpose"><a href="#Purpose" class="headerlink" title="Purpose"></a>Purpose</h2><p>Record practice around <strong>CTF</strong>, Web Security, Linux basics, and OSINT.</p>
+<h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><ul>
+<li>Browser developer tools</li>
+<li>Linux terminal</li>
+<li>Basic HTTP inspection tools</li>
+<li>Practice challenges</li>
+</ul>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><ol>
+<li>Read the challenge statement carefully.</li>
+<li>Inspect the web page, request, and response.</li>
+<li>Search for weak assumptions.</li>
+<li>Write down the solution path and mistake points.</li>
+</ol>
+<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p>The practice improved my ability to slow down, inspect details, and avoid jumping to conclusions too quickly.</p>
+<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><p>The most useful part is not only solving the challenge, but writing a clean explanation after solving it.</p>
+<h2 id="Next-Step"><a href="#Next-Step" class="headerlink" title="Next Step"></a>Next Step</h2><p>Organize solved challenge notes by topic.</p>
+
+      
+    </div>
+  </article>
+
+
+    </main>
+
+    
+<footer id="contact" class="site-footer polaris-footer" aria-label="Site footer">
+  <p class="polaris-footer-title">Find Your Polaris.</p>
+  <p class="polaris-footer-note">Curiosity matters more than rushing to prove yourself.</p>
+  <p class="footer-copy">&copy; 2026 Casper.</p>
+</footer>
+
+  </div>
+</body>
+</html>
