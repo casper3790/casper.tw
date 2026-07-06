@@ -11164,3 +11164,48 @@ footer.site-footer.polaris-footer,
   }
 }
 
+/* Project Polaris homepage hero final override: keep the first fold visually continuous. */
+.i18n-page-home > .home-positioning-hero,
+.i18n-page-dashboard > .home-positioning-hero {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.i18n-page-home > .home-positioning-hero .home-positioning-copy,
+.i18n-page-dashboard > .home-positioning-hero .home-positioning-copy {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Home shell final override: remove any remaining light-mode card block around the hero. */
+html[data-theme="light"] .home-page,
+html[data-theme="light"] .home-page.i18n-page,
+html[data-theme="light"] .i18n-page-home,
+html[data-theme="light"] .i18n-page-dashboard,
+html[data-theme="light"] .home-positioning-page,
+html[data-theme="light"] .home-positioning-wrapper,
+html[data-theme="light"] .home-sections,
+html[data-theme="light"] .main-container:has(.i18n-page-home),
+html[data-theme="light"] .main-container:has(.i18n-page-dashboard),
+html[data-theme="light"] main:has(.i18n-page-home),
+html[data-theme="light"] main:has(.i18n-page-dashboard),
+html[data-theme="light"] .page-content:has(.home-positioning-hero) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
