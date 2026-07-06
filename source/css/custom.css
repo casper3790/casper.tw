@@ -11209,6 +11209,32 @@ html[data-theme="light"] .page-content:has(.home-positioning-hero) {
   box-shadow: none !important;
 }
 
+/* Project Polaris V1 final light-mode shell override: remove remaining centered page blocks. */
+html[data-theme="light"] .main-container,
+html[data-theme="light"] main,
+html[data-theme="light"] .page-content,
+html[data-theme="light"] .about-page,
+html[data-theme="light"] .field-notes-index,
+html[data-theme="light"] .case-study-index,
+html[data-theme="light"] .lab-studio-index,
+html[data-theme="light"] .research-v1-page,
+html[data-theme="light"] .experience-detail-page,
+html[data-theme="light"] .home-page.i18n-page,
+html[data-theme="light"] .home-page.i18n-page-home,
+html[data-theme="light"] .home-page.i18n-page-projects,
+html[data-theme="light"] .home-page.i18n-page-labs,
+html[data-theme="light"] .home-page.i18n-page-dashboard,
+html[data-theme="light"] .home-positioning-page,
+html[data-theme="light"] .home-positioning-wrapper,
+html[data-theme="light"] .home-sections {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
 /* Project Polaris V1 final light-mode page shell override: remove the remaining centered card blocks. */
 html[data-theme="light"] .main-container,
 html[data-theme="light"] main,
