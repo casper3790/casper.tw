@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>從零售業打工，我看見中小企業最容易忽略的資訊安全 | Casper&#39;s SECURITY LAB</title>
+<meta name="description" content="從零售業第一線工作經驗出發，反思中小企業在新人教育、設備管理、流程與資安文化上容易忽略的風險。">
+<meta name="keywords" content="資安, CTF, Web, Robotics, IoT">
+<meta name="author" content="Casper">
+<link rel="canonical" href="https://casper.tw/zh/2026/07/18/retail-work-sme-security-culture/">
+
+<link rel="alternate" hreflang="en" href="https://casper.tw/2026/07/18/retail-work-sme-security-culture/">
+<link rel="alternate" hreflang="zh-TW" href="https://casper.tw/zh/2026/07/18/retail-work-sme-security-culture/">
+<link rel="alternate" hreflang="ja" href="https://casper.tw/ja/2026/07/18/retail-work-sme-security-culture/">
+<link rel="alternate" hreflang="x-default" href="https://casper.tw/2026/07/18/retail-work-sme-security-culture/">
+
+
+<meta property="og:site_name" content="Casper&#39;s SECURITY LAB">
+<meta property="og:title" content="從零售業打工，我看見中小企業最容易忽略的資訊安全 | Casper&#39;s SECURITY LAB">
+<meta property="og:description" content="從零售業第一線工作經驗出發，反思中小企業在新人教育、設備管理、流程與資安文化上容易忽略的風險。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://casper.tw/zh/2026/07/18/retail-work-sme-security-culture/">
+<meta property="og:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
+<meta property="og:image:alt" content="從零售業打工，我看見中小企業最容易忽略的資訊安全 preview image">
+<meta property="og:locale" content="zh_TW">
+
+<meta property="article:published_time" content="2026-07-17T16:00:00.000Z">
+
+
+<meta property="article:modified_time" content="2026-07-17T18:47:41.455Z">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="從零售業打工，我看見中小企業最容易忽略的資訊安全 | Casper&#39;s SECURITY LAB">
+<meta name="twitter:description" content="從零售業第一線工作經驗出發，反思中小企業在新人教育、設備管理、流程與資安文化上容易忽略的風險。">
+<meta name="twitter:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
+<meta name="twitter:image:alt" content="從零售業打工，我看見中小企業最容易忽略的資訊安全 preview image">
+
+<link rel="icon" type="image/svg+xml" href="/casper.tw/favicon.svg">
+<link rel="shortcut icon" href="/casper.tw/favicon.svg">
+<script>
+  (function() {
+    try {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('casper-theme') || 'light');
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="/casper.tw/css/custom.css?v=20">
+
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/casper.tw/feed.xml" title="Casper's SECURITY LAB" type="application/atom+xml">
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+  
+  <div class="brand-row">
+    <a class="brand-avatar" href="/casper.tw/zh/" aria-label="首頁">
+      <img src="/casper.tw/images/casper.png" alt="Casper avatar">
+    </a>
+
+    <div class="brand-content">
+      <div class="site-title">
+        <a href="/casper.tw/zh/"><span>Casper</span></a>
+      </div>
+
+      <div class="site-subtitle">Find Your Polaris.</div>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/casper.tw/zh/">首頁</a>
+        <a href="/casper.tw/zh/about/">關於</a>
+        <a href="/casper.tw/zh/archives/">探索筆記</a>
+        <a href="/casper.tw/zh/projects/">案例研究</a>
+        <a href="/casper.tw/zh/labs/">實驗室</a>
+        <a href="/casper.tw/zh/experience/research/">研究</a>
+        <a href="#contact">頁尾</a>
+      </nav>
+
+      <div class="header-controls">
+        <nav class="site-nav language-switcher" aria-label="Language switcher">
+          <a href="/casper.tw/2026/07/18/retail-work-sme-security-culture/" lang="en">EN</a>
+          <a href="/casper.tw/zh/2026/07/18/retail-work-sme-security-culture/" lang="zh-Hant">ZH</a>
+          <a href="/casper.tw/ja/2026/07/18/retail-work-sme-security-culture/" lang="ja">JA</a>
+        </nav>
+
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="切換色彩模式">明亮</button>
+      </div>
+
+      <button class="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false">
+        <span class="mobile-menu-label">選單</span>
+        <span class="mobile-menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <section class="mobile-nav-section mobile-nav-section-navigation" aria-labelledby="mobile-nav-navigation-label">
+          <p id="mobile-nav-navigation-label" class="mobile-nav-label">Navigation</p>
+          <div class="mobile-nav-links">
+            <a href="/casper.tw/zh/">首頁</a>
+            <a href="/casper.tw/zh/about/">關於</a>
+            <a href="/casper.tw/zh/archives/">探索筆記</a>
+            <a href="/casper.tw/zh/projects/">案例研究</a>
+            <a href="/casper.tw/zh/labs/">實驗室</a>
+            <a href="/casper.tw/zh/experience/research/">研究</a>
+          </div>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-language" aria-labelledby="mobile-nav-language-label">
+          <p id="mobile-nav-language-label" class="mobile-nav-label">Language</p>
+          <nav class="mobile-language-switcher" aria-label="Language switcher">
+            <a href="/casper.tw/2026/07/18/retail-work-sme-security-culture/" lang="en" >EN</a>
+            <a href="/casper.tw/zh/2026/07/18/retail-work-sme-security-culture/" lang="zh-Hant" aria-current=&#34;true&#34;>ZH</a>
+            <a href="/casper.tw/ja/2026/07/18/retail-work-sme-security-culture/" lang="ja" >JA</a>
+          </nav>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-appearance" aria-labelledby="mobile-nav-appearance-label">
+          <p id="mobile-nav-appearance-label" class="mobile-nav-label">Appearance</p>
+          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle>明亮</button>
+        </section>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var storageKey = 'casper-theme';
+    var root = document.documentElement;
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-theme-toggle]'));
+
+    function applyTheme(theme) {
+      var nextTheme = theme === 'dark' ? 'dark' : 'light';
+      root.setAttribute('data-theme', nextTheme);
+      buttons.forEach(function(button) {
+        button.textContent = nextTheme === 'light' ? '明亮' : '深色';
+        button.setAttribute('aria-pressed', String(nextTheme === 'dark'));
+      });
+    }
+
+    try {
+      applyTheme(localStorage.getItem(storageKey) || 'light');
+    } catch (error) {
+      applyTheme('light');
+    }
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        try {
+          localStorage.setItem(storageKey, nextTheme);
+        } catch (error) {}
+      });
+    });
+
+    var menuButton = document.querySelector('.mobile-menu-button');
+    var menu = document.getElementById('mobile-nav');
+    var header = document.querySelector('.site-header');
+    function updateHeaderState() {
+      if (!header) return;
+      header.classList.toggle('is-scrolled', window.scrollY > 12);
+    }
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+    if (!menuButton || !menu) return;
+
+    menuButton.addEventListener('click', function() {
+      var isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menu.hidden = isOpen;
+    });
+
+    menu.addEventListener('click', function(event) {
+      if (event.target && event.target.tagName === 'A') {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
+    });
+  })();
+</script>
+
+
+    <main class="main-container">
+      
+
+<div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
+
+<article class="post-content field-note-page os-reading-layout">
+  <header class="post-header field-note-header">
+    <div class="post-kicker">探索筆記</div>
+    <h1 class="post-title">從零售業打工，我看見中小企業最容易忽略的資訊安全</h1>
+
+    <div class="post-meta">
+      <time>2026-07-18</time>
+      <span>7 分鐘閱讀</span>
+    </div>
+  </header>
+
+  <div class="post-body">
+    <h1 id="從零售業打工，我看見中小企業最容易忽略的資訊安全"><a href="#從零售業打工，我看見中小企業最容易忽略的資訊安全" class="headerlink" title="從零售業打工，我看見中小企業最容易忽略的資訊安全"></a>從零售業打工，我看見中小企業最容易忽略的資訊安全</h1><p>最近我開始在零售業打工。</p>
+<p>這件事對我來說有點新鮮。過去我接觸資訊安全，大多是在電腦前面，透過題目、實驗環境、報告、工具或文件去理解風險。那時候我很自然地以為，資安比較像是科技公司、醫院、金融機構，或大型組織才會每天面對的事情。</p>
+<p>直到我真的站到第一線，開始接觸門市營運、設備操作、顧客服務與內部流程，我才意識到一件事：</p>
+<p>資安其實一直都在，只是它不一定用「資安」這兩個字出現。</p>
+<p>它可能藏在一組共用帳號裡，藏在新人不知道該不該回報的異常狀況裡，藏在一台已經用了很久、但仍然支撐營運的設備裡，也藏在每個人為了讓工作更順手而形成的日常習慣裡。</p>
+<span id="more"></span>
+
+<h2 id="第一線教育裡，資安常常不是主角"><a href="#第一線教育裡，資安常常不是主角" class="headerlink" title="第一線教育裡，資安常常不是主角"></a>第一線教育裡，資安常常不是主角</h2><p>我觀察到，很多企業對營運其實非常重視。</p>
+<p>新人教育會告訴你怎麼服務客人、怎麼操作設備、怎麼避免營業損失、哪些公司規章不能違反、遇到客訴要怎麼處理。這些都很重要，因為第一線工作本來就需要穩定、標準化，而且不能因為個人疏忽影響顧客體驗。</p>
+<p>但我也發現，資訊安全在這些教育裡常常不是主角。</p>
+<p>例如帳號應該怎麼管理，密碼為什麼不能共用，遇到可疑訊息或信件要怎麼判斷，不明 USB 能不能插，個資畫面可不可以讓無關的人看到，設備出現異常時要通報誰，這些事情在很多場景裡都沒有被講得很清楚。</p>
+<p>這不代表企業不重視安全。</p>
+<p>更準確地說，是很多組織把安全理解成營運規範、商業機密、內部紀律或防止損失，卻沒有把資訊安全拆成每個員工都能理解的行為準則。</p>
+<p>可是今天的零售業早就不是單純的收錢與找零。企業每天可能保存消費者資料、員工資料、會員資料、交易資料與營運紀錄。這些資料不一定看起來像機密，但只要被錯誤存取、外流或遭到濫用，都可能造成真實影響。</p>
+<p>所以我開始思考：如果新人教育會教我們怎麼保護商品、保護營收、保護服務品質，那是不是也應該教我們怎麼保護資料？</p>
+<h2 id="舊設備不是原罪，未知風險才是問題"><a href="#舊設備不是原罪，未知風險才是問題" class="headerlink" title="舊設備不是原罪，未知風險才是問題"></a>舊設備不是原罪，未知風險才是問題</h2><p>在第一線工作時，我也看見一些商業設備仍然使用相對較舊的作業系統或軟體環境。</p>
+<p>但我不想用很簡單的方式說「舊就是不安全」。這樣的說法太粗糙，也不符合現實。</p>
+<p>很多商業設備不是想換就能換。它可能綁定特定硬體、特定系統、特定周邊，或牽涉到供應商、維護合約、營運成本與停機風險。對中小企業來說，設備穩定能用，往往比追求最新版本更接近每天要面對的現實。</p>
+<p>真正重要的不是版本新不新，而是企業知不知道它的風險在哪裡。</p>
+<p>如果一台設備比較舊，但它被放在適當隔離的網路裡，只開必要服務，使用最小權限，有明確的更新策略、資產管理、白名單、防毒或端點偵測機制，也有備份與事件應變流程，那風險就能被管理。</p>
+<p>相反地，如果一台設備看起來很新，但所有人都用同一組帳號、密碼長期不換、沒有通報管道、沒有備份、沒有人知道它連到哪裡，也沒有人知道出事時誰要負責，那它不一定比較安全。</p>
+<p>資安不是單純買新設備，也不是把某個版本升上去就結束。</p>
+<p>資安比較像是一種持續知道自己擁有哪些東西、它們承擔哪些風險，以及組織準備怎麼處理風險的能力。</p>
+<h2 id="我以前看的是漏洞，現在看到的是習慣"><a href="#我以前看的是漏洞，現在看到的是習慣" class="headerlink" title="我以前看的是漏洞，現在看到的是習慣"></a>我以前看的是漏洞，現在看到的是習慣</h2><p>以前我學 CTF 的時候，很習慣把問題想成技術題。</p>
+<p>網站有沒有漏洞？程式邏輯有沒有缺陷？二進位檔案能不能分析？系統有沒有弱點？看到一個問題，我會很自然地往技術深處鑽。</p>
+<p>這些訓練當然重要。它讓我理解系統怎麼壞掉，也讓我學會用比較嚴謹的方式看待技術風險。</p>
+<p>可是進入真實工作場域之後，我慢慢發現，日常最常看到的風險不一定是 CVE，也不一定是高深的攻擊技術。</p>
+<p>更多時候，是人的習慣。</p>
+<p>為了方便，所以帳號共用。</p>
+<p>為了省時間，所以流程跳過。</p>
+<p>為了不麻煩別人，所以異常先放著。</p>
+<p>為了趕快完成工作，所以沒有確認資料是不是該被這樣處理。</p>
+<p>很多攻擊利用的不是技術，而是方便。</p>
+<p>這句話對我來說很有衝擊。因為它代表資安不是只有工程師、資安人員或管理階層的事情。只要一個組織裡有人使用系統、接觸資料、操作設備、處理客戶資訊，那他其實就是整個安全鏈的一部分。</p>
+<p>如果這個人從來沒有被教過什麼是可疑事件，他就很難通報。</p>
+<p>如果他不知道個資為什麼重要，他就很難保護。</p>
+<p>如果他覺得資安只是「不能做這個、不能做那個」，那他可能只會把資安當成阻礙工作效率的規定。</p>
+<p>這也是我覺得中小企業最需要補上的地方：不是要求每個人都變成資安專家，而是讓每個人都知道自己在安全裡扮演什麼角色。</p>
+<h2 id="建立負責任的資安文化"><a href="#建立負責任的資安文化" class="headerlink" title="建立負責任的資安文化"></a>建立負責任的資安文化</h2><p>我很喜歡 Responsible Security Culture 這個概念。</p>
+<p>它不是把責任全部丟給第一線員工，也不是出事之後才開始找誰犯錯。真正負責任的資安文化，應該是讓員工有足夠的教育、清楚的流程、合理的工具，以及不害怕通報問題的環境。</p>
+<p>例如，新人教育可以加入幾個很基本的問題：</p>
+<p>帳號和密碼應該怎麼使用？</p>
+<p>看到可疑訊息要怎麼處理？</p>
+<p>個人資料可以出現在哪些地方？</p>
+<p>設備異常時要通知誰？</p>
+<p>不明外接裝置為什麼不能隨便使用？</p>
+<p>如果懷疑資料外洩，第一時間應該做什麼？</p>
+<p>這些內容不需要講得像資安課程，也不需要談漏洞利用，更不需要教任何攻擊方式。它可以很生活化，很接近工作現場，甚至可以直接放進既有 SOP 裡。</p>
+<p>重點是讓員工知道：通報不是找麻煩，提問不是不專業，承認異常不是犯錯。</p>
+<p>在台灣，企業與政府單位長期面對大量網路攻擊、掃描、詐騙與社交工程風險。這些威脅不會只挑大型企業，也不會因為一間公司規模比較小就自動略過。越是仰賴數位系統營運的產業，越需要把資安變成日常管理的一部分。</p>
+<p>不是每間公司都能立刻建立完整的資安團隊。</p>
+<p>但每間公司都可以先做幾件事：盤點資產、整理權限、建立通報流程、定期備份、教育新人、檢查設備風險、讓員工知道哪些行為可能造成資料外洩。</p>
+<p>這些事情看起來不酷，也不像 CTF 題目那樣有漂亮的解答。</p>
+<p>但它們很真實。</p>
+<h2 id="最後"><a href="#最後" class="headerlink" title="最後"></a>最後</h2><p>這次在零售業打工，讓我重新理解資訊安全。</p>
+<p>以前我以為資安是一種技術能力，後來我發現，它也是一種組織能力。它不只存在於資安報告、弱點掃描或事件分析裡，也存在於新人教育、設備管理、日常習慣與通報文化裡。</p>
+<p>一個企業可以很重視服務，很重視效率，很重視營收，也很重視品牌形象。</p>
+<p>但如果它每天都在處理資料，卻沒有讓員工知道如何保護資料，那資安就會變成一個沒有人真正負責、但每個人都可能影響的空白地帶。</p>
+<p>我不認為這是某個產業的問題，也不認為這是某間企業的問題。</p>
+<p>這更像是數位化之後，每個組織都遲早要面對的問題。</p>
+<p>我們每天都在談數位轉型，但如果沒有資訊安全，轉型只是讓風險跑得更快。</p>
+
+  </div>
+
+  
+</article>
+
+<button class="back-to-top-button" type="button" data-back-top hidden>回到頂端</button>
+
+<script>
+  (function() {
+    var progress = document.querySelector('[data-reading-progress]');
+    var article = document.querySelector('.post-content');
+    var backTop = document.querySelector('[data-back-top]');
+
+    function updateProgress() {
+      if (!progress || !article) return;
+      var rect = article.getBoundingClientRect();
+      var total = Math.max(1, article.offsetHeight - window.innerHeight);
+      var read = Math.min(Math.max(-rect.top, 0), total);
+      progress.style.width = (read / total * 100).toFixed(2) + '%';
+      if (backTop) backTop.hidden = window.scrollY < 500;
+    }
+
+    document.querySelectorAll('.post-body h2, .post-body h3').forEach(function(heading) {
+      if (!heading.id) {
+        heading.id = heading.textContent.trim().toLowerCase().replace(/[^\w\u4e00-\u9fff\u3040-\u30ff]+/g, '-').replace(/^-|-$/g, '');
+      }
+      var link = document.createElement('a');
+      link.className = 'heading-anchor';
+      link.href = '#' + heading.id;
+      link.setAttribute('aria-label', 'Link to section');
+      link.textContent = '#';
+      heading.appendChild(link);
+    });
+
+    document.querySelectorAll('.post-body pre').forEach(function(pre) {
+      var button = document.createElement('button');
+      button.className = 'code-copy-button';
+      button.type = 'button';
+      button.textContent = 'Copy';
+      button.addEventListener('click', async function() {
+        var code = pre.textContent || '';
+        try {
+          await navigator.clipboard.writeText(code);
+          button.textContent = 'Copied';
+          window.setTimeout(function() { button.textContent = 'Copy'; }, 1400);
+        } catch (error) {
+          button.textContent = 'Failed';
+        }
+      });
+      pre.appendChild(button);
+    });
+
+    if (backTop) {
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+  })();
+</script>
+
+
+    </main>
+
+    
+<footer id="contact" class="site-footer polaris-footer" aria-label="網站頁尾">
+  <p class="polaris-footer-title">Find Your Polaris.</p>
+  <p class="polaris-footer-note">保持好奇，比急著證明自己更重要。</p>
+  <p class="footer-copy">&copy; 2026 Casper.</p>
+</footer>
+
+  </div>
+</body>
+</html>
