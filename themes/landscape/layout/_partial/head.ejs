@@ -17,7 +17,17 @@
     }
     return baseUrl + localPath;
   };
-  const canonicalUrl = absoluteUrl(page.path || '/');
+  const canonicalUrl = page.canonical_url || absoluteUrl(page.path || '/');
+  const canonicalBaseMatch = String(canonicalUrl).match(/^https?:\/\/[^/]+/);
+  const canonicalBaseUrl = canonicalBaseMatch ? canonicalBaseMatch[0] : baseUrl;
+  const canonicalAbsoluteUrl = function(path) {
+    if (/^https?:\/\//.test(path)) return path;
+    let localPath = url_for(path).replace(/index\.html$/, '');
+    if (rootPath !== '/' && localPath.indexOf(rootPath) === 0) {
+      localPath = localPath.slice(rootPath.length - 1);
+    }
+    return canonicalBaseUrl + localPath;
+  };
   const shareImage = absoluteUrl(page.cover || '/images/casper-og.png');
   const shareImageAlt = page.title ? page.title + ' preview image' : siteTitle + ' preview image';
   const metaType = page.layout === 'post' ? 'article' : 'website';
@@ -28,6 +38,7 @@
   const localHeadParts = headLang === 'en' ? headParts : headParts.slice(1);
   const firstHeadPart = localHeadParts[0] || '';
   const localHeadPath = localHeadParts.join('/');
+  const isDatedHeadPost = /^\d{4}\/\d{2}\/\d{2}\//.test(localHeadPath);
   const headSection =
     firstHeadPart === '' ? 'home' :
     firstHeadPart === 'dashboard' ? 'dashboard' :
@@ -59,6 +70,11 @@
     zh: '/zh/' + localHeadPath + '/',
     ja: '/ja/' + localHeadPath + '/'
   } : null;
+  const postHreflangPaths = isDatedHeadPost ? {
+    en: '/' + localHeadPath + '/',
+    zh: '/zh/' + localHeadPath + '/',
+    ja: '/ja/' + localHeadPath + '/'
+  } : null;
   const sectionHreflangPaths = headSection ? {
     home: { en: '/', zh: '/zh/', ja: '/ja/' },
     dashboard: { en: '/dashboard/', zh: '/zh/dashboard/', ja: '/ja/dashboard/' },
@@ -69,7 +85,7 @@
     writing: { en: '/writing/', zh: '/zh/writing/', ja: '/ja/writing/' },
     timeline: { en: '/timeline/', zh: '/zh/timeline/', ja: '/ja/timeline/' }
   }[headSection] : null;
-  const hreflangPaths = detailHreflangPaths || sectionHreflangPaths;
+  const hreflangPaths = detailHreflangPaths || postHreflangPaths || sectionHreflangPaths;
 %>
 
 <title><%= metaTitle %></title>
@@ -78,10 +94,10 @@
 <meta name="author" content="<%= config.author || '' %>">
 <link rel="canonical" href="<%= canonicalUrl %>">
 <% if (hreflangPaths) { %>
-<link rel="alternate" hreflang="en" href="<%= absoluteUrl(hreflangPaths.en) %>">
-<link rel="alternate" hreflang="zh-TW" href="<%= absoluteUrl(hreflangPaths.zh) %>">
-<link rel="alternate" hreflang="ja" href="<%= absoluteUrl(hreflangPaths.ja) %>">
-<link rel="alternate" hreflang="x-default" href="<%= absoluteUrl(hreflangPaths.en) %>">
+<link rel="alternate" hreflang="en" href="<%= canonicalAbsoluteUrl(hreflangPaths.en) %>">
+<link rel="alternate" hreflang="zh-TW" href="<%= canonicalAbsoluteUrl(hreflangPaths.zh) %>">
+<link rel="alternate" hreflang="ja" href="<%= canonicalAbsoluteUrl(hreflangPaths.ja) %>">
+<link rel="alternate" hreflang="x-default" href="<%= canonicalAbsoluteUrl(hreflangPaths.en) %>">
 <% } %>
 
 <meta property="og:site_name" content="<%= siteTitle %>">

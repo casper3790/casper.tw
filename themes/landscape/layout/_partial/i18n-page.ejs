@@ -476,17 +476,38 @@
     projectHref('/projects/medical-cybersecurity/'),
     localHref('labs')
   ];
+  const inferPostLang = function(post) {
+    const postPath = String(post.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
+    const postParts = postPath.split('/').filter(Boolean);
+    if (postParts[0] === 'zh') return 'zh';
+    if (postParts[0] === 'ja') return 'ja';
+    const raw = strip_html(post.content || post.description || '').replace(/\s+/g, ' ').trim();
+    const cjk = (raw.match(/[\u4e00-\u9fff\u3040-\u30ff\u3400-\u4dbf]/g) || []).length;
+    const kana = (raw.match(/[\u3040-\u30ff]/g) || []).length;
+    const latin = (raw.match(/[A-Za-z]/g) || []).length;
+    return kana > 12 ? 'ja' : (cjk > latin ? 'zh' : 'en');
+  };
 
   const recentPosts = [];
   const allPosts = [];
   if (site.posts && site.posts.length) {
     site.posts.toArray().sort(function(a, b) { return b.date - a.date; }).forEach(function(post, index) {
+      if (inferPostLang(post) !== lang) return;
       allPosts.push(post);
-      if (index < 3) recentPosts.push(post);
+      if (recentPosts.length < 3) recentPosts.push(post);
     });
   }
-  const tagList = [];
-  if (site.tags && site.tags.length) site.tags.each(function(tag) { tagList.push(tag); });
+  const tagMap = {};
+  allPosts.forEach(function(post) {
+    if (!post.tags || !post.tags.length) return;
+    const tags = post.tags.toArray ? post.tags.toArray() : post.tags.data || [];
+    tags.forEach(function(tag) {
+      if (!tag || !tag.name) return;
+      if (!tagMap[tag.name]) tagMap[tag.name] = { name: tag.name, path: tag.path, length: 0 };
+      tagMap[tag.name].length += 1;
+    });
+  });
+  const tagList = Object.keys(tagMap).map(function(name) { return tagMap[name]; });
   const tagCounts = tagList.map(function(tag) { return tag.length || 0; });
   const minTagCount = tagCounts.length ? Math.min.apply(null, tagCounts) : 0;
   const maxTagCount = tagCounts.length ? Math.max.apply(null, tagCounts) : 0;
@@ -497,7 +518,7 @@
   const awards = ['InnoServe Merit', 'OSINT Excellence', 'Creativity Award', 'Innovation Award', 'Honorable Mention'];
   const stats = [
     [String(t.projects.length).padStart(2, '0'), t.stats.projects, t.labels.currentlyBuilding, 'projects'],
-    [String(site.posts && site.posts.length ? site.posts.length : 0).padStart(2, '0'), t.stats.articles, t.labels.published, 'writing'],
+    [String(allPosts.length).padStart(2, '0'), t.stats.articles, t.labels.published, 'writing'],
     [String(t.labsList.length).padStart(2, '0'), t.stats.labs, t.labels.experiments, 'labs'],
     [String(awards.length).padStart(2, '0'), t.stats.awards, t.labels.awards, 'experience/awards'],
     ['10', t.stats.workshops, t.labels.workshops, 'experience/workshops'],

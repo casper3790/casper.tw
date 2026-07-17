@@ -11,11 +11,12 @@ tags:
   - Retail
   - Personal
 slug: retail-work-sme-security-culture
+permalink: 2026/07/18/retail-work-sme-security-culture/
 description: A reflection from frontline retail work on how SMEs often overlook security education, device management, process design, and Security Culture.
 seo_title: What a Retail Job Taught Me About the Security Gaps Small Businesses Often Miss
 seo_description: A practical reflection on SME Security from the retail frontline, covering accounts, passwords, reporting, device risk, employee training, and Responsible Security Culture.
 og_description: Cybersecurity is not limited to tech companies, hospitals, or financial institutions. From the retail frontline, I learned that the most common risks are often habits and processes, not CVEs.
-canonical_url: https://casper.tw/retail-work-sme-security-culture/
+canonical_url: https://casper.tw/2026/07/18/retail-work-sme-security-culture/
 reading_time: About 8 minutes
 hero_image_suggestion: An anonymized retail work scene with checkout equipment, an inventory screen, an employee badge, and blurred figures, without any logos, store names, brand marks, or identifiable business details.
 hero_banner_colors:
