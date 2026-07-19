@@ -264,21 +264,60 @@
       experience: 'Experience',
       title: 'Engineering Projects',
       subtitle: 'Hands-on projects across cybersecurity, medical technology, robotics, and IoT.',
-      aria: 'Project list'
+      aria: 'Project list',
+      summary: 'Overview',
+      period: 'Period',
+      role: 'Role',
+      type: 'Type',
+      outcome: 'Outcome',
+      skills: 'Skills & Technologies',
+      gallery: 'Gallery',
+      links: 'Related Links',
+      groups: [
+        ['Engineering Skills', ['System Development', 'Documentation', 'Research']],
+        ['Backend & Platforms', ['FastAPI', 'Docker', 'PostgreSQL', 'Python']],
+        ['Embedded & Robotics', ['ESP32', 'Raspberry Pi', 'ROS2', 'MQTT']]
+      ]
     },
     zh: {
       home: '首頁',
       experience: '經歷',
       title: '工程專案',
       subtitle: '以資訊安全、醫療資訊、機器人與物聯網為核心的實作專案。',
-      aria: '專案列表'
+      aria: '專案列表',
+      summary: '摘要',
+      period: '期間',
+      role: '角色',
+      type: '類型',
+      outcome: '成果',
+      skills: '技能與技術',
+      gallery: '圖集',
+      links: '相關連結',
+      groups: [
+        ['工程能力', ['System Development', 'Documentation', 'Research']],
+        ['後端與平台', ['FastAPI', 'Docker', 'PostgreSQL', 'Python']],
+        ['嵌入式與機器人', ['ESP32', 'Raspberry Pi', 'ROS2', 'MQTT']]
+      ]
     },
     ja: {
       home: 'ホーム',
       experience: '経験',
       title: 'エンジニアリングプロジェクト',
       subtitle: 'サイバーセキュリティ、医療情報、ロボティクス、IoTを中心とした実践プロジェクト。',
-      aria: 'プロジェクト一覧'
+      aria: 'プロジェクト一覧',
+      summary: '概要',
+      period: '期間',
+      role: '役割',
+      type: '種類',
+      outcome: '成果',
+      skills: 'スキルと技術',
+      gallery: 'ギャラリー',
+      links: '関連リンク',
+      groups: [
+        ['エンジニアリング能力', ['System Development', 'Documentation', 'Research']],
+        ['バックエンドとプラットフォーム', ['FastAPI', 'Docker', 'PostgreSQL', 'Python']],
+        ['組み込みとロボティクス', ['ESP32', 'Raspberry Pi', 'ROS2', 'MQTT']]
+      ]
     }
   }[expLang];
   const projectsFieldLabels = {
@@ -314,7 +353,44 @@
     }
   }[expLang];
   const normalizeProjectLine = function(value) {
-    return strip_html(String(value || '')).replace(/\s+/g, ' ').trim();
+    return strip_html(String(value || ''))
+      .replace(/&#x([0-9a-f]+);/gi, function(_, hex) { return String.fromCharCode(parseInt(hex, 16)); })
+      .replace(/&#(\d+);/g, function(_, num) { return String.fromCharCode(parseInt(num, 10)); })
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&')
+      .replace(/\s+/g, ' ')
+      .trim();
+  };
+  const projectTranslations = {
+    zh: {
+      'Multiple records': '多筆專案紀錄',
+      'Developer / Researcher': '開發者 / 研究者',
+      'Researcher / Developer': '研究者 / 開發者',
+      'Personal research project': '個人研究專案',
+      'Personal embedded project': '個人嵌入式系統專案',
+      'Personal web project': '個人網頁專案',
+      'Personal / team robotics learning': '個人與團隊機器人學習',
+      'Medical Cybersecurity project': '醫療資安 · 研究原型',
+      'Research and prototype direction': '研究原型方向'
+    },
+    ja: {
+      'Multiple records': '複数のプロジェクト記録',
+      'Developer / Researcher': '開発者 / 研究者',
+      'Researcher / Developer': '研究者 / 開発者',
+      'Personal research project': '個人研究プロジェクト',
+      'Personal embedded project': '組み込みシステム個人プロジェクト',
+      'Personal web project': '個人Webプロジェクト',
+      'Personal / team robotics learning': '個人・チームでのロボティクス学習',
+      'Medical Cybersecurity project': '医療セキュリティ · 研究プロトタイプ',
+      'Research and prototype direction': '研究プロトタイプの方向性'
+    }
+  };
+  const projectText = function(value) {
+    const cleanValue = normalizeProjectLine(value);
+    return (projectTranslations[expLang] && projectTranslations[expLang][cleanValue]) || cleanValue;
   };
   const projectField = function(lines, key) {
     const labels = projectsFieldLabels[key] || [];
@@ -339,18 +415,23 @@
       const tags = tech ? tech.split(/[,、·]/).map(function(tag) { return tag.trim(); }).filter(Boolean).slice(0, 3) : [];
       return {
         title: title,
-        year: projectField(lines, 'year'),
-        organization: projectField(lines, 'organization'),
-        type: projectField(lines, 'type'),
-        role: projectField(lines, 'role'),
-        topic: projectField(lines, 'topic'),
-        outcome: projectField(lines, 'outcome'),
-        reflection: projectField(lines, 'reflection'),
+        year: projectText(projectField(lines, 'year')),
+        organization: projectText(projectField(lines, 'organization')),
+        type: projectText(projectField(lines, 'type')),
+        role: projectText(projectField(lines, 'role')),
+        topic: projectText(projectField(lines, 'topic')),
+        outcome: projectText(projectField(lines, 'outcome')),
+        reflection: projectText(projectField(lines, 'reflection')),
         tags: tags
       };
     }).filter(function(item) { return item.title; });
   };
   const projectCards = parseProjectCards(expBody);
+  const projectSummaryCards = [
+    [projectsCopy.period, page.experience_date],
+    [projectsCopy.role, projectText(page.role)],
+    [projectsCopy.type, projectsCopy.title]
+  ].filter(function(row) { return row[1]; });
 %>
 
 <% if (expSlug === 'projects') { %>
@@ -366,33 +447,77 @@
   <header class="engineering-projects-header">
     <h1 itemprop="name"><%= projectsCopy.title %></h1>
     <p itemprop="description"><%= projectsCopy.subtitle %></p>
+    <div class="engineering-projects-header-meta">
+      <% [page.experience_date, projectText(page.role)].filter(Boolean).forEach(function(item) { %><span><%= item %></span><% }) %>
+    </div>
   </header>
+
+  <% if (projectSummaryCards.length) { %>
+    <section class="engineering-projects-summary" aria-labelledby="engineering-projects-summary-title">
+      <h2 id="engineering-projects-summary-title"><%= projectsCopy.summary %></h2>
+      <div class="engineering-projects-summary-grid">
+        <% projectSummaryCards.forEach(function(row) { %>
+          <article>
+            <span><%= row[0] %></span>
+            <strong><%= row[1] %></strong>
+          </article>
+        <% }) %>
+      </div>
+    </section>
+  <% } %>
 
   <section class="engineering-projects-list" aria-label="<%= projectsCopy.aria %>">
     <% projectCards.forEach(function(project) { %>
       <article class="engineering-project-card">
         <div class="engineering-project-card-main">
-          <div class="engineering-project-card-kicker">
-            <% if (project.year) { %><span><%= project.year %></span><% } %>
-            <% if (project.role) { %><span><%= project.role %></span><% } %>
-          </div>
           <h2><%= project.title %></h2>
-          <% if (project.topic || project.reflection) { %>
-            <p><%= project.topic || project.reflection %></p>
-          <% } %>
-          <% if (project.tags.length) { %>
-            <div class="engineering-project-tags">
-              <% project.tags.forEach(function(tag) { %><span><%= tag %></span><% }) %>
-            </div>
-          <% } %>
+          <% if (project.topic) { %><p><%= project.topic %></p><% } %>
+          <% if (project.outcome) { %><small><%= projectsCopy.outcome %>: <%= project.outcome %></small><% } %>
         </div>
-        <aside class="engineering-project-card-side">
-          <% if (project.type) { %><span><%= project.type %></span><% } %>
-          <% if (project.outcome) { %><strong><%= project.outcome %></strong><% } %>
-          <% if (project.organization) { %><small><%= project.organization %></small><% } %>
-        </aside>
+        <div class="engineering-project-card-meta">
+          <% [project.year, project.role, project.organization || project.type].filter(Boolean).forEach(function(item) { %><span><%= item %></span><% }) %>
+        </div>
+        <% if (project.tags.length) { %>
+          <div class="engineering-project-tags">
+            <% project.tags.forEach(function(tag) { %><span><%= tag %></span><% }) %>
+          </div>
+        <% } %>
       </article>
     <% }) %>
+  </section>
+
+  <section class="engineering-projects-skills" aria-labelledby="engineering-projects-skills-title">
+    <h2 id="engineering-projects-skills-title"><%= projectsCopy.skills %></h2>
+    <div class="engineering-projects-skill-grid">
+      <% projectsCopy.groups.forEach(function(group) { %>
+        <article>
+          <h3><%= group[0] %></h3>
+          <div class="engineering-project-tags">
+            <% group[1].forEach(function(item) { %><span><%= item %></span><% }) %>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <% if (expGallery.length) { %>
+    <section class="engineering-projects-gallery" aria-labelledby="engineering-projects-gallery-title">
+      <h2 id="engineering-projects-gallery-title"><%= projectsCopy.gallery %></h2>
+      <div class="engineering-projects-gallery-grid">
+        <% expGallery.forEach(function(image) { %>
+          <img src="<%= url_for(image.src) %>" alt="<%= image.alt || projectsCopy.title + ' gallery image' %>" loading="lazy">
+        <% }) %>
+      </div>
+    </section>
+  <% } %>
+
+  <section class="engineering-projects-links" aria-labelledby="engineering-projects-links-title">
+    <h2 id="engineering-projects-links-title"><%= projectsCopy.links %></h2>
+    <div class="engineering-projects-link-list">
+      <a href="<%= url_for(expBase) %>"><%= expText.back %></a>
+      <% if (expPrev) { %><a href="<%= expUrl(expPrev.slug) %>"><%= expText.previous %>: <%= expPrev.title %></a><% } %>
+      <% if (expNext) { %><a href="<%= expUrl(expNext.slug) %>"><%= expText.next %>: <%= expNext.title %></a><% } %>
+    </div>
   </section>
 
   <script type="application/ld+json"><%- JSON.stringify(schema) %></script>
