@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,35 +8,35 @@
 
 
 <title>護理師讓我重新思考醫療資安 | Casper&#39;s SECURITY LAB</title>
-<meta name="description" content="護理師讓我重新思考醫療資安如果是在幾個月前，我可能會很有自信地告訴別人： 「我想到一個很棒的醫療資安專題。」 當時的我認為，醫院裡的生命徵象資料如果遭到竄改，或是醫療設備遭到攻擊，可能會直接影響病人的安全。 於是我開始思考： 能不能利用 AI 與異常偵測技術，協助醫護人員發現不合理的生命徵象數據？ 能不能建立一套機制，">
+<meta name="description" content="從與臨床護理師討論醫療資安專題的經驗出發，反思工程師是否真的理解醫療現場、臨床流程與需求。">
 <meta name="keywords" content="資安, CTF, Web, Robotics, IoT">
 <meta name="author" content="Casper">
-<link rel="canonical" href="https://casper3790.github.io/casper.tw/2026/06/23/%E8%AD%B7%E7%90%86%E5%B8%AB%E8%AE%93%E6%88%91%E9%87%8D%E6%96%B0%E6%80%9D%E8%80%83%E9%86%AB%E7%99%82%E8%B3%87%E5%AE%89/">
+<link rel="canonical" href="https://casper.tw/zh/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
 
-<link rel="alternate" hreflang="en" href="https://casper3790.github.io/2026/06/23/%E8%AD%B7%E7%90%86%E5%B8%AB%E8%AE%93%E6%88%91%E9%87%8D%E6%96%B0%E6%80%9D%E8%80%83%E9%86%AB%E7%99%82%E8%B3%87%E5%AE%89/">
-<link rel="alternate" hreflang="zh-TW" href="https://casper3790.github.io/zh/2026/06/23/%E8%AD%B7%E7%90%86%E5%B8%AB%E8%AE%93%E6%88%91%E9%87%8D%E6%96%B0%E6%80%9D%E8%80%83%E9%86%AB%E7%99%82%E8%B3%87%E5%AE%89/">
-<link rel="alternate" hreflang="ja" href="https://casper3790.github.io/ja/2026/06/23/%E8%AD%B7%E7%90%86%E5%B8%AB%E8%AE%93%E6%88%91%E9%87%8D%E6%96%B0%E6%80%9D%E8%80%83%E9%86%AB%E7%99%82%E8%B3%87%E5%AE%89/">
-<link rel="alternate" hreflang="x-default" href="https://casper3790.github.io/2026/06/23/%E8%AD%B7%E7%90%86%E5%B8%AB%E8%AE%93%E6%88%91%E9%87%8D%E6%96%B0%E6%80%9D%E8%80%83%E9%86%AB%E7%99%82%E8%B3%87%E5%AE%89/">
+<link rel="alternate" hreflang="en" href="https://casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
+<link rel="alternate" hreflang="zh-TW" href="https://casper.tw/zh/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
+<link rel="alternate" hreflang="ja" href="https://casper.tw/ja/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
+<link rel="alternate" hreflang="x-default" href="https://casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
 
 
 <meta property="og:site_name" content="Casper&#39;s SECURITY LAB">
 <meta property="og:title" content="護理師讓我重新思考醫療資安 | Casper&#39;s SECURITY LAB">
-<meta property="og:description" content="護理師讓我重新思考醫療資安如果是在幾個月前，我可能會很有自信地告訴別人： 「我想到一個很棒的醫療資安專題。」 當時的我認為，醫院裡的生命徵象資料如果遭到竄改，或是醫療設備遭到攻擊，可能會直接影響病人的安全。 於是我開始思考： 能不能利用 AI 與異常偵測技術，協助醫護人員發現不合理的生命徵象數據？ 能不能建立一套機制，">
+<meta property="og:description" content="從與臨床護理師討論醫療資安專題的經驗出發，反思工程師是否真的理解醫療現場、臨床流程與需求。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://casper3790.github.io/casper.tw/2026/06/23/%E8%AD%B7%E7%90%86%E5%B8%AB%E8%AE%93%E6%88%91%E9%87%8D%E6%96%B0%E6%80%9D%E8%80%83%E9%86%AB%E7%99%82%E8%B3%87%E5%AE%89/">
+<meta property="og:url" content="https://casper.tw/zh/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
 <meta property="og:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
 <meta property="og:image:alt" content="護理師讓我重新思考醫療資安 preview image">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_TW">
 
 <meta property="article:published_time" content="2026-06-22T16:00:00.000Z">
 
 
-<meta property="article:modified_time" content="2026-06-23T14:36:47.891Z">
+<meta property="article:modified_time" content="2026-07-18T17:22:49.490Z">
 
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="護理師讓我重新思考醫療資安 | Casper&#39;s SECURITY LAB">
-<meta name="twitter:description" content="護理師讓我重新思考醫療資安如果是在幾個月前，我可能會很有自信地告訴別人： 「我想到一個很棒的醫療資安專題。」 當時的我認為，醫院裡的生命徵象資料如果遭到竄改，或是醫療設備遭到攻擊，可能會直接影響病人的安全。 於是我開始思考： 能不能利用 AI 與異常偵測技術，協助醫護人員發現不合理的生命徵象數據？ 能不能建立一套機制，">
+<meta name="twitter:description" content="從與臨床護理師討論醫療資安專題的經驗出發，反思工程師是否真的理解醫療現場、臨床流程與需求。">
 <meta name="twitter:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
 <meta name="twitter:image:alt" content="護理師讓我重新思考醫療資安 preview image">
 
@@ -75,6 +75,7 @@
         <a href="/casper.tw/zh/">首頁</a>
         <a href="/casper.tw/zh/about/">關於</a>
         <a href="/casper.tw/zh/archives/">探索筆記</a>
+        <a href="/casper.tw/experience/">經歷</a>
         <a href="/casper.tw/zh/projects/">案例研究</a>
         <a href="/casper.tw/zh/labs/">實驗室</a>
         <a href="/casper.tw/zh/experience/research/">研究</a>
@@ -83,12 +84,17 @@
 
       <div class="header-controls">
         <nav class="site-nav language-switcher" aria-label="Language switcher">
-          <a href="/casper.tw/archives/" lang="en">EN</a>
-          <a href="/casper.tw/2026/06/23/%E8%AD%B7%E7%90%86%E5%B8%AB%E8%AE%93%E6%88%91%E9%87%8D%E6%96%B0%E6%80%9D%E8%80%83%E9%86%AB%E7%99%82%E8%B3%87%E5%AE%89/" lang="zh-Hant">ZH</a>
-          <a href="/casper.tw/ja/archives/" lang="ja">JA</a>
+          <a href="/casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="en" >EN</a>
+          <a href="/casper.tw/zh/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="zh-Hant" aria-current=true>ZH</a>
+          <a href="/casper.tw/ja/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="ja" >JA</a>
         </nav>
+        <span class="header-controls-separator" aria-hidden="true"></span>
 
-        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="切換色彩模式">明亮</button>
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="切換色彩模式" title="切換色彩模式">
+          <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true"></span>
+          <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true"></span>
+          <span class="theme-toggle-label">切換色彩模式</span>
+        </button>
       </div>
 
       <button class="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false">
@@ -107,6 +113,7 @@
             <a href="/casper.tw/zh/">首頁</a>
             <a href="/casper.tw/zh/about/">關於</a>
             <a href="/casper.tw/zh/archives/">探索筆記</a>
+            <a href="/casper.tw/experience/">經歷</a>
             <a href="/casper.tw/zh/projects/">案例研究</a>
             <a href="/casper.tw/zh/labs/">實驗室</a>
             <a href="/casper.tw/zh/experience/research/">研究</a>
@@ -118,9 +125,9 @@
         <section class="mobile-nav-section mobile-nav-section-language" aria-labelledby="mobile-nav-language-label">
           <p id="mobile-nav-language-label" class="mobile-nav-label">Language</p>
           <nav class="mobile-language-switcher" aria-label="Language switcher">
-            <a href="/casper.tw/archives/" lang="en" >EN</a>
-            <a href="/casper.tw/2026/06/23/%E8%AD%B7%E7%90%86%E5%B8%AB%E8%AE%93%E6%88%91%E9%87%8D%E6%96%B0%E6%80%9D%E8%80%83%E9%86%AB%E7%99%82%E8%B3%87%E5%AE%89/" lang="zh-Hant" aria-current=&#34;true&#34;>ZH</a>
-            <a href="/casper.tw/ja/archives/" lang="ja" >JA</a>
+            <a href="/casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="en" >EN</a>
+            <a href="/casper.tw/zh/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="zh-Hant" aria-current=true>ZH</a>
+            <a href="/casper.tw/ja/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="ja" >JA</a>
           </nav>
         </section>
 
@@ -128,7 +135,11 @@
 
         <section class="mobile-nav-section mobile-nav-section-appearance" aria-labelledby="mobile-nav-appearance-label">
           <p id="mobile-nav-appearance-label" class="mobile-nav-label">Appearance</p>
-          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle>明亮</button>
+          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle aria-label="切換色彩模式" title="切換色彩模式">
+            <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true"></span>
+            <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true"></span>
+            <span class="theme-toggle-label">切換色彩模式</span>
+          </button>
         </section>
       </nav>
     </div>
@@ -145,8 +156,9 @@
       var nextTheme = theme === 'dark' ? 'dark' : 'light';
       root.setAttribute('data-theme', nextTheme);
       buttons.forEach(function(button) {
-        button.textContent = nextTheme === 'light' ? '明亮' : '深色';
         button.setAttribute('aria-pressed', String(nextTheme === 'dark'));
+        button.setAttribute('aria-label', '切換色彩模式: ' + (nextTheme === 'light' ? '明亮' : '深色'));
+        button.setAttribute('title', nextTheme === 'light' ? '明亮' : '深色');
       });
     }
 

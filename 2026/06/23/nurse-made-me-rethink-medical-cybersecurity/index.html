@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>A Nurse Made Me Rethink Medical Cybersecurity | Casper&#39;s SECURITY LAB</title>
+<meta name="description" content="A reflection from discussing a Medical Cybersecurity project with a clinical nurse, and realizing that engineers must first understand clinical workflows and re">
+<meta name="keywords" content="資安, CTF, Web, Robotics, IoT">
+<meta name="author" content="Casper">
+<link rel="canonical" href="https://casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
+
+<link rel="alternate" hreflang="en" href="https://casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
+<link rel="alternate" hreflang="zh-TW" href="https://casper.tw/zh/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
+<link rel="alternate" hreflang="ja" href="https://casper.tw/ja/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
+<link rel="alternate" hreflang="x-default" href="https://casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
+
+
+<meta property="og:site_name" content="Casper&#39;s SECURITY LAB">
+<meta property="og:title" content="A Nurse Made Me Rethink Medical Cybersecurity | Casper&#39;s SECURITY LAB">
+<meta property="og:description" content="A reflection from discussing a Medical Cybersecurity project with a clinical nurse, and realizing that engineers must first understand clinical workflows and re">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">
+<meta property="og:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
+<meta property="og:image:alt" content="A Nurse Made Me Rethink Medical Cybersecurity preview image">
+<meta property="og:locale" content="en_US">
+
+<meta property="article:published_time" content="2026-06-22T16:00:00.000Z">
+
+
+<meta property="article:modified_time" content="2026-07-18T17:25:28.557Z">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A Nurse Made Me Rethink Medical Cybersecurity | Casper&#39;s SECURITY LAB">
+<meta name="twitter:description" content="A reflection from discussing a Medical Cybersecurity project with a clinical nurse, and realizing that engineers must first understand clinical workflows and re">
+<meta name="twitter:image" content="https://casper3790.github.io/casper.tw/images/casper-og.png">
+<meta name="twitter:image:alt" content="A Nurse Made Me Rethink Medical Cybersecurity preview image">
+
+<link rel="icon" type="image/svg+xml" href="/casper.tw/favicon.svg">
+<link rel="shortcut icon" href="/casper.tw/favicon.svg">
+<script>
+  (function() {
+    try {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('casper-theme') || 'light');
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="/casper.tw/css/custom.css?v=20">
+
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/casper.tw/feed.xml" title="Casper's SECURITY LAB" type="application/atom+xml">
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+  
+  <div class="brand-row">
+    <a class="brand-avatar" href="/casper.tw/" aria-label="Home">
+      <img src="/casper.tw/images/casper.png" alt="Casper avatar">
+    </a>
+
+    <div class="brand-content">
+      <div class="site-title">
+        <a href="/casper.tw/"><span>Casper</span></a>
+      </div>
+
+      <div class="site-subtitle">Find Your Polaris.</div>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/casper.tw/">Home</a>
+        <a href="/casper.tw/about/">About</a>
+        <a href="/casper.tw/archives/">Field Notes</a>
+        <a href="/casper.tw/en/experience/">Experience</a>
+        <a href="/casper.tw/projects/">Case Studies</a>
+        <a href="/casper.tw/labs/">Labs</a>
+        <a href="/casper.tw/experience/research/">Research</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-controls">
+        <nav class="site-nav language-switcher" aria-label="Language switcher">
+          <a href="/casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="en" aria-current=true>EN</a>
+          <a href="/casper.tw/zh/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="zh-Hant" >ZH</a>
+          <a href="/casper.tw/ja/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="ja" >JA</a>
+        </nav>
+        <span class="header-controls-separator" aria-hidden="true"></span>
+
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">
+          <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true"></span>
+          <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true"></span>
+          <span class="theme-toggle-label">Toggle color theme</span>
+        </button>
+      </div>
+
+      <button class="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false">
+        <span class="mobile-menu-label">Menu</span>
+        <span class="mobile-menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <section class="mobile-nav-section mobile-nav-section-navigation" aria-labelledby="mobile-nav-navigation-label">
+          <p id="mobile-nav-navigation-label" class="mobile-nav-label">Navigation</p>
+          <div class="mobile-nav-links">
+            <a href="/casper.tw/">Home</a>
+            <a href="/casper.tw/about/">About</a>
+            <a href="/casper.tw/archives/">Field Notes</a>
+            <a href="/casper.tw/en/experience/">Experience</a>
+            <a href="/casper.tw/projects/">Case Studies</a>
+            <a href="/casper.tw/labs/">Labs</a>
+            <a href="/casper.tw/experience/research/">Research</a>
+          </div>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-language" aria-labelledby="mobile-nav-language-label">
+          <p id="mobile-nav-language-label" class="mobile-nav-label">Language</p>
+          <nav class="mobile-language-switcher" aria-label="Language switcher">
+            <a href="/casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="en" aria-current=true>EN</a>
+            <a href="/casper.tw/zh/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="zh-Hant" >ZH</a>
+            <a href="/casper.tw/ja/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/" lang="ja" >JA</a>
+          </nav>
+        </section>
+
+        <span class="mobile-nav-divider" aria-hidden="true"></span>
+
+        <section class="mobile-nav-section mobile-nav-section-appearance" aria-labelledby="mobile-nav-appearance-label">
+          <p id="mobile-nav-appearance-label" class="mobile-nav-label">Appearance</p>
+          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">
+            <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true"></span>
+            <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true"></span>
+            <span class="theme-toggle-label">Toggle color theme</span>
+          </button>
+        </section>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var storageKey = 'casper-theme';
+    var root = document.documentElement;
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-theme-toggle]'));
+
+    function applyTheme(theme) {
+      var nextTheme = theme === 'dark' ? 'dark' : 'light';
+      root.setAttribute('data-theme', nextTheme);
+      buttons.forEach(function(button) {
+        button.setAttribute('aria-pressed', String(nextTheme === 'dark'));
+        button.setAttribute('aria-label', 'Toggle color theme: ' + (nextTheme === 'light' ? 'Light' : 'Dark'));
+        button.setAttribute('title', nextTheme === 'light' ? 'Light' : 'Dark');
+      });
+    }
+
+    try {
+      applyTheme(localStorage.getItem(storageKey) || 'light');
+    } catch (error) {
+      applyTheme('light');
+    }
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        try {
+          localStorage.setItem(storageKey, nextTheme);
+        } catch (error) {}
+      });
+    });
+
+    var menuButton = document.querySelector('.mobile-menu-button');
+    var menu = document.getElementById('mobile-nav');
+    var header = document.querySelector('.site-header');
+    function updateHeaderState() {
+      if (!header) return;
+      header.classList.toggle('is-scrolled', window.scrollY > 12);
+    }
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+    if (!menuButton || !menu) return;
+
+    menuButton.addEventListener('click', function() {
+      var isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menu.hidden = isOpen;
+    });
+
+    menu.addEventListener('click', function(event) {
+      if (event.target && event.target.tagName === 'A') {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
+    });
+  })();
+</script>
+
+
+    <main class="main-container">
+      
+
+<div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
+
+<article class="post-content field-note-page os-reading-layout">
+  <header class="post-header field-note-header">
+    <div class="post-kicker">Field Note</div>
+    <h1 class="post-title">A Nurse Made Me Rethink Medical Cybersecurity</h1>
+
+    <div class="post-meta">
+      <time>2026-06-23</time>
+      <span>4 min read</span>
+    </div>
+  </header>
+
+  <div class="post-body">
+    <h1 id="A-Nurse-Made-Me-Rethink-Medical-Cybersecurity"><a href="#A-Nurse-Made-Me-Rethink-Medical-Cybersecurity" class="headerlink" title="A Nurse Made Me Rethink Medical Cybersecurity"></a>A Nurse Made Me Rethink Medical Cybersecurity</h1><p>If this had been a few months ago, I might have confidently told someone:</p>
+<p>“I came up with a great Medical Cybersecurity project.”</p>
+<p>At the time, I believed that if vital sign data in a hospital were tampered with, or if medical devices were attacked, it could directly affect patient safety.</p>
+<p>So I began thinking:</p>
+<p>Could AI and anomaly detection help medical staff identify unreasonable vital sign data?</p>
+<p>Could we build a mechanism to prevent incorrect data from entering medical systems?</p>
+<p>At the time, I thought this idea was valuable.</p>
+<p>Until I actually started discussing it with a clinical nurse.</p>
+<hr>
+<h2 id="The-Clinical-Setting-I-Imagined"><a href="#The-Clinical-Setting-I-Imagined" class="headerlink" title="The Clinical Setting I Imagined"></a>The Clinical Setting I Imagined</h2><p>At first, my idea was actually quite simple.</p>
+<p>In my understanding:</p>
+<ul>
+<li>Medical devices automatically measure vital signs</li>
+<li>Data is automatically sent to the system</li>
+<li>If the data is abnormal, the system may not necessarily detect it</li>
+<li>Therefore, an additional AI validation mechanism is needed</li>
+</ul>
+<p>It sounded reasonable.</p>
+<p>At least from the perspective of building a student project, it did.</p>
+<p>But the problem was:</p>
+<p>I am not a nurse.</p>
+<p>I have never truly worked in a clinical setting.</p>
+<hr>
+<h2 id="The-First-Challenge"><a href="#The-First-Challenge" class="headerlink" title="The First Challenge"></a>The First Challenge</h2><p>When I brought the idea to a nurse for discussion,</p>
+<p>the first reaction was not praise.</p>
+<p>Instead, the nurse directly asked me:</p>
+<blockquote>
+<p>Do you know that many vital sign devices already have abnormal alert functions?</p>
+</blockquote>
+<p>In that moment, I froze.</p>
+<p>Because I realized I had been looking at the problem from an engineer’s perspective.</p>
+<p>But I had not first confirmed whether the problem actually existed.</p>
+<hr>
+<h2 id="The-Second-Challenge"><a href="#The-Second-Challenge" class="headerlink" title="The Second Challenge"></a>The Second Challenge</h2><p>Later, I raised more questions:</p>
+<p>What if someone enters incorrect data?</p>
+<p>What if an account is stolen?</p>
+<p>What if vital sign data is tampered with?</p>
+<p>These problems do exist.</p>
+<p>But the nurse also reminded me:</p>
+<blockquote>
+<p>Real clinical workflows are much more complex than you imagine.</p>
+</blockquote>
+<p>Some patients’ vital signs are uploaded automatically by devices.</p>
+<p>Some require manual confirmation.</p>
+<p>Some abnormal values already need to be measured again.</p>
+<p>Some abnormal data may even reflect the patient’s real condition, not incorrect data.</p>
+<p>That was when I realized:</p>
+<p>What engineers call “abnormal” is not necessarily what clinicians call “abnormal.”</p>
+<hr>
+<h2 id="The-Biggest-Problem-Was-Not-Technology"><a href="#The-Biggest-Problem-Was-Not-Technology" class="headerlink" title="The Biggest Problem Was Not Technology"></a>The Biggest Problem Was Not Technology</h2><p>Later, I slowly understood one thing.</p>
+<p>My biggest problem was not that my technical ability was insufficient.</p>
+<p>It was that I had started thinking about solutions too early.</p>
+<p>Before I had truly understood the problem.</p>
+<p>Many students make the same mistake when building projects, including myself.</p>
+<p>We see a phenomenon.</p>
+<p>Think of a technology.</p>
+<p>Then immediately start designing a system.</p>
+<p>But we forget to first confirm:</p>
+<p>Does this problem really exist?</p>
+<p>Do people on site really need this feature?</p>
+<hr>
+<h2 id="Being-Woken-Up-Is-Actually-a-Good-Thing"><a href="#Being-Woken-Up-Is-Actually-a-Good-Thing" class="headerlink" title="Being Woken Up Is Actually a Good Thing"></a>Being Woken Up Is Actually a Good Thing</h2><p>Honestly, when your own idea is questioned, it never feels great.</p>
+<p>Especially after spending a lot of time reading and researching.</p>
+<p>But looking back now, I am actually grateful to the people who asked direct questions.</p>
+<p>Because without those discussions,</p>
+<p>I might have spent even more time building a system nobody needed.</p>
+<hr>
+<h2 id="How-I-Think-About-Medical-Cybersecurity-Now"><a href="#How-I-Think-About-Medical-Cybersecurity-Now" class="headerlink" title="How I Think About Medical Cybersecurity Now"></a>How I Think About Medical Cybersecurity Now</h2><p>Even now, I still believe Medical Cybersecurity is an extremely important field.</p>
+<p>Medical devices.<br>Medical information systems.<br>Patient data.<br>Hospital internal networks.</p>
+<p>All of these are closely connected to patient safety.</p>
+<p>But I have also begun to understand:</p>
+<p>Real Medical Cybersecurity is not only about researching technology.</p>
+<p>More importantly, it requires understanding the clinical field.</p>
+<p>Because only by understanding the field can we know which problems are worth solving.</p>
+<p>And which problems are only imagined by engineers.</p>
+<hr>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>The most important thing this experience taught me was:</p>
+<blockquote>
+<p>Technology is not the starting point of a problem.</p>
+</blockquote>
+<blockquote>
+<p>The problem itself is.</p>
+</blockquote>
+<p>If I have the chance to continue working on Medical Cybersecurity research in the future,</p>
+<p>I hope I can understand healthcare before talking about security.</p>
+<p>Understand needs before talking about technology.</p>
+<p>Because no matter how powerful a system is, if it does not solve a real problem in the field, it has no meaning.</p>
+<p>And that was the biggest lesson a nurse gave me.</p>
+
+  </div>
+
+  
+</article>
+
+<button class="back-to-top-button" type="button" data-back-top hidden>Top</button>
+
+<script>
+  (function() {
+    var progress = document.querySelector('[data-reading-progress]');
+    var article = document.querySelector('.post-content');
+    var backTop = document.querySelector('[data-back-top]');
+
+    function updateProgress() {
+      if (!progress || !article) return;
+      var rect = article.getBoundingClientRect();
+      var total = Math.max(1, article.offsetHeight - window.innerHeight);
+      var read = Math.min(Math.max(-rect.top, 0), total);
+      progress.style.width = (read / total * 100).toFixed(2) + '%';
+      if (backTop) backTop.hidden = window.scrollY < 500;
+    }
+
+    document.querySelectorAll('.post-body h2, .post-body h3').forEach(function(heading) {
+      if (!heading.id) {
+        heading.id = heading.textContent.trim().toLowerCase().replace(/[^\w\u4e00-\u9fff\u3040-\u30ff]+/g, '-').replace(/^-|-$/g, '');
+      }
+      var link = document.createElement('a');
+      link.className = 'heading-anchor';
+      link.href = '#' + heading.id;
+      link.setAttribute('aria-label', 'Link to section');
+      link.textContent = '#';
+      heading.appendChild(link);
+    });
+
+    document.querySelectorAll('.post-body pre').forEach(function(pre) {
+      var button = document.createElement('button');
+      button.className = 'code-copy-button';
+      button.type = 'button';
+      button.textContent = 'Copy';
+      button.addEventListener('click', async function() {
+        var code = pre.textContent || '';
+        try {
+          await navigator.clipboard.writeText(code);
+          button.textContent = 'Copied';
+          window.setTimeout(function() { button.textContent = 'Copy'; }, 1400);
+        } catch (error) {
+          button.textContent = 'Failed';
+        }
+      });
+      pre.appendChild(button);
+    });
+
+    if (backTop) {
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+  })();
+</script>
+
+
+    </main>
+
+    
+<footer id="contact" class="site-footer polaris-footer" aria-label="Site footer">
+  <p class="polaris-footer-title">Find Your Polaris.</p>
+  <p class="polaris-footer-note">Curiosity matters more than rushing to prove yourself.</p>
+  <p class="footer-copy">&copy; 2026 Casper.</p>
+</footer>
+
+  </div>
+</body>
+</html>

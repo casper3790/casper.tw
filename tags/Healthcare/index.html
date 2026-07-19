@@ -66,6 +66,7 @@
         <a href="/casper.tw/">Home</a>
         <a href="/casper.tw/about/">About</a>
         <a href="/casper.tw/archives/">Field Notes</a>
+        <a href="/casper.tw/en/experience/">Experience</a>
         <a href="/casper.tw/projects/">Case Studies</a>
         <a href="/casper.tw/labs/">Labs</a>
         <a href="/casper.tw/experience/research/">Research</a>
@@ -74,12 +75,17 @@
 
       <div class="header-controls">
         <nav class="site-nav language-switcher" aria-label="Language switcher">
-          <a href="/casper.tw/tags/Healthcare/" lang="en">EN</a>
-          <a href="/casper.tw/zh/tags/Healthcare/" lang="zh-Hant">ZH</a>
-          <a href="/casper.tw/ja/tags/Healthcare/" lang="ja">JA</a>
+          <a href="/casper.tw/tags/Healthcare/" lang="en" aria-current=true>EN</a>
+          <a href="/casper.tw/zh/tags/Healthcare/" lang="zh-Hant" >ZH</a>
+          <a href="/casper.tw/ja/tags/Healthcare/" lang="ja" >JA</a>
         </nav>
+        <span class="header-controls-separator" aria-hidden="true"></span>
 
-        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Toggle color theme">Light</button>
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">
+          <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true"></span>
+          <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true"></span>
+          <span class="theme-toggle-label">Toggle color theme</span>
+        </button>
       </div>
 
       <button class="mobile-menu-button" type="button" aria-controls="mobile-nav" aria-expanded="false">
@@ -98,6 +104,7 @@
             <a href="/casper.tw/">Home</a>
             <a href="/casper.tw/about/">About</a>
             <a href="/casper.tw/archives/">Field Notes</a>
+            <a href="/casper.tw/en/experience/">Experience</a>
             <a href="/casper.tw/projects/">Case Studies</a>
             <a href="/casper.tw/labs/">Labs</a>
             <a href="/casper.tw/experience/research/">Research</a>
@@ -109,7 +116,7 @@
         <section class="mobile-nav-section mobile-nav-section-language" aria-labelledby="mobile-nav-language-label">
           <p id="mobile-nav-language-label" class="mobile-nav-label">Language</p>
           <nav class="mobile-language-switcher" aria-label="Language switcher">
-            <a href="/casper.tw/tags/Healthcare/" lang="en" aria-current=&#34;true&#34;>EN</a>
+            <a href="/casper.tw/tags/Healthcare/" lang="en" aria-current=true>EN</a>
             <a href="/casper.tw/zh/tags/Healthcare/" lang="zh-Hant" >ZH</a>
             <a href="/casper.tw/ja/tags/Healthcare/" lang="ja" >JA</a>
           </nav>
@@ -119,7 +126,11 @@
 
         <section class="mobile-nav-section mobile-nav-section-appearance" aria-labelledby="mobile-nav-appearance-label">
           <p id="mobile-nav-appearance-label" class="mobile-nav-label">Appearance</p>
-          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle>Light</button>
+          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">
+            <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true"></span>
+            <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true"></span>
+            <span class="theme-toggle-label">Toggle color theme</span>
+          </button>
         </section>
       </nav>
     </div>
@@ -136,8 +147,9 @@
       var nextTheme = theme === 'dark' ? 'dark' : 'light';
       root.setAttribute('data-theme', nextTheme);
       buttons.forEach(function(button) {
-        button.textContent = nextTheme === 'light' ? 'Light' : 'Dark';
         button.setAttribute('aria-pressed', String(nextTheme === 'dark'));
+        button.setAttribute('aria-label', 'Toggle color theme: ' + (nextTheme === 'light' ? 'Light' : 'Dark'));
+        button.setAttribute('title', nextTheme === 'light' ? 'Light' : 'Dark');
       });
     }
 
@@ -191,7 +203,16 @@
   <h1 class="section-title">Tag: </h1>
 
   
-    <p>No posts in this tag.</p>
+    <div class="writing-list">
+      
+        <article class="writing-item">
+          <div class="writing-date">2026-06-23</div>
+          <div class="writing-title">
+            <a href="/casper.tw/2026/06/23/nurse-made-me-rethink-medical-cybersecurity/">A Nurse Made Me Rethink Medical Cybersecurity</a>
+          </div>
+        </article>
+      
+    </div>
   
 </section>
 
