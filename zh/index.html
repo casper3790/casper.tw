@@ -72,14 +72,7 @@
       <div class="site-subtitle">Find Your Polaris.</div>
 
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="/casper.tw/zh/">首頁</a>
-        <a href="/casper.tw/zh/about/">關於</a>
-        <a href="/casper.tw/zh/archives/">探索筆記</a>
-        <a href="/casper.tw/experience/">經歷</a>
-        <a href="/casper.tw/zh/projects/">案例研究</a>
-        <a href="/casper.tw/zh/labs/">實驗室</a>
-        <a href="/casper.tw/zh/experience/research/">研究</a>
-        <a href="#contact">頁尾</a>
+        <a href="/casper.tw/zh/" aria-current="page">首頁</a><a href="/casper.tw/zh/about/">關於</a><a href="/casper.tw/zh/experience/projects/">專案</a><a href="/casper.tw/experience/">經歷</a><a href="/casper.tw/zh/projects/">案例研究</a><a href="/casper.tw/zh/labs/">實驗室</a><a href="/casper.tw/zh/archives/">文章</a><a href="#contact">聯絡</a>
       </nav>
 
       <div class="header-controls">
@@ -90,10 +83,10 @@
         </nav>
         <span class="header-controls-separator" aria-hidden="true"></span>
 
-        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="切換色彩模式" title="切換色彩模式">
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="切換色彩主題" title="切換色彩主題">
           <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true"></span>
           <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true"></span>
-          <span class="theme-toggle-label">切換色彩模式</span>
+          <span class="theme-toggle-label">切換色彩主題</span>
         </button>
       </div>
 
@@ -110,13 +103,7 @@
         <section class="mobile-nav-section mobile-nav-section-navigation" aria-labelledby="mobile-nav-navigation-label">
           <p id="mobile-nav-navigation-label" class="mobile-nav-label">Navigation</p>
           <div class="mobile-nav-links">
-            <a href="/casper.tw/zh/">首頁</a>
-            <a href="/casper.tw/zh/about/">關於</a>
-            <a href="/casper.tw/zh/archives/">探索筆記</a>
-            <a href="/casper.tw/experience/">經歷</a>
-            <a href="/casper.tw/zh/projects/">案例研究</a>
-            <a href="/casper.tw/zh/labs/">實驗室</a>
-            <a href="/casper.tw/zh/experience/research/">研究</a>
+            <a href="/casper.tw/zh/" aria-current="page">首頁</a><a href="/casper.tw/zh/about/">關於</a><a href="/casper.tw/zh/experience/projects/">專案</a><a href="/casper.tw/experience/">經歷</a><a href="/casper.tw/zh/projects/">案例研究</a><a href="/casper.tw/zh/labs/">實驗室</a><a href="/casper.tw/zh/archives/">文章</a><a href="#contact">聯絡</a>
           </div>
         </section>
 
@@ -135,10 +122,10 @@
 
         <section class="mobile-nav-section mobile-nav-section-appearance" aria-labelledby="mobile-nav-appearance-label">
           <p id="mobile-nav-appearance-label" class="mobile-nav-label">Appearance</p>
-          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle aria-label="切換色彩模式" title="切換色彩模式">
+          <button class="theme-toggle-button theme-toggle-button-mobile" type="button" data-theme-toggle aria-label="切換色彩主題" title="切換色彩主題">
             <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true"></span>
             <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true"></span>
-            <span class="theme-toggle-label">切換色彩模式</span>
+            <span class="theme-toggle-label">切換色彩主題</span>
           </button>
         </section>
       </nav>
@@ -157,8 +144,8 @@
       root.setAttribute('data-theme', nextTheme);
       buttons.forEach(function(button) {
         button.setAttribute('aria-pressed', String(nextTheme === 'dark'));
-        button.setAttribute('aria-label', '切換色彩模式: ' + (nextTheme === 'light' ? '明亮' : '深色'));
-        button.setAttribute('title', nextTheme === 'light' ? '明亮' : '深色');
+        button.setAttribute('aria-label', '切換色彩主題: ' + (nextTheme === 'light' ? '淺色' : '深色'));
+        button.setAttribute('title', nextTheme === 'light' ? '淺色' : '深色');
       });
     }
 
