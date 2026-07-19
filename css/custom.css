@@ -12167,3 +12167,206 @@ html[data-theme="dark"] .experience-page {
   }
 }
 
+/* Engineering Projects detail page. */
+.engineering-projects-page {
+  --projects-accent: var(--anon-cyan, var(--os-accent, var(--lab-accent, #22d3ee)));
+  --projects-text: var(--anon-ink, var(--lab-text, #101827));
+  --projects-muted: var(--anon-muted, var(--lab-muted, #667085));
+  --projects-line: rgba(15, 23, 42, 0.1);
+  width: min(1080px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 52px 0 92px;
+  color: var(--projects-text);
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="dark"] .engineering-projects-page {
+  --projects-text: rgba(255, 255, 255, 0.92);
+  --projects-muted: rgba(255, 255, 255, 0.64);
+  --projects-line: rgba(255, 255, 255, 0.12);
+}
+
+.engineering-projects-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 30px;
+  color: color-mix(in srgb, var(--projects-muted) 78%, transparent);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.engineering-projects-breadcrumbs a,
+.engineering-projects-breadcrumbs span {
+  color: inherit !important;
+  text-decoration: none;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.engineering-projects-breadcrumbs a:hover,
+.engineering-projects-breadcrumbs a:focus-visible {
+  color: var(--projects-text) !important;
+}
+
+.engineering-projects-header {
+  max-width: 760px;
+  margin: 0 0 48px;
+}
+
+.engineering-projects-header h1 {
+  margin: 0;
+  color: var(--projects-text);
+  font-size: clamp(42px, 5vw, 48px);
+  font-weight: 720;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.engineering-projects-header p {
+  max-width: 700px;
+  margin: 18px 0 0;
+  color: var(--projects-muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.engineering-projects-list {
+  display: grid;
+  gap: 16px;
+}
+
+.engineering-project-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 280px);
+  gap: 24px;
+  padding: 24px 0;
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid var(--projects-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--projects-text);
+}
+
+.engineering-project-card:hover,
+.engineering-project-card:focus-within {
+  border-color: color-mix(in srgb, var(--projects-accent) 30%, var(--projects-line)) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.engineering-project-card-main {
+  min-width: 0;
+}
+
+.engineering-project-card-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-bottom: 8px;
+  color: var(--projects-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.engineering-project-card-kicker span + span::before {
+  content: '·';
+  margin-right: 10px;
+  color: color-mix(in srgb, var(--projects-muted) 58%, transparent);
+}
+
+.engineering-project-card h2 {
+  margin: 0;
+  color: var(--projects-text);
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 680;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.engineering-project-card p {
+  max-width: 680px;
+  margin: 10px 0 0;
+  color: var(--projects-muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.engineering-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.engineering-project-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 21px;
+  padding: 1px 7px;
+  border: 1px solid color-mix(in srgb, var(--projects-line) 72%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--projects-accent) 7%, transparent);
+  color: color-mix(in srgb, var(--projects-muted) 88%, var(--projects-accent));
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.engineering-project-card-side {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  color: var(--projects-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.engineering-project-card-side strong {
+  color: var(--projects-text);
+  font-size: 14px;
+  font-weight: 560;
+}
+
+.engineering-project-card-side small {
+  color: color-mix(in srgb, var(--projects-muted) 82%, transparent);
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .engineering-projects-page {
+    width: min(100% - 24px, 520px);
+    padding: 34px 0 72px;
+    overflow-x: clip;
+  }
+
+  .engineering-projects-breadcrumbs {
+    margin-bottom: 24px;
+    font-size: 12px;
+  }
+
+  .engineering-projects-header {
+    margin-bottom: 40px;
+  }
+
+  .engineering-projects-header h1 {
+    font-size: clamp(32px, 9vw, 36px);
+  }
+
+  .engineering-project-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 22px 0;
+  }
+}
+
