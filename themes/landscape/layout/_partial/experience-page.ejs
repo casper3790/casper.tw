@@ -29,28 +29,38 @@
 
   const renderTags = function(tags) {
     if (!Array.isArray(tags) || !tags.length) return '';
-    return '<div class="experience-tags">' + tags.map(function(tag) {
+    return '<div class="experience-tags">' + tags.slice(0, 2).map(function(tag) {
       return '<span>' + tag + '</span>';
     }).join('') + '</div>';
+  };
+
+  const plainMeta = function(values) {
+    return values.filter(Boolean).join(' · ');
+  };
+
+  const renderStatsSummary = function() {
+    return expCopy.stats.map(function(stat) {
+      return '<span><strong>' + countSectionItems(expSections[stat.key]) + '</strong> ' + stat.label + '</span>';
+    }).join('<span class="experience-stat-separator" aria-hidden="true">·</span>');
   };
 
   const renderExperienceCard = function(item, extraClass) {
     const classes = ['experience-card'];
     if (extraClass) classes.push(extraClass);
 
-    const meta = [];
-    if (item.year) meta.push(expLabels.year + ': ' + item.year);
-    if (item.role) meta.push(expLabels.role + ': ' + item.role);
-
     const result = Array.isArray(item.result) ? item.result.filter(Boolean).join(' / ') : item.result;
+    const primaryMeta = plainMeta([result, item.role, item.organization]);
+    const secondaryMeta = plainMeta([item.type]);
+    const tagsHtml = renderTags(item.tags);
 
     return '<article class="' + classes.join(' ') + '">' +
-      (meta.length ? '<div class="experience-card-meta">' + meta.map(function(value) { return '<span>' + value + '</span>'; }).join('') + '</div>' : '') +
-      '<h3>' + item.name + '</h3>' +
-      (result ? '<p class="experience-card-line">' + expLabels.result + ': ' + result + '</p>' : '') +
-      (item.organization ? '<p class="experience-card-line">' + expLabels.organization + ': ' + item.organization + '</p>' : '') +
-      (item.type ? '<p class="experience-card-line">' + expLabels.type + ': ' + item.type + '</p>' : '') +
-      renderTags(item.tags) +
+      '<div class="experience-card-year">' + (item.year || '') + '</div>' +
+      '<div class="experience-card-body">' +
+        '<h3>' + item.name + '</h3>' +
+        (primaryMeta ? '<p class="experience-card-line">' + primaryMeta + '</p>' : '') +
+        (secondaryMeta ? '<p class="experience-card-subline">' + secondaryMeta + '</p>' : '') +
+      '</div>' +
+      (tagsHtml ? '<div class="experience-card-aside">' + tagsHtml + '</div>' : '') +
       '</article>';
   };
 %>
@@ -61,13 +71,8 @@
     <h1 id="experience-page-title"><%= expCopy.title %></h1>
     <p class="experience-subtitle"><%= expCopy.subtitle %></p>
 
-    <div class="experience-stats" aria-label="<%= expCopy.statsLabel %>">
-      <% expCopy.stats.forEach(function(stat) { %>
-        <article class="experience-stat-card">
-          <span><%= stat.label %></span>
-          <strong><%= countSectionItems(expSections[stat.key]) %></strong>
-        </article>
-      <% }) %>
+    <div class="experience-stats-summary" aria-label="<%= expCopy.statsLabel %>">
+      <%- renderStatsSummary() %>
     </div>
   </section>
 
@@ -78,6 +83,7 @@
     <section class="experience-section" aria-labelledby="experience-<%= sectionKey %>-title" data-experience-section="<%= sectionKey %>">
       <div class="experience-section-header">
         <h2 id="experience-<%= sectionKey %>-title"><%= section.title %></h2>
+        <p><%= countSectionItems(section) %> <%= section.title %></p>
       </div>
 
       <% if (sectionKey === 'speaking') { %>

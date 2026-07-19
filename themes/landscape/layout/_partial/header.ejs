@@ -36,7 +36,7 @@
     const currentSection = (function() {
       if (!localPathParts.length) return 'home';
       if (localDetailPath === 'experience/projects') return 'projects';
-      if (localPathParts[0] === 'projects') return 'caseStudies';
+      if (localPathParts[0] === 'projects') return 'projects';
       if (localPathParts[0] === 'archives' || localPathParts[0] === 'writing') return 'articles';
       if (localPathParts[0] === 'labs' || localPathParts[0] === 'lab') return 'lab';
       if (localPathParts[0] === 'about') return 'about';
@@ -186,8 +186,6 @@
       { key: 'about', label: h.about },
       { key: 'projects', label: h.projects },
       { key: 'experience', label: h.experience },
-      { key: 'caseStudies', label: h.caseStudies },
-      { key: 'lab', label: h.lab },
       { key: 'articles', label: h.articles },
       { key: 'contact', label: h.contact }
     ];

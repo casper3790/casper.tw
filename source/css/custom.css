@@ -11829,3 +11829,341 @@ html[data-theme="dark"] .experience-placeholder-card {
   }
 }
 
+/* Minimal portfolio header and Experience layout. */
+.site-header .site-nav:not(.language-switcher) {
+  gap: clamp(14px, 2vw, 24px) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.site-header .site-nav:not(.language-switcher) a {
+  position: relative !important;
+  min-height: 0 !important;
+  padding: 2px 0 5px !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--anon-muted, var(--lab-muted)) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  opacity: 0.86 !important;
+  transform: none !important;
+  transition: color 160ms ease, opacity 160ms ease !important;
+}
+
+.site-header .site-nav:not(.language-switcher) a:hover,
+.site-header .site-nav:not(.language-switcher) a:focus-visible {
+  color: var(--anon-text, var(--lab-text)) !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.site-header .site-nav:not(.language-switcher) a[aria-current="page"],
+.site-header .mobile-nav-links a[aria-current="page"] {
+  color: var(--anon-cyan, var(--os-accent, var(--lab-accent, #22d3ee))) !important;
+  border: 0 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.32em !important;
+}
+
+.site-header .mobile-nav-links a {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.experience-page {
+  --experience-surface: transparent;
+  --experience-card: transparent;
+  --experience-text: var(--anon-ink, var(--lab-text, #101827));
+  --experience-muted: var(--anon-muted, var(--lab-muted, #667085));
+  --experience-line: rgba(15, 23, 42, 0.1);
+  width: min(1080px, calc(100% - 48px)) !important;
+  padding: 44px 0 88px !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+html[data-theme="dark"] .experience-page {
+  --experience-surface: transparent;
+  --experience-card: transparent;
+  --experience-muted: rgba(255, 255, 255, 0.64);
+  --experience-line: rgba(255, 255, 255, 0.12);
+}
+
+.experience-page .experience-hero {
+  padding: 48px 0 34px !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--experience-line) !important;
+}
+
+.experience-page .experience-hero h1 {
+  max-width: 760px !important;
+  font-size: clamp(40px, 5vw, 48px) !important;
+  line-height: 1.08 !important;
+  font-weight: 720 !important;
+}
+
+.experience-page .experience-subtitle {
+  max-width: 760px !important;
+  margin-top: 18px !important;
+  font-size: 17px !important;
+  line-height: 1.75 !important;
+}
+
+.experience-stats-summary {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px 12px !important;
+  margin-top: 24px !important;
+  color: var(--experience-muted) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.experience-stats-summary strong {
+  color: var(--experience-text) !important;
+  font-weight: 650 !important;
+}
+
+.experience-stat-separator {
+  color: color-mix(in srgb, var(--experience-muted) 58%, transparent) !important;
+}
+
+.experience-page .experience-stats,
+.experience-page .experience-stat-card {
+  display: none !important;
+}
+
+.experience-page .experience-section {
+  padding: 72px 0 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.experience-page .experience-section + .experience-section {
+  margin-top: 0 !important;
+}
+
+.experience-page .experience-section-header {
+  max-width: 740px !important;
+  margin-bottom: 24px !important;
+}
+
+.experience-page .experience-section-header h2 {
+  font-size: clamp(28px, 3vw, 32px) !important;
+  line-height: 1.18 !important;
+  font-weight: 700 !important;
+}
+
+.experience-page .experience-section-header p {
+  margin-top: 8px !important;
+  color: var(--experience-muted) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.experience-page .experience-timeline,
+.experience-page .experience-year-items,
+.experience-page .experience-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+}
+
+.experience-page .experience-timeline {
+  gap: 28px !important;
+}
+
+.experience-page .experience-timeline::before,
+.experience-page .experience-year::after {
+  content: none !important;
+  display: none !important;
+}
+
+.experience-page .experience-year-group {
+  display: grid !important;
+  grid-template-columns: 76px minmax(0, 1fr) !important;
+  gap: 18px !important;
+}
+
+.experience-page .experience-year {
+  position: static !important;
+  top: auto !important;
+  color: var(--experience-muted) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+
+.experience-page .experience-card,
+.experience-page .experience-placeholder-card,
+.experience-page .experience-muted-card {
+  display: grid !important;
+  grid-template-columns: 72px minmax(0, 1fr) minmax(120px, auto) !important;
+  gap: 16px !important;
+  align-items: start !important;
+  padding: 20px 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid var(--experience-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: border-color 160ms ease, opacity 160ms ease !important;
+}
+
+.experience-page .experience-muted-card {
+  grid-template-columns: 1fr !important;
+}
+
+.experience-page .experience-muted-card h3 {
+  overflow-wrap: anywhere !important;
+}
+
+.experience-page .experience-card:hover,
+.experience-page .experience-card:focus-within,
+.experience-page .experience-placeholder-card:hover,
+.experience-page .experience-muted-card:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: color-mix(in srgb, var(--experience-accent) 30%, var(--experience-line)) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.experience-card-year {
+  color: var(--experience-muted) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+}
+
+.experience-card-body {
+  min-width: 0 !important;
+}
+
+.experience-page .experience-card h3 {
+  margin: 0 !important;
+  color: var(--experience-text) !important;
+  font-size: clamp(18px, 2vw, 20px) !important;
+  font-weight: 680 !important;
+  line-height: 1.38 !important;
+  overflow-wrap: anywhere !important;
+}
+
+.experience-page .experience-card p {
+  margin: 7px 0 0 !important;
+  color: var(--experience-muted) !important;
+  font-size: 14px !important;
+  line-height: 1.62 !important;
+  font-weight: 400 !important;
+}
+
+.experience-page .experience-card-line {
+  color: var(--experience-muted) !important;
+  font-weight: 450 !important;
+}
+
+.experience-card-subline {
+  color: color-mix(in srgb, var(--experience-muted) 82%, transparent) !important;
+}
+
+.experience-card-aside {
+  min-width: 0 !important;
+  justify-self: end !important;
+}
+
+.experience-page .experience-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-end !important;
+  gap: 6px !important;
+  margin-top: 0 !important;
+}
+
+.experience-page .experience-tags span {
+  min-height: 20px !important;
+  padding: 1px 7px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--experience-accent) 8%, transparent) !important;
+  color: color-mix(in srgb, var(--experience-muted) 88%, var(--experience-accent)) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 900px) {
+  .experience-page {
+    width: min(100% - 32px, 760px) !important;
+    padding: 36px 0 72px !important;
+  }
+
+  .experience-page .experience-card,
+  .experience-page .experience-placeholder-card,
+  .experience-page .experience-muted-card {
+    grid-template-columns: 64px minmax(0, 1fr) !important;
+  }
+
+  .experience-card-aside {
+    grid-column: 2 !important;
+    justify-self: start !important;
+  }
+
+  .experience-page .experience-tags {
+    justify-content: flex-start !important;
+    margin-top: 8px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .experience-page {
+    width: min(100% - 24px, 520px) !important;
+    overflow-x: clip !important;
+  }
+
+  .experience-page .experience-hero {
+    padding: 32px 0 28px !important;
+  }
+
+  .experience-page .experience-section {
+    padding-top: 56px !important;
+  }
+
+  .experience-page .experience-year-group,
+  .experience-page .experience-card,
+  .experience-page .experience-placeholder-card,
+  .experience-page .experience-muted-card {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .experience-page .experience-year-items {
+    padding-left: 0 !important;
+  }
+
+  .experience-card-aside {
+    grid-column: auto !important;
+  }
+
+  .experience-card-year {
+    font-size: 13px !important;
+  }
+}
+
