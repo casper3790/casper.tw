@@ -449,8 +449,8 @@
   }[lang];
   Object.assign(t.nav, {
     dashboard: t.nav.dashboard || (lang === 'zh' ? '儀表板' : (lang === 'ja' ? 'ダッシュボード' : 'Dashboard')),
-    writing: lang === 'zh' ? '探索筆記' : (lang === 'ja' ? '探索ノート' : 'Field Notes'),
-    labs: lang === 'zh' ? '實驗室' : (lang === 'ja' ? 'Labs' : 'Labs'),
+    writing: lang === 'zh' ? '文章' : (lang === 'ja' ? '記事' : 'Articles'),
+    labs: lang === 'zh' ? '實驗室' : (lang === 'ja' ? 'ラボ' : 'Lab'),
     timeline: t.nav.timeline || (lang === 'zh' ? '時間軸' : (lang === 'ja' ? 'タイムライン' : 'Timeline')),
     search: t.nav.search || (lang === 'zh' ? '搜尋' : (lang === 'ja' ? '検索' : 'Search'))
   });
@@ -583,11 +583,11 @@
       body: 'このサイトは静かな図書館 / 研究スタジオのような場所です。それぞれのページに役割があり、Casper のノート、作品、問いを分けて置いています。',
       items: [
         ['ホーム', 'ホール', 'この場所を最初に知るための入口です。'],
-        ['紹介', '作者紹介', 'Casper の出発点、ストーリー、考え方を知る場所です。'],
-        ['探索ノート', '本棚', 'これまでの技術メモと理解を整理する場所です。'],
+        ['プロフィール', '作者プロフィール', 'Casper の出発点、ストーリー、考え方を知る場所です。'],
+        ['記事', '本棚', 'これまでの技術メモと理解を整理する場所です。'],
         ['ケーススタディ', 'ケーススタディ', 'アイデアを作品にしていく過程を記録します。'],
-        ['実験室', '実験室', '進行中の実験、テスト、つまずきの記録を置きます。'],
-        ['研究', '研究室', 'これから探りたい方向と問いを整理します。']
+        ['ラボ', 'ラボ', '進行中の実験、テスト、つまずきの記録を置きます。'],
+        ['プロジェクト', 'プロジェクト', 'これから探りたい方向と問いを整理します。']
       ]
     }
   }[lang];
@@ -739,7 +739,7 @@
         ['MedSec', '医療ワークフロー、デバイス信頼、セキュリティリスクを探る研究型システム。'],
         ['Home Lab', '自由に試し、失敗し、考えを検証するための実験環境。']
       ],
-      latestTitle: '最近の探索ノート',
+      latestTitle: '最近の記事',
       latestLink: 'すべてのノートを読む ->',
       currentTitle: '現在探索していること',
       current: [
@@ -813,7 +813,7 @@
       whyKicker: 'Casper が存在する理由',
       areasKicker: '探索領域',
       selectedKicker: '選んだ作品',
-      latestKicker: '最新の探索ノート',
+      latestKicker: '最新の記事',
       currentKicker: '現在探索していること',
       epilogueKicker: 'あとがき',
       profileKicker: 'プロフィール',

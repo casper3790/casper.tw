@@ -11298,6 +11298,14 @@ html[data-theme="light"] .page-content:has(.home-positioning-hero) {
   color: var(--anon-cyan, var(--os-accent, var(--lab-accent, #22d3ee))) !important;
 }
 
+.site-header .site-nav:not(.language-switcher) a[aria-current="page"],
+.site-header .mobile-nav-links a[aria-current="page"] {
+  color: var(--anon-cyan, var(--os-accent, var(--lab-accent, #22d3ee))) !important;
+  border-color: rgba(34, 211, 238, 0.48) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 0.22em !important;
+}
+
 .site-header .header-controls-separator {
   display: block !important;
   width: 1px !important;
