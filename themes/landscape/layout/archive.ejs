@@ -4,17 +4,6 @@
   const archivePath = String(page.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
   const archiveParts = archivePath.split('/').filter(Boolean);
   const archiveLang = archiveParts[0] === 'zh' ? 'zh' : (archiveParts[0] === 'ja' ? 'ja' : 'en');
-  const inferPostLang = function(post) {
-    const postPath = String(post.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
-    const postParts = postPath.split('/').filter(Boolean);
-    if (postParts[0] === 'zh') return 'zh';
-    if (postParts[0] === 'ja') return 'ja';
-    const raw = strip_html(post.content || post.description || '').replace(/\s+/g, ' ').trim();
-    const cjk = (raw.match(/[\u4e00-\u9fff\u3040-\u30ff\u3400-\u4dbf]/g) || []).length;
-    const kana = (raw.match(/[\u3040-\u30ff]/g) || []).length;
-    const latin = (raw.match(/[A-Za-z]/g) || []).length;
-    return kana > 12 ? 'ja' : (cjk > latin ? 'zh' : 'en');
-  };
   const postTime = function(post) {
     if (!post || !post.date) return 0;
     if (typeof post.date.valueOf === 'function') return post.date.valueOf();
@@ -22,7 +11,7 @@
     return Number.isNaN(parsed) ? 0 : parsed;
   };
   const postsArray = rawPostsArray.filter(function(post) {
-    return inferPostLang(post) === archiveLang;
+    return detect_post_language(post) === archiveLang;
   }).sort(function(a, b) {
     return postTime(b) - postTime(a);
   });

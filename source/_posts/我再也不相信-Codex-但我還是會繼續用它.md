@@ -1,6 +1,8 @@
 ---
 title: 我再也不相信 Codex，但我還是會繼續用它
 date: 2026-06-25
+site_lang: zh-TW
+translation_key: why-i-still-use-codex
 categories:
   - Thoughts
 tags:
@@ -8,6 +10,13 @@ tags:
   - Codex
   - Reflection
   - Personal
+slug: why-i-still-use-codex
+permalink: zh/2026/06/25/why-i-still-use-codex/
+description: 一篇關於使用 Codex 的個人技術反思，記錄我為什麼不再完全相信它，卻仍然會繼續把它當成可控工具使用。
+seo_title: 我再也不相信 Codex，但我還是會繼續用它
+seo_description: 從個人部落格維護與 AI coding tool 使用經驗出發，反思 Codex 的價值、風險、驗證需求，以及工程師判斷力為什麼仍然重要。
+og_description: 我不再相信 Codex 可以替我完成所有事情，但我仍然會用它，因為真正該被相信的不是工具，而是使用工具的人是否保有判斷力。
+canonical_url: https://casper.tw/zh/2026/06/25/why-i-still-use-codex/
 ---
 
 # 我再也不相信 Codex，但我還是會繼續用它

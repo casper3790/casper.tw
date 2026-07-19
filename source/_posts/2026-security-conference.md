@@ -2,6 +2,8 @@
 title: 2026 資安大會參訪心得：從展場看見資安產業的真實樣貌
 date: 2026-05-09
 updated: 2026-05-15
+site_lang: zh-TW
+translation_key: 2026-security-conference
 categories:
   - 資安
 tags:
@@ -13,6 +15,13 @@ tags:
   - OT 資安
 banner: /images/cybersec-2026.jpg
 cover: /images/cybersec-2026.jpg
+slug: 2026-security-conference
+permalink: zh/2026/05/09/2026-security-conference/
+description: 參訪 2026 資安大會後，從零信任、AI SOC、醫療資安、OT、雲端與治理等展場主題，重新理解資安產業的真實樣貌。
+seo_title: 2026 資安大會參訪心得：從展場看見資安產業的真實樣貌
+seo_description: 一篇 2026 資安大會參訪心得，記錄我對零信任、社交工程、ROS 機器人資安、AI 安全護欄、雲端與 API 安全、醫療資安、OT 與 AI SOC 的觀察。
+og_description: 這次資安大會讓我看見資安不是單一技術，而是涵蓋治理、教育、監控、鑑識、雲端、AI、醫療、工控與通訊安全的完整系統。
+canonical_url: https://casper.tw/zh/2026/05/09/2026-security-conference/
 toc: true
 ---
 

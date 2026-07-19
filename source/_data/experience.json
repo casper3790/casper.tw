@@ -1,0 +1,275 @@
+{
+  "zh": {
+    "eyebrow": "EXPERIENCE",
+    "title": "經歷 Experience",
+    "subtitle": "整理我在競賽、營隊、研討會、工作坊、證照與社群參與中的學習軌跡。",
+    "statsLabel": "Experience 統計",
+    "labels": {
+      "year": "年份",
+      "role": "身份／角色",
+      "result": "成果",
+      "organization": "主辦單位",
+      "type": "類型"
+    },
+    "stats": [
+      { "key": "competitions", "label": "競賽" },
+      { "key": "camps", "label": "營隊" },
+      { "key": "conferences", "label": "研討會與年會" },
+      { "key": "workshops", "label": "工作坊" },
+      { "key": "certifications", "label": "證照" }
+    ],
+    "sections": {
+      "competitions": {
+        "title": "競賽",
+        "groups": [
+          {
+            "year": "2026",
+            "items": [
+              { "name": "BroncoCTF 2026", "year": "2026", "role": "參賽者", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "Junior Crypt CTF 2026", "year": "2026", "role": "參賽者", "tags": ["CTF", "Cryptography"] },
+              { "name": "Grodno::CTF 2026", "year": "2026", "role": "參賽者", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "AIS3 MyFirstCTF 2026", "year": "2026", "role": "參賽者", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "AIS3 EOF CTF 2026", "year": "2026", "role": "參賽者", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "國立宜蘭大學程式設計暨資訊及 AI 應用競賽", "year": "2026", "result": ["入圍決賽", "榮獲佳作"], "tags": ["Programming", "AI", "Competition"] },
+              { "name": "FIRST Tech Challenge", "year": "2026", "role": "參賽者", "tags": ["Robotics", "Engineering", "FTC"] },
+              { "name": "智慧鐵人創意競賽", "year": "2026", "role": "參賽者", "tags": ["Creativity", "Engineering", "Teamwork"] }
+            ]
+          },
+          {
+            "year": "2025",
+            "items": [
+              { "name": "資訊服務創新應用大賽", "year": "2025", "result": ["高中職組／大專組入圍決賽", "大專組榮獲佳作"], "tags": ["Information Technology", "Innovation", "Competition"] },
+              { "name": "高中職程式安全黑客松", "year": "2025", "result": ["挖蛋專家獎"], "tags": ["Cybersecurity", "Programming", "Hackathon"] }
+            ]
+          }
+        ]
+      },
+      "camps": {
+        "title": "營隊",
+        "items": [
+          { "name": "HPC AI Summer Camp", "year": "2026", "role": "學員", "organization": "國立清華大學", "type": "暑期營隊", "tags": ["HPC", "AI", "CUDA", "GPU"] },
+          { "name": "APCSS 暑期營隊", "role": "學員", "type": "暑期營隊", "tags": ["APCSS", "Programming", "Computational Thinking"] },
+          { "name": "高中量子計畫暑期學習營", "year": "2025", "role": "學員", "type": "暑期學習營", "tags": ["Quantum", "Quantum Computing", "Physics"] }
+        ]
+      },
+      "conferences": {
+        "title": "研討會與年會",
+        "items": [
+          { "name": "InfoSec Taiwan 2026", "year": "2026", "role": "與會者", "tags": ["Cybersecurity", "Community"] },
+          { "name": "Bak3 C00kie", "year": "2026", "role": "與會者", "tags": ["Cybersecurity", "Community"] },
+          { "name": "HITCON Conference 2025", "year": "2025", "role": "與會者", "tags": ["Cybersecurity", "Conference"] },
+          { "name": "COSCUP 開源人年會 2025", "year": "2025", "role": "與會者", "tags": ["Open Source", "Community"] },
+          { "name": "InfoSec Taiwan 2025", "year": "2025", "role": "與會者", "tags": ["Cybersecurity", "Community"] },
+          { "name": "AWS Summit Taipei 2025", "year": "2025", "role": "與會者", "tags": ["Cloud", "AWS", "Conference"] },
+          { "name": "量子年會", "year": "2025", "role": "與會者", "tags": ["Quantum", "Technology", "Conference"] }
+        ]
+      },
+      "workshops": {
+        "title": "工作坊",
+        "items": [
+          { "name": "AI × Cybersecurity Workshop Series：AI for Good", "year": "2026", "role": "與會者", "tags": ["AI", "Cybersecurity", "AI for Good"] }
+        ]
+      },
+      "speaking": {
+        "title": "演講",
+        "statusTitle": "即將公開",
+        "items": []
+      },
+      "certifications": {
+        "title": "證照",
+        "items": [
+          { "name": "勞動部 電腦硬體裝修丙級", "year": "2024", "organization": "勞動部", "tags": ["Hardware", "Certification"] },
+          { "name": "勞動部 網路架設丙級", "year": "2024", "organization": "勞動部", "tags": ["Network", "Certification"] }
+        ]
+      },
+      "community": {
+        "title": "社群",
+        "items": [
+          { "name": "RCEs Team", "role": "成員", "tags": ["CTF", "Team", "Cybersecurity"] }
+        ]
+      }
+    }
+  },
+  "en": {
+    "eyebrow": "EXPERIENCE",
+    "title": "Experience",
+    "subtitle": "A record of my competitions, camps, conferences, workshops, certifications, community involvement, and continued growth.",
+    "statsLabel": "Experience statistics",
+    "labels": {
+      "year": "Year",
+      "role": "Role",
+      "result": "Result",
+      "organization": "Organizer",
+      "type": "Type"
+    },
+    "stats": [
+      { "key": "competitions", "label": "Competitions" },
+      { "key": "camps", "label": "Camps" },
+      { "key": "conferences", "label": "Conferences" },
+      { "key": "workshops", "label": "Workshops" },
+      { "key": "certifications", "label": "Certifications" }
+    ],
+    "sections": {
+      "competitions": {
+        "title": "Competitions",
+        "groups": [
+          {
+            "year": "2026",
+            "items": [
+              { "name": "BroncoCTF 2026", "year": "2026", "role": "Participant", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "Junior Crypt CTF 2026", "year": "2026", "role": "Participant", "tags": ["CTF", "Cryptography"] },
+              { "name": "Grodno::CTF 2026", "year": "2026", "role": "Participant", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "AIS3 MyFirstCTF 2026", "year": "2026", "role": "Participant", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "AIS3 EOF CTF 2026", "year": "2026", "role": "Participant", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "National Ilan University Programming, Information and AI Application Competition", "year": "2026", "result": ["Finalist", "Honorable Mention"], "tags": ["Programming", "AI", "Competition"] },
+              { "name": "FIRST Tech Challenge", "year": "2026", "role": "Participant", "tags": ["Robotics", "Engineering", "FTC"] },
+              { "name": "Intelligent Ironman Creativity Contest", "year": "2026", "role": "Participant", "tags": ["Creativity", "Engineering", "Teamwork"] }
+            ]
+          },
+          {
+            "year": "2025",
+            "items": [
+              { "name": "Information Service Innovation Application Competition", "year": "2025", "result": ["High School and University Divisions Finalist", "University Division Honorable Mention"], "tags": ["Information Technology", "Innovation", "Competition"] },
+              { "name": "High School Program Security Hackathon", "year": "2025", "result": ["Easter Egg Expert Award"], "tags": ["Cybersecurity", "Programming", "Hackathon"] }
+            ]
+          }
+        ]
+      },
+      "camps": {
+        "title": "Camps",
+        "items": [
+          { "name": "HPC AI Summer Camp", "year": "2026", "role": "Camper", "organization": "National Tsing Hua University", "type": "Summer Camp", "tags": ["HPC", "AI", "CUDA", "GPU"] },
+          { "name": "APCSS Summer Camp", "role": "Camper", "type": "Summer Camp", "tags": ["APCSS", "Programming", "Computational Thinking"] },
+          { "name": "High School Quantum Program Summer Camp", "year": "2025", "role": "Camper", "type": "Summer Camp", "tags": ["Quantum", "Quantum Computing", "Physics"] }
+        ]
+      },
+      "conferences": {
+        "title": "Conferences",
+        "items": [
+          { "name": "InfoSec Taiwan 2026", "year": "2026", "role": "Attendee", "tags": ["Cybersecurity", "Community"] },
+          { "name": "Bak3 C00kie", "year": "2026", "role": "Attendee", "tags": ["Cybersecurity", "Community"] },
+          { "name": "HITCON Conference 2025", "year": "2025", "role": "Attendee", "tags": ["Cybersecurity", "Conference"] },
+          { "name": "COSCUP 2025", "year": "2025", "role": "Attendee", "tags": ["Open Source", "Community"] },
+          { "name": "InfoSec Taiwan 2025", "year": "2025", "role": "Attendee", "tags": ["Cybersecurity", "Community"] },
+          { "name": "AWS Summit Taipei 2025", "year": "2025", "role": "Attendee", "tags": ["Cloud", "AWS", "Conference"] },
+          { "name": "Quantum Conference", "year": "2025", "role": "Attendee", "tags": ["Quantum", "Technology", "Conference"] }
+        ]
+      },
+      "workshops": {
+        "title": "Workshops",
+        "items": [
+          { "name": "AI × Cybersecurity Workshop Series: AI for Good", "year": "2026", "role": "Participant", "tags": ["AI", "Cybersecurity", "AI for Good"] }
+        ]
+      },
+      "speaking": {
+        "title": "Speaking",
+        "statusTitle": "Coming Soon",
+        "items": []
+      },
+      "certifications": {
+        "title": "Certifications",
+        "items": [
+          { "name": "Level C Technician for Computer Hardware Fabrication", "year": "2024", "organization": "Ministry of Labor", "tags": ["Hardware", "Certification"] },
+          { "name": "Level C Technician for Network Installation", "year": "2024", "organization": "Ministry of Labor", "tags": ["Network", "Certification"] }
+        ]
+      },
+      "community": {
+        "title": "Community",
+        "items": [
+          { "name": "RCEs Team", "role": "Member", "tags": ["CTF", "Team", "Cybersecurity"] }
+        ]
+      }
+    }
+  },
+  "ja": {
+    "eyebrow": "EXPERIENCE",
+    "title": "経験",
+    "subtitle": "コンテスト、キャンプ、カンファレンス、ワークショップ、資格、コミュニティ活動を通して、積み重ねてきた学びと成長を記録しています。",
+    "statsLabel": "経験の統計",
+    "labels": {
+      "year": "年",
+      "role": "役割",
+      "result": "成果",
+      "organization": "主催",
+      "type": "種類"
+    },
+    "stats": [
+      { "key": "competitions", "label": "コンテスト" },
+      { "key": "camps", "label": "キャンプ" },
+      { "key": "conferences", "label": "カンファレンス" },
+      { "key": "workshops", "label": "ワークショップ" },
+      { "key": "certifications", "label": "資格" }
+    ],
+    "sections": {
+      "competitions": {
+        "title": "コンテスト",
+        "groups": [
+          {
+            "year": "2026",
+            "items": [
+              { "name": "BroncoCTF 2026", "year": "2026", "role": "参加者", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "Junior Crypt CTF 2026", "year": "2026", "role": "参加者", "tags": ["CTF", "Cryptography"] },
+              { "name": "Grodno::CTF 2026", "year": "2026", "role": "参加者", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "AIS3 MyFirstCTF 2026", "year": "2026", "role": "参加者", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "AIS3 EOF CTF 2026", "year": "2026", "role": "参加者", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "国立宜蘭大学プログラミング・情報・AI応用コンテスト", "year": "2026", "result": ["決勝進出", "佳作"], "tags": ["Programming", "AI", "Competition"] },
+              { "name": "FIRST Tech Challenge", "year": "2026", "role": "参加者", "tags": ["Robotics", "Engineering", "FTC"] },
+              { "name": "インテリジェント・アイアンマン創意コンテスト", "year": "2026", "role": "参加者", "tags": ["Creativity", "Engineering", "Teamwork"] }
+            ]
+          },
+          {
+            "year": "2025",
+            "items": [
+              { "name": "情報サービス革新応用コンテスト", "year": "2025", "result": ["高校・大学部門 決勝進出", "大学部門 佳作"], "tags": ["Information Technology", "Innovation", "Competition"] },
+              { "name": "高校プログラムセキュリティ・ハッカソン", "year": "2025", "result": ["イースターエッグ専門家賞"], "tags": ["Cybersecurity", "Programming", "Hackathon"] }
+            ]
+          }
+        ]
+      },
+      "camps": {
+        "title": "キャンプ",
+        "items": [
+          { "name": "HPC AI Summer Camp", "year": "2026", "role": "参加者", "organization": "国立清華大学", "type": "サマーキャンプ", "tags": ["HPC", "AI", "CUDA", "GPU"] },
+          { "name": "APCSS サマーキャンプ", "role": "参加者", "type": "サマーキャンプ", "tags": ["APCSS", "Programming", "Computational Thinking"] },
+          { "name": "高校量子プログラム・サマーキャンプ", "year": "2025", "role": "参加者", "type": "サマーキャンプ", "tags": ["Quantum", "Quantum Computing", "Physics"] }
+        ]
+      },
+      "conferences": {
+        "title": "カンファレンス",
+        "items": [
+          { "name": "InfoSec Taiwan 2026", "year": "2026", "role": "参加者", "tags": ["Cybersecurity", "Community"] },
+          { "name": "Bak3 C00kie", "year": "2026", "role": "参加者", "tags": ["Cybersecurity", "Community"] },
+          { "name": "HITCON Conference 2025", "year": "2025", "role": "参加者", "tags": ["Cybersecurity", "Conference"] },
+          { "name": "COSCUP 2025", "year": "2025", "role": "参加者", "tags": ["Open Source", "Community"] },
+          { "name": "InfoSec Taiwan 2025", "year": "2025", "role": "参加者", "tags": ["Cybersecurity", "Community"] },
+          { "name": "AWS Summit Taipei 2025", "year": "2025", "role": "参加者", "tags": ["Cloud", "AWS", "Conference"] },
+          { "name": "量子カンファレンス", "year": "2025", "role": "参加者", "tags": ["Quantum", "Technology", "Conference"] }
+        ]
+      },
+      "workshops": {
+        "title": "ワークショップ",
+        "items": [
+          { "name": "AI × Cybersecurity Workshop Series：AI for Good", "year": "2026", "role": "参加者", "tags": ["AI", "Cybersecurity", "AI for Good"] }
+        ]
+      },
+      "speaking": {
+        "title": "登壇",
+        "statusTitle": "近日公開",
+        "items": []
+      },
+      "certifications": {
+        "title": "資格",
+        "items": [
+          { "name": "コンピュータハードウェア装修 丙級", "year": "2024", "organization": "労働部", "tags": ["Hardware", "Certification"] },
+          { "name": "ネットワーク架設 丙級", "year": "2024", "organization": "労働部", "tags": ["Network", "Certification"] }
+        ]
+      },
+      "community": {
+        "title": "コミュニティ",
+        "items": [
+          { "name": "RCEs Team", "role": "メンバー", "tags": ["CTF", "Team", "Cybersecurity"] }
+        ]
+      }
+    }
+  }
+}

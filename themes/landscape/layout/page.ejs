@@ -1,9 +1,18 @@
 <%
   const normalizedPagePath = String(page.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
   const pageParts = normalizedPagePath.split('/').filter(Boolean);
-  const pageLang = pageParts[0] === 'zh' ? 'zh' : (pageParts[0] === 'ja' ? 'ja' : 'en');
-  const localPageParts = pageLang === 'en' ? pageParts : pageParts.slice(1);
+  const normalizePageLang = function(value) {
+    const normalized = String(value || '').toLowerCase();
+    if (normalized === 'zh' || normalized === 'zh-tw' || normalized === 'zh-hant') return 'zh';
+    if (normalized === 'ja' || normalized === 'jp') return 'ja';
+    if (normalized === 'en') return 'en';
+    return '';
+  };
+  const explicitPageLang = ['en', 'zh', 'ja'].includes(pageParts[0]) ? pageParts[0] : '';
+  const pageLang = explicitPageLang || normalizePageLang(page.site_lang) || 'en';
+  const localPageParts = explicitPageLang ? pageParts.slice(1) : pageParts;
   const pageSection = localPageParts[0] || 'home';
+  const isExperienceLanding = pageSection === 'experience' && localPageParts.length === 1;
   const isExperienceDetail = pageSection === 'experience' && localPageParts.length === 2;
   const i18nPagePaths = [
     '',
@@ -13,6 +22,7 @@
     'labs',
     'writing',
     'timeline',
+    'en/experience',
     'zh',
     'zh/dashboard',
     'zh/experience',
@@ -57,7 +67,9 @@
   }[pageLang];
 %>
 
-<% if (isExperienceDetail) { %>
+<% if (isExperienceLanding) { %>
+  <%- partial('_partial/experience-page') %>
+<% } else if (isExperienceDetail) { %>
   <%- partial('_partial/experience-detail') %>
 <% } else if (isI18nPage) { %>
   <%- partial('_partial/i18n-page') %>

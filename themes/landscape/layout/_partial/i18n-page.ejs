@@ -476,23 +476,12 @@
     projectHref('/projects/medical-cybersecurity/'),
     localHref('labs')
   ];
-  const inferPostLang = function(post) {
-    const postPath = String(post.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
-    const postParts = postPath.split('/').filter(Boolean);
-    if (postParts[0] === 'zh') return 'zh';
-    if (postParts[0] === 'ja') return 'ja';
-    const raw = strip_html(post.content || post.description || '').replace(/\s+/g, ' ').trim();
-    const cjk = (raw.match(/[\u4e00-\u9fff\u3040-\u30ff\u3400-\u4dbf]/g) || []).length;
-    const kana = (raw.match(/[\u3040-\u30ff]/g) || []).length;
-    const latin = (raw.match(/[A-Za-z]/g) || []).length;
-    return kana > 12 ? 'ja' : (cjk > latin ? 'zh' : 'en');
-  };
-
   const recentPosts = [];
   const allPosts = [];
   if (site.posts && site.posts.length) {
     site.posts.toArray().sort(function(a, b) { return b.date - a.date; }).forEach(function(post, index) {
-      if (inferPostLang(post) !== lang) return;
+      const postLang = detect_post_language(post);
+      if (postLang !== lang) return;
       allPosts.push(post);
       if (recentPosts.length < 3) recentPosts.push(post);
     });

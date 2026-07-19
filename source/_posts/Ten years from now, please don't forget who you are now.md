@@ -2,6 +2,8 @@
 title: 十年後的我，請不要忘記現在的自己
 date: 2026-06-23
 sticky: 90
+site_lang: zh-TW
+translation_key: ten-years-from-now-dont-forget-who-you-are-now
 categories:
   - Personal
 tags:
@@ -9,6 +11,13 @@ tags:
   - Reflection
   - Personal
   - Journey
+slug: ten-years-from-now-dont-forget-who-you-are-now
+permalink: zh/2026/06/23/ten-years-from-now-dont-forget-who-you-are-now/
+description: 寫給十年後自己的個人成長文章，提醒未來的自己不要忘記現在的熱情、努力、失敗、同行的人與最初開始的理由。
+seo_title: 十年後的我，請不要忘記現在的自己
+seo_description: 一篇寫給未來自己的成長反思，記錄現在作為學生學習資訊安全、機器人、網站開發、AI、醫療資安與帶隊過程中的努力與信念。
+og_description: 願十年後的你，仍然記得現在的自己，記得那些熬夜、失敗、同行的人，以及最初相信夢想的自己。
+canonical_url: https://casper.tw/zh/2026/06/23/ten-years-from-now-dont-forget-who-you-are-now/
 ---
 
 # 十年後的我，請不要忘記現在的自己

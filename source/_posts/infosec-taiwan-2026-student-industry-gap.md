@@ -1,6 +1,8 @@
 ---
 title: 從 InfoSec Taiwan 2026，我看見學生與企業之間的資安落差
 date: 2026-07-07
+site_lang: zh-TW
+translation_key: infosec-taiwan-2026-student-industry-gap
 description: 這不是一篇活動流水帳，而是我參加 InfoSec Taiwan 2026 後，對學生研究方向與企業實際資安人才需求之間落差的觀察與反思。
 categories:
   - Cybersecurity
@@ -18,6 +20,11 @@ tags:
   - Career
   - Students
 slug: infosec-taiwan-2026-student-industry-gap
+permalink: zh/2026/07/07/infosec-taiwan-2026-student-industry-gap/
+seo_title: 從 InfoSec Taiwan 2026，我看見學生與企業之間的資安落差
+seo_description: 從 InfoSec Taiwan 2026 展場觀察學生資安專題與企業需求之間的差異，反思 CTF、AI、SOC、事件應變、零信任與後量子密碼學如何接近真實場域。
+og_description: 學生常問自己能做出什麼，企業更在意這能解決什麼真實問題。這篇文章整理我在 InfoSec Taiwan 2026 後對資安學習與產業需求落差的觀察。
+canonical_url: https://casper.tw/zh/2026/07/07/infosec-taiwan-2026-student-industry-gap/
 ---
 
 # 從 InfoSec Taiwan 2026，我看見學生與企業之間的資安落差

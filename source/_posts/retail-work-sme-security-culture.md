@@ -1,6 +1,8 @@
 ---
 title: 從零售業打工，我看見中小企業最容易忽略的資訊安全
 date: 2026-07-18
+site_lang: zh-TW
+translation_key: retail-work-sme-security-culture
 categories:
   - Cybersecurity
 tags:

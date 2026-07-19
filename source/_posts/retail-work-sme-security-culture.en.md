@@ -1,6 +1,8 @@
 ---
 title: What a Retail Job Taught Me About the Security Gaps Small Businesses Often Miss
 date: 2026-07-18
+site_lang: en
+translation_key: retail-work-sme-security-culture
 categories:
   - Cybersecurity
 tags:
