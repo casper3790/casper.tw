@@ -48,7 +48,7 @@
         "title": "營隊",
         "items": [
           { "name": "HPC AI Summer Camp", "year": "2026", "role": "學員", "organization": "國立清華大學", "type": "暑期營隊", "tags": ["HPC", "AI", "CUDA", "GPU"] },
-          { "name": "APCSS 暑期營隊", "role": "學員", "type": "暑期營隊", "tags": ["APCSS", "Programming", "Computational Thinking"] },
+          { "name": "APCS 模擬測驗團隊暑期營隊", "year": "2025", "role": "學員", "type": "暑期營隊", "tags": ["APCS", "Programming"] },
           { "name": "高中量子計畫暑期學習營", "year": "2025", "role": "學員", "type": "暑期學習營", "tags": ["Quantum", "Quantum Computing", "Physics"] }
         ]
       },
@@ -61,13 +61,13 @@
           { "name": "COSCUP 開源人年會 2025", "year": "2025", "role": "與會者", "tags": ["Open Source", "Community"] },
           { "name": "InfoSec Taiwan 2025", "year": "2025", "role": "與會者", "tags": ["Cybersecurity", "Community"] },
           { "name": "AWS Summit Taipei 2025", "year": "2025", "role": "與會者", "tags": ["Cloud", "AWS", "Conference"] },
-          { "name": "量子年會", "year": "2025", "role": "與會者", "tags": ["Quantum", "Technology", "Conference"] }
+          { "name": "QRACON 學生量子電腦年會", "year": "2025", "role": "與會者", "tags": ["Quantum", "Technology", "Conference"] }
         ]
       },
       "workshops": {
         "title": "工作坊",
         "items": [
-          { "name": "AI × Cybersecurity Workshop Series：AI for Good", "year": "2026", "role": "與會者", "tags": ["AI", "Cybersecurity", "AI for Good"] }
+          { "name": "AI × Cybersecurity Workshop Series：AI for Good", "year": "2026", "role": "參與者", "tags": ["AI", "Cybersecurity", "AI for Good"] }
         ]
       },
       "speaking": {
@@ -116,14 +116,14 @@
           {
             "year": "2026",
             "items": [
-              { "name": "BroncoCTF 2026", "year": "2026", "role": "Participant", "tags": ["CTF", "Cybersecurity"] },
-              { "name": "Junior Crypt CTF 2026", "year": "2026", "role": "Participant", "tags": ["CTF", "Cryptography"] },
-              { "name": "Grodno::CTF 2026", "year": "2026", "role": "Participant", "tags": ["CTF", "Cybersecurity"] },
-              { "name": "AIS3 MyFirstCTF 2026", "year": "2026", "role": "Participant", "tags": ["CTF", "Cybersecurity"] },
-              { "name": "AIS3 EOF CTF 2026", "year": "2026", "role": "Participant", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "BroncoCTF 2026", "year": "2026", "role": "Competitor", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "Junior Crypt CTF 2026", "year": "2026", "role": "Competitor", "tags": ["CTF", "Cryptography"] },
+              { "name": "Grodno::CTF 2026", "year": "2026", "role": "Competitor", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "AIS3 MyFirstCTF 2026", "year": "2026", "role": "Competitor", "tags": ["CTF", "Cybersecurity"] },
+              { "name": "AIS3 EOF CTF 2026", "year": "2026", "role": "Competitor", "tags": ["CTF", "Cybersecurity"] },
               { "name": "National Ilan University Programming, Information and AI Application Competition", "year": "2026", "result": ["Finalist", "Honorable Mention"], "tags": ["Programming", "AI", "Competition"] },
-              { "name": "FIRST Tech Challenge", "year": "2026", "role": "Participant", "tags": ["Robotics", "Engineering", "FTC"] },
-              { "name": "Intelligent Ironman Creativity Contest", "year": "2026", "role": "Participant", "tags": ["Creativity", "Engineering", "Teamwork"] }
+              { "name": "FIRST Tech Challenge", "year": "2026", "role": "Competitor", "tags": ["Robotics", "Engineering", "FTC"] },
+              { "name": "Intelligent Ironman Creativity Contest", "year": "2026", "role": "Competitor", "tags": ["Creativity", "Engineering", "Teamwork"] }
             ]
           },
           {
@@ -138,9 +138,9 @@
       "camps": {
         "title": "Camps",
         "items": [
-          { "name": "HPC AI Summer Camp", "year": "2026", "role": "Camper", "organization": "National Tsing Hua University", "type": "Summer Camp", "tags": ["HPC", "AI", "CUDA", "GPU"] },
-          { "name": "APCSS Summer Camp", "role": "Camper", "type": "Summer Camp", "tags": ["APCSS", "Programming", "Computational Thinking"] },
-          { "name": "High School Quantum Program Summer Camp", "year": "2025", "role": "Camper", "type": "Summer Camp", "tags": ["Quantum", "Quantum Computing", "Physics"] }
+          { "name": "HPC AI Summer Camp", "year": "2026", "role": "Student", "organization": "National Tsing Hua University", "type": "Summer Camp", "tags": ["HPC", "AI", "CUDA", "GPU"] },
+          { "name": "APCS Mock Exam Team Summer Camp", "year": "2025", "role": "Student", "type": "Summer Camp", "tags": ["APCS", "Programming"] },
+          { "name": "High School Quantum Program Summer Camp", "year": "2025", "role": "Student", "type": "Summer Camp", "tags": ["Quantum", "Quantum Computing", "Physics"] }
         ]
       },
       "conferences": {
@@ -152,7 +152,7 @@
           { "name": "COSCUP 2025", "year": "2025", "role": "Attendee", "tags": ["Open Source", "Community"] },
           { "name": "InfoSec Taiwan 2025", "year": "2025", "role": "Attendee", "tags": ["Cybersecurity", "Community"] },
           { "name": "AWS Summit Taipei 2025", "year": "2025", "role": "Attendee", "tags": ["Cloud", "AWS", "Conference"] },
-          { "name": "Quantum Conference", "year": "2025", "role": "Attendee", "tags": ["Quantum", "Technology", "Conference"] }
+          { "name": "QRACON Student Quantum Computing Conference", "year": "2025", "role": "Attendee", "tags": ["Quantum", "Technology", "Conference"] }
         ]
       },
       "workshops": {
@@ -229,9 +229,9 @@
       "camps": {
         "title": "キャンプ",
         "items": [
-          { "name": "HPC AI Summer Camp", "year": "2026", "role": "参加者", "organization": "国立清華大学", "type": "サマーキャンプ", "tags": ["HPC", "AI", "CUDA", "GPU"] },
-          { "name": "APCSS サマーキャンプ", "role": "参加者", "type": "サマーキャンプ", "tags": ["APCSS", "Programming", "Computational Thinking"] },
-          { "name": "高校量子プログラム・サマーキャンプ", "year": "2025", "role": "参加者", "type": "サマーキャンプ", "tags": ["Quantum", "Quantum Computing", "Physics"] }
+          { "name": "HPC AI サマーキャンプ", "year": "2026", "role": "受講生", "organization": "国立清華大学", "type": "サマーキャンプ", "tags": ["HPC", "AI", "CUDA", "GPU"] },
+          { "name": "APCS 模擬試験チーム・サマーキャンプ", "year": "2025", "role": "受講生", "type": "サマーキャンプ", "tags": ["APCS", "Programming"] },
+          { "name": "高校量子プログラム・サマーキャンプ", "year": "2025", "role": "受講生", "type": "サマーキャンプ", "tags": ["Quantum", "Quantum Computing", "Physics"] }
         ]
       },
       "conferences": {
@@ -243,7 +243,7 @@
           { "name": "COSCUP 2025", "year": "2025", "role": "参加者", "tags": ["Open Source", "Community"] },
           { "name": "InfoSec Taiwan 2025", "year": "2025", "role": "参加者", "tags": ["Cybersecurity", "Community"] },
           { "name": "AWS Summit Taipei 2025", "year": "2025", "role": "参加者", "tags": ["Cloud", "AWS", "Conference"] },
-          { "name": "量子カンファレンス", "year": "2025", "role": "参加者", "tags": ["Quantum", "Technology", "Conference"] }
+          { "name": "QRACON 学生量子コンピューティングカンファレンス", "year": "2025", "role": "参加者", "tags": ["Quantum", "Technology", "Conference"] }
         ]
       },
       "workshops": {

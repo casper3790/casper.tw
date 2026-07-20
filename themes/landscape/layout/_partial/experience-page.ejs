@@ -15,6 +15,11 @@
   const expSections = expCopy.sections || {};
   const expLabels = expCopy.labels || {};
   const expSectionOrder = ['competitions', 'camps', 'conferences', 'workshops', 'speaking', 'certifications', 'community'];
+  const expRoleLabels = {
+    zh: { camp: '學員', workshop: '參與者', conference: '與會者', contest: '參賽者' },
+    en: { camp: 'Student', workshop: 'Participant', conference: 'Attendee', contest: 'Competitor' },
+    ja: { camp: '受講生', workshop: '参加者', conference: '参加者', contest: '参加者' }
+  };
 
   const countSectionItems = function(section) {
     if (!section) return 0;
@@ -38,26 +43,50 @@
     return values.filter(Boolean).join(' · ');
   };
 
+  const localizedField = function(value) {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return value;
+    return value[expLang] || value.en || value.zh || value.ja || '';
+  };
+
+  const roleTypeForItem = function(item, sectionKey) {
+    if (item.roleType) return item.roleType;
+    if (sectionKey === 'camps') return 'camp';
+    if (sectionKey === 'workshops') return 'workshop';
+    if (sectionKey === 'conferences') return 'conference';
+    if (sectionKey === 'competitions') return 'contest';
+    return '';
+  };
+
+  const localizedRole = function(item, sectionKey) {
+    const roleType = roleTypeForItem(item, sectionKey);
+    const roleMap = expRoleLabels[expLang] || expRoleLabels.zh;
+    return roleMap[roleType] || localizedField(item.role);
+  };
+
   const renderStatsSummary = function() {
     return expCopy.stats.map(function(stat) {
       return '<span><strong>' + countSectionItems(expSections[stat.key]) + '</strong> ' + stat.label + '</span>';
     }).join('<span class="experience-stat-separator" aria-hidden="true">·</span>');
   };
 
-  const renderExperienceCard = function(item, extraClass) {
+  const renderExperienceCard = function(item, extraClass, sectionKey) {
     const classes = ['experience-card'];
     if (extraClass) classes.push(extraClass);
 
-    const result = Array.isArray(item.result) ? item.result.filter(Boolean).join(' / ') : item.result;
-    const primaryMeta = plainMeta([result, item.role, item.organization]);
-    const secondaryMeta = plainMeta([item.type]);
+    const resultValue = localizedField(item.result);
+    const result = Array.isArray(resultValue) ? resultValue.filter(Boolean).join(' / ') : resultValue;
+    const primaryMeta = plainMeta([result, localizedRole(item, sectionKey), localizedField(item.organization)]);
+    const secondaryMeta = plainMeta([localizedField(item.type)]);
+    const itemTitle = localizedField(item.title || item.name);
+    const itemDescription = localizedField(item.description);
     const tagsHtml = renderTags(item.tags);
 
     return '<article class="' + classes.join(' ') + '">' +
       '<div class="experience-card-year">' + (item.year || '') + '</div>' +
       '<div class="experience-card-body">' +
-        '<h3>' + item.name + '</h3>' +
+        '<h3>' + itemTitle + '</h3>' +
         (primaryMeta ? '<p class="experience-card-line">' + primaryMeta + '</p>' : '') +
+        (itemDescription ? '<p class="experience-card-subline">' + itemDescription + '</p>' : '') +
         (secondaryMeta ? '<p class="experience-card-subline">' + secondaryMeta + '</p>' : '') +
       '</div>' +
       (tagsHtml ? '<div class="experience-card-aside">' + tagsHtml + '</div>' : '') +
@@ -97,7 +126,7 @@
               <div class="experience-year"><%= group.year %></div>
               <div class="experience-year-items">
                 <% (group.items || []).forEach(function(item) { %>
-                  <%- renderExperienceCard(item, 'experience-timeline-card') %>
+                  <%- renderExperienceCard(item, 'experience-timeline-card', sectionKey) %>
                 <% }) %>
               </div>
             </div>
@@ -106,7 +135,7 @@
       <% } else { %>
         <div class="experience-grid<%= (section.items || []).length === 1 ? ' experience-grid-single' : '' %>">
           <% (section.items || []).forEach(function(item) { %>
-            <%- renderExperienceCard(item) %>
+            <%- renderExperienceCard(item, '', sectionKey) %>
           <% }) %>
         </div>
       <% } %>
