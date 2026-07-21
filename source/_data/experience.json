@@ -84,9 +84,7 @@
       },
       "community": {
         "title": "社群",
-        "items": [
-          { "name": "RCEs Team", "role": "成員", "tags": ["CTF", "Team", "Cybersecurity"] }
-        ]
+        "items": []
       }
     }
   },
@@ -175,9 +173,7 @@
       },
       "community": {
         "title": "Community",
-        "items": [
-          { "name": "RCEs Team", "role": "Member", "tags": ["CTF", "Team", "Cybersecurity"] }
-        ]
+        "items": []
       }
     }
   },
@@ -266,9 +262,7 @@
       },
       "community": {
         "title": "コミュニティ",
-        "items": [
-          { "name": "RCEs Team", "role": "メンバー", "tags": ["CTF", "Team", "Cybersecurity"] }
-        ]
+        "items": []
       }
     }
   }
